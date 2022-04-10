@@ -1,0 +1,62 @@
+---
+title: ☑️ Prevent deprecated APIs in Kubernetes v1.16
+slug: /built-in-rules/prevent-deprecated-k8s-api-116
+---
+
+The v1.16 release stopped serving some API versions for different resource types. When a user deploys a resource with a deprecated API version, the Kubernetes engine rejects it.
+
+:::tip
+Kubernetes v1.16 is no longer (officially) supported since 2 September 2020, So if you are still running this version, consider upgrading it as soon as possible.
+:::
+
+**Targeted resources by this rule (types of **`kind`**): **NetworkPolicy / Deployment / DaemonSet / StatefulSet
+
+**Enabled by default?** True
+
+**Policy as code identifier:** K8S_DEPRECATED_APIVERSION_1.16
+
+---
+
+## This rule will fail
+
+If one of the following API versions is used
+
+- _extensions/v1beta1_
+
+- _apps/v1beta1_
+
+- _apps/v1beta2_
+
+```yaml
+apiVersion: apps/v1beta2
+kind: Deployment
+```
+
+### Rule output in the CLI
+
+```none
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent deprecated APIs in Kubernetes v1.16 [1 occurrence]
+💡 Incorrect value for key `apiVersion` - the version you are trying to use is not supported by the Kubernetes cluster version (>=1.16)
+```
+
+---
+
+## How to fix this failure
+
+Use \*apps/v1**\* **instead of the deprecated version
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - v1.16 deprecation guide](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#v1-16)
+
+- [Kubernetes blog - API deprecation in v1.16](https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/)

@@ -1,0 +1,57 @@
+---
+title: ☑️ Ensure each container has a configured memory request
+slug: /built-in-rules/ensure-memory-request
+---
+
+Memory requests allow you to use memory resources efficiently and allow you to allocate a guaranteed minimum of computing resources for the pods running in your cluster.
+
+**Targeted resources by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Enabled by default?** True
+
+**Policy as code identifier:** CONTAINERS_MISSING_MEMORY_REQUEST_KEY
+
+---
+
+## This rule will fail
+
+If a container doesn't have a memory request configured
+
+```yaml
+spec:
+  containers:
+    - name: app
+      image: nginx:1.19.8
+```
+
+### Rule output in the CLI
+
+```none
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure each container has a configured memory request [1 occurrence]
+💡 Missing property object `requests.memory` - value should be within the accepted boundaries recommended by the organization
+```
+
+---
+
+## How to fix this failure
+
+```yaml
+spec:
+  containers:
+    - name: app
+      image: nginx:1.19.8
+      resources:
+        requests:
+          memory: '64Mi'
+```
+
+---
+
+## Read more
+
+- [Kubernetes configurations best practices - CPU/memory requests and limits](https://www.datree.io/resources/kubernetes-configurations-best-practices#anchor8)
+
+- [Kubernetes docs - manage resources containers](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)

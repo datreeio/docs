@@ -1,0 +1,38 @@
+---
+title: CircleCI
+slug: /cicd-examples/circle-ci
+---
+
+<img src='/img/cicd/1.png' alt='' width='180px' />
+
+## TO-DO list for setting-up Datree in your CI
+
+- [x] Get your [account token](/setup/account-token)
+- [ ] Set DATREE_TOKEN as a [secret/environment variable](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-context)
+- [ ] Add datree to your CI script&#x20;
+
+## CI config example
+
+```yaml
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run: npm run build
+  test:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run: curl https://get.datree.io | /bin/bash
+      - run: datree test ~/.datree/k8s-demo.yaml
+
+workflows:
+  main:
+    jobs:
+      - build
+      - test
+```

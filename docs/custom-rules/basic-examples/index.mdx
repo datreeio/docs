@@ -1,0 +1,166 @@
+---
+title: Basic examples
+slug: /custom-rules/basic-examples
+---
+
+## Example #1
+
+Here is an example of a [custom rule logic](https://www.jsonschemavalidator.net/s/QGe8g1l9) that will ensure only pre-approved values are used (allow-list) with the label key \`environment\`:
+
+```yaml
+customRules:
+  - identifier: CUSTOM_WORKLOAD_INCORRECT_ENVIRONMENT_LABELS
+    name: Ensure correct environment labels are used [CUSTOM RULE]
+    defaultMessageOnFailure: Use only approved environment labels (`prod`, `staging` and `test`)
+    schema:
+      properties:
+        metadata:
+          properties:
+            labels:
+              properties:
+                environment:
+                  enum:
+                    - prod
+                    - staging
+                    - test
+              required:
+                - environment
+          required:
+            - labels
+```
+
+Every custom rule must be coupled with a specific policy
+
+```yaml
+policies:
+  - name: Default
+    isDefault: true
+    rules:
+      - identifier: CUSTOM_WORKLOAD_INCORRECT_ENVIRONMENT_LABELS
+        messageOnFailure: ''
+        # more rules... #
+```
+
+And this is how the [Policy as code](docId:b98paugYVzlfox0ztnfem) file should look:&#x20;
+
+```yaml
+apiVersion: v1
+policies:
+  - name: Default
+    isDefault: true
+    rules:
+      - identifier: CUSTOM_WORKLOAD_INCORRECT_ENVIRONMENT_LABELS
+        messageOnFailure: This message will override the rule's `defaultMessageOnFailure` property
+#   - name: staging
+#     rules:
+#       - identifier: CUSTOM_WORKLOAD_INCORRECT_ENVIRONMENT_LABELS
+#         messageOnFailure: ''
+
+customRules:
+  - identifier: CUSTOM_WORKLOAD_INCORRECT_ENVIRONMENT_LABELS
+    name: Ensure correct environment labels are used [CUSTOM RULE]
+    defaultMessageOnFailure: Use only approved environment labels (`prod`, `staging` and `test`)
+    schema:
+      properties:
+        metadata:
+          properties:
+            labels:
+              properties:
+                environment:
+                  enum:
+                    - prod
+                    - staging
+                    - test
+              required:
+                - environment
+          required:
+            - labels
+```
+
+:::tip
+**Applying the new policies to your account**
+
+Enable PaC mode and publish the policies.yaml configuration ([read more](https://hub.datree.io/policy-as-code#zn-how-does-it-work))
+:::
+
+|                                                 **Dashboard**                                                 |                                                 **Terminal**                                                  |
+| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
+| ![](https://archbee-image-uploads.s3.amazonaws.com/geX2Ub-NMLY6MZgYV2qPn/gVwyKXf5hwg-YeXKzghn4_group-254.png) | ![](https://archbee-image-uploads.s3.amazonaws.com/geX2Ub-NMLY6MZgYV2qPn/sqyz0p5K4LyhhsF87-7vr_group-255.png) |
+
+## Example #2
+
+Here is an example of a [custom rule logic](https://www.jsonschemavalidator.net/s/oKAzqu4L) that will ensure pre-defined \`namespace\` values are excluded (block-list):&#x20;
+
+```yaml
+apiVersion: v1
+policies:
+  - name: Default
+    isDefault: true
+    rules:
+      - identifier: CUSTOM_WORKLOAD_INCORRECT_NAMESPACE_VALUE
+        messageOnFailure: This message will override the rule's `defaultMessageOnFailure` property
+#   - name: staging
+#     rules:
+#       - identifier: CUSTOM_WORKLOAD_INCORRECT_NAMESPACE_VALUE
+#         messageOnFailure: ''
+
+customRules:
+  - identifier: CUSTOM_WORKLOAD_INCORRECT_NAMESPACE_VALUE
+    name: Prevent workload from using the (system) default namespaces [CUSTOM RULE]
+    defaultMessageOnFailure: Don't use saved namespaces (`default`, `kube-node-lease`, `kube-public` and `kube-system`)
+    schema:
+      properties:
+        metadata:
+          properties:
+            namespace:
+              not:
+                enum:
+                  - default
+                  - kube-node-lease
+                  - kube-public
+                  - kube-syste
+          required:
+            - namespace
+```
+
+The above rule enforces similar logic to our built-in rule - [☑️ Prevent workload from using the default namespace](docId:g74kCpB1qBuk62dChm7ix)
+
+## Example #3
+
+Here is an example of a [custom rule logic](https://www.jsonschemavalidator.net/s/9tvpDkP1) that will ensure the number of \`replicas\` is set between 2-10 for resources kind \`Deployment\`:
+
+```yaml
+apiVersion: v1
+policies:
+  - name: Default
+    isDefault: true
+    rules:
+      - identifier: CUSTOM_DEPLOYMENT_INCORRECT_REPLICAS_VALUE
+        messageOnFailure: This message will override the rule's `defaultMessageOnFailure` property
+#   - name: staging
+#     rules:
+#       - identifier: CUSTOM_DEPLOYMENT_INCORRECT_REPLICAS_VALUE
+#         messageOnFailure: ''
+
+customRules:
+  - identifier: CUSTOM_DEPLOYMENT_INCORRECT_REPLICAS_VALUE
+    name: Ensure Deployment has replicas set between 2-10 [CUSTOM RULE]
+    defaultMessageOnFailure: Running 2 or more replicas will increase the availability of the service
+    schema:
+      if:
+        properties:
+          kind:
+            enum:
+              - Deployment
+      then:
+        properties:
+          spec:
+            properties:
+              replicas:
+                minimum: 2
+                maximum: 10
+            required:
+              - replicas
+```
+
+The above rule enforces similar logic to our built-in rule - [☑️ Ensure Deployment has more than one replica configured](docId:8pG44zg_kNt8aaAeUsKFW)&#x20;

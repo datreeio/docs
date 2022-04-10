@@ -1,0 +1,78 @@
+---
+title: Git hooks
+slug: /integrations/git-hooks
+---
+
+Git hooks are scripts that run automatically every time a particular event occurs in a Git repository (e.g. `$ git commit`, `$ git push`, etc.).&#x20;
+
+## Git pre-commit example
+
+### 1. Open .git/hooks dir
+
+By default, every Git repo has a .git/hooks directory (a hidden folder).
+
+### 2. Rename pre-commit.sample
+
+Change `pre-commit.sample` file name to `pre-commit` (by removing **.sample**). If you'd like to enable another hook, apply the same change to it.
+
+### 3. Add script to pre-commit hook
+
+:::hint
+
+## Prerequisite
+
+In order to run the following script properly, you will need to install jq:
+https\://stedolan.github.io/jq/download/
+:::
+
+Copy-paste the following code into your pre-commit file:
+
+```shell
+#!/bin/bash
+
+# Grep all yaml files that are part of the commit
+YAML_STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep ".ya\?ml\$")
+
+if [ "$YAML_STAGED_FILES" = "" ]; then
+  exit 0
+fi
+
+# K8s yaml validation
+YAML_PASS=true
+if [ ! "$YAML_STAGED_FILES" = "" ]; then
+  echo -e "$(tput setaf 7)$(tput bold)INFO: $(tput init)Validating K8s files with Datree..."
+
+  for YAML_FILE in $YAML_STAGED_FILES
+  do
+    # Skip yaml files that are not k8s files
+    apiVersionResult="$(yq e '.apiVersion' "$YAML_FILE")"
+    kindResult="$(yq e '.kind' "$YAML_FILE")"
+
+    if [ "$apiVersionResult" = "null" ] && [ "$kindResult" = "null" ]; then
+      echo -e "$(tput setaf 3)$(tput bold)WARNING: $(tput init)Could not find a 'kind' or 'apiVersion' attribute in $YAML_FILE, skipping..."
+      continue
+    fi
+
+    # Run datree on all the other yaml files
+    if datree test "$YAML_FILE"; then
+      echo -e "$(tput setaf 2)$(tput bold)Datree Passed: $(tput init)$YAML_FILE"
+    else
+      echo -e "$(tput setaf 1)$(tput bold)Datree Failed: $(tput init)$YAML_FILE"
+      YAML_PASS=false
+    fi
+  done
+fi
+
+# Exit and give status
+if [ "$YAML_PASS" = "false" ]; then
+  echo -e "$(tput setaf 1)$(tput bold)ERROR: $(tput init)Your commit contains files that failed Datree tests. Please fix the errors and try again."
+  exit 1
+fi
+
+echo -e "\n$(tput setaf 2)$(tput bold)COMMIT SUCCEEDED$(tput init)"
+exit $?
+```
+
+### 4. Test your hook
+
+Make a change in a Kubernetes yaml file and make a commit. The bash script will look for all the yaml files that have been committed and will run `datree test [yaml file]` on each of them.

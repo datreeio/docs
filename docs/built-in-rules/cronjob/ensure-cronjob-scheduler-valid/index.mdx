@@ -1,0 +1,59 @@
+---
+title: ☑️ Ensure CronJob has a configured deadline
+slug: /built-in-rules/ensure-cronjob-scheduler-valid
+---
+
+When the CronJob controller counts more than **100** missed schedules, the cron job is no longer scheduled. Missed CronJobs are considered failures.
+
+By default, the CronJob controller counts how many missed schedules happen for a cron job since `status.lastScheduleTime` until now. When `startingDeadlineSeconds` is set, the CronJob controller counts how many missed jobs occurred between the value of `startingDeadlineSeconds` until now.
+
+Setting a deadline can reduce the number of missed schedules needed to mark a CronJob as a failure while increasing the CronJob reliability.
+
+**Targeted resources by this rule (types of **`kind`**): **CronJob
+
+**Enabled by default?** True
+
+**Policy as code identifier:** CRONJOB_MISSING_STARTINGDEADLINESECOND_KEY
+
+---
+
+## This rule will fail
+
+If a CronJob doesn't have a `startingDeadlineSeconds` key configured
+
+```yaml
+kind: CronJob
+spec:
+  schedule: '*/1 * * * *'
+```
+
+### Rule output in the CLI
+
+```none
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure CronJob has a configured deadline [1 occurrence]
+💡 Missing property object `startingDeadlineSeconds` - set a time limit for the cron execution to allow killing it if exceeded
+```
+
+---
+
+## How to fix this failure
+
+```yaml
+kind: CronJob
+spec:
+  schedule: '*/1 * * * *'
+  startingDeadlineSeconds: 100
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - starting deadline](https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/#starting-deadline)
+
+- [Kubernetes docs - CronJob limitations](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-job-limitations)
+
+- [Post-mortem: missing startingDeadlineSeconds from CronJob config](https://timewitch.net/post/2020-04-04-cronjob-retro/)

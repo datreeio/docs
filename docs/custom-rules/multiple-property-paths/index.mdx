@@ -1,0 +1,45 @@
+---
+title: Multiple property paths
+slug: /custom-rules/multiple-property-paths
+---
+
+Sometimes, a property (key/value) that you want to test against will be located in multiple places. For example, if you want to create a custom rule that ensures all container images have a pinned version, you can avoid creating a rule logic that declares all possible paths because checking the value of the image property in two locations can be complex.&#x20;
+
+- When _kind is Deployment_, the value of the property `spec.template.spec.containers[].image` _should have_ a pinned version
+
+- When _kind is Pod_, the value of the property `spec.containers[].image` _should have_ a pinned version
+
+To avoid this complexity, you can write a JSON Schema with a rule logic that will define the common path and disregard all prefixes:&#x20;
+
+- The value of the property `**.spec.containers[].image`_ should have_ a [pinned version](https://regex101.com/r/su2NXg/1)&#x20;
+
+Here is an example of what that would look like:
+
+```yaml
+customRules:
+  - identifier: CUSTOM_CONTAINERS_MISSING_IMAGE_VALUE_VERSION
+    name: Ensure each container image has a pinned (tag) version [CUSTOM RULE]
+    defaultMessageOnFailure: |
+      Not setting image version for your containers is like going to the casino 🎰 - you don't know which version you'll get
+    schema:
+      definitions:
+        imagePattern:
+          properties:
+            spec:
+              properties:
+                containers:
+                  type: array
+                  items:
+                    properties:
+                      image:
+                        type: string
+                        pattern: ^(?=.*[:|@](?=.+)(?!latest)).*$
+      allOf:
+        - $ref: '#/definitions/imagePattern'
+      additionalProperties:
+        $ref: '#'
+      items:
+        $ref: '#'
+```
+
+The above rule is enforcing the same logic as our built-in rule - [☑️ Ensure each container image has a pinned (tag) version](docId:nhvnGLR0KXYQR2mq1jkrH)

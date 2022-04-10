@@ -1,0 +1,55 @@
+---
+title: ☑️ Prevent Workflow from having an empty retry strategy
+slug: /built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy
+---
+
+The user can specify a `retryStrategy` that will dictate how failed or errored steps are retried in a workflow. Providing an empty `retryStrategy` (i.e. retryStrategy: {}) will cause a container to retry until completion and eventually cause OOM issues.
+
+**Targeted resources by this rule (types of kind): **Workflow
+
+**Enabled by default?** True
+
+**Policy as code identifier:** ARGO_WORKFLOW_INCORRECT_RETRY_STRATEGY_VALUE_EMPTY
+
+---
+
+## This rule will fail
+
+If the `retryStrategy` key is set with an empty value {}:
+
+```yaml
+kind: Workflow
+spec:
+  templates:
+  - retryStrategy: {}
+```
+
+### Rule output in the CLI
+
+```none
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent Workflow from having an empty retry strategy [1 occurrence]
+💡 Incorrect value for key `retryStrategy` - empty value (`{}`) can cause failed/errored steps to keep retrying, which can result in OOM issues
+```
+
+---
+
+## How to fix this failure
+
+Set the `retryStrategy` key with a non-empty value or don't set it at all:
+
+```yaml
+kind: Workflow
+spec:
+  templates:
+  - retryStrategy:
+     limit: 10
+```
+
+---
+
+## Read more[\*\*](https://www.datree.io/resources/kubernetes-configuration-mistakes#anchor3)
+
+- [**_Argo github_**](https://github.com/argoproj/argo-workflows/blob/master/examples/README.md#retrying-failed-or-errored-steps)

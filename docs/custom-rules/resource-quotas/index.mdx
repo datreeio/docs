@@ -1,0 +1,100 @@
+---
+title: Resource quotas
+slug: /custom-rules/resource-quotas
+---
+
+## Overview
+
+We extended JSON Schema with the keywords `resourceMinimum` and `resourceMaximum` to help create custom rules for comparing resource quotas strings (CPU and memory) like 1000m and 1G. Here's an example check for when memory and CPU fall within a certain range.
+
+Let's say we want to make sure that Kubernetes configs always have a CPU limit within the range of 250m-500m. This is how the custom rule to check that would look:
+
+```yaml
+customRules:
+  - identifier: CUSTOM_CONTAINERS_INCORRECT_CPU_LIMIT_VALUE
+    name: Ensure each container has a configured CPU limit within range [CUSTOM RULE]
+    defaultMessageOnFailure: CPU limit value should be within the accepted boundaries (250m-500m)
+    schema:
+      properties:
+        spec:
+          properties:
+            containers:
+              items:
+                properties:
+                  resources:
+                    properties:
+                      limits:
+                        properties:
+                          cpu:
+                            resourceMinimum: 250m
+                            resourceMaximum: 500m
+```
+
+And this is how the policy would look:
+
+```yaml
+apiVersion: v1
+policies:
+  - name: Default
+    isDefault: true
+    rules:
+      - identifier: CUSTOM_CONTAINERS_INCORRECT_CPU_LIMIT_VALUE
+        messageOnFailure: CPU limit value should be within the accepted boundaries (250m-500m)
+#   - name: staging
+#     rules:
+#       - identifier: CUSTOM_CONTAINERS_INCORRECT_CPU_LIMIT_VALUE
+#         messageOnFailure: This message will override the rule's `defaultMessageOnFailure` property
+
+customRules:
+  - identifier: CUSTOM_CONTAINERS_INCORRECT_CPU_LIMIT_VALUE
+    name: Ensure each container has a configured CPU limit within range [CUSTOM RULE]
+    defaultMessageOnFailure: CPU limit value should be within the accepted boundaries (250m-600m)
+    schema:
+      properties:
+        spec:
+          properties:
+            containers:
+              items:
+                properties:
+                  resources:
+                    properties:
+                      limits:
+                        properties:
+                          cpu:
+                            resourceMinimum: 250m
+                            resourceMaximum: 500m
+```
+
+## See it in action
+
+Let's test this manifest after publishing the policy.
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+spec:
+  containers:
+    - name: cpu-demo
+      image: images.my-company.example/app:v4
+      resources:
+        requests:
+          memory: '64Mi'
+          cpu: '250m'
+        limits:
+          memory: '128Mi'
+          cpu: '1G'
+```
+
+This manifest will fail because it has a container (cpu-demo) with a CPU limit larger than 500m:
+
+![](https://archbee-image-uploads.s3.amazonaws.com/geX2Ub-NMLY6MZgYV2qPn/g5f0J9_HmyzrTSlhIrwkm_screen-shot-2021-10-19-at-150642.png)
+
+## Important notes
+
+- `resourceMinimum` and `resourceMaximum` keywords will translate and compare input from different resource quotas, so if CPU will be "0.6", the rule will still fail (600m=0.6).
+
+- The rule in this example **will not fail** if the property path `resources.limits.cpu` **doesn't exist**. If you want the policy check to fail in a case like that, you need to either add our [built-in rule](https://hub.datree.io/ensure-cpu-limit) to this policy or add it to the rule logic by using \`[required](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.5.3)\`.
+
+- The above rule won't work if the property containers is nested under `spec.template.spec.containers[]`. If you want the rule to support the property path `**.spec.containers[].resources.limits.cpu`, find direction for its implementation [here](https://hub.datree.io/multiple-property-paths).

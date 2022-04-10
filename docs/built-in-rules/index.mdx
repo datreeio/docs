@@ -1,0 +1,66 @@
+---
+title: Built in rules
+slug: /built-in-rules
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import styles from './styles.module.scss';
+import {
+  BuiltInRulesContainer,
+  BuiltInRulesWorkload,
+  BuiltInRulesCronjob,
+  BuiltInRulesNetworking,
+  BuiltInRulesSecurity,
+  BuiltInRulesDeprecation,
+  BuiltInRulesArgo,
+  BuiltInRulesOther,
+} from '/src/components/built-in-rules/BuiltInRulesNav.js';
+
+# Built in rules
+
+There are 34 battle-tested rules for you to choose from.
+The rules cover different Kubernetes resources and use cases:
+
+<Tabs>
+  <TabItem value='containers' label='Containers' default>
+    <nav>
+      <BuiltInRulesContainer />
+    </nav>
+  </TabItem>
+  <TabItem value='workload' label='Workload'>
+    <nav>
+      <BuiltInRulesWorkload />
+    </nav>
+  </TabItem>
+  <TabItem value='cronjob' label='CronJob'>
+    <nav>
+      <BuiltInRulesCronjob />
+    </nav>
+  </TabItem>
+  <TabItem value='networking' label='Networking'>
+    <nav>
+      <BuiltInRulesNetworking />
+    </nav>
+  </TabItem>
+  <TabItem value='security' label='Security'>
+    <nav>
+      <BuiltInRulesSecurity />
+    </nav>
+  </TabItem>
+  <TabItem value='deprecation' label='Deprecation'>
+    <nav>
+      <BuiltInRulesDeprecation />
+    </nav>
+  </TabItem>
+  <TabItem value='argo' label='Argo'>
+    <nav>
+      <BuiltInRulesArgo />
+    </nav>
+  </TabItem>
+  <TabItem value='other' label='Other'>
+    <nav>
+      <BuiltInRulesOther />
+    </nav>
+  </TabItem>
+</Tabs>

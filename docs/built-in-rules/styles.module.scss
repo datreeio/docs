@@ -1,0 +1,31 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 2rem;
+  gap: 0rem;
+}
+
+.link {
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  transition: all ease 0.7s;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-weight: 600;
+
+  span {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+}
+
+.link:hover {
+  text-decoration: none;
+  background-color: #f8fafc;
+  transform: translateY(-2px);
+}

@@ -1,0 +1,45 @@
+---
+title: Centralized policy
+slug: /setup/centralized-policy
+---
+
+"Centralized policy" is the concept of controlling distributed policy execution from a centralized location. This concept enables the policy owner to easily control the rules that are evaluated in each run of Datree without creating operation overhead. The centralized policy can be managed by logging into the dashboard.
+
+## Enable and disable rules in a policy
+
+In the [dashboard](https://app.datree.io), each of the [34 built-in](https://hub.datree.io/built-in-rules) rules can be switched "ON" or "OFF" according to your needs. Once a rule is disabled or enabled, it will automatically propagate to all policy checks that are executed against that policy (via [account token](/setup/account-token)). This way, the policy owner doesn't need to manually update all the devices connected to this policy.
+
+<img src='/img/setup/centralized-policy/1.png' alt='' />
+
+## Edit rule fail suggestion text
+
+The output text that is shown in the CLI when a rule fails is editable. This can be used by the policy owner to educate policy consumers (e.g. developers, teammates, etc.), and instruct them regarding how they should fix their misconfigurations.
+
+|                    |                    **Dashboard view**                    |                      **CLI output**                      |
+| ------------------ | :------------------------------------------------------: | :------------------------------------------------------: |
+| ### Before edit ➡️ | <img src='/img/setup/centralized-policy/2.png' alt='' /> | <img src='/img/setup/centralized-policy/3.png' alt='' /> |
+| ### After edit ➡️  | <img src='/img/setup/centralized-policy/4.png' alt='' /> | <img src='/img/setup/centralized-policy/5.png' alt='' /> |
+
+## Policy management
+
+Add policies with different rules configured, giving each of your use cases its own custom policy.
+
+### Add a new policy
+
+Create a new policy and give it a descriptive name.
+
+<img src='/img/setup/centralized-policy/6.png' alt='' />
+
+By default, each new policy is created without any rules enabled, giving you the freedom to configure it according to your needs.
+
+<img src='/img/setup/centralized-policy/7.png' alt='' />
+
+### Running checks against the new policy
+
+To run the Datree CLI against the new policy (instead of the default one), you will need to add the \`_-p \[policy-name]_\` to your policy check execution (e.g. `$ datree test ~/.datree/k8s-demo.yaml -p A_team`)
+
+```none
+$ datree test [K8s-manifest] -p [policy-name]
+```
+
+<img src='/img/setup/centralized-policy/8.png' alt='' />

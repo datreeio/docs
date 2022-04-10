@@ -1,0 +1,63 @@
+---
+title: ☑️ Ensure ConfigMap is recognized by ArgoCD
+slug: /built-in-rules/ensure-configmap-is-recognized-by-argocd
+---
+
+A relevant ConfigMap resource that isn’t labeled with `app.kubernetes.io/part-of: argocd` will not be used by Argo CD.
+
+**Targeted resources by this rule (types of kind): **ConfigMap
+
+**Enabled by default?** True
+
+**Policy as code identifier:** ARGO_CONFIGMAP_MISSING_PART_OF_LABEL_VALUE_ARGOCD
+
+---
+
+## This rule will fail
+
+If the `app.kubernetes.io/part-of` label is not set, or set to anything other than '_argocd_':
+
+```yaml
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: somethingElse
+```
+
+```yaml
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: somethingElse
+```
+
+### Rule output in the CLI
+
+```none
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure ConfigMap is recognized by ArgoCD [1 occurrence]
+💡 Incorrect value for annotation `app.kubernetes.io/part-of` - value should be `argocd`, or ArgoCD won't recognize this resource
+```
+
+---
+
+## How to fix this failure
+
+Set the `app.kubernetes.io/part-of` key with a value of '_argocd'_:
+
+```yaml
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/part-of: argocd
+```
+
+---
+
+## Read more[\*\*](https://www.datree.io/resources/kubernetes-configuration-mistakes#anchor3)
+
+- [ArgoCD - declarative setup](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#atomic-configuration)

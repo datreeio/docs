@@ -1,0 +1,48 @@
+---
+title: ☑️ Prevent Service from exposing node port
+slug: /built-in-rules/prevent-node-port
+---
+
+Exposing a _NodePort_ will open a network port on all nodes to be reached by the cluster's external network. Using this method to expose the application is less secure and forces you to create unnecessary coupling between services in order to expose them all to external traffic.
+
+**Targeted resources by this rule (types of **`kind`**): **Service
+
+**Enabled by default?** True
+
+**Policy as code identifier:** SERVICE_INCORRECT_TYPE_VALUE_NODEPORT
+
+---
+
+## This rule will fail
+
+If the service `type` is configured as _NodePort_
+
+```yaml
+kind: Service
+spec:
+  type: NodePort
+```
+
+### Rule output in the CLI
+
+```none
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent Service from exposing node port [1 occurrence]
+💡 Incorrect value for key `type` - `NodePort` will open a port on all nodes where it can be reached by the network external to the cluster
+```
+
+---
+
+## How to fix this failure
+
+Use a different service `type` other than _NodePort_
+
+---
+
+## Read more
+
+- [](https://www.datree.io/resources/kubernetes-configuration-mistakes#anchor3)[NodePort vs LoadBalancer vs Ingress - When should I use what?](https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0)
+
+- [Kubernetes configurations best practices - NodePort](https://www.datree.io/resources/kubernetes-configurations-best-practices#anchor6)

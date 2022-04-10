@@ -1,0 +1,52 @@
+---
+title: ☑️ Prevent containers from sharing the host's IPC namespace
+slug: /built-in-rules/prevent-using-host-ipc
+---
+
+By default, containers only share IPC resources within the same pod. When a container is allowed to share its host's IPC namespace, it has access to the same inter-process mechanisms as other processes running outside of the container runtime.
+
+**Targeted resources by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Enabled by default?** False
+
+**Policy as code identifier:** CONTAINERS_INCORRECT_HOSTIPC_VALUE_TRUE
+
+---
+
+## This rule will fail
+
+If `hostIPC` is set to _true_
+
+```yaml
+spec:
+  hostIPC: true
+```
+
+### Rule output in the CLI
+
+```none
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent containers from sharing the host’s IPC namespace [1 occurrence]
+💡 Incorrect value for key `hostIPC` - running on the host’s IPC namespace can be (maliciously) used to interact with other processes running outside the container
+```
+
+---
+
+## How to fix this failure
+
+Set the `hostIPC` to _false_ or remove it completely
+
+```yaml
+spec:
+  hostIPC: false
+```
+
+---
+
+## Read more
+
+- [KubeSec - hostIPC](https://kubesec.io/basics/spec-hostipc/)
+
+- [Kubernetes docs - host namespaces](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#host-namespace)

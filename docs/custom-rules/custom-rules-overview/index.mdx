@@ -1,0 +1,95 @@
+---
+title: Understanding custom rules
+slug: /custom-rules/custom-rules-overview
+---
+
+In addition to the tool's built-in rules, you can also write any tests that you wish and run them against your Kubernetes configurations to check for rule violations. The custom rule engine is based on [JSON Schema](https://json-schema.org/), so it supports both YAML and JSON declarative syntax.
+
+Note that using custom rules is possible only when in [Policy as code](/setup/policy-as-code) mode.
+
+## customRules properties
+
+- **identifier** - a unique ID to associate with a policy
+
+- **name** \[OPTIONAL] - a title that will be shown when a rule fails
+
+- **defaultMessageOnFailure** \[OPTIONAL] - a message that is shown when the property `policies.name[].rules.messageOnFailure` is empty (unique to each identifier)
+
+- **schema** - a custom rule logic written in JSON Schema (as YAML)
+
+## Basic examples
+
+Here are three examples of custom rules to showcase how you can set it up:
+
+1.  [Ensure correct environment labels are used](https://hub.datree.io/basic-examples#c6-example-1)
+
+2.  [Prevent workload from using the (system) default namespaces](https://hub.datree.io/basic-examples#t0-example-2)
+
+3.  [Ensure Deployment has replicas set between 2-10](https://hub.datree.io/basic-examples#h3-example-3)
+
+## JSON vs. YAML
+
+Schema logic can also be specified as JSON strings instead of YAML, for easier copy/pasting. This is an example of the same rule logic in both JSON string (jsonSchema) and YAML string (schema):
+
+```yaml
+customRules:
+  - identifier: CUSTOM_WORKLOAD_INCORRECT_ENVIRONMENT_LABELS
+    name: Ensure correct environment labels are used [CUSTOM RULE]
+    defaultMessageOnFailure: Use only approved environment labels (`prod`, `staging` and `test`)
+    jsonSchema: |
+      {
+        "properties": {
+          "metadata": {
+            "properties": {
+              "labels": {
+                "properties": {
+                  "environment": {
+                    "enum": [
+                      "prod",
+                      "staging",
+                      "test"
+                    ]
+                  }
+                },
+                "required": [
+                  "environment"
+                ]
+              }
+            },
+            "required": [
+              "labels"
+            ]
+          }
+        }
+      }
+```
+
+```yaml
+customRules:
+  - identifier: CUSTOM_WORKLOAD_INCORRECT_ENVIRONMENT_LABELS
+    name: Ensure correct environment labels are used [CUSTOM RULE]
+    defaultMessageOnFailure: Use only approved environment labels (`prod`, `staging` and `test`)
+    schema:
+      properties:
+        metadata:
+          properties:
+            labels:
+              properties:
+                environment:
+                  enum:
+                    - prod
+                    - staging
+                    - test
+              required:
+                - environment
+          required:
+            - labels
+```
+
+## Helpful links
+
+[Getting started with JSON Schema](https://json-schema.org/learn/getting-started-step-by-step)
+
+[Online YAML Schema validator](https://yamlschemavalidator.datree.io/)
+
+[Online JSON Schema validator](https://www.jsonschemavalidator.net/)

@@ -1,0 +1,38 @@
+---
+title: Kustomize support
+slug: /integrations/kustomize-support
+---
+
+<img src='/img/official-integrations/1.avif' alt='' />
+
+### Overview
+
+Datree comes with out-of-the-box support for Kustomize, allowing you to easily scan your Kustomization file and the resources it will generate for misconfigurations.
+
+When testing a kustomization directory, Datree will build temporary copies of the resources defined in kustomization.yaml and run a policy check against them.
+
+**Linux**, **MacOS**, and **Windows** are supported.
+
+### Dependencies
+
+Using the Datree CLI to scan kustomize files requires [**Kustomize**](https://kustomize.io/) and/or [**kubectl**](https://kubernetes.io/docs/tasks/tools/) to be installed.
+
+### Usage
+
+Simply add the 'kustomize' argument to the CLI command, like so:
+
+> datree kustomize test [path] [cliArgs] -- [kustomizeArgs]
+
+**path **-\** **the path to your desired kustomize directory (that contains a kustomization.yaml file).**
+cliArgs \*\*(*optional*) - your desired Datree CLI arguments, as described here: [CLI arguments](docId:bAiB7OnJ9qIu1NNzA3c8e)&#x20;
+**kustomizeArgs** (*optional\*) - your desired arguments for the 'kustomize build' command. To see a list of supported arguments, run `kustomize build -h` or `kubectl kustomize -h`
+
+### Examples
+
+Assuming "/path/to/dir/" is a directory containing a 'kustomization.yaml' file, the following command will perform a policy check against all generated resources:
+
+> datree kustomize test /path/to/dir/
+
+The following command will also perform a policy check against all generated resources, this time using k8s schema version 1.23.0 and a Datree policy named "staging":
+
+> datree kustomize test /path/to/dir/ -s 1.23.0 -p staging

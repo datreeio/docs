@@ -1,0 +1,31 @@
+---
+title: Troubleshooting
+slug: /troubleshooting
+---
+
+## Tokens mismatch
+
+<img src='/img/troubleshooting/1.avif' alt='' />
+
+If you see this message in your dashboard, it means that we identified there are two [account tokens](/setup/account-token) associate with your account - one in your CLI and a different one in your dashboard. This can be an issue because it will break the connection between the policy checks that are executed (CLI) and the centralized policy (dashboard). As a result, you will not be able to control your policies or see results on your history page.
+
+### How to fix tokens mismatch?
+
+You will need to set your CLI token to match your dashboard token:
+
+1.  [Get your dashboard account token](/setup/account-token#wd-from-the-centralized-policy-dashboard)
+
+2.  [Set your dashboard account token in your CLI](/setup/account-token#o1-overriding-account-token)
+
+## Running Datree on Alpine (Linux) image
+
+Alpine is missing some dependencies that [are required](https://github.com/datreeio/helm-datree/issues/22) to successfully install Datree.
+
+### How to fix missing dependencies?
+
+Adding the following command to the CI should fix this: `apk add curl bash`
+This will add curl and bash commands which our install scripts require in order to run.
+
+## Haven't found a solution to your problem?
+
+Let us know by opening an issue in our [github](https://github.com/datreeio/datree) and we will gladly help!

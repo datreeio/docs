@@ -1,0 +1,27 @@
+---
+title: GitLab CI/CD
+slug: /cicd-examples/gitLab-ci-cd
+---
+
+<img src='/img/cicd/3.png' alt='' width='180px' />
+
+## TO-DO list for setting-up Datree in your CI
+
+- [x] Get your [account token](/setup/account-token)
+- [ ] Set DATREE_TOKEN as a [secret/environment variable](https://docs.gitlab.com/ee/ci/variables/#project-cicd-variables)
+- [ ] Add datree to your CI script&#x20;
+
+## CI config example
+
+```yaml
+image: node:14
+
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+    - curl https://get.datree.io | /bin/bash
+    - datree test ~/.datree/k8s-demo.yaml
+```

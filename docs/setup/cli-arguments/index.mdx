@@ -1,0 +1,47 @@
+---
+title: CLI arguments
+slug: /setup/cli-arguments
+---
+
+## Running a policy check
+
+The minimum input that's required to trigger a policy check is to use the command `datree test` and to provide a Kubernetes configuration file path or a [glob pattern](https://www.digitalocean.com/community/tools/glob):
+
+```none
+$ datree test kube-prod/deployment.yaml
+$ datree test kube-*/*.yaml
+```
+
+---
+
+### Flags
+
+| Flag                     | Alias | Values                                 | Description                                                                                                                                                        |
+| ------------------------ | ----- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| --help                   | -h    | N/A                                    | Print help. If a command is provided, help will be printed for that command                                                                                        |
+| --output                 | -o    | json, yaml, xml                        | Output the policy check results in the requested format                                                                                                            |
+| --output                 | -o    | simple                                 | Output the policy check results in simple text (without emoji or colors)                                                                                           |
+| --schema-version         | -s    | e.g. "1.20.0"                          | Set Kubernetes version to validate against.&#x20;Defaults to 1.18.0 (default "1.18.0")                                                                             |
+| --schema-location        | N/A   | e.g. "http\://example.com/schema.json" | Override Kubernetes schema location. See [relevant page](https://hub.datree.io/schema-validation#m2-overriding-schemas-location-crd-support) for more information. |
+| --ignore-missing-schemas | N/A   | N/A                                    | Skip files with missing schemas instead of failing the schema validation check                                                                                     |
+| --policy                 | -p    | e.g. staging                           | Specify which policy to execute (by policy name)                                                                                                                   |
+| --only-k8s-files         | N/A   | N/A                                    | Skip all non-K8s files.&#x20;Especially useful when scanning a dir with K8s and other config files:&#x20;`datree test *.yaml --only-k8s-files`                     |
+
+## Additional options
+
+### Built-in Kustomize support
+
+Run `datree kustomize test [path]` to render resources defined in a kustomization.yaml file located in `[path]` and run a policy check against them.
+For more information, options and examples, see the [Kustomize support](docId:drNWV3HERFRm43eXIv7NA) page.
+
+### Publish policy-as-code configuration
+
+When using [Policy as code](docId:b98paugYVzlfox0ztnfem) mode, the command `datree publish fileName.yaml` will publish policies configuration for given fileName. Input should be the path to the Policy-as-Code yaml configuration file.
+
+### Configure the CLI
+
+The command `datree config` allows you to manage the datree config file. Use `datree config set` to change the value of a specific key in the datree config.yaml file (defaults to $HOME/.datree/config.yaml). For example:
+
+```none
+$ datree config set token MY_EXAMPLE_TOKEN
+```

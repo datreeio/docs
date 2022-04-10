@@ -1,0 +1,51 @@
+---
+title: ☑️ Ensure HPA has minimum replicas configured
+slug: /built-in-rules/ensure-hpa-minimum-replicas
+---
+
+When auto-scaling resource utilization is triggered with HPA (_HorizontalPodAutoscaler_), a range of acceptable values must be set to prevent unintended scaling down scenarios.
+
+**Targeted resources by this rule (types of **`kind`**): **HorizontalPodAutoscaler
+
+**Enabled by default?** True
+
+**Policy as code identifier:** HPA_MISSING_MINREPLICAS_KEY
+
+---
+
+## This rule will fail
+
+If an HPA doesn't have minimum replicas configured
+
+```yaml
+kind: HorizontalPodAutoscaler
+spec:
+  maxReplicas: 10
+```
+
+### Rule output in the CLI
+
+```none
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure HPA has minimum replicas configured [1 occurrence]
+💡 Missing property object `minReplicas` - the value should be within the accepted boundaries recommended by the organization
+```
+
+---
+
+## How to fix this failure
+
+```yaml
+kind: HorizontalPodAutoscaler
+spec:
+  minReplicas: 1
+  maxReplicas: 10
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - horizontal pod autoscale walkthrough](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/)[](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/)

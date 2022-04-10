@@ -1,0 +1,83 @@
+---
+title: Account token
+slug: /setup/account-token
+---
+
+## How it works
+
+Every account has its own token. The token connects the policy checks to your [Centralized policy](docId:0-uWz2hrYE6OvSK15gWNK) to know which policies and rules to run. When a policy check is triggered, Datree attempts to read the account token from the following locations (in order):
+
+1.  Environment variable - `DATREE_TOKEN`
+
+2.  Config file - `~/.datree/config.yaml`
+
+If a token number is not found in one of those two locations, Datree will generate a new token and will place it inside the config file.
+
+## Getting the account token
+
+### From the centralized policy dashboard
+
+&#x20; 1\. Log into your account
+
+&#x20; 2\. Go to "SETTINGS" (click on the avatar in the upper-right corner)
+
+<img src='/img/setup/account-token/1.jpeg' alt='' />
+
+&#x20; 3\. Copy your account's token number
+
+<img src='/img/setup/account-token/2.png' alt='' />
+
+### From the config file
+
+Open Datree's config file:
+
+```none
+nano ~/.datree/config.yaml
+```
+
+and copy the token value from your config file (e.g. token: rXG3u53tsQWyYYFS8GE...)
+
+### From local environment variables
+
+Type in the CLI:
+
+```none
+printenv DATREE_TOKEN
+```
+
+and copy the output value (e.g. rXG3u53tsQWyYYFS8GE...).
+
+:::tip
+
+## Got an empty string?
+
+That means there no local environment variable set for Datree's CLI integration
+:::
+
+## Overriding account token
+
+### Environment variable
+
+If you want to set up an installation of Datree on a new device (e.g. on a CI machine or someone else in your team) and connect it to your centralized policy, you'll need to override the new device account token. To do that, it's recommended to set your token value as a local environment variable on the new device environment:
+
+```none
+export DATREE_TOKEN=<token>
+```
+
+### Config file
+
+Another way to override the account token is via the config file. If the device already ran at least one policy check from the CLI with the `datree test` command, you can override the token value that's in the file `~/.datree/config.yaml`. If the device never ran a policy check before, create a new file in the same location and write inside:
+
+```yaml
+token: <token>
+```
+
+### CLI command
+
+You can also set the account token from Datree's CLI:
+
+```none
+datree config set token <token>
+```
+
+This will replace the token number inside Datree's config file (`~/.datree/config.yaml`)

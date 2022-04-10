@@ -1,0 +1,88 @@
+---
+title: CLI output
+slug: /setup/cli-output
+---
+
+## Output structure
+
+- [Evaluated files](https://hub.datree.io/cli-output#u6-evaluated-files)
+
+- [Check body](https://hub.datree.io/cli-output#p0-check-body)
+
+  - YAML validation
+
+  - Kubernetes schema validation
+
+  - Policy check
+
+- [Check summary](https://hub.datree.io/cli-output#4q-check-summary)
+
+  - Files status
+
+  - Policy table
+
+<img src='/img/setup/cli-output/1.png' alt='CLI output' />
+
+---
+
+## Evaluated files
+
+> File:** %fileName% **- scanned file full (path) name
+
+## Check body
+
+Every Kubernetes manifest that is scanned by Datree is also validated before the policy check is preform. If the manifest is not valid, the policy check will not be calculated.&#x20;
+
+### \[ ] YAML validation
+
+This step verifies that the file is a valid YAML file
+
+### \[ ] Kubernetes schema validation
+
+This step verifies that the file is a valid Kubernetes file
+
+### \[ ] Policy check
+
+This step verifies that the file is following your Kubernetes policy
+
+<img src='/img/setup/cli-output/2.png' alt='' />
+
+**A. Rule name** - rules can be disabled from the centralized policy dashboard
+
+**B. Number of occurrences** - how many times the rule failed on this specific file
+
+**C. Detailed failure occurrences** - which configuration within your file prompted the failure
+
+**D. Message on fail** - text can be changed from the centralized policy dashboard
+
+## Check summary
+
+A summary of all the validations and policy checks that ran on this execution. &#x20;
+
+### Files status
+
+- **Passing YAML validation** - the total number of valid YAML files
+
+- **Passing Kubernetes (%schemaVersion%) schema validation** - the total number of valid Kubernetes files
+
+- **Passing policy check** - the total number of files that are passing all the rules in your policy
+
+### Policy table
+
+- **Enabled rules in policy “default”** - number of rules enabled on this [policy](https://hub.datree.io/faq#f-what-is-a-policy)
+
+- **Configs tested against policy** - number of configurations scanned (one YAML file can contain several Kubernetes configurations)
+
+- **Total rules evaluated** - number of rules in policy X number of configs tested
+
+- **Total rules failed** - number of rules failed from the total of rules evaluated
+
+- **Total rules passed** - number of rules passed from the total of rules evaluated
+
+- **See all rules in policy** - link to your account [Centralized policy](docId:0-uWz2hrYE6OvSK15gWNK) dashboard
+
+---
+
+## Exit codes
+
+If one of the validations (YAML and Kubernetes schema) OR the policy check fails - the CLI will return **exit code 1**, else (all validations and policy check passed) - it will return **exit code 0**.

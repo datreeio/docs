@@ -1,0 +1,33 @@
+---
+title: History
+slug: /cicd-examples/jenkins-pipeline
+---
+
+<img src='/img/cicd/4.avif' alt='' width='180px' />
+
+## TO-DO list for setting-up Datree in your CI
+
+- [x] Get your [account token](/setup/account-token)
+- [ ] Set DATREE_TOKEN as an [environment variable](https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/#withenv-set-environment-variables)
+- [ ] Add datree to your CI script&#x20;
+
+### CI config example
+
+```json
+pipeline{
+    agent any
+    stages{
+        stage('indentifying misconfigs using datree'){
+            steps{
+                script{
+                        withEnv(['DATREE_TOKEN=<your-account-token>']) {
+                              sh 'datree test *.yaml --only-k8s-files'
+                        }
+
+                }
+            }
+        }
+    }
+
+}
+```

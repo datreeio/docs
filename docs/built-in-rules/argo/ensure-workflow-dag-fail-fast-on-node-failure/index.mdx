@@ -1,0 +1,56 @@
+---
+title: ☑️ Ensure Workflow DAG fail-fast on node failure
+slug: /built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure
+---
+
+As an alternative to specifying sequences of steps in Workflow, you can define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each task.
+
+The DAG logic has a built-in fail fast feature to stop scheduling new steps, as soon as it detects that one of the DAG nodes is failed. Then it waits until all DAG nodes are completed before failing the DAG itself. The FailFast flag default is true. If set to false, it will allow a DAG to run all branches of the DAG to completion (either success or failure), regardless of the failed outcomes of branches in the DAG.
+
+**Targeted resources by this rule (types of kind): **Workflow
+
+**Enabled by default?** True
+
+**Policy as code identifier:** ARGO_WORKFLOW_INCORRECT_FAILFAST_VALUE_FALSE
+
+---
+
+## This rule will fail
+
+If `failFast` is explicitly set to `false`:
+
+```yaml
+kind: Workflow
+spec:
+  - dag:
+    failFast: false
+```
+
+### Rule output in the CLI
+
+```none
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure Workflow DAG fail-fast on node failure [1 occurrence]
+💡 Incorrect value for key `failFast` - value should be `true` to prevent DAG from running on all branches, regardless of the failed outcomes of the DAG branches
+```
+
+---
+
+## **How to fix this failure**
+
+Set the `failFast` key to `true` or omit it:
+
+```yaml
+kind: Workflow
+spec:
+  - dag:
+	  failFast: true
+```
+
+---
+
+## **Read more**[**\*\***](https://www.datree.io/resources/kubernetes-configuration-mistakes#anchor3)\*\*\*\*
+
+- [**_Argo github_**](https://github.com/argoproj/argo-workflows/blob/master/examples/dag-disable-failFast.yaml)

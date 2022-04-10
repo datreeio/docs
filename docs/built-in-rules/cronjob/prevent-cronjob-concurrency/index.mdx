@@ -1,0 +1,64 @@
+---
+title: ☑️ Prevent CronJob from executing jobs concurrency
+slug: /built-in-rules/prevent-cronjob-concurrency
+---
+
+By default, the cron job allows concurrently running jobs but generally speaking, the behavior of your cron jobs will be more deterministic if you prevent them from running concurrently. Allowing concurrent cron jobs often requires locking mechanisms (to avoid race conditions) in addition to startup/cleanup handling.
+
+**Targeted resources by this rule (types of **`kind`**): **CronJob
+
+**Enabled by default?** False
+
+**Policy as code identifier:** CRONJOB_MISSING_CONCURRENCYPOLICY_KEY
+
+---
+
+## This rule will fail
+
+If a CronJob doesn't have `concurrencyPolicy` set or `concurrencyPolicy` is set to _Allow_
+
+```yaml
+kind: CronJob
+spec:
+  schedule: '*/1 * * * *'
+```
+
+```yaml
+kind: CronJob
+spec:
+  concurrencyPolicy: Allow
+```
+
+### Rule output in the CLI
+
+```none
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent CronJob from executing jobs concurrency [1 occurrence]
+💡 Missing property object `concurrencyPolicy` - the behavior will be more deterministic when the jobs run one at a time
+```
+
+---
+
+## How to fix this failure
+
+Set `concurrencyPolicy` to either _Forbid_ or _Replace_
+
+```yaml
+kind: CronJob
+spec:
+  concurrencyPolicy: Forbid
+```
+
+```yaml
+kind: CronJob
+spec:
+  concurrencyPolicy: Replace
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - concurrency policy](https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/#concurrency-policy)

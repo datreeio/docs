@@ -1,0 +1,23 @@
+---
+title: Pre-commit hook
+slug: /integrations/pre-commit-hook
+---
+
+<img src='/img/official-integrations/2.avif' alt='' />
+
+[Pre-commit](https://pre-commit.com/) is a multi-language package manager for pre-commit hooks. You specify a list of hooks you want and pre-commit manages the installation and execution of the hooks.
+
+```yaml
+# sample .pre-commit-config.yaml for a project that would like to use datree with pre-commit
+repos:
+  - repo: https://github.com/datreeio/datree
+    # rev is the .pre-commit-hooks.yaml version
+    # could also be a version or a release tag
+    rev: HEAD
+    hooks:
+      - id: datree-docker
+```
+
+:::tip
+The [pre-commit hook](https://github.com/datreeio/datree/blob/main/.pre-commit-hooks.yaml) is using our docker image to run Datree CLI to it requires to have docker installed on the machine.
+:::

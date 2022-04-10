@@ -1,0 +1,72 @@
+---
+title: ☑️ Ensure each container image has a pinned (tag) version
+slug: /built-in-rules/ensure-image-pinned-version
+---
+
+When an image tag is not descriptive (e.g. lacking the version tag like _1.19.8_), every time that image is pulled, the version will be a different version and might break your code. Also, a non-descriptive image tag does not allow you to easily roll back (or forward) to different image versions. It is better to use concrete and meaningful tags such as version strings or an image SHA.
+
+**Targeted resources by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Enabled by default?** True
+
+**Policy as code identifier:** CONTAINERS_MISSING_IMAGE_VALUE_VERSION
+
+---
+
+## This rule will fail
+
+If a container image has no image version or is using _latest_ as its image tag version
+
+```yaml
+spec:
+  containers:
+    - name: app
+      image: nginx
+```
+
+```yaml
+spec:
+  containers:
+    - name: app
+      image: nginx:latest
+```
+
+### Rule output in the CLI
+
+```none
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure each container image has a pinned (tag) version [1 occurrence]
+💡 Incorrect value for key `image` - specify an image version to avoid unpleasant "version surprises" in the future
+```
+
+---
+
+## How to fix this failure
+
+Each container image should have a pinned version tag or image ID (aka image SHA)
+
+```yaml
+spec:
+  containers:
+    - name: app
+      image: nginx:1.19.8
+```
+
+```yaml
+spec:
+  containers:
+    - name: app
+      image: nginx@sha256:0a564e80a3156f2cc825d1720f303d59bd521da19bcbd01316870e1313ecbd23
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - images names](https://kubernetes.io/docs/concepts/containers/images/#image-names)
+
+- [Openshift docs - understanding images](https://docs.openshift.com/container-platform/4.1/openshift_images/images-understand.html)
+
+- [Just say no to \`:latest\`](https://platformers.dev/log/2022-03-02-latest-literally-kills-puppies/)
