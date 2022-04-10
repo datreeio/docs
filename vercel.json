@@ -1,0 +1,14 @@
+{
+    "redirects": [
+      { 
+        "source": "/view-source",
+        "destination": "https://github.com/vercel/vercel", 
+        "permanent": true
+      },
+      {
+        "source": "/ensure-image-pinned-version",
+        "destination": "/built-in-rules/ensure-image-pinned-version", 
+        "permanent": true
+      }
+    ]
+  }
