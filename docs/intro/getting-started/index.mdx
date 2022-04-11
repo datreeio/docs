@@ -118,7 +118,7 @@ Binary releases can be downloaded from the [releases page](https://github.com/da
         Check out our built-in{' '}
         <a
           className={styles.underline}
-          href='/kustomize-support'
+          href='/integrations/kustomize-support'
           rel='nofollow noreferrer noopener'>
           Kustomize support
         </a>
@@ -132,12 +132,7 @@ Binary releases can be downloaded from the [releases page](https://github.com/da
 Run Datree to test it against a pre-compiled demo file - [`k8s-demo.yaml`](https://raw.githubusercontent.com/datreeio/datree/main/internal/fixtures/kube/k8s-demo.yaml):
 
 <Tabs>
-  <TabItem value='Docker' label='Docker' default>
-
-    cat ~/.datree/k8s-demo.yaml | docker run -i datree/datree test -
-
-  </TabItem>
-  <TabItem value='Linux' label='Linux'>
+  <TabItem value='Linux' label='Linux' default>
 
     datree test ~/.datree/k8s-demo.yaml
 
@@ -150,6 +145,11 @@ Run Datree to test it against a pre-compiled demo file - [`k8s-demo.yaml`](https
   <TabItem value='Windows (PowerShell)' label='Windows (PowerShell)'>
 
     datree.exe test $env:USERPROFILE\.datree\k8s-demo.yaml
+
+  </TabItem>
+  <TabItem value='Docker' label='Docker'>
+
+    cat ~/.datree/k8s-demo.yaml | docker run -i datree/datree test -
 
   </TabItem>
 </Tabs>
