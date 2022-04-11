@@ -7,7 +7,6 @@ export const navItems = [
     slug: '/built-in-rules/ensure-image-pinned-version',
     isEnabledByDefault: true,
     isContainer: true,
-    isContainer: true,
   },
   {
     id: uuid(),
