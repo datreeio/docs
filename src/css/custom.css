@@ -64,7 +64,7 @@ blockquote {
 }
 
 .menu__link {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .footer__link-item {
@@ -82,7 +82,7 @@ blockquote {
 }
 
 article a {
-  text-decoration: underline !important;
+  text-decoration: underline;
   color: #2166ae;
   font-weight: 700;
 }

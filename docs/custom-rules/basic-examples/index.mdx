@@ -41,7 +41,7 @@ policies:
         # more rules... #
 ```
 
-And this is how the [Policy as code](docId:b98paugYVzlfox0ztnfem) file should look:&#x20;
+And this is how the [Policy as code](/setup/policy-as-code) file should look:&#x20;
 
 ```yaml
 apiVersion: v1
@@ -80,7 +80,7 @@ customRules:
 :::tip
 **Applying the new policies to your account**
 
-Enable PaC mode and publish the policies.yaml configuration ([read more](https://hub.datree.io/policy-as-code#zn-how-does-it-work))
+Enable PaC mode and publish the policies.yaml configuration ([read more](/policy-as-code#how-does-it-work))
 :::
 
 |                                                 **Dashboard**                                                 |                                                 **Terminal**                                                  |
@@ -123,7 +123,7 @@ customRules:
             - namespace
 ```
 
-The above rule enforces similar logic to our built-in rule - [☑️ Prevent workload from using the default namespace](docId:g74kCpB1qBuk62dChm7ix)
+The above rule enforces similar logic to our built-in rule - [☑️ Prevent workload from using the default namespace](/built-in-rules/prevent-deafult-namespce)
 
 ## Example #3
 
@@ -163,4 +163,4 @@ customRules:
               - replicas
 ```
 
-The above rule enforces similar logic to our built-in rule - [☑️ Ensure Deployment has more than one replica configured](docId:8pG44zg_kNt8aaAeUsKFW)&#x20;
+The above rule enforces similar logic to our built-in rule - [☑️ Ensure Deployment has more than one replica configured](/built-in-rules/ensure-minimum-two-replicas);

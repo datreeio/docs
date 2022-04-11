@@ -1,4 +1,3 @@
 {
-  "label": "Ensure each container has a configured CPU limit",
-  "className": "hide"
+  "label": "Ensure each container has a configured CPU limit"
 }
