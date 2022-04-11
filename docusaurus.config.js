@@ -125,7 +125,7 @@ const config = {
                 href: '/cicd-examples',
               },
               {
-                label: "FAQ's",
+                label: "FAQ",
                 href: '/faq',
               },
               {
