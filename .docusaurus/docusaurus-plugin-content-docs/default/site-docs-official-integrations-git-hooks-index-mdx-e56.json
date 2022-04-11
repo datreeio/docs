@@ -1,0 +1,26 @@
+{
+  "unversionedId": "official-integrations/git-hooks/index",
+  "id": "official-integrations/git-hooks/index",
+  "title": "Git hooks",
+  "description": "Git hooks are scripts that run automatically every time a particular event occurs in a Git repository (e.g. $ git commit, $ git push, etc.).&#x20;",
+  "source": "@site/docs/official-integrations/git-hooks/index.mdx",
+  "sourceDirName": "official-integrations/git-hooks",
+  "slug": "/integrations/git-hooks",
+  "permalink": "/integrations/git-hooks",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/official-integrations/git-hooks/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Git hooks",
+    "slug": "/integrations/git-hooks"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Kustomize support",
+    "permalink": "/integrations/kustomize-support"
+  },
+  "next": {
+    "title": "Pre-commit hook",
+    "permalink": "/integrations/pre-commit-hook"
+  }
+}

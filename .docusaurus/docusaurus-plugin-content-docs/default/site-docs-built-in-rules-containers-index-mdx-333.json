@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/containers/index",
+  "id": "built-in-rules/containers/index",
+  "title": "Containers",
+  "description": "",
+  "source": "@site/docs/built-in-rules/containers/index.mdx",
+  "sourceDirName": "built-in-rules/containers",
+  "slug": "/built-in-rules/containers",
+  "permalink": "/built-in-rules/containers",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Containers",
+    "slug": "/built-in-rules/containers"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Prevent Workflow pods from using the default service account",
+    "permalink": "/built-in-rules/prevent-workflow-pods-from-using-the-default-service-account"
+  },
+  "next": {
+    "title": "☑️ Ensure each container has a configured CPU limit",
+    "permalink": "/built-in-rules/ensure-cpu-limit"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/cronjob/ensure-cronjob-deadline/index",
+  "id": "built-in-rules/cronjob/ensure-cronjob-deadline/index",
+  "title": "☑️ Ensure Deployment has a configured `env` label",
+  "description": "Having an bulk operations in specific environments or for filtering Deployments according to their stage. Recommended values for this key are: prod / staging / qa / admin / testing.",
+  "source": "@site/docs/built-in-rules/cronjob/ensure-cronjob-deadline/index.mdx",
+  "sourceDirName": "built-in-rules/cronjob/ensure-cronjob-deadline",
+  "slug": "/built-in-rules/ensure-cronjob-deadline",
+  "permalink": "/built-in-rules/ensure-cronjob-deadline",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/cronjob/ensure-cronjob-deadline/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure Deployment has a configured `env` label",
+    "slug": "/built-in-rules/ensure-cronjob-deadline"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "CronJob",
+    "permalink": "/built-in-rules/cronjob"
+  },
+  "next": {
+    "title": "☑️ Ensure CronJob has a configured deadline",
+    "permalink": "/built-in-rules/ensure-cronjob-scheduler-valid"
+  }
+}

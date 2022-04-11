@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/cronjob/prevent-cronjob-concurrency/index",
+  "id": "built-in-rules/cronjob/prevent-cronjob-concurrency/index",
+  "title": "☑️ Prevent CronJob from executing jobs concurrency",
+  "description": "By default, the cron job allows concurrently running jobs but generally speaking, the behavior of your cron jobs will be more deterministic if you prevent them from running concurrently. Allowing concurrent cron jobs often requires locking mechanisms (to avoid race conditions) in addition to startup/cleanup handling.",
+  "source": "@site/docs/built-in-rules/cronjob/prevent-cronjob-concurrency/index.mdx",
+  "sourceDirName": "built-in-rules/cronjob/prevent-cronjob-concurrency",
+  "slug": "/built-in-rules/prevent-cronjob-concurrency",
+  "permalink": "/built-in-rules/prevent-cronjob-concurrency",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/cronjob/prevent-cronjob-concurrency/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Prevent CronJob from executing jobs concurrency",
+    "slug": "/built-in-rules/prevent-cronjob-concurrency"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure CronJob has a configured deadline",
+    "permalink": "/built-in-rules/ensure-cronjob-scheduler-valid"
+  },
+  "next": {
+    "title": "Networking",
+    "permalink": "/built-in-rules/networking"
+  }
+}

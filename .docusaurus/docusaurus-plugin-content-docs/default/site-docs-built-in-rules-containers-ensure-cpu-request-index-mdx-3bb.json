@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/containers/ensure-cpu-request/index",
+  "id": "built-in-rules/containers/ensure-cpu-request/index",
+  "title": "☑️ Ensure each container has a configured CPU request",
+  "description": "CPU requests enable you to use CPU resources efficiently and to allocate a guaranteed minimum of computing resources for the pods running in your cluster.",
+  "source": "@site/docs/built-in-rules/containers/ensure-cpu-request/index.mdx",
+  "sourceDirName": "built-in-rules/containers/ensure-cpu-request",
+  "slug": "/built-in-rules/ensure-cpu-request",
+  "permalink": "/built-in-rules/ensure-cpu-request",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/ensure-cpu-request/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure each container has a configured CPU request",
+    "slug": "/built-in-rules/ensure-cpu-request"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure each container has a configured CPU limit",
+    "permalink": "/built-in-rules/ensure-cpu-limit"
+  },
+  "next": {
+    "title": "☑️ Ensure each container image has a digest tag",
+    "permalink": "/built-in-rules/ensure-digest-tag"
+  }
+}

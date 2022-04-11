@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/cronjob/ensure-cronjob-scheduler-valid/index",
+  "id": "built-in-rules/cronjob/ensure-cronjob-scheduler-valid/index",
+  "title": "☑️ Ensure CronJob has a configured deadline",
+  "description": "When the CronJob controller counts more than 100 missed schedules, the cron job is no longer scheduled. Missed CronJobs are considered failures.",
+  "source": "@site/docs/built-in-rules/cronjob/ensure-cronjob-scheduler-valid/index.mdx",
+  "sourceDirName": "built-in-rules/cronjob/ensure-cronjob-scheduler-valid",
+  "slug": "/built-in-rules/ensure-cronjob-scheduler-valid",
+  "permalink": "/built-in-rules/ensure-cronjob-scheduler-valid",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/cronjob/ensure-cronjob-scheduler-valid/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure CronJob has a configured deadline",
+    "slug": "/built-in-rules/ensure-cronjob-scheduler-valid"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure Deployment has a configured `env` label",
+    "permalink": "/built-in-rules/ensure-cronjob-deadline"
+  },
+  "next": {
+    "title": "☑️ Prevent CronJob from executing jobs concurrency",
+    "permalink": "/built-in-rules/prevent-cronjob-concurrency"
+  }
+}

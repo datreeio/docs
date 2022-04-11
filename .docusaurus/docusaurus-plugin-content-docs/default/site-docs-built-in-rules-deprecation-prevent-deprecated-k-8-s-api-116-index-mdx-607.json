@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-116/index",
+  "id": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-116/index",
+  "title": "☑️ Prevent deprecated APIs in Kubernetes v1.16",
+  "description": "The v1.16 release stopped serving some API versions for different resource types. When a user deploys a resource with a deprecated API version, the Kubernetes engine rejects it.",
+  "source": "@site/docs/built-in-rules/Deprecation/prevent-deprecated-k8s-api-116/index.mdx",
+  "sourceDirName": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-116",
+  "slug": "/built-in-rules/prevent-deprecated-k8s-api-116",
+  "permalink": "/built-in-rules/prevent-deprecated-k8s-api-116",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Deprecation/prevent-deprecated-k8s-api-116/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Prevent deprecated APIs in Kubernetes v1.16",
+    "slug": "/built-in-rules/prevent-deprecated-k8s-api-116"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Deprecation",
+    "permalink": "/built-in-rules/deprecation"
+  },
+  "next": {
+    "title": "☑️ Prevent deprecated APIs in Kubernetes v1.17",
+    "permalink": "/built-in-rules/prevent-deprecated-k8s-api-117"
+  }
+}

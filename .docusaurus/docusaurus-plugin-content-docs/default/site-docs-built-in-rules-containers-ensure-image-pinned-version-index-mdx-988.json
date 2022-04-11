@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/containers/ensure-image-pinned-version/index",
+  "id": "built-in-rules/containers/ensure-image-pinned-version/index",
+  "title": "☑️ Ensure each container image has a pinned (tag) version",
+  "description": "When an image tag is not descriptive (e.g. lacking the version tag like 1.19.8), every time that image is pulled, the version will be a different version and might break your code. Also, a non-descriptive image tag does not allow you to easily roll back (or forward) to different image versions. It is better to use concrete and meaningful tags such as version strings or an image SHA.",
+  "source": "@site/docs/built-in-rules/containers/ensure-image-pinned-version/index.mdx",
+  "sourceDirName": "built-in-rules/containers/ensure-image-pinned-version",
+  "slug": "/built-in-rules/ensure-image-pinned-version",
+  "permalink": "/built-in-rules/ensure-image-pinned-version",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/ensure-image-pinned-version/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure each container image has a pinned (tag) version",
+    "slug": "/built-in-rules/ensure-image-pinned-version"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure each container image has a digest tag",
+    "permalink": "/built-in-rules/ensure-digest-tag"
+  },
+  "next": {
+    "title": "☑️ Ensure each container has a configured liveness probe",
+    "permalink": "/built-in-rules/ensure-liveness-probe"
+  }
+}

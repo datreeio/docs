@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only/index",
+  "id": "built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only/index",
+  "title": "☑️ Ensure Workflow retry policy catches relevant errors only",
+  "description": "retryStrategy is an optional field of the Workflow CRD that provides control over how to retry a workflow step. One of its fields is retryPolicy, which defines the policy of NodePhase statuses that will be retried (NodePhase is the condition of a node at the current time).",
+  "source": "@site/docs/built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only/index.mdx",
+  "sourceDirName": "built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only",
+  "slug": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only",
+  "permalink": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure Workflow retry policy catches relevant errors only",
+    "slug": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure Workflow DAG fail-fast on node failure",
+    "permalink": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure"
+  },
+  "next": {
+    "title": "☑️ Prevent Workflow from having an empty retry strategy",
+    "permalink": "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy"
+  }
+}

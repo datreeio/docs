@@ -1,0 +1,26 @@
+{
+  "unversionedId": "custom-rules/basic-examples/index",
+  "id": "custom-rules/basic-examples/index",
+  "title": "Basic examples",
+  "description": "Example 1",
+  "source": "@site/docs/custom-rules/basic-examples/index.mdx",
+  "sourceDirName": "custom-rules/basic-examples",
+  "slug": "/custom-rules/basic-examples",
+  "permalink": "/custom-rules/basic-examples",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/custom-rules/basic-examples/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Basic examples",
+    "slug": "/custom-rules/basic-examples"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Understanding custom rules",
+    "permalink": "/custom-rules/custom-rules-overview"
+  },
+  "next": {
+    "title": "Multiple property paths",
+    "permalink": "/custom-rules/multiple-property-paths"
+  }
+}

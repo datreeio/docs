@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/other/prevent-naked-pods/index",
+  "id": "built-in-rules/other/prevent-naked-pods/index",
+  "title": "☑️ Prevent deploying naked pods",
+  "description": "Having an bulk operations in specific environments or for filtering Deployments according to their stage. Recommended values for this key are: prod / staging / qa / admin / testing.",
+  "source": "@site/docs/built-in-rules/other/prevent-naked-pods/index.mdx",
+  "sourceDirName": "built-in-rules/other/prevent-naked-pods",
+  "slug": "/built-in-rules/prevent-naked-pods",
+  "permalink": "/built-in-rules/prevent-naked-pods",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/other/prevent-naked-pods/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Prevent deploying naked pods",
+    "slug": "/built-in-rules/prevent-naked-pods"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure HPA has minimum replicas configured",
+    "permalink": "/built-in-rules/ensure-hpa-minimum-replicas"
+  },
+  "next": {
+    "title": "Security",
+    "permalink": "/built-in-rules/security"
+  }
+}

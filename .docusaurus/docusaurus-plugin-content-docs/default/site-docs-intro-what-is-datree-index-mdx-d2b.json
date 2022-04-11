@@ -1,0 +1,30 @@
+{
+  "unversionedId": "intro/what-is-datree/index",
+  "id": "intro/what-is-datree/index",
+  "title": "What is Datree?",
+  "description": "What is Datree",
+  "source": "@site/docs/intro/what-is-datree/index.mdx",
+  "sourceDirName": "intro/what-is-datree",
+  "slug": "/welcom/what-is-datree",
+  "permalink": "/welcom/what-is-datree",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro/what-is-datree/index.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "What is Datree?",
+    "label": "What is Datree?",
+    "slug": "/welcom/what-is-datree",
+    "sidebar_position": 3,
+    "description": "What is Datree"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/welcom/overview"
+  },
+  "next": {
+    "title": "Centralized policy",
+    "permalink": "/setup/centralized-policy"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration/index",
+  "id": "built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration/index",
+  "title": "☑️ Ensure Rollout pause step has a configured duration",
+  "description": "Users can define a list of steps the controller uses to manipulate the ReplicaSets during the rollout. Each step can have one of two fields.",
+  "source": "@site/docs/built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration/index.mdx",
+  "sourceDirName": "built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration",
+  "slug": "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration",
+  "permalink": "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure Rollout pause step has a configured duration",
+    "slug": "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure Rollout has revision history set",
+    "permalink": "/built-in-rules/ensure-rollout-has-revision-history-set"
+  },
+  "next": {
+    "title": "☑️ Ensure Rollout that is marked as degraded scales down ReplicaSet",
+    "permalink": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset"
+  }
+}

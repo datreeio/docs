@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/networking/index",
+  "id": "built-in-rules/networking/index",
+  "title": "Networking",
+  "description": "",
+  "source": "@site/docs/built-in-rules/networking/index.mdx",
+  "sourceDirName": "built-in-rules/networking",
+  "slug": "/built-in-rules/networking",
+  "permalink": "/built-in-rules/networking",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/networking/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Networking",
+    "slug": "/built-in-rules/networking"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Prevent CronJob from executing jobs concurrency",
+    "permalink": "/built-in-rules/prevent-cronjob-concurrency"
+  },
+  "next": {
+    "title": "☑️ Prevent Ingress from forwarding all traffic to a single container",
+    "permalink": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container"
+  }
+}

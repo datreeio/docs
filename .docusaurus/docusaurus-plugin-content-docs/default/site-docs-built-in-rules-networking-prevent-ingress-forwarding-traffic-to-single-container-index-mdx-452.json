@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container/index",
+  "id": "built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container/index",
+  "title": "☑️ Prevent Ingress from forwarding all traffic to a single container",
+  "description": "Misconfiguring the ingress host can unintended forward all traffic to a single pod instead of leveraging the load balancing capabilities. By verifying that ingress traffic is targeted by multiple pods, you will achieve higher application availability because you won't be dependent upon a single pod to serve all ingress traffic.",
+  "source": "@site/docs/built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container/index.mdx",
+  "sourceDirName": "built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container",
+  "slug": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container",
+  "permalink": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Prevent Ingress from forwarding all traffic to a single container",
+    "slug": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Networking",
+    "permalink": "/built-in-rules/networking"
+  },
+  "next": {
+    "title": "☑️ Prevent Service from exposing node port",
+    "permalink": "/built-in-rules/prevent-node-port"
+  }
+}

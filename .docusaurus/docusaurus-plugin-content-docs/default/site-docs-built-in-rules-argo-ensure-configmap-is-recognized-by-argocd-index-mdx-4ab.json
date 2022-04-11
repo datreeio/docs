@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/argo/ensure-configmap-is-recognized-by-argocd/index",
+  "id": "built-in-rules/argo/ensure-configmap-is-recognized-by-argocd/index",
+  "title": "☑️ Ensure ConfigMap is recognized by ArgoCD",
+  "description": "A relevant ConfigMap resource that isn’t labeled with app.kubernetes.io/part-of: argocd will not be used by Argo CD.",
+  "source": "@site/docs/built-in-rules/argo/ensure-configmap-is-recognized-by-argocd/index.mdx",
+  "sourceDirName": "built-in-rules/argo/ensure-configmap-is-recognized-by-argocd",
+  "slug": "/built-in-rules/ensure-configmap-is-recognized-by-argocd",
+  "permalink": "/built-in-rules/ensure-configmap-is-recognized-by-argocd",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/ensure-configmap-is-recognized-by-argocd/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure ConfigMap is recognized by ArgoCD",
+    "slug": "/built-in-rules/ensure-configmap-is-recognized-by-argocd"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure Application and AppProject are part of the argocd namespace",
+    "permalink": "/built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace"
+  },
+  "next": {
+    "title": "☑️ Ensure Rollout allows broadcasting IP table changes",
+    "permalink": "/built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes"
+  }
+}

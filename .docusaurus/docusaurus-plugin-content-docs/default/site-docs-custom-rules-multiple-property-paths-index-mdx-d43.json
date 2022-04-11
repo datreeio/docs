@@ -1,0 +1,26 @@
+{
+  "unversionedId": "custom-rules/multiple-property-paths/index",
+  "id": "custom-rules/multiple-property-paths/index",
+  "title": "Multiple property paths",
+  "description": "Sometimes, a property (key/value) that you want to test against will be located in multiple places. For example, if you want to create a custom rule that ensures all container images have a pinned version, you can avoid creating a rule logic that declares all possible paths because checking the value of the image property in two locations can be complex.&#x20;",
+  "source": "@site/docs/custom-rules/multiple-property-paths/index.mdx",
+  "sourceDirName": "custom-rules/multiple-property-paths",
+  "slug": "/custom-rules/multiple-property-paths",
+  "permalink": "/custom-rules/multiple-property-paths",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/custom-rules/multiple-property-paths/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Multiple property paths",
+    "slug": "/custom-rules/multiple-property-paths"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Basic examples",
+    "permalink": "/custom-rules/basic-examples"
+  },
+  "next": {
+    "title": "Resource quotas",
+    "permalink": "/custom-rules/resource-quotas"
+  }
+}

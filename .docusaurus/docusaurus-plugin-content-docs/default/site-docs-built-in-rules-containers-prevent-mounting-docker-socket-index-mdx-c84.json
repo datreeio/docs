@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/containers/prevent-mounting-docker-socket/index",
+  "id": "built-in-rules/containers/prevent-mounting-docker-socket/index",
+  "title": "☑️ Prevent containers from mounting Docker socket",
+  "description": "It is recommended to disallow Docker socket access to all pods running on a cluster. When a container has access to the Docker socket, it can effectively manage other containers on the host.",
+  "source": "@site/docs/built-in-rules/containers/prevent-mounting-docker-socket/index.mdx",
+  "sourceDirName": "built-in-rules/containers/prevent-mounting-docker-socket",
+  "slug": "/built-in-rules/prevent-mounting-docker-socket",
+  "permalink": "/built-in-rules/prevent-mounting-docker-socket",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/prevent-mounting-docker-socket/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Prevent containers from mounting Docker socket",
+    "slug": "/built-in-rules/prevent-mounting-docker-socket"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure each container has a configured readiness probe",
+    "permalink": "/built-in-rules/ensure-readiness-probe"
+  },
+  "next": {
+    "title": "☑️ Prevent containers from having root access capabilities",
+    "permalink": "/built-in-rules/prevent-privileged-containers"
+  }
+}

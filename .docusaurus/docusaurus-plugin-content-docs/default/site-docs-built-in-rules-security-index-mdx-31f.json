@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/security/index",
+  "id": "built-in-rules/security/index",
+  "title": "Security",
+  "description": "",
+  "source": "@site/docs/built-in-rules/security/index.mdx",
+  "sourceDirName": "built-in-rules/security",
+  "slug": "/built-in-rules/security",
+  "permalink": "/built-in-rules/security",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/security/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Security",
+    "slug": "/built-in-rules/security"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Prevent deploying naked pods",
+    "permalink": "/built-in-rules/prevent-naked-pods"
+  },
+  "next": {
+    "title": "☑️ Prevent ConfigMap security vulnerability (CVE-2021-25742)",
+    "permalink": "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "setup/centralized-policy/index",
+  "id": "setup/centralized-policy/index",
+  "title": "Centralized policy",
+  "description": "\"Centralized policy\" is the concept of controlling distributed policy execution from a centralized location. This concept enables the policy owner to easily control the rules that are evaluated in each run of Datree without creating operation overhead. The centralized policy can be managed by logging into the dashboard.",
+  "source": "@site/docs/setup/centralized-policy/index.mdx",
+  "sourceDirName": "setup/centralized-policy",
+  "slug": "/setup/centralized-policy",
+  "permalink": "/setup/centralized-policy",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/setup/centralized-policy/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Centralized policy",
+    "slug": "/setup/centralized-policy"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "What is Datree?",
+    "permalink": "/welcom/what-is-datree"
+  },
+  "next": {
+    "title": "Schema validation",
+    "permalink": "/setup/schema-validation"
+  }
+}

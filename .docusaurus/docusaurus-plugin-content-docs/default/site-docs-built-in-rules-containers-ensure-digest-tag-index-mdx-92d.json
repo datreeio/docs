@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/containers/ensure-digest-tag/index",
+  "id": "built-in-rules/containers/ensure-digest-tag/index",
+  "title": "☑️ Ensure each container image has a digest tag",
+  "description": "To make sure the container always uses the same version of the image, you can specify its digest. The digest uniquely identifies a specific version of the image, so it will never be updated by Kubernetes unless you change the digest value.",
+  "source": "@site/docs/built-in-rules/containers/ensure-digest-tag/index.mdx",
+  "sourceDirName": "built-in-rules/containers/ensure-digest-tag",
+  "slug": "/built-in-rules/ensure-digest-tag",
+  "permalink": "/built-in-rules/ensure-digest-tag",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/ensure-digest-tag/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure each container image has a digest tag",
+    "slug": "/built-in-rules/ensure-digest-tag"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure each container has a configured CPU request",
+    "permalink": "/built-in-rules/ensure-cpu-request"
+  },
+  "next": {
+    "title": "☑️ Ensure each container image has a pinned (tag) version",
+    "permalink": "/built-in-rules/ensure-image-pinned-version"
+  }
+}

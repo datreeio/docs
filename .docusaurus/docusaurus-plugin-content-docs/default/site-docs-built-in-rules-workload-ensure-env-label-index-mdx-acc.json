@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/Workload/ensure-env-label/index",
+  "id": "built-in-rules/Workload/ensure-env-label/index",
+  "title": "☑️ Ensure Deployment has a configured `env` label",
+  "description": "Having an bulk operations in specific environments or for filtering Deployments according to their stage. Recommended values for this key are: prod / staging / qa / admin / testing.",
+  "source": "@site/docs/built-in-rules/Workload/ensure-env-label/index.mdx",
+  "sourceDirName": "built-in-rules/Workload/ensure-env-label",
+  "slug": "/built-in-rules/ensure-env-label",
+  "permalink": "/built-in-rules/ensure-env-label",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Workload/ensure-env-label/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure Deployment has a configured `env` label",
+    "slug": "/built-in-rules/ensure-env-label"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Workload",
+    "permalink": "/built-in-rules/workload"
+  },
+  "next": {
+    "title": "☑️ Ensure workload has valid label values",
+    "permalink": "/built-in-rules/ensure-labels-value-valid"
+  }
+}

@@ -1,0 +1,434 @@
+{
+  "docusaurus-plugin-google-gtag": {
+    "default": {
+      "trackingID": "GTM-K7BG7K2",
+      "anonymizeIP": true,
+      "id": "default"
+    }
+  },
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/",
+          "mainDocId": "intro/getting-started/1",
+          "docs": [
+            {
+              "id": "built-in-rules/argo/ensure-application-and-appproject-are-part-of-the-argocd-namespace/index",
+              "path": "/built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/argo/ensure-configmap-is-recognized-by-argocd/index",
+              "path": "/built-in-rules/ensure-configmap-is-recognized-by-argocd",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/argo/ensure-rollout-allows-broadcasting-ip-table-changes/index",
+              "path": "/built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/argo/ensure-rollout-has-revision-history-set/index",
+              "path": "/built-in-rules/ensure-rollout-has-revision-history-set",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration/index",
+              "path": "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset/index",
+              "path": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure/index",
+              "path": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only/index",
+              "path": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/argo/index",
+              "path": "/built-in-rules/argo",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy/index",
+              "path": "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/argo/prevent-workflow-pods-from-using-the-default-service-account/index",
+              "path": "/built-in-rules/prevent-workflow-pods-from-using-the-default-service-account",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/ensure-cpu-limit/index",
+              "path": "/built-in-rules/ensure-cpu-limit",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/ensure-cpu-request/index",
+              "path": "/built-in-rules/ensure-cpu-request",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/ensure-digest-tag/index",
+              "path": "/built-in-rules/ensure-digest-tag",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/ensure-image-pinned-version/index",
+              "path": "/built-in-rules/ensure-image-pinned-version",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/ensure-liveness-probe/index",
+              "path": "/built-in-rules/ensure-liveness-probe",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/ensure-memory-limit/index",
+              "path": "/built-in-rules/ensure-memory-limit",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/ensure-memory-request/index",
+              "path": "/built-in-rules/ensure-memory-request",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/ensure-readiness-probe/index",
+              "path": "/built-in-rules/ensure-readiness-probe",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/index",
+              "path": "/built-in-rules/containers",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/prevent-mounting-docker-socket/index",
+              "path": "/built-in-rules/prevent-mounting-docker-socket",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/prevent-privileged-containers/index",
+              "path": "/built-in-rules/prevent-privileged-containers",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/prevent-uid-conflicts/index",
+              "path": "/built-in-rules/prevent-uid-conflicts",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/prevent-using-host-ipc/index",
+              "path": "/built-in-rules/prevent-using-host-ipc",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/prevent-using-host-network/index",
+              "path": "/built-in-rules/prevent-using-host-network",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/containers/prevent-using-host-pid/index",
+              "path": "/built-in-rules/prevent-using-host-pid",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/cronjob/ensure-cronjob-deadline/index",
+              "path": "/built-in-rules/ensure-cronjob-deadline",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/cronjob/ensure-cronjob-scheduler-valid/index",
+              "path": "/built-in-rules/ensure-cronjob-scheduler-valid",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/cronjob/index",
+              "path": "/built-in-rules/cronjob",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/cronjob/prevent-cronjob-concurrency/index",
+              "path": "/built-in-rules/prevent-cronjob-concurrency",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/Deprecation/index",
+              "path": "/built-in-rules/deprecation",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-116/index",
+              "path": "/built-in-rules/prevent-deprecated-k8s-api-116",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-117/index",
+              "path": "/built-in-rules/prevent-deprecated-k8s-api-117",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/index",
+              "path": "/built-in-rules",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/networking/index",
+              "path": "/built-in-rules/networking",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container/index",
+              "path": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/networking/prevent-node-port/index",
+              "path": "/built-in-rules/prevent-node-port",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/other/ensure-hpa-maximum-replicas/index",
+              "path": "/built-in-rules/ensure-hpa-maximum-replicas",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/other/ensure-hpa-minimum-replicas/index",
+              "path": "/built-in-rules/ensure-hpa-minimum-replicas",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/other/index",
+              "path": "/built-in-rules/other",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/other/prevent-naked-pods/index",
+              "path": "/built-in-rules/prevent-naked-pods",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/security/index",
+              "path": "/built-in-rules/security",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/security/prevent-configmap-security-vulnerability-cve-2021-25742/index",
+              "path": "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/security/prevent-container-security-vulnerability-cve-2021-25741/index",
+              "path": "/built-in-rules/prevent-container-security-vulnerability-cve-2021-25741",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/security/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737/index",
+              "path": "/built-in-rules/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/security/prevent-ingress-security-vulnerability-cve-2021-25742/index",
+              "path": "/built-in-rules/prevent-ingress-security-vulnerability-cve-2021-25742",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/Workload/ensure-env-label/index",
+              "path": "/built-in-rules/ensure-env-label",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/Workload/ensure-labels-value-valid/index",
+              "path": "/built-in-rules/ensure-labels-value-valid",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/Workload/ensure-minimum-two-replicas/index",
+              "path": "/built-in-rules/ensure-minimum-two-replicas",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/Workload/ensure-owner-label/index",
+              "path": "/built-in-rules/ensure-owner-label",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/Workload/ensure-valid-restart-policy/index",
+              "path": "/built-in-rules/ensure-valid-restart-policy",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/Workload/index",
+              "path": "/built-in-rules/workload",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "built-in-rules/Workload/prevent-deafult-namespce/index",
+              "path": "/built-in-rules/prevent-deafult-namespce",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "cicd-examples/circle-ci/index",
+              "path": "/cicd-examples/circle-ci",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "cicd-examples/gitlab-cicd/index",
+              "path": "/cicd-examples/gitLab-ci-cd",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "cicd-examples/index",
+              "path": "/cicd-examples",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "cicd-examples/jenkins-pipeline/index",
+              "path": "/cicd-examples/jenkins-pipeline",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "cicd-examples/travis-ci/index",
+              "path": "/cicd-examples/travis-ci",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "community-integrations/index",
+              "path": "/community-integrations",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "custom-rules/basic-examples/index",
+              "path": "/custom-rules/basic-examples",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "custom-rules/custom-rules-overview/index",
+              "path": "/custom-rules/custom-rules-overview",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "custom-rules/index",
+              "path": "/custom-rules",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "custom-rules/multiple-property-paths/index",
+              "path": "/custom-rules/multiple-property-paths",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "custom-rules/resource-quotas/index",
+              "path": "/custom-rules/resource-quotas",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "faqs/index",
+              "path": "/faq",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "intro/getting-started/1",
+              "path": "/",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "intro/overview/index",
+              "path": "/welcom/overview",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "intro/what-is-datree/index",
+              "path": "/welcom/what-is-datree",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "official-integrations/git-hooks/index",
+              "path": "/integrations/git-hooks",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "official-integrations/index",
+              "path": "/integrations",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "official-integrations/kustomize-support/index",
+              "path": "/integrations/kustomize-support",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "official-integrations/pre-commit-hook/index",
+              "path": "/integrations/pre-commit-hook",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "setup/account-token/index",
+              "path": "/setup/account-token",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "setup/centralized-policy/index",
+              "path": "/setup/centralized-policy",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "setup/cli-arguments/index",
+              "path": "/setup/cli-arguments",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "setup/cli-output/index",
+              "path": "/setup/cli-output",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "setup/history/index",
+              "path": "/setup/history",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "setup/policy-as-code/index",
+              "path": "/setup/policy-as-code",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "setup/schema-validation/index",
+              "path": "/setup/schema-validation",
+              "sidebar": "sidebar"
+            },
+            {
+              "id": "troubleshooting/index",
+              "path": "/troubleshooting",
+              "sidebar": "sidebar"
+            }
+          ],
+          "sidebars": {
+            "sidebar": {
+              "link": {
+                "path": "/",
+                "label": "Getting started"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

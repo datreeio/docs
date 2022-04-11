@@ -1,0 +1,26 @@
+{
+  "unversionedId": "custom-rules/custom-rules-overview/index",
+  "id": "custom-rules/custom-rules-overview/index",
+  "title": "Understanding custom rules",
+  "description": "In addition to the tool's built-in rules, you can also write any tests that you wish and run them against your Kubernetes configurations to check for rule violations. The custom rule engine is based on JSON Schema, so it supports both YAML and JSON declarative syntax.",
+  "source": "@site/docs/custom-rules/custom-rules-overview/index.mdx",
+  "sourceDirName": "custom-rules/custom-rules-overview",
+  "slug": "/custom-rules/custom-rules-overview",
+  "permalink": "/custom-rules/custom-rules-overview",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/custom-rules/custom-rules-overview/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Understanding custom rules",
+    "slug": "/custom-rules/custom-rules-overview"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Custom rules",
+    "permalink": "/custom-rules"
+  },
+  "next": {
+    "title": "Basic examples",
+    "permalink": "/custom-rules/basic-examples"
+  }
+}

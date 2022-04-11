@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/other/ensure-hpa-maximum-replicas/index",
+  "id": "built-in-rules/other/ensure-hpa-maximum-replicas/index",
+  "title": "☑️ Ensure HPA has maximum replicas configured",
+  "description": "It's preferable to manage services and applications in clusters using higher-level resources such as Deployments, StatefulSets and DaemonSets instead of raw Pod resources. These constructs include standard default features which, in most scenarios, are necessary to configure and maintain a stable cluster.",
+  "source": "@site/docs/built-in-rules/other/ensure-hpa-maximum-replicas/index.mdx",
+  "sourceDirName": "built-in-rules/other/ensure-hpa-maximum-replicas",
+  "slug": "/built-in-rules/ensure-hpa-maximum-replicas",
+  "permalink": "/built-in-rules/ensure-hpa-maximum-replicas",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/other/ensure-hpa-maximum-replicas/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure HPA has maximum replicas configured",
+    "slug": "/built-in-rules/ensure-hpa-maximum-replicas"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Other",
+    "permalink": "/built-in-rules/other"
+  },
+  "next": {
+    "title": "☑️ Ensure HPA has minimum replicas configured",
+    "permalink": "/built-in-rules/ensure-hpa-minimum-replicas"
+  }
+}

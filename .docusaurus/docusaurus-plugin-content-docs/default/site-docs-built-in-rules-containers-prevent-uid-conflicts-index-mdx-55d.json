@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/containers/prevent-uid-conflicts/index",
+  "id": "built-in-rules/containers/prevent-uid-conflicts/index",
+  "title": "☑️ Prevent containers from accessing host files by using high UIDs",
+  "description": "It's recommended for containers to run under UIDs that are not used on the host system. With a high UID number, a container is blocked from accessing host-based files even if it manages to gain access to a host's file system.",
+  "source": "@site/docs/built-in-rules/containers/prevent-uid-conflicts/index.mdx",
+  "sourceDirName": "built-in-rules/containers/prevent-uid-conflicts",
+  "slug": "/built-in-rules/prevent-uid-conflicts",
+  "permalink": "/built-in-rules/prevent-uid-conflicts",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/prevent-uid-conflicts/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Prevent containers from accessing host files by using high UIDs",
+    "slug": "/built-in-rules/prevent-uid-conflicts"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Prevent containers from having root access capabilities",
+    "permalink": "/built-in-rules/prevent-privileged-containers"
+  },
+  "next": {
+    "title": "☑️ Prevent containers from sharing the host's IPC namespace",
+    "permalink": "/built-in-rules/prevent-using-host-ipc"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/other/index",
+  "id": "built-in-rules/other/index",
+  "title": "Other",
+  "description": "",
+  "source": "@site/docs/built-in-rules/other/index.mdx",
+  "sourceDirName": "built-in-rules/other",
+  "slug": "/built-in-rules/other",
+  "permalink": "/built-in-rules/other",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/other/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Other",
+    "slug": "/built-in-rules/other"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Prevent Service from exposing node port",
+    "permalink": "/built-in-rules/prevent-node-port"
+  },
+  "next": {
+    "title": "☑️ Ensure HPA has maximum replicas configured",
+    "permalink": "/built-in-rules/ensure-hpa-maximum-replicas"
+  }
+}

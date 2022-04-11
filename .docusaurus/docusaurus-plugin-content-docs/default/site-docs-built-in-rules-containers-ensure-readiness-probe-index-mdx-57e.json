@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/containers/ensure-readiness-probe/index",
+  "id": "built-in-rules/containers/ensure-readiness-probe/index",
+  "title": "☑️ Ensure each container has a configured readiness probe",
+  "description": "Readiness probes allow Kubernetes to determine when a pod is ready to accept traffic. This ensures that client requests will not be routed to pods that are unable to process them.",
+  "source": "@site/docs/built-in-rules/containers/ensure-readiness-probe/index.mdx",
+  "sourceDirName": "built-in-rules/containers/ensure-readiness-probe",
+  "slug": "/built-in-rules/ensure-readiness-probe",
+  "permalink": "/built-in-rules/ensure-readiness-probe",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/ensure-readiness-probe/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure each container has a configured readiness probe",
+    "slug": "/built-in-rules/ensure-readiness-probe"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure each container has a configured memory request",
+    "permalink": "/built-in-rules/ensure-memory-request"
+  },
+  "next": {
+    "title": "☑️ Prevent containers from mounting Docker socket",
+    "permalink": "/built-in-rules/prevent-mounting-docker-socket"
+  }
+}

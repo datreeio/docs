@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset/index",
+  "id": "built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset/index",
+  "title": "☑️ Ensure Rollout that is marked as degraded scales down ReplicaSet",
+  "description": "Users can set the progressDeadlineSeconds key which states the maximum time in seconds in which a Rollout must make progress during an update before it is considered to be failed.",
+  "source": "@site/docs/built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset/index.mdx",
+  "sourceDirName": "built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset",
+  "slug": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset",
+  "permalink": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure Rollout that is marked as degraded scales down ReplicaSet",
+    "slug": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure Rollout pause step has a configured duration",
+    "permalink": "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration"
+  },
+  "next": {
+    "title": "☑️ Ensure Workflow DAG fail-fast on node failure",
+    "permalink": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure"
+  }
+}

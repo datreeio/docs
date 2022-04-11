@@ -1,0 +1,29 @@
+{
+  "unversionedId": "intro/overview/index",
+  "id": "intro/overview/index",
+  "title": "Overview",
+  "description": "Overview",
+  "source": "@site/docs/intro/overview/index.mdx",
+  "sourceDirName": "intro/overview",
+  "slug": "/welcom/overview",
+  "permalink": "/welcom/overview",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro/overview/index.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Overview",
+    "sidebar_position": 2,
+    "slug": "/welcom/overview",
+    "description": "Overview"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Getting started",
+    "permalink": "/"
+  },
+  "next": {
+    "title": "What is Datree?",
+    "permalink": "/welcom/what-is-datree"
+  }
+}

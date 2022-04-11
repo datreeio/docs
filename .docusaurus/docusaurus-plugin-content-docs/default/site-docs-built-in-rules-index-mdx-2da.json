@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/index",
+  "id": "built-in-rules/index",
+  "title": "Built in rules",
+  "description": "There are 34 battle-tested rules for you to choose from.",
+  "source": "@site/docs/built-in-rules/index.mdx",
+  "sourceDirName": "built-in-rules",
+  "slug": "/built-in-rules",
+  "permalink": "/built-in-rules",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Built in rules",
+    "slug": "/built-in-rules"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Account token",
+    "permalink": "/setup/account-token"
+  },
+  "next": {
+    "title": "Deprecation",
+    "permalink": "/built-in-rules/deprecation"
+  }
+}

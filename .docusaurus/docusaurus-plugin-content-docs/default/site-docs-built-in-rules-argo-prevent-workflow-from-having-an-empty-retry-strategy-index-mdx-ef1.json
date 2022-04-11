@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy/index",
+  "id": "built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy/index",
+  "title": "☑️ Prevent Workflow from having an empty retry strategy",
+  "description": "The user can specify a retryStrategy that will dictate how failed or errored steps are retried in a workflow. Providing an empty retryStrategy (i.e. retryStrategy: {}) will cause a container to retry until completion and eventually cause OOM issues.",
+  "source": "@site/docs/built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy/index.mdx",
+  "sourceDirName": "built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy",
+  "slug": "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy",
+  "permalink": "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Prevent Workflow from having an empty retry strategy",
+    "slug": "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure Workflow retry policy catches relevant errors only",
+    "permalink": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only"
+  },
+  "next": {
+    "title": "☑️ Prevent Workflow pods from using the default service account",
+    "permalink": "/built-in-rules/prevent-workflow-pods-from-using-the-default-service-account"
+  }
+}

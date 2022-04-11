@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/containers/ensure-liveness-probe/index",
+  "id": "built-in-rules/containers/ensure-liveness-probe/index",
+  "title": "☑️ Ensure each container has a configured liveness probe",
+  "description": "Liveness probes allow Kubernetes to determine when a pod should be replaced. They are fundamental in configuring a resilient cluster architecture.",
+  "source": "@site/docs/built-in-rules/containers/ensure-liveness-probe/index.mdx",
+  "sourceDirName": "built-in-rules/containers/ensure-liveness-probe",
+  "slug": "/built-in-rules/ensure-liveness-probe",
+  "permalink": "/built-in-rules/ensure-liveness-probe",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/ensure-liveness-probe/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure each container has a configured liveness probe",
+    "slug": "/built-in-rules/ensure-liveness-probe"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure each container image has a pinned (tag) version",
+    "permalink": "/built-in-rules/ensure-image-pinned-version"
+  },
+  "next": {
+    "title": "☑️ Ensure each container has a configured memory limit",
+    "permalink": "/built-in-rules/ensure-memory-limit"
+  }
+}

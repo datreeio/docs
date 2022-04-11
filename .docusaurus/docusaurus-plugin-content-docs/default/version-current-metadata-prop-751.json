@@ -1,0 +1,1035 @@
+{
+  "pluginId": "default",
+  "version": "current",
+  "label": "Next",
+  "banner": null,
+  "badge": false,
+  "className": "docs-version-current",
+  "isLast": true,
+  "docsSidebars": {
+    "sidebar": [
+      {
+        "type": "category",
+        "label": "👋 WELCOME",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Getting started",
+            "href": "/",
+            "docId": "intro/getting-started/1"
+          },
+          {
+            "type": "link",
+            "label": "Overview",
+            "href": "/welcom/overview",
+            "docId": "intro/overview/index"
+          },
+          {
+            "type": "link",
+            "label": "What is Datree?",
+            "href": "/welcom/what-is-datree",
+            "docId": "intro/what-is-datree/index"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "🛠️ SETUP",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Centralized policy",
+            "href": "/setup/centralized-policy",
+            "docId": "setup/centralized-policy/index"
+          },
+          {
+            "type": "link",
+            "label": "Schema validation",
+            "href": "/setup/schema-validation",
+            "docId": "setup/schema-validation/index"
+          },
+          {
+            "type": "link",
+            "label": "Policy as code",
+            "href": "/setup/policy-as-code",
+            "docId": "setup/policy-as-code/index"
+          },
+          {
+            "type": "link",
+            "label": "CLI output",
+            "href": "/setup/cli-output",
+            "docId": "setup/cli-output/index"
+          },
+          {
+            "type": "link",
+            "label": "CLI arguments",
+            "href": "/setup/cli-arguments",
+            "docId": "setup/cli-arguments/index"
+          },
+          {
+            "type": "link",
+            "label": "History",
+            "href": "/setup/history",
+            "docId": "setup/history/index"
+          },
+          {
+            "type": "link",
+            "label": "Account token",
+            "href": "/setup/account-token",
+            "docId": "setup/account-token/index"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "🚔 BUILT-IN RULES",
+        "collapsible": false,
+        "collapsed": false,
+        "items": [
+          {
+            "type": "category",
+            "label": "Deprecation",
+            "collapsible": true,
+            "collapsed": true,
+            "className": "hide",
+            "items": [
+              {
+                "type": "link",
+                "label": "☑️ Prevent deprecated APIs in Kubernetes v1.16",
+                "href": "/built-in-rules/prevent-deprecated-k8s-api-116",
+                "docId": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-116/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent deprecated APIs in Kubernetes v1.17",
+                "href": "/built-in-rules/prevent-deprecated-k8s-api-117",
+                "docId": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-117/index"
+              }
+            ],
+            "href": "/built-in-rules/deprecation"
+          },
+          {
+            "type": "category",
+            "label": "Workload",
+            "collapsible": true,
+            "collapsed": true,
+            "className": "hide",
+            "items": [
+              {
+                "type": "link",
+                "label": "☑️ Ensure Deployment has a configured `env` label",
+                "href": "/built-in-rules/ensure-env-label",
+                "docId": "built-in-rules/Workload/ensure-env-label/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure workload has valid label values",
+                "href": "/built-in-rules/ensure-labels-value-valid",
+                "docId": "built-in-rules/Workload/ensure-labels-value-valid/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure Deployment has more than one replica configured",
+                "href": "/built-in-rules/ensure-minimum-two-replicas",
+                "docId": "built-in-rules/Workload/ensure-minimum-two-replicas/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure workload has a configured `owner` label",
+                "href": "/built-in-rules/ensure-owner-label",
+                "docId": "built-in-rules/Workload/ensure-owner-label/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure workload has valid label values",
+                "href": "/built-in-rules/ensure-valid-restart-policy",
+                "docId": "built-in-rules/Workload/ensure-valid-restart-policy/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent workload from using the default namespace",
+                "href": "/built-in-rules/prevent-deafult-namespce",
+                "docId": "built-in-rules/Workload/prevent-deafult-namespce/index"
+              }
+            ],
+            "href": "/built-in-rules/workload"
+          },
+          {
+            "type": "category",
+            "label": "Argo",
+            "collapsible": true,
+            "collapsed": true,
+            "className": "hide",
+            "items": [
+              {
+                "type": "link",
+                "label": "☑️ Ensure Application and AppProject are part of the argocd namespace",
+                "href": "/built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace",
+                "docId": "built-in-rules/argo/ensure-application-and-appproject-are-part-of-the-argocd-namespace/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure ConfigMap is recognized by ArgoCD",
+                "href": "/built-in-rules/ensure-configmap-is-recognized-by-argocd",
+                "docId": "built-in-rules/argo/ensure-configmap-is-recognized-by-argocd/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure Rollout allows broadcasting IP table changes",
+                "href": "/built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes",
+                "docId": "built-in-rules/argo/ensure-rollout-allows-broadcasting-ip-table-changes/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure Rollout has revision history set",
+                "href": "/built-in-rules/ensure-rollout-has-revision-history-set",
+                "docId": "built-in-rules/argo/ensure-rollout-has-revision-history-set/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure Rollout pause step has a configured duration",
+                "href": "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration",
+                "docId": "built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure Rollout that is marked as degraded scales down ReplicaSet",
+                "href": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset",
+                "docId": "built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure Workflow DAG fail-fast on node failure",
+                "href": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure",
+                "docId": "built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure Workflow retry policy catches relevant errors only",
+                "href": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only",
+                "docId": "built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent Workflow from having an empty retry strategy",
+                "href": "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy",
+                "docId": "built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent Workflow pods from using the default service account",
+                "href": "/built-in-rules/prevent-workflow-pods-from-using-the-default-service-account",
+                "docId": "built-in-rules/argo/prevent-workflow-pods-from-using-the-default-service-account/index"
+              }
+            ],
+            "href": "/built-in-rules/argo"
+          },
+          {
+            "type": "category",
+            "label": "Containers",
+            "collapsible": true,
+            "collapsed": true,
+            "className": "hide",
+            "items": [
+              {
+                "type": "link",
+                "label": "Ensure each container has a configured CPU limit",
+                "href": "/built-in-rules/ensure-cpu-limit",
+                "docId": "built-in-rules/containers/ensure-cpu-limit/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure each container has a configured CPU request",
+                "href": "/built-in-rules/ensure-cpu-request",
+                "docId": "built-in-rules/containers/ensure-cpu-request/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure each container image has a digest tag",
+                "href": "/built-in-rules/ensure-digest-tag",
+                "docId": "built-in-rules/containers/ensure-digest-tag/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure each container image has a pinned (tag) version",
+                "href": "/built-in-rules/ensure-image-pinned-version",
+                "docId": "built-in-rules/containers/ensure-image-pinned-version/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure each container has a configured liveness probe",
+                "href": "/built-in-rules/ensure-liveness-probe",
+                "docId": "built-in-rules/containers/ensure-liveness-probe/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure each container has a configured memory limit",
+                "href": "/built-in-rules/ensure-memory-limit",
+                "docId": "built-in-rules/containers/ensure-memory-limit/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure each container has a configured memory request",
+                "href": "/built-in-rules/ensure-memory-request",
+                "docId": "built-in-rules/containers/ensure-memory-request/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure each container has a configured readiness probe",
+                "href": "/built-in-rules/ensure-readiness-probe",
+                "docId": "built-in-rules/containers/ensure-readiness-probe/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent containers from mounting Docker socket",
+                "href": "/built-in-rules/prevent-mounting-docker-socket",
+                "docId": "built-in-rules/containers/prevent-mounting-docker-socket/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent containers from having root access capabilities",
+                "href": "/built-in-rules/prevent-privileged-containers",
+                "docId": "built-in-rules/containers/prevent-privileged-containers/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent containers from accessing host files by using high UIDs",
+                "href": "/built-in-rules/prevent-uid-conflicts",
+                "docId": "built-in-rules/containers/prevent-uid-conflicts/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent containers from sharing the host's IPC namespace",
+                "href": "/built-in-rules/prevent-using-host-ipc",
+                "docId": "built-in-rules/containers/prevent-using-host-ipc/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent containers from sharing the host’s network namespace",
+                "href": "/built-in-rules/prevent-using-host-network",
+                "docId": "built-in-rules/containers/prevent-using-host-network/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent containers from sharing the host's PID namespace",
+                "href": "/built-in-rules/prevent-using-host-pid",
+                "docId": "built-in-rules/containers/prevent-using-host-pid/index"
+              }
+            ],
+            "href": "/built-in-rules/containers"
+          },
+          {
+            "type": "category",
+            "label": "CronJob",
+            "collapsible": true,
+            "collapsed": true,
+            "className": "hide",
+            "items": [
+              {
+                "type": "link",
+                "label": "☑️ Ensure Deployment has a configured `env` label",
+                "href": "/built-in-rules/ensure-cronjob-deadline",
+                "docId": "built-in-rules/cronjob/ensure-cronjob-deadline/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure CronJob has a configured deadline",
+                "href": "/built-in-rules/ensure-cronjob-scheduler-valid",
+                "docId": "built-in-rules/cronjob/ensure-cronjob-scheduler-valid/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent CronJob from executing jobs concurrency",
+                "href": "/built-in-rules/prevent-cronjob-concurrency",
+                "docId": "built-in-rules/cronjob/prevent-cronjob-concurrency/index"
+              }
+            ],
+            "href": "/built-in-rules/cronjob"
+          },
+          {
+            "type": "category",
+            "label": "Networking",
+            "collapsible": true,
+            "collapsed": true,
+            "className": "hide",
+            "items": [
+              {
+                "type": "link",
+                "label": "☑️ Prevent Ingress from forwarding all traffic to a single container",
+                "href": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container",
+                "docId": "built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent Service from exposing node port",
+                "href": "/built-in-rules/prevent-node-port",
+                "docId": "built-in-rules/networking/prevent-node-port/index"
+              }
+            ],
+            "href": "/built-in-rules/networking"
+          },
+          {
+            "type": "category",
+            "label": "Other",
+            "collapsible": true,
+            "collapsed": true,
+            "className": "hide",
+            "items": [
+              {
+                "type": "link",
+                "label": "☑️ Ensure HPA has maximum replicas configured",
+                "href": "/built-in-rules/ensure-hpa-maximum-replicas",
+                "docId": "built-in-rules/other/ensure-hpa-maximum-replicas/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Ensure HPA has minimum replicas configured",
+                "href": "/built-in-rules/ensure-hpa-minimum-replicas",
+                "docId": "built-in-rules/other/ensure-hpa-minimum-replicas/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent deploying naked pods",
+                "href": "/built-in-rules/prevent-naked-pods",
+                "docId": "built-in-rules/other/prevent-naked-pods/index"
+              }
+            ],
+            "href": "/built-in-rules/other"
+          },
+          {
+            "type": "category",
+            "label": "Security",
+            "collapsible": true,
+            "collapsed": true,
+            "className": "hide",
+            "items": [
+              {
+                "type": "link",
+                "label": "☑️ Prevent ConfigMap security vulnerability (CVE-2021-25742)",
+                "href": "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742",
+                "docId": "built-in-rules/security/prevent-configmap-security-vulnerability-cve-2021-25742/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent container security vulnerability (CVE-2021-25741)",
+                "href": "/built-in-rules/prevent-container-security-vulnerability-cve-2021-25741",
+                "docId": "built-in-rules/security/prevent-container-security-vulnerability-cve-2021-25741/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent EndpointSlice validation from enabling host network hijack (CVE-2021-25737)",
+                "href": "/built-in-rules/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737",
+                "docId": "built-in-rules/security/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737/index"
+              },
+              {
+                "type": "link",
+                "label": "☑️ Prevent Ingress security vulnerability (CVE-2021-25742)",
+                "href": "/built-in-rules/prevent-ingress-security-vulnerability-cve-2021-25742",
+                "docId": "built-in-rules/security/prevent-ingress-security-vulnerability-cve-2021-25742/index"
+              }
+            ],
+            "href": "/built-in-rules/security"
+          }
+        ],
+        "href": "/built-in-rules"
+      },
+      {
+        "type": "category",
+        "label": "🤖 CUSTOM RULES",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Understanding custom rules",
+            "href": "/custom-rules/custom-rules-overview",
+            "docId": "custom-rules/custom-rules-overview/index"
+          },
+          {
+            "type": "link",
+            "label": "Basic examples",
+            "href": "/custom-rules/basic-examples",
+            "docId": "custom-rules/basic-examples/index"
+          },
+          {
+            "type": "link",
+            "label": "Multiple property paths",
+            "href": "/custom-rules/multiple-property-paths",
+            "docId": "custom-rules/multiple-property-paths/index"
+          },
+          {
+            "type": "link",
+            "label": "Resource quotas",
+            "href": "/custom-rules/resource-quotas",
+            "docId": "custom-rules/resource-quotas/index"
+          }
+        ],
+        "href": "/custom-rules"
+      },
+      {
+        "type": "category",
+        "label": "🔌 OFFICIAL INTEGRATIONS",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Kustomize support",
+            "href": "/integrations/kustomize-support",
+            "docId": "official-integrations/kustomize-support/index"
+          },
+          {
+            "type": "link",
+            "label": "Git hooks",
+            "href": "/integrations/git-hooks",
+            "docId": "official-integrations/git-hooks/index"
+          },
+          {
+            "type": "link",
+            "label": "Pre-commit hook",
+            "href": "/integrations/pre-commit-hook",
+            "docId": "official-integrations/pre-commit-hook/index"
+          }
+        ],
+        "href": "/integrations"
+      },
+      {
+        "type": "link",
+        "label": "🙌 COMMUNITY INTEGRATIONS",
+        "href": "/community-integrations",
+        "docId": "community-integrations/index"
+      },
+      {
+        "type": "category",
+        "label": "⏩ CI/CD EXAMPLES",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Circle CI",
+            "href": "/cicd-examples/circle-ci",
+            "docId": "cicd-examples/circle-ci/index"
+          },
+          {
+            "type": "link",
+            "label": "Travis CI",
+            "href": "/cicd-examples/travis-ci",
+            "docId": "cicd-examples/travis-ci/index"
+          },
+          {
+            "type": "link",
+            "label": "GitLab CI/CD",
+            "href": "/cicd-examples/gitLab-ci-cd",
+            "docId": "cicd-examples/gitlab-cicd/index"
+          },
+          {
+            "type": "link",
+            "label": "Jenkins pipeline",
+            "href": "/cicd-examples/jenkins-pipeline",
+            "docId": "cicd-examples/jenkins-pipeline/index"
+          }
+        ],
+        "href": "/cicd-examples"
+      },
+      {
+        "type": "link",
+        "label": "💬 FAQ",
+        "href": "/faq",
+        "docId": "faqs/index"
+      },
+      {
+        "type": "link",
+        "label": "🗃️ TROUBLESHOOTING",
+        "href": "/troubleshooting",
+        "docId": "troubleshooting/index"
+      }
+    ]
+  },
+  "docs": {
+    "built-in-rules/argo/ensure-application-and-appproject-are-part-of-the-argocd-namespace/index": {
+      "id": "built-in-rules/argo/ensure-application-and-appproject-are-part-of-the-argocd-namespace/index",
+      "title": "☑️ Ensure Application and AppProject are part of the argocd namespace",
+      "description": "ArgoCD is installed in a specific namespace (by default 'argocd'). All of its resources, including Application and AppProject instances, have to be installed in that namespace.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/argo/ensure-configmap-is-recognized-by-argocd/index": {
+      "id": "built-in-rules/argo/ensure-configmap-is-recognized-by-argocd/index",
+      "title": "☑️ Ensure ConfigMap is recognized by ArgoCD",
+      "description": "A relevant ConfigMap resource that isn’t labeled with app.kubernetes.io/part-of: argocd will not be used by Argo CD.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/argo/ensure-rollout-allows-broadcasting-ip-table-changes/index": {
+      "id": "built-in-rules/argo/ensure-rollout-allows-broadcasting-ip-table-changes/index",
+      "title": "☑️ Ensure Rollout allows broadcasting IP table changes",
+      "description": "When the Rollout changes the selector on a service, there is a propagation delay before all the nodes update their IP tables to send traffic to the new pods instead of the old. Traffic will be directed to the old pods if the nodes have not been updated yet during this delay. In order to prevent the packets from being sent to a node that killed the old pod, the rollout uses the scaleDownDelaySeconds field to give nodes enough time to broadcast the IP table changes.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/argo/ensure-rollout-has-revision-history-set/index": {
+      "id": "built-in-rules/argo/ensure-rollout-has-revision-history-set/index",
+      "title": "☑️ Ensure Rollout has revision history set",
+      "description": "A Rollout's revision history is stored in the ReplicaSets it controls.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration/index": {
+      "id": "built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration/index",
+      "title": "☑️ Ensure Rollout pause step has a configured duration",
+      "description": "Users can define a list of steps the controller uses to manipulate the ReplicaSets during the rollout. Each step can have one of two fields.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset/index": {
+      "id": "built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset/index",
+      "title": "☑️ Ensure Rollout that is marked as degraded scales down ReplicaSet",
+      "description": "Users can set the progressDeadlineSeconds key which states the maximum time in seconds in which a Rollout must make progress during an update before it is considered to be failed.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure/index": {
+      "id": "built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure/index",
+      "title": "☑️ Ensure Workflow DAG fail-fast on node failure",
+      "description": "As an alternative to specifying sequences of steps in Workflow, you can define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each task.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only/index": {
+      "id": "built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only/index",
+      "title": "☑️ Ensure Workflow retry policy catches relevant errors only",
+      "description": "retryStrategy is an optional field of the Workflow CRD that provides control over how to retry a workflow step. One of its fields is retryPolicy, which defines the policy of NodePhase statuses that will be retried (NodePhase is the condition of a node at the current time).",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/argo/index": {
+      "id": "built-in-rules/argo/index",
+      "title": "Argo",
+      "description": "",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy/index": {
+      "id": "built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy/index",
+      "title": "☑️ Prevent Workflow from having an empty retry strategy",
+      "description": "The user can specify a retryStrategy that will dictate how failed or errored steps are retried in a workflow. Providing an empty retryStrategy (i.e. retryStrategy: {}) will cause a container to retry until completion and eventually cause OOM issues.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/argo/prevent-workflow-pods-from-using-the-default-service-account/index": {
+      "id": "built-in-rules/argo/prevent-workflow-pods-from-using-the-default-service-account/index",
+      "title": "☑️ Prevent Workflow pods from using the default service account",
+      "description": "All pods in a Workflow run with the service account. The service account can be specified in workflow.spec.serviceAccountName, or if omitted, the default service account of the workflow's namespace is used.  This provides the workflow(i.e the pod) the ability to interact with the Kubernetes API server and because this behavior is enabled by default, it creates a great way for attackers with access to a single container, to abuse Kubernetes with the AutomountServiceAccountToken.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/ensure-cpu-limit/index": {
+      "id": "built-in-rules/containers/ensure-cpu-limit/index",
+      "title": "☑️ Ensure each container has a configured CPU limit",
+      "description": "CPU limits enable you to use CPU resources efficiently by restricting the maximum amount of CPU available to the pods running in your cluster.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/ensure-cpu-request/index": {
+      "id": "built-in-rules/containers/ensure-cpu-request/index",
+      "title": "☑️ Ensure each container has a configured CPU request",
+      "description": "CPU requests enable you to use CPU resources efficiently and to allocate a guaranteed minimum of computing resources for the pods running in your cluster.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/ensure-digest-tag/index": {
+      "id": "built-in-rules/containers/ensure-digest-tag/index",
+      "title": "☑️ Ensure each container image has a digest tag",
+      "description": "To make sure the container always uses the same version of the image, you can specify its digest. The digest uniquely identifies a specific version of the image, so it will never be updated by Kubernetes unless you change the digest value.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/ensure-image-pinned-version/index": {
+      "id": "built-in-rules/containers/ensure-image-pinned-version/index",
+      "title": "☑️ Ensure each container image has a pinned (tag) version",
+      "description": "When an image tag is not descriptive (e.g. lacking the version tag like 1.19.8), every time that image is pulled, the version will be a different version and might break your code. Also, a non-descriptive image tag does not allow you to easily roll back (or forward) to different image versions. It is better to use concrete and meaningful tags such as version strings or an image SHA.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/ensure-liveness-probe/index": {
+      "id": "built-in-rules/containers/ensure-liveness-probe/index",
+      "title": "☑️ Ensure each container has a configured liveness probe",
+      "description": "Liveness probes allow Kubernetes to determine when a pod should be replaced. They are fundamental in configuring a resilient cluster architecture.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/ensure-memory-limit/index": {
+      "id": "built-in-rules/containers/ensure-memory-limit/index",
+      "title": "☑️ Ensure each container has a configured memory limit",
+      "description": "Memory limits enable you to use memory resources efficiently. By setting memory limits, you restrict the maximum amount of memory available to the pods running in your cluster.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/ensure-memory-request/index": {
+      "id": "built-in-rules/containers/ensure-memory-request/index",
+      "title": "☑️ Ensure each container has a configured memory request",
+      "description": "Memory requests allow you to use memory resources efficiently and allow you to allocate a guaranteed minimum of computing resources for the pods running in your cluster.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/ensure-readiness-probe/index": {
+      "id": "built-in-rules/containers/ensure-readiness-probe/index",
+      "title": "☑️ Ensure each container has a configured readiness probe",
+      "description": "Readiness probes allow Kubernetes to determine when a pod is ready to accept traffic. This ensures that client requests will not be routed to pods that are unable to process them.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/index": {
+      "id": "built-in-rules/containers/index",
+      "title": "Containers",
+      "description": "",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/prevent-mounting-docker-socket/index": {
+      "id": "built-in-rules/containers/prevent-mounting-docker-socket/index",
+      "title": "☑️ Prevent containers from mounting Docker socket",
+      "description": "It is recommended to disallow Docker socket access to all pods running on a cluster. When a container has access to the Docker socket, it can effectively manage other containers on the host.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/prevent-privileged-containers/index": {
+      "id": "built-in-rules/containers/prevent-privileged-containers/index",
+      "title": "☑️ Prevent containers from having root access capabilities",
+      "description": "Processes running in privileged containers have access to host-level resources such as the file system. These containers are much more secure when their access is limited to the pod level.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/prevent-uid-conflicts/index": {
+      "id": "built-in-rules/containers/prevent-uid-conflicts/index",
+      "title": "☑️ Prevent containers from accessing host files by using high UIDs",
+      "description": "It's recommended for containers to run under UIDs that are not used on the host system. With a high UID number, a container is blocked from accessing host-based files even if it manages to gain access to a host's file system.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/prevent-using-host-ipc/index": {
+      "id": "built-in-rules/containers/prevent-using-host-ipc/index",
+      "title": "☑️ Prevent containers from sharing the host's IPC namespace",
+      "description": "By default, containers only share IPC resources within the same pod. When a container is allowed to share its host's IPC namespace, it has access to the same inter-process mechanisms as other processes running outside of the container runtime.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/prevent-using-host-network/index": {
+      "id": "built-in-rules/containers/prevent-using-host-network/index",
+      "title": "☑️ Prevent containers from sharing the host’s network namespace",
+      "description": "When a container is allowed to share its host's network namespace, it can access local network listeners and leverage it to probe the host's local network.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/containers/prevent-using-host-pid/index": {
+      "id": "built-in-rules/containers/prevent-using-host-pid/index",
+      "title": "☑️ Prevent containers from sharing the host's PID namespace",
+      "description": "When a container is allowed to share its host's PID namespace, it can see and in some cases even kill processes running on the host outside of the container. This violates the principle of least privilege - you will likely never need a pod to access other processes outside of its own namespace.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/cronjob/ensure-cronjob-deadline/index": {
+      "id": "built-in-rules/cronjob/ensure-cronjob-deadline/index",
+      "title": "☑️ Ensure Deployment has a configured `env` label",
+      "description": "Having an bulk operations in specific environments or for filtering Deployments according to their stage. Recommended values for this key are: prod / staging / qa / admin / testing.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/cronjob/ensure-cronjob-scheduler-valid/index": {
+      "id": "built-in-rules/cronjob/ensure-cronjob-scheduler-valid/index",
+      "title": "☑️ Ensure CronJob has a configured deadline",
+      "description": "When the CronJob controller counts more than 100 missed schedules, the cron job is no longer scheduled. Missed CronJobs are considered failures.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/cronjob/index": {
+      "id": "built-in-rules/cronjob/index",
+      "title": "CronJob",
+      "description": "",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/cronjob/prevent-cronjob-concurrency/index": {
+      "id": "built-in-rules/cronjob/prevent-cronjob-concurrency/index",
+      "title": "☑️ Prevent CronJob from executing jobs concurrency",
+      "description": "By default, the cron job allows concurrently running jobs but generally speaking, the behavior of your cron jobs will be more deterministic if you prevent them from running concurrently. Allowing concurrent cron jobs often requires locking mechanisms (to avoid race conditions) in addition to startup/cleanup handling.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/Deprecation/index": {
+      "id": "built-in-rules/Deprecation/index",
+      "title": "Deprecation",
+      "description": "",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/Deprecation/prevent-deprecated-k8s-api-116/index": {
+      "id": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-116/index",
+      "title": "☑️ Prevent deprecated APIs in Kubernetes v1.16",
+      "description": "The v1.16 release stopped serving some API versions for different resource types. When a user deploys a resource with a deprecated API version, the Kubernetes engine rejects it.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/Deprecation/prevent-deprecated-k8s-api-117/index": {
+      "id": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-117/index",
+      "title": "☑️ Prevent deprecated APIs in Kubernetes v1.17",
+      "description": "The v1.17 release stopped serving some API versions for different resource types. When a user deploys a resource with a deprecated API version, the Kubernetes engine rejects it.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/index": {
+      "id": "built-in-rules/index",
+      "title": "Built in rules",
+      "description": "There are 34 battle-tested rules for you to choose from.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/networking/index": {
+      "id": "built-in-rules/networking/index",
+      "title": "Networking",
+      "description": "",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container/index": {
+      "id": "built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container/index",
+      "title": "☑️ Prevent Ingress from forwarding all traffic to a single container",
+      "description": "Misconfiguring the ingress host can unintended forward all traffic to a single pod instead of leveraging the load balancing capabilities. By verifying that ingress traffic is targeted by multiple pods, you will achieve higher application availability because you won't be dependent upon a single pod to serve all ingress traffic.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/networking/prevent-node-port/index": {
+      "id": "built-in-rules/networking/prevent-node-port/index",
+      "title": "☑️ Prevent Service from exposing node port",
+      "description": "Exposing a NodePort will open a network port on all nodes to be reached by the cluster's external network. Using this method to expose the application is less secure and forces you to create unnecessary coupling between services in order to expose them all to external traffic.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/other/ensure-hpa-maximum-replicas/index": {
+      "id": "built-in-rules/other/ensure-hpa-maximum-replicas/index",
+      "title": "☑️ Ensure HPA has maximum replicas configured",
+      "description": "It's preferable to manage services and applications in clusters using higher-level resources such as Deployments, StatefulSets and DaemonSets instead of raw Pod resources. These constructs include standard default features which, in most scenarios, are necessary to configure and maintain a stable cluster.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/other/ensure-hpa-minimum-replicas/index": {
+      "id": "built-in-rules/other/ensure-hpa-minimum-replicas/index",
+      "title": "☑️ Ensure HPA has minimum replicas configured",
+      "description": "When auto-scaling resource utilization is triggered with HPA (HorizontalPodAutoscaler), a range of acceptable values must be set to prevent unintended scaling down scenarios.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/other/index": {
+      "id": "built-in-rules/other/index",
+      "title": "Other",
+      "description": "",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/other/prevent-naked-pods/index": {
+      "id": "built-in-rules/other/prevent-naked-pods/index",
+      "title": "☑️ Prevent deploying naked pods",
+      "description": "Having an bulk operations in specific environments or for filtering Deployments according to their stage. Recommended values for this key are: prod / staging / qa / admin / testing.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/security/index": {
+      "id": "built-in-rules/security/index",
+      "title": "Security",
+      "description": "",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/security/prevent-configmap-security-vulnerability-cve-2021-25742/index": {
+      "id": "built-in-rules/security/prevent-configmap-security-vulnerability-cve-2021-25742/index",
+      "title": "☑️ Prevent ConfigMap security vulnerability (CVE-2021-25742)",
+      "description": "A vulnerability has been discovered in Kuberenetes where users with limited access to a Kubernetes cluster, but with the ability to create an Ingress object based on the NGINX Ingress Controller, could elevate privilege and access full cluster secrets (NVD severity of this issue: High).",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/security/prevent-container-security-vulnerability-cve-2021-25741/index": {
+      "id": "built-in-rules/security/prevent-container-security-vulnerability-cve-2021-25741/index",
+      "title": "☑️ Prevent container security vulnerability (CVE-2021-25741)",
+      "description": "A vulnerability has been discovered in Kubernetes that allows users to create a container with subpath volume mounts to access files and directories outside of the volume, including the host filesystem (NVD severity of this issue: High).",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/security/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737/index": {
+      "id": "built-in-rules/security/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737/index",
+      "title": "☑️ Prevent EndpointSlice validation from enabling host network hijack (CVE-2021-25737)",
+      "description": "A vulnerability has been found in Kubernetes kube-apiserver in which an authorized user could redirect pod traffic to private networks on a node (NVD severity of this issue: \\\\\\\\Low).",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/security/prevent-ingress-security-vulnerability-cve-2021-25742/index": {
+      "id": "built-in-rules/security/prevent-ingress-security-vulnerability-cve-2021-25742/index",
+      "title": "☑️ Prevent Ingress security vulnerability (CVE-2021-25742)",
+      "description": "A vulnerability has been discovered in Kuberenetes where users with limited access to a Kubernetes cluster, but with the ability to create an Ingress object based on the NGINX Ingress Controller, could elevate privilege and access full cluster secrets (NVD severity of this issue: High).",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/Workload/ensure-env-label/index": {
+      "id": "built-in-rules/Workload/ensure-env-label/index",
+      "title": "☑️ Ensure Deployment has a configured `env` label",
+      "description": "Having an bulk operations in specific environments or for filtering Deployments according to their stage. Recommended values for this key are: prod / staging / qa / admin / testing.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/Workload/ensure-labels-value-valid/index": {
+      "id": "built-in-rules/Workload/ensure-labels-value-valid/index",
+      "title": "☑️ Ensure workload has valid label values",
+      "description": "Labels are nothing more than custom key-value pairs that are attached to objects and are used to describe and manage different Kubernetes resources. If the labels do not follow Kubernetes label syntax requirements (see links below), they will not be applied properly.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/Workload/ensure-minimum-two-replicas/index": {
+      "id": "built-in-rules/Workload/ensure-minimum-two-replicas/index",
+      "title": "☑️ Ensure Deployment has more than one replica configured",
+      "description": "When you run two or more replicas per service, you are increasing the availability of the containerized service because you are not relying on a single pod to do all of the work. Furthermore, scaling horizontally by adding pods allows your service to scale and handle larger loads.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/Workload/ensure-owner-label/index": {
+      "id": "built-in-rules/Workload/ensure-owner-label/index",
+      "title": "☑️ Ensure workload has a configured `owner` label",
+      "description": "An owner label is great not only for financial ownership but also useful for operational ownership. Consider adding an owner label to your workload with the name, email alias or Slack channel of the team responsible for the service. This will make it easier to alert the relevant team or team member when necessary.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/Workload/ensure-valid-restart-policy/index": {
+      "id": "built-in-rules/Workload/ensure-valid-restart-policy/index",
+      "title": "☑️ Ensure workload has valid label values",
+      "description": "Labels are nothing more than custom key-value pairs that are attached to objects and are used to describe and manage different Kubernetes resources. If the labels do not follow Kubernetes label syntax requirements (see links below), they will not be applied properly.",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/Workload/index": {
+      "id": "built-in-rules/Workload/index",
+      "title": "Workload",
+      "description": "",
+      "sidebar": "sidebar"
+    },
+    "built-in-rules/Workload/prevent-deafult-namespce/index": {
+      "id": "built-in-rules/Workload/prevent-deafult-namespce/index",
+      "title": "☑️ Prevent workload from using the default namespace",
+      "description": "The namespace default is a saved namespace value in which Kubernetes is deploying all objects without an explicit namespace. Using explicit namespaces instead of the default value makes for clearer boundaries between sets of pods in a cluster. For example, namespaces that represent teams present a clear organization of cluster resources and make configuration overlaps less likely.",
+      "sidebar": "sidebar"
+    },
+    "cicd-examples/circle-ci/index": {
+      "id": "cicd-examples/circle-ci/index",
+      "title": "CircleCI",
+      "description": "TO-DO list for setting-up Datree in your CI",
+      "sidebar": "sidebar"
+    },
+    "cicd-examples/gitlab-cicd/index": {
+      "id": "cicd-examples/gitlab-cicd/index",
+      "title": "GitLab CI/CD",
+      "description": "TO-DO list for setting-up Datree in your CI",
+      "sidebar": "sidebar"
+    },
+    "cicd-examples/index": {
+      "id": "cicd-examples/index",
+      "title": "CI/CD examples",
+      "description": "Seamlessly integrate your Datree policy-checks into your CI platform of choice:",
+      "sidebar": "sidebar"
+    },
+    "cicd-examples/jenkins-pipeline/index": {
+      "id": "cicd-examples/jenkins-pipeline/index",
+      "title": "History",
+      "description": "TO-DO list for setting-up Datree in your CI",
+      "sidebar": "sidebar"
+    },
+    "cicd-examples/travis-ci/index": {
+      "id": "cicd-examples/travis-ci/index",
+      "title": "Travis CI",
+      "description": "TO-DO list for setting-up Datree in your CI",
+      "sidebar": "sidebar"
+    },
+    "community-integrations/index": {
+      "id": "community-integrations/index",
+      "title": "Community integrations",
+      "description": "Check out the integrations created by our wonderful contributors :",
+      "sidebar": "sidebar"
+    },
+    "custom-rules/basic-examples/index": {
+      "id": "custom-rules/basic-examples/index",
+      "title": "Basic examples",
+      "description": "Example 1",
+      "sidebar": "sidebar"
+    },
+    "custom-rules/custom-rules-overview/index": {
+      "id": "custom-rules/custom-rules-overview/index",
+      "title": "Understanding custom rules",
+      "description": "In addition to the tool's built-in rules, you can also write any tests that you wish and run them against your Kubernetes configurations to check for rule violations. The custom rule engine is based on JSON Schema, so it supports both YAML and JSON declarative syntax.",
+      "sidebar": "sidebar"
+    },
+    "custom-rules/index": {
+      "id": "custom-rules/index",
+      "title": "Custom rules",
+      "description": "You can write any custom rule you wish, and then run them against your Kubernetes configurations to check for rule violations. The custom rule engine is based on JSON Schema.",
+      "sidebar": "sidebar"
+    },
+    "custom-rules/multiple-property-paths/index": {
+      "id": "custom-rules/multiple-property-paths/index",
+      "title": "Multiple property paths",
+      "description": "Sometimes, a property (key/value) that you want to test against will be located in multiple places. For example, if you want to create a custom rule that ensures all container images have a pinned version, you can avoid creating a rule logic that declares all possible paths because checking the value of the image property in two locations can be complex.&#x20;",
+      "sidebar": "sidebar"
+    },
+    "custom-rules/resource-quotas/index": {
+      "id": "custom-rules/resource-quotas/index",
+      "title": "Resource quotas",
+      "description": "Overview",
+      "sidebar": "sidebar"
+    },
+    "faqs/index": {
+      "id": "faqs/index",
+      "title": "FAQ",
+      "description": "Where does the policy evaluation occur?",
+      "sidebar": "sidebar"
+    },
+    "intro/getting-started/1": {
+      "id": "intro/getting-started/1",
+      "title": "Getting started",
+      "description": "Datree is a CLI tool to prevent Kubernetes misconfigurations by ensuring that manifests and Helm charts follow best practices as well as your organization's policies",
+      "sidebar": "sidebar"
+    },
+    "intro/overview/index": {
+      "id": "intro/overview/index",
+      "title": "Overview",
+      "description": "Overview",
+      "sidebar": "sidebar"
+    },
+    "intro/what-is-datree/index": {
+      "id": "intro/what-is-datree/index",
+      "title": "What is Datree?",
+      "description": "What is Datree",
+      "sidebar": "sidebar"
+    },
+    "official-integrations/git-hooks/index": {
+      "id": "official-integrations/git-hooks/index",
+      "title": "Git hooks",
+      "description": "Git hooks are scripts that run automatically every time a particular event occurs in a Git repository (e.g. $ git commit, $ git push, etc.).&#x20;",
+      "sidebar": "sidebar"
+    },
+    "official-integrations/index": {
+      "id": "official-integrations/index",
+      "title": "OFFICIAL INTEGRATIONS",
+      "description": "Incorporating Datree into the most widely-used k8s tools has never been easier!",
+      "sidebar": "sidebar"
+    },
+    "official-integrations/kustomize-support/index": {
+      "id": "official-integrations/kustomize-support/index",
+      "title": "Kustomize support",
+      "description": "Overview",
+      "sidebar": "sidebar"
+    },
+    "official-integrations/pre-commit-hook/index": {
+      "id": "official-integrations/pre-commit-hook/index",
+      "title": "Pre-commit hook",
+      "description": "Pre-commit is a multi-language package manager for pre-commit hooks. You specify a list of hooks you want and pre-commit manages the installation and execution of the hooks.",
+      "sidebar": "sidebar"
+    },
+    "setup/account-token/index": {
+      "id": "setup/account-token/index",
+      "title": "Account token",
+      "description": "How it works",
+      "sidebar": "sidebar"
+    },
+    "setup/centralized-policy/index": {
+      "id": "setup/centralized-policy/index",
+      "title": "Centralized policy",
+      "description": "\"Centralized policy\" is the concept of controlling distributed policy execution from a centralized location. This concept enables the policy owner to easily control the rules that are evaluated in each run of Datree without creating operation overhead. The centralized policy can be managed by logging into the dashboard.",
+      "sidebar": "sidebar"
+    },
+    "setup/cli-arguments/index": {
+      "id": "setup/cli-arguments/index",
+      "title": "CLI arguments",
+      "description": "Running a policy check",
+      "sidebar": "sidebar"
+    },
+    "setup/cli-output/index": {
+      "id": "setup/cli-output/index",
+      "title": "CLI output",
+      "description": "Output structure",
+      "sidebar": "sidebar"
+    },
+    "setup/history/index": {
+      "id": "setup/history/index",
+      "title": "History",
+      "description": "Every policy check that is executed is also logged and shown on this page. This way, you can easily track all the different executions of Datree, from different sources, and their status to verify this tool is used properly in your organization.",
+      "sidebar": "sidebar"
+    },
+    "setup/policy-as-code/index": {
+      "id": "setup/policy-as-code/index",
+      "title": "Policy as code",
+      "description": "What is Policy as code?",
+      "sidebar": "sidebar"
+    },
+    "setup/schema-validation/index": {
+      "id": "setup/schema-validation/index",
+      "title": "Schema validation",
+      "description": "Why run schema validation?",
+      "sidebar": "sidebar"
+    },
+    "troubleshooting/index": {
+      "id": "troubleshooting/index",
+      "title": "Troubleshooting",
+      "description": "Tokens mismatch",
+      "sidebar": "sidebar"
+    }
+  }
+}

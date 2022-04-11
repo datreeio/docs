@@ -1,0 +1,26 @@
+{
+  "unversionedId": "cicd-examples/jenkins-pipeline/index",
+  "id": "cicd-examples/jenkins-pipeline/index",
+  "title": "History",
+  "description": "TO-DO list for setting-up Datree in your CI",
+  "source": "@site/docs/cicd-examples/jenkins-pipeline/index.mdx",
+  "sourceDirName": "cicd-examples/jenkins-pipeline",
+  "slug": "/cicd-examples/jenkins-pipeline",
+  "permalink": "/cicd-examples/jenkins-pipeline",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/cicd-examples/jenkins-pipeline/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "History",
+    "slug": "/cicd-examples/jenkins-pipeline"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "GitLab CI/CD",
+    "permalink": "/cicd-examples/gitLab-ci-cd"
+  },
+  "next": {
+    "title": "FAQ",
+    "permalink": "/faq"
+  }
+}

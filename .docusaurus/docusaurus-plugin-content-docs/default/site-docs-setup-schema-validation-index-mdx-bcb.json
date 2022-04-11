@@ -1,0 +1,28 @@
+{
+  "unversionedId": "setup/schema-validation/index",
+  "id": "setup/schema-validation/index",
+  "title": "Schema validation",
+  "description": "Why run schema validation?",
+  "source": "@site/docs/setup/schema-validation/index.mdx",
+  "sourceDirName": "setup/schema-validation",
+  "slug": "/setup/schema-validation",
+  "permalink": "/setup/schema-validation",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/setup/schema-validation/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Schema validation",
+    "slug": "/setup/schema-validation",
+    "createdAt": "Sun May 23 2021 16:58:02 GMT+0000 (Coordinated Universal Time)",
+    "updatedAt": "Tue Mar 22 2022 15:31:31 GMT+0000 (Coordinated Universal Time)"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Centralized policy",
+    "permalink": "/setup/centralized-policy"
+  },
+  "next": {
+    "title": "Policy as code",
+    "permalink": "/setup/policy-as-code"
+  }
+}

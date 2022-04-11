@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/Deprecation/index",
+  "id": "built-in-rules/Deprecation/index",
+  "title": "Deprecation",
+  "description": "",
+  "source": "@site/docs/built-in-rules/Deprecation/index.mdx",
+  "sourceDirName": "built-in-rules/Deprecation",
+  "slug": "/built-in-rules/deprecation",
+  "permalink": "/built-in-rules/deprecation",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Deprecation/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Deprecation",
+    "slug": "/built-in-rules/deprecation"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Built in rules",
+    "permalink": "/built-in-rules"
+  },
+  "next": {
+    "title": "☑️ Prevent deprecated APIs in Kubernetes v1.16",
+    "permalink": "/built-in-rules/prevent-deprecated-k8s-api-116"
+  }
+}

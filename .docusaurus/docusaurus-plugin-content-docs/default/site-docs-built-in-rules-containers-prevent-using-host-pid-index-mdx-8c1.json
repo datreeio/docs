@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/containers/prevent-using-host-pid/index",
+  "id": "built-in-rules/containers/prevent-using-host-pid/index",
+  "title": "☑️ Prevent containers from sharing the host's PID namespace",
+  "description": "When a container is allowed to share its host's PID namespace, it can see and in some cases even kill processes running on the host outside of the container. This violates the principle of least privilege - you will likely never need a pod to access other processes outside of its own namespace.",
+  "source": "@site/docs/built-in-rules/containers/prevent-using-host-pid/index.mdx",
+  "sourceDirName": "built-in-rules/containers/prevent-using-host-pid",
+  "slug": "/built-in-rules/prevent-using-host-pid",
+  "permalink": "/built-in-rules/prevent-using-host-pid",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/prevent-using-host-pid/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Prevent containers from sharing the host's PID namespace",
+    "slug": "/built-in-rules/prevent-using-host-pid"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Prevent containers from sharing the host’s network namespace",
+    "permalink": "/built-in-rules/prevent-using-host-network"
+  },
+  "next": {
+    "title": "CronJob",
+    "permalink": "/built-in-rules/cronjob"
+  }
+}

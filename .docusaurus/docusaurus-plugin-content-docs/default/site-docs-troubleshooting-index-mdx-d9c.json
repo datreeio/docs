@@ -1,0 +1,22 @@
+{
+  "unversionedId": "troubleshooting/index",
+  "id": "troubleshooting/index",
+  "title": "Troubleshooting",
+  "description": "Tokens mismatch",
+  "source": "@site/docs/troubleshooting/index.mdx",
+  "sourceDirName": "troubleshooting",
+  "slug": "/troubleshooting",
+  "permalink": "/troubleshooting",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/troubleshooting/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Troubleshooting",
+    "slug": "/troubleshooting"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "FAQ",
+    "permalink": "/faq"
+  }
+}

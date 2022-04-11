@@ -1,0 +1,26 @@
+{
+  "unversionedId": "official-integrations/pre-commit-hook/index",
+  "id": "official-integrations/pre-commit-hook/index",
+  "title": "Pre-commit hook",
+  "description": "Pre-commit is a multi-language package manager for pre-commit hooks. You specify a list of hooks you want and pre-commit manages the installation and execution of the hooks.",
+  "source": "@site/docs/official-integrations/pre-commit-hook/index.mdx",
+  "sourceDirName": "official-integrations/pre-commit-hook",
+  "slug": "/integrations/pre-commit-hook",
+  "permalink": "/integrations/pre-commit-hook",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/official-integrations/pre-commit-hook/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Pre-commit hook",
+    "slug": "/integrations/pre-commit-hook"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Git hooks",
+    "permalink": "/integrations/git-hooks"
+  },
+  "next": {
+    "title": "Community integrations",
+    "permalink": "/community-integrations"
+  }
+}

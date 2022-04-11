@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/containers/prevent-privileged-containers/index",
+  "id": "built-in-rules/containers/prevent-privileged-containers/index",
+  "title": "☑️ Prevent containers from having root access capabilities",
+  "description": "Processes running in privileged containers have access to host-level resources such as the file system. These containers are much more secure when their access is limited to the pod level.",
+  "source": "@site/docs/built-in-rules/containers/prevent-privileged-containers/index.mdx",
+  "sourceDirName": "built-in-rules/containers/prevent-privileged-containers",
+  "slug": "/built-in-rules/prevent-privileged-containers",
+  "permalink": "/built-in-rules/prevent-privileged-containers",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/prevent-privileged-containers/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Prevent containers from having root access capabilities",
+    "slug": "/built-in-rules/prevent-privileged-containers"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Prevent containers from mounting Docker socket",
+    "permalink": "/built-in-rules/prevent-mounting-docker-socket"
+  },
+  "next": {
+    "title": "☑️ Prevent containers from accessing host files by using high UIDs",
+    "permalink": "/built-in-rules/prevent-uid-conflicts"
+  }
+}

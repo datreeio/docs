@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/Workload/ensure-owner-label/index",
+  "id": "built-in-rules/Workload/ensure-owner-label/index",
+  "title": "☑️ Ensure workload has a configured `owner` label",
+  "description": "An owner label is great not only for financial ownership but also useful for operational ownership. Consider adding an owner label to your workload with the name, email alias or Slack channel of the team responsible for the service. This will make it easier to alert the relevant team or team member when necessary.",
+  "source": "@site/docs/built-in-rules/Workload/ensure-owner-label/index.mdx",
+  "sourceDirName": "built-in-rules/Workload/ensure-owner-label",
+  "slug": "/built-in-rules/ensure-owner-label",
+  "permalink": "/built-in-rules/ensure-owner-label",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Workload/ensure-owner-label/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure workload has a configured `owner` label",
+    "slug": "/built-in-rules/ensure-owner-label"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure Deployment has more than one replica configured",
+    "permalink": "/built-in-rules/ensure-minimum-two-replicas"
+  },
+  "next": {
+    "title": "☑️ Ensure workload has valid label values",
+    "permalink": "/built-in-rules/ensure-valid-restart-policy"
+  }
+}

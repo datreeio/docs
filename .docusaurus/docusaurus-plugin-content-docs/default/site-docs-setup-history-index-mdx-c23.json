@@ -1,0 +1,26 @@
+{
+  "unversionedId": "setup/history/index",
+  "id": "setup/history/index",
+  "title": "History",
+  "description": "Every policy check that is executed is also logged and shown on this page. This way, you can easily track all the different executions of Datree, from different sources, and their status to verify this tool is used properly in your organization.",
+  "source": "@site/docs/setup/history/index.mdx",
+  "sourceDirName": "setup/history",
+  "slug": "/setup/history",
+  "permalink": "/setup/history",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/setup/history/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "History",
+    "slug": "/setup/history"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "CLI arguments",
+    "permalink": "/setup/cli-arguments"
+  },
+  "next": {
+    "title": "Account token",
+    "permalink": "/setup/account-token"
+  }
+}

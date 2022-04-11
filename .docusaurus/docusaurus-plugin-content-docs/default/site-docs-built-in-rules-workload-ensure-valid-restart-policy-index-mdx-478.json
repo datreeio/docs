@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/Workload/ensure-valid-restart-policy/index",
+  "id": "built-in-rules/Workload/ensure-valid-restart-policy/index",
+  "title": "☑️ Ensure workload has valid label values",
+  "description": "Labels are nothing more than custom key-value pairs that are attached to objects and are used to describe and manage different Kubernetes resources. If the labels do not follow Kubernetes label syntax requirements (see links below), they will not be applied properly.",
+  "source": "@site/docs/built-in-rules/Workload/ensure-valid-restart-policy/index.mdx",
+  "sourceDirName": "built-in-rules/Workload/ensure-valid-restart-policy",
+  "slug": "/built-in-rules/ensure-valid-restart-policy",
+  "permalink": "/built-in-rules/ensure-valid-restart-policy",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Workload/ensure-valid-restart-policy/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure workload has valid label values",
+    "slug": "/built-in-rules/ensure-valid-restart-policy"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure workload has a configured `owner` label",
+    "permalink": "/built-in-rules/ensure-owner-label"
+  },
+  "next": {
+    "title": "☑️ Prevent workload from using the default namespace",
+    "permalink": "/built-in-rules/prevent-deafult-namespce"
+  }
+}

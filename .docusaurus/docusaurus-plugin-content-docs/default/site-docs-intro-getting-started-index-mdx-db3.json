@@ -1,0 +1,26 @@
+{
+  "unversionedId": "intro/getting-started/1",
+  "id": "intro/getting-started/1",
+  "title": "Getting started",
+  "description": "Datree is a CLI tool to prevent Kubernetes misconfigurations by ensuring that manifests and Helm charts follow best practices as well as your organization's policies",
+  "source": "@site/docs/intro/getting-started/index.mdx",
+  "sourceDirName": "intro/getting-started",
+  "slug": "/",
+  "permalink": "/",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro/getting-started/index.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "slug": "/",
+    "id": "1",
+    "title": "Getting started",
+    "description": "Datree is a CLI tool to prevent Kubernetes misconfigurations by ensuring that manifests and Helm charts follow best practices as well as your organization's policies"
+  },
+  "sidebar": "sidebar",
+  "next": {
+    "title": "Overview",
+    "permalink": "/welcom/overview"
+  }
+}

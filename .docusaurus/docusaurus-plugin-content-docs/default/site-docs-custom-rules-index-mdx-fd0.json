@@ -1,0 +1,26 @@
+{
+  "unversionedId": "custom-rules/index",
+  "id": "custom-rules/index",
+  "title": "Custom rules",
+  "description": "You can write any custom rule you wish, and then run them against your Kubernetes configurations to check for rule violations. The custom rule engine is based on JSON Schema.",
+  "source": "@site/docs/custom-rules/index.mdx",
+  "sourceDirName": "custom-rules",
+  "slug": "/custom-rules",
+  "permalink": "/custom-rules",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/custom-rules/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Custom rules",
+    "slug": "/custom-rules"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Prevent Ingress security vulnerability (CVE-2021-25742)",
+    "permalink": "/built-in-rules/prevent-ingress-security-vulnerability-cve-2021-25742"
+  },
+  "next": {
+    "title": "Understanding custom rules",
+    "permalink": "/custom-rules/custom-rules-overview"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/other/ensure-hpa-minimum-replicas/index",
+  "id": "built-in-rules/other/ensure-hpa-minimum-replicas/index",
+  "title": "☑️ Ensure HPA has minimum replicas configured",
+  "description": "When auto-scaling resource utilization is triggered with HPA (HorizontalPodAutoscaler), a range of acceptable values must be set to prevent unintended scaling down scenarios.",
+  "source": "@site/docs/built-in-rules/other/ensure-hpa-minimum-replicas/index.mdx",
+  "sourceDirName": "built-in-rules/other/ensure-hpa-minimum-replicas",
+  "slug": "/built-in-rules/ensure-hpa-minimum-replicas",
+  "permalink": "/built-in-rules/ensure-hpa-minimum-replicas",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/other/ensure-hpa-minimum-replicas/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure HPA has minimum replicas configured",
+    "slug": "/built-in-rules/ensure-hpa-minimum-replicas"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure HPA has maximum replicas configured",
+    "permalink": "/built-in-rules/ensure-hpa-maximum-replicas"
+  },
+  "next": {
+    "title": "☑️ Prevent deploying naked pods",
+    "permalink": "/built-in-rules/prevent-naked-pods"
+  }
+}

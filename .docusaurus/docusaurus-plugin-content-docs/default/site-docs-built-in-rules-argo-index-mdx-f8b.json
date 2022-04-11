@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/argo/index",
+  "id": "built-in-rules/argo/index",
+  "title": "Argo",
+  "description": "",
+  "source": "@site/docs/built-in-rules/argo/index.mdx",
+  "sourceDirName": "built-in-rules/argo",
+  "slug": "/built-in-rules/argo",
+  "permalink": "/built-in-rules/argo",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Argo",
+    "slug": "/built-in-rules/argo"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Prevent workload from using the default namespace",
+    "permalink": "/built-in-rules/prevent-deafult-namespce"
+  },
+  "next": {
+    "title": "☑️ Ensure Application and AppProject are part of the argocd namespace",
+    "permalink": "/built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace"
+  }
+}

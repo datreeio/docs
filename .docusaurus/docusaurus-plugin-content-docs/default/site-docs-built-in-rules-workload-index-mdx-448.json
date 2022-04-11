@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/Workload/index",
+  "id": "built-in-rules/Workload/index",
+  "title": "Workload",
+  "description": "",
+  "source": "@site/docs/built-in-rules/Workload/index.mdx",
+  "sourceDirName": "built-in-rules/Workload",
+  "slug": "/built-in-rules/workload",
+  "permalink": "/built-in-rules/workload",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Workload/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Workload",
+    "slug": "/built-in-rules/workload"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Prevent deprecated APIs in Kubernetes v1.17",
+    "permalink": "/built-in-rules/prevent-deprecated-k8s-api-117"
+  },
+  "next": {
+    "title": "☑️ Ensure Deployment has a configured `env` label",
+    "permalink": "/built-in-rules/ensure-env-label"
+  }
+}

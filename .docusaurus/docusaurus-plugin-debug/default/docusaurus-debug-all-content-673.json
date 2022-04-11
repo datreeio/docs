@@ -1,0 +1,2642 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "versionLabel": "Next",
+          "versionPath": "/",
+          "tagsPath": "/tags",
+          "versionEditUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs",
+          "versionEditUrlLocalized": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/i18n/en/docusaurus-plugin-content-docs/current",
+          "versionBanner": null,
+          "versionBadge": false,
+          "versionClassName": "docs-version-current",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/Users/harel/Desktop/react/datree/datree-hub/sidebars.js",
+          "contentPath": "/Users/harel/Desktop/react/datree/datree-hub/docs",
+          "contentPathLocalized": "/Users/harel/Desktop/react/datree/datree-hub/i18n/en/docusaurus-plugin-content-docs/current",
+          "docs": [
+            {
+              "unversionedId": "built-in-rules/argo/ensure-application-and-appproject-are-part-of-the-argocd-namespace/index",
+              "id": "built-in-rules/argo/ensure-application-and-appproject-are-part-of-the-argocd-namespace/index",
+              "title": "☑️ Ensure Application and AppProject are part of the argocd namespace",
+              "description": "ArgoCD is installed in a specific namespace (by default 'argocd'). All of its resources, including Application and AppProject instances, have to be installed in that namespace.",
+              "source": "@site/docs/built-in-rules/argo/ensure-application-and-appproject-are-part-of-the-argocd-namespace/index.mdx",
+              "sourceDirName": "built-in-rules/argo/ensure-application-and-appproject-are-part-of-the-argocd-namespace",
+              "slug": "/built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace",
+              "permalink": "/built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/ensure-application-and-appproject-are-part-of-the-argocd-namespace/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure Application and AppProject are part of the argocd namespace",
+                "slug": "/built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Argo",
+                "permalink": "/built-in-rules/argo"
+              },
+              "next": {
+                "title": "☑️ Ensure ConfigMap is recognized by ArgoCD",
+                "permalink": "/built-in-rules/ensure-configmap-is-recognized-by-argocd"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/argo/ensure-configmap-is-recognized-by-argocd/index",
+              "id": "built-in-rules/argo/ensure-configmap-is-recognized-by-argocd/index",
+              "title": "☑️ Ensure ConfigMap is recognized by ArgoCD",
+              "description": "A relevant ConfigMap resource that isn’t labeled with app.kubernetes.io/part-of: argocd will not be used by Argo CD.",
+              "source": "@site/docs/built-in-rules/argo/ensure-configmap-is-recognized-by-argocd/index.mdx",
+              "sourceDirName": "built-in-rules/argo/ensure-configmap-is-recognized-by-argocd",
+              "slug": "/built-in-rules/ensure-configmap-is-recognized-by-argocd",
+              "permalink": "/built-in-rules/ensure-configmap-is-recognized-by-argocd",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/ensure-configmap-is-recognized-by-argocd/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure ConfigMap is recognized by ArgoCD",
+                "slug": "/built-in-rules/ensure-configmap-is-recognized-by-argocd"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure Application and AppProject are part of the argocd namespace",
+                "permalink": "/built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace"
+              },
+              "next": {
+                "title": "☑️ Ensure Rollout allows broadcasting IP table changes",
+                "permalink": "/built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/argo/ensure-rollout-allows-broadcasting-ip-table-changes/index",
+              "id": "built-in-rules/argo/ensure-rollout-allows-broadcasting-ip-table-changes/index",
+              "title": "☑️ Ensure Rollout allows broadcasting IP table changes",
+              "description": "When the Rollout changes the selector on a service, there is a propagation delay before all the nodes update their IP tables to send traffic to the new pods instead of the old. Traffic will be directed to the old pods if the nodes have not been updated yet during this delay. In order to prevent the packets from being sent to a node that killed the old pod, the rollout uses the scaleDownDelaySeconds field to give nodes enough time to broadcast the IP table changes.",
+              "source": "@site/docs/built-in-rules/argo/ensure-rollout-allows-broadcasting-ip-table-changes/index.mdx",
+              "sourceDirName": "built-in-rules/argo/ensure-rollout-allows-broadcasting-ip-table-changes",
+              "slug": "/built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes",
+              "permalink": "/built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/ensure-rollout-allows-broadcasting-ip-table-changes/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure Rollout allows broadcasting IP table changes",
+                "slug": "/built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure ConfigMap is recognized by ArgoCD",
+                "permalink": "/built-in-rules/ensure-configmap-is-recognized-by-argocd"
+              },
+              "next": {
+                "title": "☑️ Ensure Rollout has revision history set",
+                "permalink": "/built-in-rules/ensure-rollout-has-revision-history-set"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/argo/ensure-rollout-has-revision-history-set/index",
+              "id": "built-in-rules/argo/ensure-rollout-has-revision-history-set/index",
+              "title": "☑️ Ensure Rollout has revision history set",
+              "description": "A Rollout's revision history is stored in the ReplicaSets it controls.",
+              "source": "@site/docs/built-in-rules/argo/ensure-rollout-has-revision-history-set/index.mdx",
+              "sourceDirName": "built-in-rules/argo/ensure-rollout-has-revision-history-set",
+              "slug": "/built-in-rules/ensure-rollout-has-revision-history-set",
+              "permalink": "/built-in-rules/ensure-rollout-has-revision-history-set",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/ensure-rollout-has-revision-history-set/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure Rollout has revision history set",
+                "slug": "/built-in-rules/ensure-rollout-has-revision-history-set"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure Rollout allows broadcasting IP table changes",
+                "permalink": "/built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes"
+              },
+              "next": {
+                "title": "☑️ Ensure Rollout pause step has a configured duration",
+                "permalink": "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration/index",
+              "id": "built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration/index",
+              "title": "☑️ Ensure Rollout pause step has a configured duration",
+              "description": "Users can define a list of steps the controller uses to manipulate the ReplicaSets during the rollout. Each step can have one of two fields.",
+              "source": "@site/docs/built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration/index.mdx",
+              "sourceDirName": "built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration",
+              "slug": "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration",
+              "permalink": "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure Rollout pause step has a configured duration",
+                "slug": "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure Rollout has revision history set",
+                "permalink": "/built-in-rules/ensure-rollout-has-revision-history-set"
+              },
+              "next": {
+                "title": "☑️ Ensure Rollout that is marked as degraded scales down ReplicaSet",
+                "permalink": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset/index",
+              "id": "built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset/index",
+              "title": "☑️ Ensure Rollout that is marked as degraded scales down ReplicaSet",
+              "description": "Users can set the progressDeadlineSeconds key which states the maximum time in seconds in which a Rollout must make progress during an update before it is considered to be failed.",
+              "source": "@site/docs/built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset/index.mdx",
+              "sourceDirName": "built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset",
+              "slug": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset",
+              "permalink": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure Rollout that is marked as degraded scales down ReplicaSet",
+                "slug": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure Rollout pause step has a configured duration",
+                "permalink": "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration"
+              },
+              "next": {
+                "title": "☑️ Ensure Workflow DAG fail-fast on node failure",
+                "permalink": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure/index",
+              "id": "built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure/index",
+              "title": "☑️ Ensure Workflow DAG fail-fast on node failure",
+              "description": "As an alternative to specifying sequences of steps in Workflow, you can define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each task.",
+              "source": "@site/docs/built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure/index.mdx",
+              "sourceDirName": "built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure",
+              "slug": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure",
+              "permalink": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure Workflow DAG fail-fast on node failure",
+                "slug": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure Rollout that is marked as degraded scales down ReplicaSet",
+                "permalink": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset"
+              },
+              "next": {
+                "title": "☑️ Ensure Workflow retry policy catches relevant errors only",
+                "permalink": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only/index",
+              "id": "built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only/index",
+              "title": "☑️ Ensure Workflow retry policy catches relevant errors only",
+              "description": "retryStrategy is an optional field of the Workflow CRD that provides control over how to retry a workflow step. One of its fields is retryPolicy, which defines the policy of NodePhase statuses that will be retried (NodePhase is the condition of a node at the current time).",
+              "source": "@site/docs/built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only/index.mdx",
+              "sourceDirName": "built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only",
+              "slug": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only",
+              "permalink": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure Workflow retry policy catches relevant errors only",
+                "slug": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure Workflow DAG fail-fast on node failure",
+                "permalink": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure"
+              },
+              "next": {
+                "title": "☑️ Prevent Workflow from having an empty retry strategy",
+                "permalink": "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/argo/index",
+              "id": "built-in-rules/argo/index",
+              "title": "Argo",
+              "description": "",
+              "source": "@site/docs/built-in-rules/argo/index.mdx",
+              "sourceDirName": "built-in-rules/argo",
+              "slug": "/built-in-rules/argo",
+              "permalink": "/built-in-rules/argo",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Argo",
+                "slug": "/built-in-rules/argo"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent workload from using the default namespace",
+                "permalink": "/built-in-rules/prevent-deafult-namespce"
+              },
+              "next": {
+                "title": "☑️ Ensure Application and AppProject are part of the argocd namespace",
+                "permalink": "/built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy/index",
+              "id": "built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy/index",
+              "title": "☑️ Prevent Workflow from having an empty retry strategy",
+              "description": "The user can specify a retryStrategy that will dictate how failed or errored steps are retried in a workflow. Providing an empty retryStrategy (i.e. retryStrategy: {}) will cause a container to retry until completion and eventually cause OOM issues.",
+              "source": "@site/docs/built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy/index.mdx",
+              "sourceDirName": "built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy",
+              "slug": "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy",
+              "permalink": "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent Workflow from having an empty retry strategy",
+                "slug": "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure Workflow retry policy catches relevant errors only",
+                "permalink": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only"
+              },
+              "next": {
+                "title": "☑️ Prevent Workflow pods from using the default service account",
+                "permalink": "/built-in-rules/prevent-workflow-pods-from-using-the-default-service-account"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/argo/prevent-workflow-pods-from-using-the-default-service-account/index",
+              "id": "built-in-rules/argo/prevent-workflow-pods-from-using-the-default-service-account/index",
+              "title": "☑️ Prevent Workflow pods from using the default service account",
+              "description": "All pods in a Workflow run with the service account. The service account can be specified in workflow.spec.serviceAccountName, or if omitted, the default service account of the workflow's namespace is used.  This provides the workflow(i.e the pod) the ability to interact with the Kubernetes API server and because this behavior is enabled by default, it creates a great way for attackers with access to a single container, to abuse Kubernetes with the AutomountServiceAccountToken.",
+              "source": "@site/docs/built-in-rules/argo/prevent-workflow-pods-from-using-the-default-service-account/index.mdx",
+              "sourceDirName": "built-in-rules/argo/prevent-workflow-pods-from-using-the-default-service-account",
+              "slug": "/built-in-rules/prevent-workflow-pods-from-using-the-default-service-account",
+              "permalink": "/built-in-rules/prevent-workflow-pods-from-using-the-default-service-account",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/prevent-workflow-pods-from-using-the-default-service-account/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent Workflow pods from using the default service account",
+                "slug": "/built-in-rules/prevent-workflow-pods-from-using-the-default-service-account"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent Workflow from having an empty retry strategy",
+                "permalink": "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy"
+              },
+              "next": {
+                "title": "Containers",
+                "permalink": "/built-in-rules/containers"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/ensure-cpu-limit/index",
+              "id": "built-in-rules/containers/ensure-cpu-limit/index",
+              "title": "☑️ Ensure each container has a configured CPU limit",
+              "description": "CPU limits enable you to use CPU resources efficiently by restricting the maximum amount of CPU available to the pods running in your cluster.",
+              "source": "@site/docs/built-in-rules/containers/ensure-cpu-limit/index.mdx",
+              "sourceDirName": "built-in-rules/containers/ensure-cpu-limit",
+              "slug": "/built-in-rules/ensure-cpu-limit",
+              "permalink": "/built-in-rules/ensure-cpu-limit",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/ensure-cpu-limit/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure each container has a configured CPU limit",
+                "slug": "/built-in-rules/ensure-cpu-limit"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Containers",
+                "permalink": "/built-in-rules/containers"
+              },
+              "next": {
+                "title": "☑️ Ensure each container has a configured CPU request",
+                "permalink": "/built-in-rules/ensure-cpu-request"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/ensure-cpu-request/index",
+              "id": "built-in-rules/containers/ensure-cpu-request/index",
+              "title": "☑️ Ensure each container has a configured CPU request",
+              "description": "CPU requests enable you to use CPU resources efficiently and to allocate a guaranteed minimum of computing resources for the pods running in your cluster.",
+              "source": "@site/docs/built-in-rules/containers/ensure-cpu-request/index.mdx",
+              "sourceDirName": "built-in-rules/containers/ensure-cpu-request",
+              "slug": "/built-in-rules/ensure-cpu-request",
+              "permalink": "/built-in-rules/ensure-cpu-request",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/ensure-cpu-request/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure each container has a configured CPU request",
+                "slug": "/built-in-rules/ensure-cpu-request"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure each container has a configured CPU limit",
+                "permalink": "/built-in-rules/ensure-cpu-limit"
+              },
+              "next": {
+                "title": "☑️ Ensure each container image has a digest tag",
+                "permalink": "/built-in-rules/ensure-digest-tag"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/ensure-digest-tag/index",
+              "id": "built-in-rules/containers/ensure-digest-tag/index",
+              "title": "☑️ Ensure each container image has a digest tag",
+              "description": "To make sure the container always uses the same version of the image, you can specify its digest. The digest uniquely identifies a specific version of the image, so it will never be updated by Kubernetes unless you change the digest value.",
+              "source": "@site/docs/built-in-rules/containers/ensure-digest-tag/index.mdx",
+              "sourceDirName": "built-in-rules/containers/ensure-digest-tag",
+              "slug": "/built-in-rules/ensure-digest-tag",
+              "permalink": "/built-in-rules/ensure-digest-tag",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/ensure-digest-tag/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure each container image has a digest tag",
+                "slug": "/built-in-rules/ensure-digest-tag"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure each container has a configured CPU request",
+                "permalink": "/built-in-rules/ensure-cpu-request"
+              },
+              "next": {
+                "title": "☑️ Ensure each container image has a pinned (tag) version",
+                "permalink": "/built-in-rules/ensure-image-pinned-version"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/ensure-image-pinned-version/index",
+              "id": "built-in-rules/containers/ensure-image-pinned-version/index",
+              "title": "☑️ Ensure each container image has a pinned (tag) version",
+              "description": "When an image tag is not descriptive (e.g. lacking the version tag like 1.19.8), every time that image is pulled, the version will be a different version and might break your code. Also, a non-descriptive image tag does not allow you to easily roll back (or forward) to different image versions. It is better to use concrete and meaningful tags such as version strings or an image SHA.",
+              "source": "@site/docs/built-in-rules/containers/ensure-image-pinned-version/index.mdx",
+              "sourceDirName": "built-in-rules/containers/ensure-image-pinned-version",
+              "slug": "/built-in-rules/ensure-image-pinned-version",
+              "permalink": "/built-in-rules/ensure-image-pinned-version",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/ensure-image-pinned-version/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure each container image has a pinned (tag) version",
+                "slug": "/built-in-rules/ensure-image-pinned-version"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure each container image has a digest tag",
+                "permalink": "/built-in-rules/ensure-digest-tag"
+              },
+              "next": {
+                "title": "☑️ Ensure each container has a configured liveness probe",
+                "permalink": "/built-in-rules/ensure-liveness-probe"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/ensure-liveness-probe/index",
+              "id": "built-in-rules/containers/ensure-liveness-probe/index",
+              "title": "☑️ Ensure each container has a configured liveness probe",
+              "description": "Liveness probes allow Kubernetes to determine when a pod should be replaced. They are fundamental in configuring a resilient cluster architecture.",
+              "source": "@site/docs/built-in-rules/containers/ensure-liveness-probe/index.mdx",
+              "sourceDirName": "built-in-rules/containers/ensure-liveness-probe",
+              "slug": "/built-in-rules/ensure-liveness-probe",
+              "permalink": "/built-in-rules/ensure-liveness-probe",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/ensure-liveness-probe/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure each container has a configured liveness probe",
+                "slug": "/built-in-rules/ensure-liveness-probe"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure each container image has a pinned (tag) version",
+                "permalink": "/built-in-rules/ensure-image-pinned-version"
+              },
+              "next": {
+                "title": "☑️ Ensure each container has a configured memory limit",
+                "permalink": "/built-in-rules/ensure-memory-limit"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/ensure-memory-limit/index",
+              "id": "built-in-rules/containers/ensure-memory-limit/index",
+              "title": "☑️ Ensure each container has a configured memory limit",
+              "description": "Memory limits enable you to use memory resources efficiently. By setting memory limits, you restrict the maximum amount of memory available to the pods running in your cluster.",
+              "source": "@site/docs/built-in-rules/containers/ensure-memory-limit/index.mdx",
+              "sourceDirName": "built-in-rules/containers/ensure-memory-limit",
+              "slug": "/built-in-rules/ensure-memory-limit",
+              "permalink": "/built-in-rules/ensure-memory-limit",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/ensure-memory-limit/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure each container has a configured memory limit",
+                "slug": "/built-in-rules/ensure-memory-limit"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure each container has a configured liveness probe",
+                "permalink": "/built-in-rules/ensure-liveness-probe"
+              },
+              "next": {
+                "title": "☑️ Ensure each container has a configured memory request",
+                "permalink": "/built-in-rules/ensure-memory-request"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/ensure-memory-request/index",
+              "id": "built-in-rules/containers/ensure-memory-request/index",
+              "title": "☑️ Ensure each container has a configured memory request",
+              "description": "Memory requests allow you to use memory resources efficiently and allow you to allocate a guaranteed minimum of computing resources for the pods running in your cluster.",
+              "source": "@site/docs/built-in-rules/containers/ensure-memory-request/index.mdx",
+              "sourceDirName": "built-in-rules/containers/ensure-memory-request",
+              "slug": "/built-in-rules/ensure-memory-request",
+              "permalink": "/built-in-rules/ensure-memory-request",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/ensure-memory-request/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure each container has a configured memory request",
+                "slug": "/built-in-rules/ensure-memory-request"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure each container has a configured memory limit",
+                "permalink": "/built-in-rules/ensure-memory-limit"
+              },
+              "next": {
+                "title": "☑️ Ensure each container has a configured readiness probe",
+                "permalink": "/built-in-rules/ensure-readiness-probe"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/ensure-readiness-probe/index",
+              "id": "built-in-rules/containers/ensure-readiness-probe/index",
+              "title": "☑️ Ensure each container has a configured readiness probe",
+              "description": "Readiness probes allow Kubernetes to determine when a pod is ready to accept traffic. This ensures that client requests will not be routed to pods that are unable to process them.",
+              "source": "@site/docs/built-in-rules/containers/ensure-readiness-probe/index.mdx",
+              "sourceDirName": "built-in-rules/containers/ensure-readiness-probe",
+              "slug": "/built-in-rules/ensure-readiness-probe",
+              "permalink": "/built-in-rules/ensure-readiness-probe",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/ensure-readiness-probe/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure each container has a configured readiness probe",
+                "slug": "/built-in-rules/ensure-readiness-probe"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure each container has a configured memory request",
+                "permalink": "/built-in-rules/ensure-memory-request"
+              },
+              "next": {
+                "title": "☑️ Prevent containers from mounting Docker socket",
+                "permalink": "/built-in-rules/prevent-mounting-docker-socket"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/index",
+              "id": "built-in-rules/containers/index",
+              "title": "Containers",
+              "description": "",
+              "source": "@site/docs/built-in-rules/containers/index.mdx",
+              "sourceDirName": "built-in-rules/containers",
+              "slug": "/built-in-rules/containers",
+              "permalink": "/built-in-rules/containers",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Containers",
+                "slug": "/built-in-rules/containers"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent Workflow pods from using the default service account",
+                "permalink": "/built-in-rules/prevent-workflow-pods-from-using-the-default-service-account"
+              },
+              "next": {
+                "title": "☑️ Ensure each container has a configured CPU limit",
+                "permalink": "/built-in-rules/ensure-cpu-limit"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/prevent-mounting-docker-socket/index",
+              "id": "built-in-rules/containers/prevent-mounting-docker-socket/index",
+              "title": "☑️ Prevent containers from mounting Docker socket",
+              "description": "It is recommended to disallow Docker socket access to all pods running on a cluster. When a container has access to the Docker socket, it can effectively manage other containers on the host.",
+              "source": "@site/docs/built-in-rules/containers/prevent-mounting-docker-socket/index.mdx",
+              "sourceDirName": "built-in-rules/containers/prevent-mounting-docker-socket",
+              "slug": "/built-in-rules/prevent-mounting-docker-socket",
+              "permalink": "/built-in-rules/prevent-mounting-docker-socket",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/prevent-mounting-docker-socket/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent containers from mounting Docker socket",
+                "slug": "/built-in-rules/prevent-mounting-docker-socket"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure each container has a configured readiness probe",
+                "permalink": "/built-in-rules/ensure-readiness-probe"
+              },
+              "next": {
+                "title": "☑️ Prevent containers from having root access capabilities",
+                "permalink": "/built-in-rules/prevent-privileged-containers"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/prevent-privileged-containers/index",
+              "id": "built-in-rules/containers/prevent-privileged-containers/index",
+              "title": "☑️ Prevent containers from having root access capabilities",
+              "description": "Processes running in privileged containers have access to host-level resources such as the file system. These containers are much more secure when their access is limited to the pod level.",
+              "source": "@site/docs/built-in-rules/containers/prevent-privileged-containers/index.mdx",
+              "sourceDirName": "built-in-rules/containers/prevent-privileged-containers",
+              "slug": "/built-in-rules/prevent-privileged-containers",
+              "permalink": "/built-in-rules/prevent-privileged-containers",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/prevent-privileged-containers/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent containers from having root access capabilities",
+                "slug": "/built-in-rules/prevent-privileged-containers"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent containers from mounting Docker socket",
+                "permalink": "/built-in-rules/prevent-mounting-docker-socket"
+              },
+              "next": {
+                "title": "☑️ Prevent containers from accessing host files by using high UIDs",
+                "permalink": "/built-in-rules/prevent-uid-conflicts"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/prevent-uid-conflicts/index",
+              "id": "built-in-rules/containers/prevent-uid-conflicts/index",
+              "title": "☑️ Prevent containers from accessing host files by using high UIDs",
+              "description": "It's recommended for containers to run under UIDs that are not used on the host system. With a high UID number, a container is blocked from accessing host-based files even if it manages to gain access to a host's file system.",
+              "source": "@site/docs/built-in-rules/containers/prevent-uid-conflicts/index.mdx",
+              "sourceDirName": "built-in-rules/containers/prevent-uid-conflicts",
+              "slug": "/built-in-rules/prevent-uid-conflicts",
+              "permalink": "/built-in-rules/prevent-uid-conflicts",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/prevent-uid-conflicts/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent containers from accessing host files by using high UIDs",
+                "slug": "/built-in-rules/prevent-uid-conflicts"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent containers from having root access capabilities",
+                "permalink": "/built-in-rules/prevent-privileged-containers"
+              },
+              "next": {
+                "title": "☑️ Prevent containers from sharing the host's IPC namespace",
+                "permalink": "/built-in-rules/prevent-using-host-ipc"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/prevent-using-host-ipc/index",
+              "id": "built-in-rules/containers/prevent-using-host-ipc/index",
+              "title": "☑️ Prevent containers from sharing the host's IPC namespace",
+              "description": "By default, containers only share IPC resources within the same pod. When a container is allowed to share its host's IPC namespace, it has access to the same inter-process mechanisms as other processes running outside of the container runtime.",
+              "source": "@site/docs/built-in-rules/containers/prevent-using-host-ipc/index.mdx",
+              "sourceDirName": "built-in-rules/containers/prevent-using-host-ipc",
+              "slug": "/built-in-rules/prevent-using-host-ipc",
+              "permalink": "/built-in-rules/prevent-using-host-ipc",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/prevent-using-host-ipc/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent containers from sharing the host's IPC namespace",
+                "slug": "/built-in-rules/prevent-using-host-ipc"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent containers from accessing host files by using high UIDs",
+                "permalink": "/built-in-rules/prevent-uid-conflicts"
+              },
+              "next": {
+                "title": "☑️ Prevent containers from sharing the host’s network namespace",
+                "permalink": "/built-in-rules/prevent-using-host-network"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/prevent-using-host-network/index",
+              "id": "built-in-rules/containers/prevent-using-host-network/index",
+              "title": "☑️ Prevent containers from sharing the host’s network namespace",
+              "description": "When a container is allowed to share its host's network namespace, it can access local network listeners and leverage it to probe the host's local network.",
+              "source": "@site/docs/built-in-rules/containers/prevent-using-host-network/index.mdx",
+              "sourceDirName": "built-in-rules/containers/prevent-using-host-network",
+              "slug": "/built-in-rules/prevent-using-host-network",
+              "permalink": "/built-in-rules/prevent-using-host-network",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/prevent-using-host-network/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent containers from sharing the host’s network namespace",
+                "slug": "/built-in-rules/prevent-using-host-network"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent containers from sharing the host's IPC namespace",
+                "permalink": "/built-in-rules/prevent-using-host-ipc"
+              },
+              "next": {
+                "title": "☑️ Prevent containers from sharing the host's PID namespace",
+                "permalink": "/built-in-rules/prevent-using-host-pid"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/containers/prevent-using-host-pid/index",
+              "id": "built-in-rules/containers/prevent-using-host-pid/index",
+              "title": "☑️ Prevent containers from sharing the host's PID namespace",
+              "description": "When a container is allowed to share its host's PID namespace, it can see and in some cases even kill processes running on the host outside of the container. This violates the principle of least privilege - you will likely never need a pod to access other processes outside of its own namespace.",
+              "source": "@site/docs/built-in-rules/containers/prevent-using-host-pid/index.mdx",
+              "sourceDirName": "built-in-rules/containers/prevent-using-host-pid",
+              "slug": "/built-in-rules/prevent-using-host-pid",
+              "permalink": "/built-in-rules/prevent-using-host-pid",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/prevent-using-host-pid/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent containers from sharing the host's PID namespace",
+                "slug": "/built-in-rules/prevent-using-host-pid"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent containers from sharing the host’s network namespace",
+                "permalink": "/built-in-rules/prevent-using-host-network"
+              },
+              "next": {
+                "title": "CronJob",
+                "permalink": "/built-in-rules/cronjob"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/cronjob/ensure-cronjob-deadline/index",
+              "id": "built-in-rules/cronjob/ensure-cronjob-deadline/index",
+              "title": "☑️ Ensure Deployment has a configured `env` label",
+              "description": "Having an bulk operations in specific environments or for filtering Deployments according to their stage. Recommended values for this key are: prod / staging / qa / admin / testing.",
+              "source": "@site/docs/built-in-rules/cronjob/ensure-cronjob-deadline/index.mdx",
+              "sourceDirName": "built-in-rules/cronjob/ensure-cronjob-deadline",
+              "slug": "/built-in-rules/ensure-cronjob-deadline",
+              "permalink": "/built-in-rules/ensure-cronjob-deadline",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/cronjob/ensure-cronjob-deadline/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure Deployment has a configured `env` label",
+                "slug": "/built-in-rules/ensure-cronjob-deadline"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "CronJob",
+                "permalink": "/built-in-rules/cronjob"
+              },
+              "next": {
+                "title": "☑️ Ensure CronJob has a configured deadline",
+                "permalink": "/built-in-rules/ensure-cronjob-scheduler-valid"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/cronjob/ensure-cronjob-scheduler-valid/index",
+              "id": "built-in-rules/cronjob/ensure-cronjob-scheduler-valid/index",
+              "title": "☑️ Ensure CronJob has a configured deadline",
+              "description": "When the CronJob controller counts more than 100 missed schedules, the cron job is no longer scheduled. Missed CronJobs are considered failures.",
+              "source": "@site/docs/built-in-rules/cronjob/ensure-cronjob-scheduler-valid/index.mdx",
+              "sourceDirName": "built-in-rules/cronjob/ensure-cronjob-scheduler-valid",
+              "slug": "/built-in-rules/ensure-cronjob-scheduler-valid",
+              "permalink": "/built-in-rules/ensure-cronjob-scheduler-valid",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/cronjob/ensure-cronjob-scheduler-valid/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure CronJob has a configured deadline",
+                "slug": "/built-in-rules/ensure-cronjob-scheduler-valid"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure Deployment has a configured `env` label",
+                "permalink": "/built-in-rules/ensure-cronjob-deadline"
+              },
+              "next": {
+                "title": "☑️ Prevent CronJob from executing jobs concurrency",
+                "permalink": "/built-in-rules/prevent-cronjob-concurrency"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/cronjob/index",
+              "id": "built-in-rules/cronjob/index",
+              "title": "CronJob",
+              "description": "",
+              "source": "@site/docs/built-in-rules/cronjob/index.mdx",
+              "sourceDirName": "built-in-rules/cronjob",
+              "slug": "/built-in-rules/cronjob",
+              "permalink": "/built-in-rules/cronjob",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/cronjob/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "CronJob",
+                "slug": "/built-in-rules/cronjob"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent containers from sharing the host's PID namespace",
+                "permalink": "/built-in-rules/prevent-using-host-pid"
+              },
+              "next": {
+                "title": "☑️ Ensure Deployment has a configured `env` label",
+                "permalink": "/built-in-rules/ensure-cronjob-deadline"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/cronjob/prevent-cronjob-concurrency/index",
+              "id": "built-in-rules/cronjob/prevent-cronjob-concurrency/index",
+              "title": "☑️ Prevent CronJob from executing jobs concurrency",
+              "description": "By default, the cron job allows concurrently running jobs but generally speaking, the behavior of your cron jobs will be more deterministic if you prevent them from running concurrently. Allowing concurrent cron jobs often requires locking mechanisms (to avoid race conditions) in addition to startup/cleanup handling.",
+              "source": "@site/docs/built-in-rules/cronjob/prevent-cronjob-concurrency/index.mdx",
+              "sourceDirName": "built-in-rules/cronjob/prevent-cronjob-concurrency",
+              "slug": "/built-in-rules/prevent-cronjob-concurrency",
+              "permalink": "/built-in-rules/prevent-cronjob-concurrency",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/cronjob/prevent-cronjob-concurrency/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent CronJob from executing jobs concurrency",
+                "slug": "/built-in-rules/prevent-cronjob-concurrency"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure CronJob has a configured deadline",
+                "permalink": "/built-in-rules/ensure-cronjob-scheduler-valid"
+              },
+              "next": {
+                "title": "Networking",
+                "permalink": "/built-in-rules/networking"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/Deprecation/index",
+              "id": "built-in-rules/Deprecation/index",
+              "title": "Deprecation",
+              "description": "",
+              "source": "@site/docs/built-in-rules/Deprecation/index.mdx",
+              "sourceDirName": "built-in-rules/Deprecation",
+              "slug": "/built-in-rules/deprecation",
+              "permalink": "/built-in-rules/deprecation",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Deprecation/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Deprecation",
+                "slug": "/built-in-rules/deprecation"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Built in rules",
+                "permalink": "/built-in-rules"
+              },
+              "next": {
+                "title": "☑️ Prevent deprecated APIs in Kubernetes v1.16",
+                "permalink": "/built-in-rules/prevent-deprecated-k8s-api-116"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-116/index",
+              "id": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-116/index",
+              "title": "☑️ Prevent deprecated APIs in Kubernetes v1.16",
+              "description": "The v1.16 release stopped serving some API versions for different resource types. When a user deploys a resource with a deprecated API version, the Kubernetes engine rejects it.",
+              "source": "@site/docs/built-in-rules/Deprecation/prevent-deprecated-k8s-api-116/index.mdx",
+              "sourceDirName": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-116",
+              "slug": "/built-in-rules/prevent-deprecated-k8s-api-116",
+              "permalink": "/built-in-rules/prevent-deprecated-k8s-api-116",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Deprecation/prevent-deprecated-k8s-api-116/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent deprecated APIs in Kubernetes v1.16",
+                "slug": "/built-in-rules/prevent-deprecated-k8s-api-116"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Deprecation",
+                "permalink": "/built-in-rules/deprecation"
+              },
+              "next": {
+                "title": "☑️ Prevent deprecated APIs in Kubernetes v1.17",
+                "permalink": "/built-in-rules/prevent-deprecated-k8s-api-117"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-117/index",
+              "id": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-117/index",
+              "title": "☑️ Prevent deprecated APIs in Kubernetes v1.17",
+              "description": "The v1.17 release stopped serving some API versions for different resource types. When a user deploys a resource with a deprecated API version, the Kubernetes engine rejects it.",
+              "source": "@site/docs/built-in-rules/Deprecation/prevent-deprecated-k8s-api-117/index.mdx",
+              "sourceDirName": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-117",
+              "slug": "/built-in-rules/prevent-deprecated-k8s-api-117",
+              "permalink": "/built-in-rules/prevent-deprecated-k8s-api-117",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Deprecation/prevent-deprecated-k8s-api-117/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent deprecated APIs in Kubernetes v1.17",
+                "slug": "/built-in-rules/prevent-deprecated-k8s-api-117"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent deprecated APIs in Kubernetes v1.16",
+                "permalink": "/built-in-rules/prevent-deprecated-k8s-api-116"
+              },
+              "next": {
+                "title": "Workload",
+                "permalink": "/built-in-rules/workload"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/index",
+              "id": "built-in-rules/index",
+              "title": "Built in rules",
+              "description": "There are 34 battle-tested rules for you to choose from.",
+              "source": "@site/docs/built-in-rules/index.mdx",
+              "sourceDirName": "built-in-rules",
+              "slug": "/built-in-rules",
+              "permalink": "/built-in-rules",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Built in rules",
+                "slug": "/built-in-rules"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Account token",
+                "permalink": "/setup/account-token"
+              },
+              "next": {
+                "title": "Deprecation",
+                "permalink": "/built-in-rules/deprecation"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/networking/index",
+              "id": "built-in-rules/networking/index",
+              "title": "Networking",
+              "description": "",
+              "source": "@site/docs/built-in-rules/networking/index.mdx",
+              "sourceDirName": "built-in-rules/networking",
+              "slug": "/built-in-rules/networking",
+              "permalink": "/built-in-rules/networking",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/networking/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Networking",
+                "slug": "/built-in-rules/networking"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent CronJob from executing jobs concurrency",
+                "permalink": "/built-in-rules/prevent-cronjob-concurrency"
+              },
+              "next": {
+                "title": "☑️ Prevent Ingress from forwarding all traffic to a single container",
+                "permalink": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container/index",
+              "id": "built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container/index",
+              "title": "☑️ Prevent Ingress from forwarding all traffic to a single container",
+              "description": "Misconfiguring the ingress host can unintended forward all traffic to a single pod instead of leveraging the load balancing capabilities. By verifying that ingress traffic is targeted by multiple pods, you will achieve higher application availability because you won't be dependent upon a single pod to serve all ingress traffic.",
+              "source": "@site/docs/built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container/index.mdx",
+              "sourceDirName": "built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container",
+              "slug": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container",
+              "permalink": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent Ingress from forwarding all traffic to a single container",
+                "slug": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Networking",
+                "permalink": "/built-in-rules/networking"
+              },
+              "next": {
+                "title": "☑️ Prevent Service from exposing node port",
+                "permalink": "/built-in-rules/prevent-node-port"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/networking/prevent-node-port/index",
+              "id": "built-in-rules/networking/prevent-node-port/index",
+              "title": "☑️ Prevent Service from exposing node port",
+              "description": "Exposing a NodePort will open a network port on all nodes to be reached by the cluster's external network. Using this method to expose the application is less secure and forces you to create unnecessary coupling between services in order to expose them all to external traffic.",
+              "source": "@site/docs/built-in-rules/networking/prevent-node-port/index.mdx",
+              "sourceDirName": "built-in-rules/networking/prevent-node-port",
+              "slug": "/built-in-rules/prevent-node-port",
+              "permalink": "/built-in-rules/prevent-node-port",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/networking/prevent-node-port/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent Service from exposing node port",
+                "slug": "/built-in-rules/prevent-node-port"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent Ingress from forwarding all traffic to a single container",
+                "permalink": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container"
+              },
+              "next": {
+                "title": "Other",
+                "permalink": "/built-in-rules/other"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/other/ensure-hpa-maximum-replicas/index",
+              "id": "built-in-rules/other/ensure-hpa-maximum-replicas/index",
+              "title": "☑️ Ensure HPA has maximum replicas configured",
+              "description": "It's preferable to manage services and applications in clusters using higher-level resources such as Deployments, StatefulSets and DaemonSets instead of raw Pod resources. These constructs include standard default features which, in most scenarios, are necessary to configure and maintain a stable cluster.",
+              "source": "@site/docs/built-in-rules/other/ensure-hpa-maximum-replicas/index.mdx",
+              "sourceDirName": "built-in-rules/other/ensure-hpa-maximum-replicas",
+              "slug": "/built-in-rules/ensure-hpa-maximum-replicas",
+              "permalink": "/built-in-rules/ensure-hpa-maximum-replicas",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/other/ensure-hpa-maximum-replicas/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure HPA has maximum replicas configured",
+                "slug": "/built-in-rules/ensure-hpa-maximum-replicas"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Other",
+                "permalink": "/built-in-rules/other"
+              },
+              "next": {
+                "title": "☑️ Ensure HPA has minimum replicas configured",
+                "permalink": "/built-in-rules/ensure-hpa-minimum-replicas"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/other/ensure-hpa-minimum-replicas/index",
+              "id": "built-in-rules/other/ensure-hpa-minimum-replicas/index",
+              "title": "☑️ Ensure HPA has minimum replicas configured",
+              "description": "When auto-scaling resource utilization is triggered with HPA (HorizontalPodAutoscaler), a range of acceptable values must be set to prevent unintended scaling down scenarios.",
+              "source": "@site/docs/built-in-rules/other/ensure-hpa-minimum-replicas/index.mdx",
+              "sourceDirName": "built-in-rules/other/ensure-hpa-minimum-replicas",
+              "slug": "/built-in-rules/ensure-hpa-minimum-replicas",
+              "permalink": "/built-in-rules/ensure-hpa-minimum-replicas",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/other/ensure-hpa-minimum-replicas/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure HPA has minimum replicas configured",
+                "slug": "/built-in-rules/ensure-hpa-minimum-replicas"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure HPA has maximum replicas configured",
+                "permalink": "/built-in-rules/ensure-hpa-maximum-replicas"
+              },
+              "next": {
+                "title": "☑️ Prevent deploying naked pods",
+                "permalink": "/built-in-rules/prevent-naked-pods"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/other/index",
+              "id": "built-in-rules/other/index",
+              "title": "Other",
+              "description": "",
+              "source": "@site/docs/built-in-rules/other/index.mdx",
+              "sourceDirName": "built-in-rules/other",
+              "slug": "/built-in-rules/other",
+              "permalink": "/built-in-rules/other",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/other/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Other",
+                "slug": "/built-in-rules/other"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent Service from exposing node port",
+                "permalink": "/built-in-rules/prevent-node-port"
+              },
+              "next": {
+                "title": "☑️ Ensure HPA has maximum replicas configured",
+                "permalink": "/built-in-rules/ensure-hpa-maximum-replicas"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/other/prevent-naked-pods/index",
+              "id": "built-in-rules/other/prevent-naked-pods/index",
+              "title": "☑️ Prevent deploying naked pods",
+              "description": "Having an bulk operations in specific environments or for filtering Deployments according to their stage. Recommended values for this key are: prod / staging / qa / admin / testing.",
+              "source": "@site/docs/built-in-rules/other/prevent-naked-pods/index.mdx",
+              "sourceDirName": "built-in-rules/other/prevent-naked-pods",
+              "slug": "/built-in-rules/prevent-naked-pods",
+              "permalink": "/built-in-rules/prevent-naked-pods",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/other/prevent-naked-pods/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent deploying naked pods",
+                "slug": "/built-in-rules/prevent-naked-pods"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure HPA has minimum replicas configured",
+                "permalink": "/built-in-rules/ensure-hpa-minimum-replicas"
+              },
+              "next": {
+                "title": "Security",
+                "permalink": "/built-in-rules/security"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/security/index",
+              "id": "built-in-rules/security/index",
+              "title": "Security",
+              "description": "",
+              "source": "@site/docs/built-in-rules/security/index.mdx",
+              "sourceDirName": "built-in-rules/security",
+              "slug": "/built-in-rules/security",
+              "permalink": "/built-in-rules/security",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/security/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Security",
+                "slug": "/built-in-rules/security"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent deploying naked pods",
+                "permalink": "/built-in-rules/prevent-naked-pods"
+              },
+              "next": {
+                "title": "☑️ Prevent ConfigMap security vulnerability (CVE-2021-25742)",
+                "permalink": "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/security/prevent-configmap-security-vulnerability-cve-2021-25742/index",
+              "id": "built-in-rules/security/prevent-configmap-security-vulnerability-cve-2021-25742/index",
+              "title": "☑️ Prevent ConfigMap security vulnerability (CVE-2021-25742)",
+              "description": "A vulnerability has been discovered in Kuberenetes where users with limited access to a Kubernetes cluster, but with the ability to create an Ingress object based on the NGINX Ingress Controller, could elevate privilege and access full cluster secrets (NVD severity of this issue: High).",
+              "source": "@site/docs/built-in-rules/security/prevent-configmap-security-vulnerability-cve-2021-25742/index.mdx",
+              "sourceDirName": "built-in-rules/security/prevent-configmap-security-vulnerability-cve-2021-25742",
+              "slug": "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742",
+              "permalink": "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/security/prevent-configmap-security-vulnerability-cve-2021-25742/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent ConfigMap security vulnerability (CVE-2021-25742)",
+                "slug": "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Security",
+                "permalink": "/built-in-rules/security"
+              },
+              "next": {
+                "title": "☑️ Prevent container security vulnerability (CVE-2021-25741)",
+                "permalink": "/built-in-rules/prevent-container-security-vulnerability-cve-2021-25741"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/security/prevent-container-security-vulnerability-cve-2021-25741/index",
+              "id": "built-in-rules/security/prevent-container-security-vulnerability-cve-2021-25741/index",
+              "title": "☑️ Prevent container security vulnerability (CVE-2021-25741)",
+              "description": "A vulnerability has been discovered in Kubernetes that allows users to create a container with subpath volume mounts to access files and directories outside of the volume, including the host filesystem (NVD severity of this issue: High).",
+              "source": "@site/docs/built-in-rules/security/prevent-container-security-vulnerability-cve-2021-25741/index.mdx",
+              "sourceDirName": "built-in-rules/security/prevent-container-security-vulnerability-cve-2021-25741",
+              "slug": "/built-in-rules/prevent-container-security-vulnerability-cve-2021-25741",
+              "permalink": "/built-in-rules/prevent-container-security-vulnerability-cve-2021-25741",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/security/prevent-container-security-vulnerability-cve-2021-25741/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent container security vulnerability (CVE-2021-25741)",
+                "slug": "/built-in-rules/prevent-container-security-vulnerability-cve-2021-25741"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent ConfigMap security vulnerability (CVE-2021-25742)",
+                "permalink": "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742"
+              },
+              "next": {
+                "title": "☑️ Prevent EndpointSlice validation from enabling host network hijack (CVE-2021-25737)",
+                "permalink": "/built-in-rules/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/security/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737/index",
+              "id": "built-in-rules/security/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737/index",
+              "title": "☑️ Prevent EndpointSlice validation from enabling host network hijack (CVE-2021-25737)",
+              "description": "A vulnerability has been found in Kubernetes kube-apiserver in which an authorized user could redirect pod traffic to private networks on a node (NVD severity of this issue: \\\\\\\\Low).",
+              "source": "@site/docs/built-in-rules/security/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737/index.mdx",
+              "sourceDirName": "built-in-rules/security/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737",
+              "slug": "/built-in-rules/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737",
+              "permalink": "/built-in-rules/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/security/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent EndpointSlice validation from enabling host network hijack (CVE-2021-25737)",
+                "slug": "/built-in-rules/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent container security vulnerability (CVE-2021-25741)",
+                "permalink": "/built-in-rules/prevent-container-security-vulnerability-cve-2021-25741"
+              },
+              "next": {
+                "title": "☑️ Prevent Ingress security vulnerability (CVE-2021-25742)",
+                "permalink": "/built-in-rules/prevent-ingress-security-vulnerability-cve-2021-25742"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/security/prevent-ingress-security-vulnerability-cve-2021-25742/index",
+              "id": "built-in-rules/security/prevent-ingress-security-vulnerability-cve-2021-25742/index",
+              "title": "☑️ Prevent Ingress security vulnerability (CVE-2021-25742)",
+              "description": "A vulnerability has been discovered in Kuberenetes where users with limited access to a Kubernetes cluster, but with the ability to create an Ingress object based on the NGINX Ingress Controller, could elevate privilege and access full cluster secrets (NVD severity of this issue: High).",
+              "source": "@site/docs/built-in-rules/security/prevent-ingress-security-vulnerability-cve-2021-25742/index.mdx",
+              "sourceDirName": "built-in-rules/security/prevent-ingress-security-vulnerability-cve-2021-25742",
+              "slug": "/built-in-rules/prevent-ingress-security-vulnerability-cve-2021-25742",
+              "permalink": "/built-in-rules/prevent-ingress-security-vulnerability-cve-2021-25742",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/security/prevent-ingress-security-vulnerability-cve-2021-25742/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent Ingress security vulnerability (CVE-2021-25742)",
+                "slug": "/built-in-rules/prevent-ingress-security-vulnerability-cve-2021-25742"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent EndpointSlice validation from enabling host network hijack (CVE-2021-25737)",
+                "permalink": "/built-in-rules/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737"
+              },
+              "next": {
+                "title": "Custom rules",
+                "permalink": "/custom-rules"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/Workload/ensure-env-label/index",
+              "id": "built-in-rules/Workload/ensure-env-label/index",
+              "title": "☑️ Ensure Deployment has a configured `env` label",
+              "description": "Having an bulk operations in specific environments or for filtering Deployments according to their stage. Recommended values for this key are: prod / staging / qa / admin / testing.",
+              "source": "@site/docs/built-in-rules/Workload/ensure-env-label/index.mdx",
+              "sourceDirName": "built-in-rules/Workload/ensure-env-label",
+              "slug": "/built-in-rules/ensure-env-label",
+              "permalink": "/built-in-rules/ensure-env-label",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Workload/ensure-env-label/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure Deployment has a configured `env` label",
+                "slug": "/built-in-rules/ensure-env-label"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Workload",
+                "permalink": "/built-in-rules/workload"
+              },
+              "next": {
+                "title": "☑️ Ensure workload has valid label values",
+                "permalink": "/built-in-rules/ensure-labels-value-valid"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/Workload/ensure-labels-value-valid/index",
+              "id": "built-in-rules/Workload/ensure-labels-value-valid/index",
+              "title": "☑️ Ensure workload has valid label values",
+              "description": "Labels are nothing more than custom key-value pairs that are attached to objects and are used to describe and manage different Kubernetes resources. If the labels do not follow Kubernetes label syntax requirements (see links below), they will not be applied properly.",
+              "source": "@site/docs/built-in-rules/Workload/ensure-labels-value-valid/index.mdx",
+              "sourceDirName": "built-in-rules/Workload/ensure-labels-value-valid",
+              "slug": "/built-in-rules/ensure-labels-value-valid",
+              "permalink": "/built-in-rules/ensure-labels-value-valid",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Workload/ensure-labels-value-valid/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure workload has valid label values",
+                "slug": "/built-in-rules/ensure-labels-value-valid"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure Deployment has a configured `env` label",
+                "permalink": "/built-in-rules/ensure-env-label"
+              },
+              "next": {
+                "title": "☑️ Ensure Deployment has more than one replica configured",
+                "permalink": "/built-in-rules/ensure-minimum-two-replicas"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/Workload/ensure-minimum-two-replicas/index",
+              "id": "built-in-rules/Workload/ensure-minimum-two-replicas/index",
+              "title": "☑️ Ensure Deployment has more than one replica configured",
+              "description": "When you run two or more replicas per service, you are increasing the availability of the containerized service because you are not relying on a single pod to do all of the work. Furthermore, scaling horizontally by adding pods allows your service to scale and handle larger loads.",
+              "source": "@site/docs/built-in-rules/Workload/ensure-minimum-two-replicas/index.mdx",
+              "sourceDirName": "built-in-rules/Workload/ensure-minimum-two-replicas",
+              "slug": "/built-in-rules/ensure-minimum-two-replicas",
+              "permalink": "/built-in-rules/ensure-minimum-two-replicas",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Workload/ensure-minimum-two-replicas/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure Deployment has more than one replica configured",
+                "slug": "/built-in-rules/ensure-minimum-two-replicas"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure workload has valid label values",
+                "permalink": "/built-in-rules/ensure-labels-value-valid"
+              },
+              "next": {
+                "title": "☑️ Ensure workload has a configured `owner` label",
+                "permalink": "/built-in-rules/ensure-owner-label"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/Workload/ensure-owner-label/index",
+              "id": "built-in-rules/Workload/ensure-owner-label/index",
+              "title": "☑️ Ensure workload has a configured `owner` label",
+              "description": "An owner label is great not only for financial ownership but also useful for operational ownership. Consider adding an owner label to your workload with the name, email alias or Slack channel of the team responsible for the service. This will make it easier to alert the relevant team or team member when necessary.",
+              "source": "@site/docs/built-in-rules/Workload/ensure-owner-label/index.mdx",
+              "sourceDirName": "built-in-rules/Workload/ensure-owner-label",
+              "slug": "/built-in-rules/ensure-owner-label",
+              "permalink": "/built-in-rules/ensure-owner-label",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Workload/ensure-owner-label/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure workload has a configured `owner` label",
+                "slug": "/built-in-rules/ensure-owner-label"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure Deployment has more than one replica configured",
+                "permalink": "/built-in-rules/ensure-minimum-two-replicas"
+              },
+              "next": {
+                "title": "☑️ Ensure workload has valid label values",
+                "permalink": "/built-in-rules/ensure-valid-restart-policy"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/Workload/ensure-valid-restart-policy/index",
+              "id": "built-in-rules/Workload/ensure-valid-restart-policy/index",
+              "title": "☑️ Ensure workload has valid label values",
+              "description": "Labels are nothing more than custom key-value pairs that are attached to objects and are used to describe and manage different Kubernetes resources. If the labels do not follow Kubernetes label syntax requirements (see links below), they will not be applied properly.",
+              "source": "@site/docs/built-in-rules/Workload/ensure-valid-restart-policy/index.mdx",
+              "sourceDirName": "built-in-rules/Workload/ensure-valid-restart-policy",
+              "slug": "/built-in-rules/ensure-valid-restart-policy",
+              "permalink": "/built-in-rules/ensure-valid-restart-policy",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Workload/ensure-valid-restart-policy/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Ensure workload has valid label values",
+                "slug": "/built-in-rules/ensure-valid-restart-policy"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure workload has a configured `owner` label",
+                "permalink": "/built-in-rules/ensure-owner-label"
+              },
+              "next": {
+                "title": "☑️ Prevent workload from using the default namespace",
+                "permalink": "/built-in-rules/prevent-deafult-namespce"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/Workload/index",
+              "id": "built-in-rules/Workload/index",
+              "title": "Workload",
+              "description": "",
+              "source": "@site/docs/built-in-rules/Workload/index.mdx",
+              "sourceDirName": "built-in-rules/Workload",
+              "slug": "/built-in-rules/workload",
+              "permalink": "/built-in-rules/workload",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Workload/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Workload",
+                "slug": "/built-in-rules/workload"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent deprecated APIs in Kubernetes v1.17",
+                "permalink": "/built-in-rules/prevent-deprecated-k8s-api-117"
+              },
+              "next": {
+                "title": "☑️ Ensure Deployment has a configured `env` label",
+                "permalink": "/built-in-rules/ensure-env-label"
+              }
+            },
+            {
+              "unversionedId": "built-in-rules/Workload/prevent-deafult-namespce/index",
+              "id": "built-in-rules/Workload/prevent-deafult-namespce/index",
+              "title": "☑️ Prevent workload from using the default namespace",
+              "description": "The namespace default is a saved namespace value in which Kubernetes is deploying all objects without an explicit namespace. Using explicit namespaces instead of the default value makes for clearer boundaries between sets of pods in a cluster. For example, namespaces that represent teams present a clear organization of cluster resources and make configuration overlaps less likely.",
+              "source": "@site/docs/built-in-rules/Workload/prevent-deafult-namespce/index.mdx",
+              "sourceDirName": "built-in-rules/Workload/prevent-deafult-namespce",
+              "slug": "/built-in-rules/prevent-deafult-namespce",
+              "permalink": "/built-in-rules/prevent-deafult-namespce",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Workload/prevent-deafult-namespce/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "☑️ Prevent workload from using the default namespace",
+                "slug": "/built-in-rules/prevent-deafult-namespce"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Ensure workload has valid label values",
+                "permalink": "/built-in-rules/ensure-valid-restart-policy"
+              },
+              "next": {
+                "title": "Argo",
+                "permalink": "/built-in-rules/argo"
+              }
+            },
+            {
+              "unversionedId": "cicd-examples/circle-ci/index",
+              "id": "cicd-examples/circle-ci/index",
+              "title": "CircleCI",
+              "description": "TO-DO list for setting-up Datree in your CI",
+              "source": "@site/docs/cicd-examples/circle-ci/index.mdx",
+              "sourceDirName": "cicd-examples/circle-ci",
+              "slug": "/cicd-examples/circle-ci",
+              "permalink": "/cicd-examples/circle-ci",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/cicd-examples/circle-ci/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "CircleCI",
+                "slug": "/cicd-examples/circle-ci"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "CI/CD examples",
+                "permalink": "/cicd-examples"
+              },
+              "next": {
+                "title": "Travis CI",
+                "permalink": "/cicd-examples/travis-ci"
+              }
+            },
+            {
+              "unversionedId": "cicd-examples/gitlab-cicd/index",
+              "id": "cicd-examples/gitlab-cicd/index",
+              "title": "GitLab CI/CD",
+              "description": "TO-DO list for setting-up Datree in your CI",
+              "source": "@site/docs/cicd-examples/gitlab-cicd/index.mdx",
+              "sourceDirName": "cicd-examples/gitlab-cicd",
+              "slug": "/cicd-examples/gitLab-ci-cd",
+              "permalink": "/cicd-examples/gitLab-ci-cd",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/cicd-examples/gitlab-cicd/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "GitLab CI/CD",
+                "slug": "/cicd-examples/gitLab-ci-cd"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Travis CI",
+                "permalink": "/cicd-examples/travis-ci"
+              },
+              "next": {
+                "title": "History",
+                "permalink": "/cicd-examples/jenkins-pipeline"
+              }
+            },
+            {
+              "unversionedId": "cicd-examples/index",
+              "id": "cicd-examples/index",
+              "title": "CI/CD examples",
+              "description": "Seamlessly integrate your Datree policy-checks into your CI platform of choice:",
+              "source": "@site/docs/cicd-examples/index.mdx",
+              "sourceDirName": "cicd-examples",
+              "slug": "/cicd-examples",
+              "permalink": "/cicd-examples",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/cicd-examples/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "CI/CD examples",
+                "slug": "/cicd-examples"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Community integrations",
+                "permalink": "/community-integrations"
+              },
+              "next": {
+                "title": "CircleCI",
+                "permalink": "/cicd-examples/circle-ci"
+              }
+            },
+            {
+              "unversionedId": "cicd-examples/jenkins-pipeline/index",
+              "id": "cicd-examples/jenkins-pipeline/index",
+              "title": "History",
+              "description": "TO-DO list for setting-up Datree in your CI",
+              "source": "@site/docs/cicd-examples/jenkins-pipeline/index.mdx",
+              "sourceDirName": "cicd-examples/jenkins-pipeline",
+              "slug": "/cicd-examples/jenkins-pipeline",
+              "permalink": "/cicd-examples/jenkins-pipeline",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/cicd-examples/jenkins-pipeline/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "History",
+                "slug": "/cicd-examples/jenkins-pipeline"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "GitLab CI/CD",
+                "permalink": "/cicd-examples/gitLab-ci-cd"
+              },
+              "next": {
+                "title": "FAQ",
+                "permalink": "/faq"
+              }
+            },
+            {
+              "unversionedId": "cicd-examples/travis-ci/index",
+              "id": "cicd-examples/travis-ci/index",
+              "title": "Travis CI",
+              "description": "TO-DO list for setting-up Datree in your CI",
+              "source": "@site/docs/cicd-examples/travis-ci/index.mdx",
+              "sourceDirName": "cicd-examples/travis-ci",
+              "slug": "/cicd-examples/travis-ci",
+              "permalink": "/cicd-examples/travis-ci",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/cicd-examples/travis-ci/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Travis CI",
+                "slug": "/cicd-examples/travis-ci"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "CircleCI",
+                "permalink": "/cicd-examples/circle-ci"
+              },
+              "next": {
+                "title": "GitLab CI/CD",
+                "permalink": "/cicd-examples/gitLab-ci-cd"
+              }
+            },
+            {
+              "unversionedId": "community-integrations/index",
+              "id": "community-integrations/index",
+              "title": "Community integrations",
+              "description": "Check out the integrations created by our wonderful contributors :",
+              "source": "@site/docs/community-integrations/index.mdx",
+              "sourceDirName": "community-integrations",
+              "slug": "/community-integrations",
+              "permalink": "/community-integrations",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/community-integrations/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Community integrations",
+                "slug": "/community-integrations"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Pre-commit hook",
+                "permalink": "/integrations/pre-commit-hook"
+              },
+              "next": {
+                "title": "CI/CD examples",
+                "permalink": "/cicd-examples"
+              }
+            },
+            {
+              "unversionedId": "custom-rules/basic-examples/index",
+              "id": "custom-rules/basic-examples/index",
+              "title": "Basic examples",
+              "description": "Example 1",
+              "source": "@site/docs/custom-rules/basic-examples/index.mdx",
+              "sourceDirName": "custom-rules/basic-examples",
+              "slug": "/custom-rules/basic-examples",
+              "permalink": "/custom-rules/basic-examples",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/custom-rules/basic-examples/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Basic examples",
+                "slug": "/custom-rules/basic-examples"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Understanding custom rules",
+                "permalink": "/custom-rules/custom-rules-overview"
+              },
+              "next": {
+                "title": "Multiple property paths",
+                "permalink": "/custom-rules/multiple-property-paths"
+              }
+            },
+            {
+              "unversionedId": "custom-rules/custom-rules-overview/index",
+              "id": "custom-rules/custom-rules-overview/index",
+              "title": "Understanding custom rules",
+              "description": "In addition to the tool's built-in rules, you can also write any tests that you wish and run them against your Kubernetes configurations to check for rule violations. The custom rule engine is based on JSON Schema, so it supports both YAML and JSON declarative syntax.",
+              "source": "@site/docs/custom-rules/custom-rules-overview/index.mdx",
+              "sourceDirName": "custom-rules/custom-rules-overview",
+              "slug": "/custom-rules/custom-rules-overview",
+              "permalink": "/custom-rules/custom-rules-overview",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/custom-rules/custom-rules-overview/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Understanding custom rules",
+                "slug": "/custom-rules/custom-rules-overview"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Custom rules",
+                "permalink": "/custom-rules"
+              },
+              "next": {
+                "title": "Basic examples",
+                "permalink": "/custom-rules/basic-examples"
+              }
+            },
+            {
+              "unversionedId": "custom-rules/index",
+              "id": "custom-rules/index",
+              "title": "Custom rules",
+              "description": "You can write any custom rule you wish, and then run them against your Kubernetes configurations to check for rule violations. The custom rule engine is based on JSON Schema.",
+              "source": "@site/docs/custom-rules/index.mdx",
+              "sourceDirName": "custom-rules",
+              "slug": "/custom-rules",
+              "permalink": "/custom-rules",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/custom-rules/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Custom rules",
+                "slug": "/custom-rules"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "☑️ Prevent Ingress security vulnerability (CVE-2021-25742)",
+                "permalink": "/built-in-rules/prevent-ingress-security-vulnerability-cve-2021-25742"
+              },
+              "next": {
+                "title": "Understanding custom rules",
+                "permalink": "/custom-rules/custom-rules-overview"
+              }
+            },
+            {
+              "unversionedId": "custom-rules/multiple-property-paths/index",
+              "id": "custom-rules/multiple-property-paths/index",
+              "title": "Multiple property paths",
+              "description": "Sometimes, a property (key/value) that you want to test against will be located in multiple places. For example, if you want to create a custom rule that ensures all container images have a pinned version, you can avoid creating a rule logic that declares all possible paths because checking the value of the image property in two locations can be complex.&#x20;",
+              "source": "@site/docs/custom-rules/multiple-property-paths/index.mdx",
+              "sourceDirName": "custom-rules/multiple-property-paths",
+              "slug": "/custom-rules/multiple-property-paths",
+              "permalink": "/custom-rules/multiple-property-paths",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/custom-rules/multiple-property-paths/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Multiple property paths",
+                "slug": "/custom-rules/multiple-property-paths"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Basic examples",
+                "permalink": "/custom-rules/basic-examples"
+              },
+              "next": {
+                "title": "Resource quotas",
+                "permalink": "/custom-rules/resource-quotas"
+              }
+            },
+            {
+              "unversionedId": "custom-rules/resource-quotas/index",
+              "id": "custom-rules/resource-quotas/index",
+              "title": "Resource quotas",
+              "description": "Overview",
+              "source": "@site/docs/custom-rules/resource-quotas/index.mdx",
+              "sourceDirName": "custom-rules/resource-quotas",
+              "slug": "/custom-rules/resource-quotas",
+              "permalink": "/custom-rules/resource-quotas",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/custom-rules/resource-quotas/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Resource quotas",
+                "slug": "/custom-rules/resource-quotas"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Multiple property paths",
+                "permalink": "/custom-rules/multiple-property-paths"
+              },
+              "next": {
+                "title": "OFFICIAL INTEGRATIONS",
+                "permalink": "/integrations"
+              }
+            },
+            {
+              "unversionedId": "faqs/index",
+              "id": "faqs/index",
+              "title": "FAQ",
+              "description": "Where does the policy evaluation occur?",
+              "source": "@site/docs/faqs/index.mdx",
+              "sourceDirName": "faqs",
+              "slug": "/faq",
+              "permalink": "/faq",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/faqs/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "FAQ",
+                "slug": "/faq"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "History",
+                "permalink": "/cicd-examples/jenkins-pipeline"
+              },
+              "next": {
+                "title": "Troubleshooting",
+                "permalink": "/troubleshooting"
+              }
+            },
+            {
+              "unversionedId": "intro/getting-started/1",
+              "id": "intro/getting-started/1",
+              "title": "Getting started",
+              "description": "Datree is a CLI tool to prevent Kubernetes misconfigurations by ensuring that manifests and Helm charts follow best practices as well as your organization's policies",
+              "source": "@site/docs/intro/getting-started/index.mdx",
+              "sourceDirName": "intro/getting-started",
+              "slug": "/",
+              "permalink": "/",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro/getting-started/index.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1,
+                "slug": "/",
+                "id": "1",
+                "title": "Getting started",
+                "description": "Datree is a CLI tool to prevent Kubernetes misconfigurations by ensuring that manifests and Helm charts follow best practices as well as your organization's policies"
+              },
+              "sidebar": "sidebar",
+              "next": {
+                "title": "Overview",
+                "permalink": "/welcom/overview"
+              }
+            },
+            {
+              "unversionedId": "intro/overview/index",
+              "id": "intro/overview/index",
+              "title": "Overview",
+              "description": "Overview",
+              "source": "@site/docs/intro/overview/index.mdx",
+              "sourceDirName": "intro/overview",
+              "slug": "/welcom/overview",
+              "permalink": "/welcom/overview",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro/overview/index.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "title": "Overview",
+                "sidebar_position": 2,
+                "slug": "/welcom/overview",
+                "description": "Overview"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Getting started",
+                "permalink": "/"
+              },
+              "next": {
+                "title": "What is Datree?",
+                "permalink": "/welcom/what-is-datree"
+              }
+            },
+            {
+              "unversionedId": "intro/what-is-datree/index",
+              "id": "intro/what-is-datree/index",
+              "title": "What is Datree?",
+              "description": "What is Datree",
+              "source": "@site/docs/intro/what-is-datree/index.mdx",
+              "sourceDirName": "intro/what-is-datree",
+              "slug": "/welcom/what-is-datree",
+              "permalink": "/welcom/what-is-datree",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro/what-is-datree/index.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "title": "What is Datree?",
+                "label": "What is Datree?",
+                "slug": "/welcom/what-is-datree",
+                "sidebar_position": 3,
+                "description": "What is Datree"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Overview",
+                "permalink": "/welcom/overview"
+              },
+              "next": {
+                "title": "Centralized policy",
+                "permalink": "/setup/centralized-policy"
+              }
+            },
+            {
+              "unversionedId": "official-integrations/git-hooks/index",
+              "id": "official-integrations/git-hooks/index",
+              "title": "Git hooks",
+              "description": "Git hooks are scripts that run automatically every time a particular event occurs in a Git repository (e.g. $ git commit, $ git push, etc.).&#x20;",
+              "source": "@site/docs/official-integrations/git-hooks/index.mdx",
+              "sourceDirName": "official-integrations/git-hooks",
+              "slug": "/integrations/git-hooks",
+              "permalink": "/integrations/git-hooks",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/official-integrations/git-hooks/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Git hooks",
+                "slug": "/integrations/git-hooks"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Kustomize support",
+                "permalink": "/integrations/kustomize-support"
+              },
+              "next": {
+                "title": "Pre-commit hook",
+                "permalink": "/integrations/pre-commit-hook"
+              }
+            },
+            {
+              "unversionedId": "official-integrations/index",
+              "id": "official-integrations/index",
+              "title": "OFFICIAL INTEGRATIONS",
+              "description": "Incorporating Datree into the most widely-used k8s tools has never been easier!",
+              "source": "@site/docs/official-integrations/index.mdx",
+              "sourceDirName": "official-integrations",
+              "slug": "/integrations",
+              "permalink": "/integrations",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/official-integrations/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "OFFICIAL INTEGRATIONS",
+                "slug": "/integrations"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Resource quotas",
+                "permalink": "/custom-rules/resource-quotas"
+              },
+              "next": {
+                "title": "Kustomize support",
+                "permalink": "/integrations/kustomize-support"
+              }
+            },
+            {
+              "unversionedId": "official-integrations/kustomize-support/index",
+              "id": "official-integrations/kustomize-support/index",
+              "title": "Kustomize support",
+              "description": "Overview",
+              "source": "@site/docs/official-integrations/kustomize-support/index.mdx",
+              "sourceDirName": "official-integrations/kustomize-support",
+              "slug": "/integrations/kustomize-support",
+              "permalink": "/integrations/kustomize-support",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/official-integrations/kustomize-support/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Kustomize support",
+                "slug": "/integrations/kustomize-support"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "OFFICIAL INTEGRATIONS",
+                "permalink": "/integrations"
+              },
+              "next": {
+                "title": "Git hooks",
+                "permalink": "/integrations/git-hooks"
+              }
+            },
+            {
+              "unversionedId": "official-integrations/pre-commit-hook/index",
+              "id": "official-integrations/pre-commit-hook/index",
+              "title": "Pre-commit hook",
+              "description": "Pre-commit is a multi-language package manager for pre-commit hooks. You specify a list of hooks you want and pre-commit manages the installation and execution of the hooks.",
+              "source": "@site/docs/official-integrations/pre-commit-hook/index.mdx",
+              "sourceDirName": "official-integrations/pre-commit-hook",
+              "slug": "/integrations/pre-commit-hook",
+              "permalink": "/integrations/pre-commit-hook",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/official-integrations/pre-commit-hook/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Pre-commit hook",
+                "slug": "/integrations/pre-commit-hook"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Git hooks",
+                "permalink": "/integrations/git-hooks"
+              },
+              "next": {
+                "title": "Community integrations",
+                "permalink": "/community-integrations"
+              }
+            },
+            {
+              "unversionedId": "setup/account-token/index",
+              "id": "setup/account-token/index",
+              "title": "Account token",
+              "description": "How it works",
+              "source": "@site/docs/setup/account-token/index.mdx",
+              "sourceDirName": "setup/account-token",
+              "slug": "/setup/account-token",
+              "permalink": "/setup/account-token",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/setup/account-token/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Account token",
+                "slug": "/setup/account-token"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "History",
+                "permalink": "/setup/history"
+              },
+              "next": {
+                "title": "Built in rules",
+                "permalink": "/built-in-rules"
+              }
+            },
+            {
+              "unversionedId": "setup/centralized-policy/index",
+              "id": "setup/centralized-policy/index",
+              "title": "Centralized policy",
+              "description": "\"Centralized policy\" is the concept of controlling distributed policy execution from a centralized location. This concept enables the policy owner to easily control the rules that are evaluated in each run of Datree without creating operation overhead. The centralized policy can be managed by logging into the dashboard.",
+              "source": "@site/docs/setup/centralized-policy/index.mdx",
+              "sourceDirName": "setup/centralized-policy",
+              "slug": "/setup/centralized-policy",
+              "permalink": "/setup/centralized-policy",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/setup/centralized-policy/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Centralized policy",
+                "slug": "/setup/centralized-policy"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "What is Datree?",
+                "permalink": "/welcom/what-is-datree"
+              },
+              "next": {
+                "title": "Schema validation",
+                "permalink": "/setup/schema-validation"
+              }
+            },
+            {
+              "unversionedId": "setup/cli-arguments/index",
+              "id": "setup/cli-arguments/index",
+              "title": "CLI arguments",
+              "description": "Running a policy check",
+              "source": "@site/docs/setup/cli-arguments/index.mdx",
+              "sourceDirName": "setup/cli-arguments",
+              "slug": "/setup/cli-arguments",
+              "permalink": "/setup/cli-arguments",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/setup/cli-arguments/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "CLI arguments",
+                "slug": "/setup/cli-arguments"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "CLI output",
+                "permalink": "/setup/cli-output"
+              },
+              "next": {
+                "title": "History",
+                "permalink": "/setup/history"
+              }
+            },
+            {
+              "unversionedId": "setup/cli-output/index",
+              "id": "setup/cli-output/index",
+              "title": "CLI output",
+              "description": "Output structure",
+              "source": "@site/docs/setup/cli-output/index.mdx",
+              "sourceDirName": "setup/cli-output",
+              "slug": "/setup/cli-output",
+              "permalink": "/setup/cli-output",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/setup/cli-output/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "CLI output",
+                "slug": "/setup/cli-output"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Policy as code",
+                "permalink": "/setup/policy-as-code"
+              },
+              "next": {
+                "title": "CLI arguments",
+                "permalink": "/setup/cli-arguments"
+              }
+            },
+            {
+              "unversionedId": "setup/history/index",
+              "id": "setup/history/index",
+              "title": "History",
+              "description": "Every policy check that is executed is also logged and shown on this page. This way, you can easily track all the different executions of Datree, from different sources, and their status to verify this tool is used properly in your organization.",
+              "source": "@site/docs/setup/history/index.mdx",
+              "sourceDirName": "setup/history",
+              "slug": "/setup/history",
+              "permalink": "/setup/history",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/setup/history/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "History",
+                "slug": "/setup/history"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "CLI arguments",
+                "permalink": "/setup/cli-arguments"
+              },
+              "next": {
+                "title": "Account token",
+                "permalink": "/setup/account-token"
+              }
+            },
+            {
+              "unversionedId": "setup/policy-as-code/index",
+              "id": "setup/policy-as-code/index",
+              "title": "Policy as code",
+              "description": "What is Policy as code?",
+              "source": "@site/docs/setup/policy-as-code/index.mdx",
+              "sourceDirName": "setup/policy-as-code",
+              "slug": "/setup/policy-as-code",
+              "permalink": "/setup/policy-as-code",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/setup/policy-as-code/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Policy as code",
+                "slug": "/setup/policy-as-code"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Schema validation",
+                "permalink": "/setup/schema-validation"
+              },
+              "next": {
+                "title": "CLI output",
+                "permalink": "/setup/cli-output"
+              }
+            },
+            {
+              "unversionedId": "setup/schema-validation/index",
+              "id": "setup/schema-validation/index",
+              "title": "Schema validation",
+              "description": "Why run schema validation?",
+              "source": "@site/docs/setup/schema-validation/index.mdx",
+              "sourceDirName": "setup/schema-validation",
+              "slug": "/setup/schema-validation",
+              "permalink": "/setup/schema-validation",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/setup/schema-validation/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Schema validation",
+                "slug": "/setup/schema-validation",
+                "createdAt": "Sun May 23 2021 16:58:02 GMT+0000 (Coordinated Universal Time)",
+                "updatedAt": "Tue Mar 22 2022 15:31:31 GMT+0000 (Coordinated Universal Time)"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "Centralized policy",
+                "permalink": "/setup/centralized-policy"
+              },
+              "next": {
+                "title": "Policy as code",
+                "permalink": "/setup/policy-as-code"
+              }
+            },
+            {
+              "unversionedId": "troubleshooting/index",
+              "id": "troubleshooting/index",
+              "title": "Troubleshooting",
+              "description": "Tokens mismatch",
+              "source": "@site/docs/troubleshooting/index.mdx",
+              "sourceDirName": "troubleshooting",
+              "slug": "/troubleshooting",
+              "permalink": "/troubleshooting",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/troubleshooting/index.mdx",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "Troubleshooting",
+                "slug": "/troubleshooting"
+              },
+              "sidebar": "sidebar",
+              "previous": {
+                "title": "FAQ",
+                "permalink": "/faq"
+              }
+            }
+          ],
+          "sidebars": {
+            "sidebar": [
+              {
+                "type": "category",
+                "label": "👋 WELCOME",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "label": "Getting started",
+                    "id": "intro/getting-started/1"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "Overview",
+                    "id": "intro/overview/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "What is Datree?",
+                    "id": "intro/what-is-datree/index"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "🛠️ SETUP",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "label": "Centralized policy",
+                    "id": "setup/centralized-policy/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "Schema validation",
+                    "id": "setup/schema-validation/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "Policy as code",
+                    "id": "setup/policy-as-code/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "CLI output",
+                    "id": "setup/cli-output/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "CLI arguments",
+                    "id": "setup/cli-arguments/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "History",
+                    "id": "setup/history/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "Account token",
+                    "id": "setup/account-token/index"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "🚔 BUILT-IN RULES",
+                "collapsible": false,
+                "collapsed": false,
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "Deprecation",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "className": "hide",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent deprecated APIs in Kubernetes v1.16",
+                        "id": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-116/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent deprecated APIs in Kubernetes v1.17",
+                        "id": "built-in-rules/Deprecation/prevent-deprecated-k8s-api-117/index"
+                      }
+                    ],
+                    "link": {
+                      "type": "doc",
+                      "id": "built-in-rules/Deprecation/index"
+                    }
+                  },
+                  {
+                    "type": "category",
+                    "label": "Workload",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "className": "hide",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure Deployment has a configured `env` label",
+                        "id": "built-in-rules/Workload/ensure-env-label/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure workload has valid label values",
+                        "id": "built-in-rules/Workload/ensure-labels-value-valid/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure Deployment has more than one replica configured",
+                        "id": "built-in-rules/Workload/ensure-minimum-two-replicas/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure workload has a configured `owner` label",
+                        "id": "built-in-rules/Workload/ensure-owner-label/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure workload has valid label values",
+                        "id": "built-in-rules/Workload/ensure-valid-restart-policy/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent workload from using the default namespace",
+                        "id": "built-in-rules/Workload/prevent-deafult-namespce/index"
+                      }
+                    ],
+                    "link": {
+                      "type": "doc",
+                      "id": "built-in-rules/Workload/index"
+                    }
+                  },
+                  {
+                    "type": "category",
+                    "label": "Argo",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "className": "hide",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure Application and AppProject are part of the argocd namespace",
+                        "id": "built-in-rules/argo/ensure-application-and-appproject-are-part-of-the-argocd-namespace/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure ConfigMap is recognized by ArgoCD",
+                        "id": "built-in-rules/argo/ensure-configmap-is-recognized-by-argocd/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure Rollout allows broadcasting IP table changes",
+                        "id": "built-in-rules/argo/ensure-rollout-allows-broadcasting-ip-table-changes/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure Rollout has revision history set",
+                        "id": "built-in-rules/argo/ensure-rollout-has-revision-history-set/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure Rollout pause step has a configured duration",
+                        "id": "built-in-rules/argo/ensure-rollout-pause-step-has-a-configured-duration/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure Rollout that is marked as degraded scales down ReplicaSet",
+                        "id": "built-in-rules/argo/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure Workflow DAG fail-fast on node failure",
+                        "id": "built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure Workflow retry policy catches relevant errors only",
+                        "id": "built-in-rules/argo/ensure-workflow-retry-policy-catches-relevant-errors-only/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent Workflow from having an empty retry strategy",
+                        "id": "built-in-rules/argo/prevent-workflow-from-having-an-empty-retry-strategy/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent Workflow pods from using the default service account",
+                        "id": "built-in-rules/argo/prevent-workflow-pods-from-using-the-default-service-account/index"
+                      }
+                    ],
+                    "link": {
+                      "type": "doc",
+                      "id": "built-in-rules/argo/index"
+                    }
+                  },
+                  {
+                    "type": "category",
+                    "label": "Containers",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "className": "hide",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "label": "Ensure each container has a configured CPU limit",
+                        "id": "built-in-rules/containers/ensure-cpu-limit/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure each container has a configured CPU request",
+                        "id": "built-in-rules/containers/ensure-cpu-request/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure each container image has a digest tag",
+                        "id": "built-in-rules/containers/ensure-digest-tag/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure each container image has a pinned (tag) version",
+                        "id": "built-in-rules/containers/ensure-image-pinned-version/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure each container has a configured liveness probe",
+                        "id": "built-in-rules/containers/ensure-liveness-probe/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure each container has a configured memory limit",
+                        "id": "built-in-rules/containers/ensure-memory-limit/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure each container has a configured memory request",
+                        "id": "built-in-rules/containers/ensure-memory-request/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure each container has a configured readiness probe",
+                        "id": "built-in-rules/containers/ensure-readiness-probe/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent containers from mounting Docker socket",
+                        "id": "built-in-rules/containers/prevent-mounting-docker-socket/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent containers from having root access capabilities",
+                        "id": "built-in-rules/containers/prevent-privileged-containers/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent containers from accessing host files by using high UIDs",
+                        "id": "built-in-rules/containers/prevent-uid-conflicts/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent containers from sharing the host's IPC namespace",
+                        "id": "built-in-rules/containers/prevent-using-host-ipc/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent containers from sharing the host’s network namespace",
+                        "id": "built-in-rules/containers/prevent-using-host-network/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent containers from sharing the host's PID namespace",
+                        "id": "built-in-rules/containers/prevent-using-host-pid/index"
+                      }
+                    ],
+                    "link": {
+                      "type": "doc",
+                      "id": "built-in-rules/containers/index"
+                    }
+                  },
+                  {
+                    "type": "category",
+                    "label": "CronJob",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "className": "hide",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure Deployment has a configured `env` label",
+                        "id": "built-in-rules/cronjob/ensure-cronjob-deadline/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure CronJob has a configured deadline",
+                        "id": "built-in-rules/cronjob/ensure-cronjob-scheduler-valid/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent CronJob from executing jobs concurrency",
+                        "id": "built-in-rules/cronjob/prevent-cronjob-concurrency/index"
+                      }
+                    ],
+                    "link": {
+                      "type": "doc",
+                      "id": "built-in-rules/cronjob/index"
+                    }
+                  },
+                  {
+                    "type": "category",
+                    "label": "Networking",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "className": "hide",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent Ingress from forwarding all traffic to a single container",
+                        "id": "built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent Service from exposing node port",
+                        "id": "built-in-rules/networking/prevent-node-port/index"
+                      }
+                    ],
+                    "link": {
+                      "type": "doc",
+                      "id": "built-in-rules/networking/index"
+                    }
+                  },
+                  {
+                    "type": "category",
+                    "label": "Other",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "className": "hide",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure HPA has maximum replicas configured",
+                        "id": "built-in-rules/other/ensure-hpa-maximum-replicas/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Ensure HPA has minimum replicas configured",
+                        "id": "built-in-rules/other/ensure-hpa-minimum-replicas/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent deploying naked pods",
+                        "id": "built-in-rules/other/prevent-naked-pods/index"
+                      }
+                    ],
+                    "link": {
+                      "type": "doc",
+                      "id": "built-in-rules/other/index"
+                    }
+                  },
+                  {
+                    "type": "category",
+                    "label": "Security",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "className": "hide",
+                    "items": [
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent ConfigMap security vulnerability (CVE-2021-25742)",
+                        "id": "built-in-rules/security/prevent-configmap-security-vulnerability-cve-2021-25742/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent container security vulnerability (CVE-2021-25741)",
+                        "id": "built-in-rules/security/prevent-container-security-vulnerability-cve-2021-25741/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent EndpointSlice validation from enabling host network hijack (CVE-2021-25737)",
+                        "id": "built-in-rules/security/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737/index"
+                      },
+                      {
+                        "type": "doc",
+                        "label": "☑️ Prevent Ingress security vulnerability (CVE-2021-25742)",
+                        "id": "built-in-rules/security/prevent-ingress-security-vulnerability-cve-2021-25742/index"
+                      }
+                    ],
+                    "link": {
+                      "type": "doc",
+                      "id": "built-in-rules/security/index"
+                    }
+                  }
+                ],
+                "link": {
+                  "type": "doc",
+                  "id": "built-in-rules/index"
+                }
+              },
+              {
+                "type": "category",
+                "label": "🤖 CUSTOM RULES",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "label": "Understanding custom rules",
+                    "id": "custom-rules/custom-rules-overview/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "Basic examples",
+                    "id": "custom-rules/basic-examples/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "Multiple property paths",
+                    "id": "custom-rules/multiple-property-paths/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "Resource quotas",
+                    "id": "custom-rules/resource-quotas/index"
+                  }
+                ],
+                "link": {
+                  "type": "doc",
+                  "id": "custom-rules/index"
+                }
+              },
+              {
+                "type": "category",
+                "label": "🔌 OFFICIAL INTEGRATIONS",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "label": "Kustomize support",
+                    "id": "official-integrations/kustomize-support/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "Git hooks",
+                    "id": "official-integrations/git-hooks/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "Pre-commit hook",
+                    "id": "official-integrations/pre-commit-hook/index"
+                  }
+                ],
+                "link": {
+                  "type": "doc",
+                  "id": "official-integrations/index"
+                }
+              },
+              {
+                "type": "doc",
+                "label": "🙌 COMMUNITY INTEGRATIONS",
+                "id": "community-integrations/index"
+              },
+              {
+                "type": "category",
+                "label": "⏩ CI/CD EXAMPLES",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "label": "Circle CI",
+                    "id": "cicd-examples/circle-ci/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "Travis CI",
+                    "id": "cicd-examples/travis-ci/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "GitLab CI/CD",
+                    "id": "cicd-examples/gitlab-cicd/index"
+                  },
+                  {
+                    "type": "doc",
+                    "label": "Jenkins pipeline",
+                    "id": "cicd-examples/jenkins-pipeline/index"
+                  }
+                ],
+                "link": {
+                  "type": "doc",
+                  "id": "cicd-examples/index"
+                }
+              },
+              {
+                "type": "doc",
+                "label": "💬 FAQ",
+                "id": "faqs/index"
+              },
+              {
+                "type": "doc",
+                "label": "🗃️ TROUBLESHOOTING",
+                "id": "troubleshooting/index"
+              }
+            ]
+          },
+          "mainDocId": "intro/getting-started/1",
+          "categoryGeneratedIndices": []
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-blog": {
+    "default": {
+      "blogSidebarTitle": "Recent posts",
+      "blogPosts": [],
+      "blogListPaginated": [],
+      "blogTags": {},
+      "blogTagsListPath": null,
+      "blogTagsPaginated": []
+    }
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": null
+  },
+  "docusaurus-plugin-debug": {},
+  "docusaurus-plugin-google-gtag": {},
+  "docusaurus-theme-classic": {},
+  "docusaurus-plugin-sass": {}
+}

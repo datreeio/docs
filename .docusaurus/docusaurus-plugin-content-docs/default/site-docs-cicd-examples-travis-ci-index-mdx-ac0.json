@@ -1,0 +1,26 @@
+{
+  "unversionedId": "cicd-examples/travis-ci/index",
+  "id": "cicd-examples/travis-ci/index",
+  "title": "Travis CI",
+  "description": "TO-DO list for setting-up Datree in your CI",
+  "source": "@site/docs/cicd-examples/travis-ci/index.mdx",
+  "sourceDirName": "cicd-examples/travis-ci",
+  "slug": "/cicd-examples/travis-ci",
+  "permalink": "/cicd-examples/travis-ci",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/cicd-examples/travis-ci/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Travis CI",
+    "slug": "/cicd-examples/travis-ci"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "CircleCI",
+    "permalink": "/cicd-examples/circle-ci"
+  },
+  "next": {
+    "title": "GitLab CI/CD",
+    "permalink": "/cicd-examples/gitLab-ci-cd"
+  }
+}

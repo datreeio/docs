@@ -1,0 +1,26 @@
+{
+  "unversionedId": "custom-rules/resource-quotas/index",
+  "id": "custom-rules/resource-quotas/index",
+  "title": "Resource quotas",
+  "description": "Overview",
+  "source": "@site/docs/custom-rules/resource-quotas/index.mdx",
+  "sourceDirName": "custom-rules/resource-quotas",
+  "slug": "/custom-rules/resource-quotas",
+  "permalink": "/custom-rules/resource-quotas",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/custom-rules/resource-quotas/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Resource quotas",
+    "slug": "/custom-rules/resource-quotas"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Multiple property paths",
+    "permalink": "/custom-rules/multiple-property-paths"
+  },
+  "next": {
+    "title": "OFFICIAL INTEGRATIONS",
+    "permalink": "/integrations"
+  }
+}

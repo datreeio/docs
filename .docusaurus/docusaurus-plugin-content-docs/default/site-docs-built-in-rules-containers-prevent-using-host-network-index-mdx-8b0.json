@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/containers/prevent-using-host-network/index",
+  "id": "built-in-rules/containers/prevent-using-host-network/index",
+  "title": "☑️ Prevent containers from sharing the host’s network namespace",
+  "description": "When a container is allowed to share its host's network namespace, it can access local network listeners and leverage it to probe the host's local network.",
+  "source": "@site/docs/built-in-rules/containers/prevent-using-host-network/index.mdx",
+  "sourceDirName": "built-in-rules/containers/prevent-using-host-network",
+  "slug": "/built-in-rules/prevent-using-host-network",
+  "permalink": "/built-in-rules/prevent-using-host-network",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/prevent-using-host-network/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Prevent containers from sharing the host’s network namespace",
+    "slug": "/built-in-rules/prevent-using-host-network"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Prevent containers from sharing the host's IPC namespace",
+    "permalink": "/built-in-rules/prevent-using-host-ipc"
+  },
+  "next": {
+    "title": "☑️ Prevent containers from sharing the host's PID namespace",
+    "permalink": "/built-in-rules/prevent-using-host-pid"
+  }
+}

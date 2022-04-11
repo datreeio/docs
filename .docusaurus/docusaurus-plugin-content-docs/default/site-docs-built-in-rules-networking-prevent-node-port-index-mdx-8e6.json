@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/networking/prevent-node-port/index",
+  "id": "built-in-rules/networking/prevent-node-port/index",
+  "title": "☑️ Prevent Service from exposing node port",
+  "description": "Exposing a NodePort will open a network port on all nodes to be reached by the cluster's external network. Using this method to expose the application is less secure and forces you to create unnecessary coupling between services in order to expose them all to external traffic.",
+  "source": "@site/docs/built-in-rules/networking/prevent-node-port/index.mdx",
+  "sourceDirName": "built-in-rules/networking/prevent-node-port",
+  "slug": "/built-in-rules/prevent-node-port",
+  "permalink": "/built-in-rules/prevent-node-port",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/networking/prevent-node-port/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Prevent Service from exposing node port",
+    "slug": "/built-in-rules/prevent-node-port"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Prevent Ingress from forwarding all traffic to a single container",
+    "permalink": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container"
+  },
+  "next": {
+    "title": "Other",
+    "permalink": "/built-in-rules/other"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/containers/ensure-cpu-limit/index",
+  "id": "built-in-rules/containers/ensure-cpu-limit/index",
+  "title": "☑️ Ensure each container has a configured CPU limit",
+  "description": "CPU limits enable you to use CPU resources efficiently by restricting the maximum amount of CPU available to the pods running in your cluster.",
+  "source": "@site/docs/built-in-rules/containers/ensure-cpu-limit/index.mdx",
+  "sourceDirName": "built-in-rules/containers/ensure-cpu-limit",
+  "slug": "/built-in-rules/ensure-cpu-limit",
+  "permalink": "/built-in-rules/ensure-cpu-limit",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/containers/ensure-cpu-limit/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure each container has a configured CPU limit",
+    "slug": "/built-in-rules/ensure-cpu-limit"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Containers",
+    "permalink": "/built-in-rules/containers"
+  },
+  "next": {
+    "title": "☑️ Ensure each container has a configured CPU request",
+    "permalink": "/built-in-rules/ensure-cpu-request"
+  }
+}

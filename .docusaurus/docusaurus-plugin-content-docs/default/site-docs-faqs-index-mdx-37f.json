@@ -1,0 +1,26 @@
+{
+  "unversionedId": "faqs/index",
+  "id": "faqs/index",
+  "title": "FAQ",
+  "description": "Where does the policy evaluation occur?",
+  "source": "@site/docs/faqs/index.mdx",
+  "sourceDirName": "faqs",
+  "slug": "/faq",
+  "permalink": "/faq",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/faqs/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "FAQ",
+    "slug": "/faq"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "History",
+    "permalink": "/cicd-examples/jenkins-pipeline"
+  },
+  "next": {
+    "title": "Troubleshooting",
+    "permalink": "/troubleshooting"
+  }
+}

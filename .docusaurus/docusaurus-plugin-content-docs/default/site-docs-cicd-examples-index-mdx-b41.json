@@ -1,0 +1,26 @@
+{
+  "unversionedId": "cicd-examples/index",
+  "id": "cicd-examples/index",
+  "title": "CI/CD examples",
+  "description": "Seamlessly integrate your Datree policy-checks into your CI platform of choice:",
+  "source": "@site/docs/cicd-examples/index.mdx",
+  "sourceDirName": "cicd-examples",
+  "slug": "/cicd-examples",
+  "permalink": "/cicd-examples",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/cicd-examples/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "CI/CD examples",
+    "slug": "/cicd-examples"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Community integrations",
+    "permalink": "/community-integrations"
+  },
+  "next": {
+    "title": "CircleCI",
+    "permalink": "/cicd-examples/circle-ci"
+  }
+}

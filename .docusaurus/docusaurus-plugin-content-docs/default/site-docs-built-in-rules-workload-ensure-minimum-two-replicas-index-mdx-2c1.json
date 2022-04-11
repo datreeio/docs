@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/Workload/ensure-minimum-two-replicas/index",
+  "id": "built-in-rules/Workload/ensure-minimum-two-replicas/index",
+  "title": "☑️ Ensure Deployment has more than one replica configured",
+  "description": "When you run two or more replicas per service, you are increasing the availability of the containerized service because you are not relying on a single pod to do all of the work. Furthermore, scaling horizontally by adding pods allows your service to scale and handle larger loads.",
+  "source": "@site/docs/built-in-rules/Workload/ensure-minimum-two-replicas/index.mdx",
+  "sourceDirName": "built-in-rules/Workload/ensure-minimum-two-replicas",
+  "slug": "/built-in-rules/ensure-minimum-two-replicas",
+  "permalink": "/built-in-rules/ensure-minimum-two-replicas",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/Workload/ensure-minimum-two-replicas/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure Deployment has more than one replica configured",
+    "slug": "/built-in-rules/ensure-minimum-two-replicas"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure workload has valid label values",
+    "permalink": "/built-in-rules/ensure-labels-value-valid"
+  },
+  "next": {
+    "title": "☑️ Ensure workload has a configured `owner` label",
+    "permalink": "/built-in-rules/ensure-owner-label"
+  }
+}

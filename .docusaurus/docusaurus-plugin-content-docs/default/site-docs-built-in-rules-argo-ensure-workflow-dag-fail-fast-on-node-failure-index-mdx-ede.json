@@ -1,0 +1,26 @@
+{
+  "unversionedId": "built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure/index",
+  "id": "built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure/index",
+  "title": "☑️ Ensure Workflow DAG fail-fast on node failure",
+  "description": "As an alternative to specifying sequences of steps in Workflow, you can define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each task.",
+  "source": "@site/docs/built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure/index.mdx",
+  "sourceDirName": "built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure",
+  "slug": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure",
+  "permalink": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "☑️ Ensure Workflow DAG fail-fast on node failure",
+    "slug": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure"
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "☑️ Ensure Rollout that is marked as degraded scales down ReplicaSet",
+    "permalink": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset"
+  },
+  "next": {
+    "title": "☑️ Ensure Workflow retry policy catches relevant errors only",
+    "permalink": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only"
+  }
+}
