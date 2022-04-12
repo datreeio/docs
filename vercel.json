@@ -5,6 +5,38 @@
         "destination": "https://github.com/vercel/vercel", 
         "permanent": true
       },
+
+      {
+        "source": "/centralized-policy",
+        "destination": "/setup/centralized-policy", 
+        "permanent": true
+      },
+      {
+        "source": "/schema-validation",
+        "destination": "/setup/schema-validation", 
+        "permanent": true
+      },
+      {
+        "source": "/policy-as-code",
+        "destination": "/setup/policy-as-code", 
+        "permanent": true
+      },
+      {
+        "source": "/cli-output",
+        "destination": "/setup/cli-output", 
+        "permanent": true
+      },
+      {
+        "source": "/cli-arguments",
+        "destination": "/setup/cli-arguments", 
+        "permanent": true
+      },
+      {
+        "source": "/history",
+        "destination": "/setup/history", 
+        "permanent": true
+      },
+
       {
         "source": "/ensure-image-pinned-version",
         "destination": "/built-in-rules/ensure-image-pinned-version", 
