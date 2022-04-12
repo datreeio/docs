@@ -19,7 +19,7 @@ const sidebars = {
   docs: [
     {
       type: 'category',
-      label: '👋   WELCOME',
+      label: '👋  WELCOME',
       collapsed: true,
       items: [
         'intro/getting-started/index',
@@ -29,7 +29,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🛠️   SETUP',
+      label: '🛠️  SETUP',
       collapsed: true,
       items: [
         'setup/centralized-policy/index',
@@ -43,7 +43,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🚔   BUILT-IN RULES',
+      label: '🚔  BUILT-IN RULES',
       link: {
         type: 'doc',
         id: 'built-in-rules/index',
@@ -185,7 +185,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🤖   CUSTOM RULES',
+      label: '🤖  CUSTOM RULES',
       collapsed: true,
       items: [
         'custom-rules/custom-rules-overview/index',
@@ -196,7 +196,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🔌   OFFICIAL INTEGRATIONS',
+      label: '🔌  OFFICIAL INTEGRATIONS',
       link: {
         type: 'doc',
         id: 'official-integrations/index',
@@ -225,7 +225,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🙌   COMMUNITY INTEGRATIONS',
+      label: '🙌  COMMUNITY INTEGRATIONS',
       link: {
         type: 'doc',
         id: 'community-integrations/index',
@@ -241,7 +241,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '⏩   CI/CD EXAMPLES',
+      label: '⏩ CI/CD EXAMPLES',
       link: {
         type: 'doc',
         id: 'cicd-examples/index',
@@ -256,17 +256,17 @@ const sidebars = {
     },
     {
       type: 'doc',
-      label: '💬   FAQ',
+      label: '💬  FAQ',
       id: 'faqs/index',
     },
     {
       type: 'doc',
-      label: '🗃️   TROUBLESHOOTING',
+      label: '🗃️  TROUBLESHOOTING',
       id: 'troubleshooting/index',
     },
     {
       type: 'link',
-      label: '📚   RESOURCES',
+      label: '📚  RESOURCES',
       href: 'https://github.com/datreeio/awesome-datree/blob/main/README.md',
     },
   ],
