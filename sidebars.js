@@ -19,7 +19,7 @@ const sidebars = {
   docs: [
     {
       type: 'category',
-      label: ' 👋 WELCOME',
+      label: `👋`+ <br/> +`WELCOME`,
       collapsed: true,
       items: [
         'intro/getting-started/index',
