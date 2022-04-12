@@ -19,7 +19,7 @@ const sidebars = {
   docs: [
     {
       type: 'category',
-      label: '👋 <space> WELCOME',
+      label: '👋 WELCOME',
       collapsed: true,
       items: [
         'intro/getting-started/index',
@@ -29,7 +29,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🛠️ :wave: SETUP',
+      label: '🛠️ SETUP',
       collapsed: true,
       items: [
         'setup/centralized-policy/index',
