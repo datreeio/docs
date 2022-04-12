@@ -11,7 +11,7 @@ How do you know that your Kubernetes manifests are syntactically valid? Are you 
 
 ## How does it work?
 
-There is no need to set up anything because every Kubernetes manifest that Datree scanned is also validated before the rules from the [Centralized policy](docId:0-uWz2hrYE6OvSK15gWNK) are executed. &#x20;
+There is no need to set up anything because every Kubernetes manifest that Datree scanned is also validated before the rules from the [Centralized policy](/setup/centralized-policy) are executed. &#x20;
 
 If the manifest schema is invalid, the policy check will not be calculated. This way, you can ensure that all the files that are scanned by Datree are also valid Kubernetes files. Under the hood, we incorporated [kubeconform](https://github.com/yannh/kubeconform) with Datree to gain the schema validation capability.
 
