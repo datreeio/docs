@@ -225,7 +225,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🙌  COMMUNITY INTEGRATIONS',
+      label: '🙌    COMMUNITY INTEGRATIONS',
       link: {
         type: 'doc',
         id: 'community-integrations/index',
@@ -241,7 +241,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '⏩ CI/CD EXAMPLES',
+      label: '⏩   CI/CD EXAMPLES',
       link: {
         type: 'doc',
         id: 'cicd-examples/index',
@@ -256,17 +256,17 @@ const sidebars = {
     },
     {
       type: 'doc',
-      label: '💬  FAQ',
+      label: '💬    FAQ',
       id: 'faqs/index',
     },
     {
       type: 'doc',
-      label: '🗃️  TROUBLESHOOTING',
+      label: '🗃️    TROUBLESHOOTING',
       id: 'troubleshooting/index',
     },
     {
       type: 'link',
-      label: '📚  RESOURCES',
+      label: '📚    RESOURCES',
       href: 'https://github.com/datreeio/awesome-datree/blob/main/README.md',
     },
   ],
