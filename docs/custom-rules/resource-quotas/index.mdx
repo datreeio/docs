@@ -95,6 +95,6 @@ This manifest will fail because it has a container (cpu-demo) with a CPU limit l
 
 - `resourceMinimum` and `resourceMaximum` keywords will translate and compare input from different resource quotas, so if CPU will be "0.6", the rule will still fail (600m=0.6).
 
-- The rule in this example **will not fail** if the property path `resources.limits.cpu` **doesn't exist**. If you want the policy check to fail in a case like that, you need to either add our [built-in rule](/ensure-cpu-limit) to this policy or add it to the rule logic by using \`[required](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.5.3)\`.
+- The rule in this example **will not fail** if the property path `resources.limits.cpu` **doesn't exist**. If you want the policy check to fail in a case like that, you need to either add our [built-in rule](/built-in-rules/ensure-cpu-limit) to this policy or add it to the rule logic by using \`[required](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.6.5.3)\`.
 
-- The above rule won't work if the property containers is nested under `spec.template.spec.containers[]`. If you want the rule to support the property path `**.spec.containers[].resources.limits.cpu`, find direction for its implementation [here](/multiple-property-paths).
+- The above rule won't work if the property containers is nested under `spec.template.spec.containers[]`. If you want the rule to support the property path `**.spec.containers[].resources.limits.cpu`, find direction for its implementation [here](/custom-rules/multiple-property-paths).
