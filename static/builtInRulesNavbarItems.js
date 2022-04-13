@@ -3,7 +3,7 @@ import uuid from 'react-uuid';
 export const navItems = [
   {
     id: uuid(),
-    title: 'Ensure image pinned version',
+    title: 'Ensure each container image has a pinned (tag) version',
     slug: '/built-in-rules/ensure-image-pinned-version',
     isEnabledByDefault: true,
     isContainer: true,
@@ -55,12 +55,12 @@ export const navItems = [
     id: uuid(),
     title: 'Prevent containers from having root access capabilities',
     slug: '/built-in-rules/prevent-privileged-containers',
-    isEnabledByDefault: false,
+    isEnabledByDefault: true,
     isContainer: true,
   },
   {
     id: uuid(),
-    title: 'Ensure each container has a configured CPU request',
+    title: 'Ensure each container image has a digest tag',
     slug: '/built-in-rules/ensure-digest-tag',
     isEnabledByDefault: false,
     isContainer: true,
@@ -74,8 +74,15 @@ export const navItems = [
   },
   {
     id: uuid(),
-    title: "Prevent containers from sharing the host's network namespace",
+    title: "Prevent containers from sharing the host's IPC namespace",
     slug: '/built-in-rules/prevent-using-host-ipc',
+    isEnabledByDefault: false,
+    isContainer: true,
+  },
+  {
+    id: uuid(),
+    title: "Prevent containers from sharing the host's network namespace",
+    slug: '/built-in-rules/prevent-using-host-network',
     isEnabledByDefault: false,
     isContainer: true,
   },
@@ -131,7 +138,7 @@ export const navItems = [
   },
   {
     id: uuid(),
-    title: 'Ensure workload has valid label values',
+    title: 'Ensure Deployment has a configured `env` label',
     slug: '/built-in-rules/ensure-env-label',
     isEnabledByDefault: false,
     isWorkload: true,
