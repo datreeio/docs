@@ -22,7 +22,7 @@ Kubernetes v1.17 is no longer (officially) supported since 30 January 2021, So i
 
 ## This rule will fail
 
-If one of the following API versions is used
+If one of the following API versions is used:
 
 - _kubeadm.k8s.io/v1beta1_
 - _rbac.authorization.k8s.io/v1alpha1_
@@ -47,7 +47,7 @@ $ datree test *.yaml
 
 ## How to fix this failure
 
-Use *v1* **instead of the deprecated version
+Use *v1* instead of the deprecated version
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
