@@ -23,14 +23,12 @@ kind: ConfigMap
 metadata:
   labels:
     app.kubernetes.io/name: argocd-cm
-    app.kubernetes.io/part-of: somethingElse
 ```
 
 ```yaml
 kind: ConfigMap
 metadata:
   labels:
-    app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/part-of: somethingElse
 ```
 
@@ -59,6 +57,6 @@ metadata:
 
 ---
 
-## Read more[\*\*](https://www.datree.io/resources/kubernetes-configuration-mistakes#anchor3)
+## Read more
 
 - [ArgoCD - declarative setup](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#atomic-configuration)

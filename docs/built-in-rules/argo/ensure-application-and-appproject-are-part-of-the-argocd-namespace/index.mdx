@@ -4,11 +4,11 @@ slug: /built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-n
 displayed_sidebar: docs2
 ---
 
-ArgoCD is installed in a specific namespace (by default 'argocd'). All of its resources, including Application and AppProject instances, have to be installed in that namespace.
+ArgoCD is installed in a specific namespace (by default it's '*argocd*'). All of its resources, including Application and AppProject instances, have to be installed in that namespace.
 
 NOTE: This rule will enforce using the 'argocd' namespace. If you wish to use another namespace and still want to enforce this rule, disable this rule in your dashboard and create a custom rule for your namespace.
 
-**Targeted resources by this rule (types of kind): **AppProject / Application
+**Targeted resources by this rule (types of kind):** AppProject / Application
 
 **Enabled by default?** True
 
@@ -57,6 +57,6 @@ metadata:
 
 ---
 
-## Read more[\*﻿\*](https://www.datree.io/resources/kubernetes-configuration-mistakes#anchor3)
+## Read more
 
-- [**_Block87 - Argo CD Namespace Isolation_**](https://blog.andyserver.com/2020/12/argocd-namespace-isolation/)
+- [**Block87 - Argo CD Namespace Isolation**](https://blog.andyserver.com/2020/12/argocd-namespace-isolation/)

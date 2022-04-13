@@ -18,13 +18,13 @@ The DAG logic has a built-in fail fast feature to stop scheduling new steps, as 
 
 ## This rule will fail
 
-If `failFast` is explicitly set to `false`:
+If `failFast` is explicitly set to *false*:
 
 ```yaml
 kind: Workflow
 spec:
   - dag:
-    failFast: false
+      failFast: false
 ```
 
 ### Rule output in the CLI
@@ -41,17 +41,17 @@ $ datree test *.yaml
 
 ## **How to fix this failure**
 
-Set the `failFast` key to `true` or omit it:
+Set the `failFast` key to *true* or omit it:
 
 ```yaml
 kind: Workflow
 spec:
-  - dag:
-	  failFast: true
+  - dag:
+      failFast: true
 ```
 
 ---
 
-## **Read more**[**\*\***](https://www.datree.io/resources/kubernetes-configuration-mistakes#anchor3)\*\*\*\*
+## Read more
 
-- [**_Argo github_**](https://github.com/argoproj/argo-workflows/blob/master/examples/dag-disable-failFast.yaml)
+- [**Argo github**](https://github.com/argoproj/argo-workflows/blob/master/examples/dag-disable-failFast.yaml)
