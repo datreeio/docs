@@ -270,6 +270,174 @@ const sidebars = {
       href: 'https://github.com/datreeio/awesome-datree/blob/main/README.md',
     },
   ],
+  docs2: [
+    {
+      type: 'category',
+      label: '👋  WELCOME',
+      collapsed: true,
+      items: [
+        'intro/getting-started/index',
+        'intro/overview/index',
+        'intro/what-is-datree/index',
+      ],
+    },
+    {
+      type: 'category',
+      label: '🛠️  SETUP',
+      collapsed: true,
+      items: [
+        'setup/centralized-policy/index',
+        'setup/schema-validation/index',
+        'setup/policy-as-code/index',
+        'setup/cli-output/index',
+        'setup/cli-arguments/index',
+        'setup/history/index',
+        'setup/account-token/index',
+      ],
+    },
+    {
+      type: 'doc',
+      label: '🚔  BUILT-IN RULES',
+      id: 'built-in-rules/index',
+    },
+    // {
+    //   type: 'category',
+    //   label: '🚔  BUILT-IN RULES',
+    //   link: {
+    //     type: 'doc',
+    //     id: 'built-in-rules/index',
+    //   },
+    //   collapsed: true,
+    // items: [
+    //   {
+    //     type: 'doc',
+    //     label: 'Container',
+    //     id: 'built-in-rules/containers/index',
+    //   },
+    //   {
+    //     type: 'doc',
+    //     label: 'Workload',
+    //     id: 'built-in-rules/Workload/index',
+    //   },
+    //   {
+    //     type: 'doc',
+    //     label: 'CronJob',
+    //     id: 'built-in-rules/cronjob/index',
+    //   },
+    //   {
+    //     type: 'doc',
+    //     label: 'Networking',
+    //     id: 'built-in-rules/networking/index',
+    //   },
+    //   {
+    //     type: 'doc',
+    //     label: 'Security',
+    //     id: 'built-in-rules/security/index',
+    //   },
+    //   {
+    //     type: 'doc',
+    //     label: 'Deprecation',
+    //     id: 'built-in-rules/Deprecation/index',
+    //   },
+    //   {
+    //     type: 'doc',
+    //     label: 'Argo',
+    //     id: 'built-in-rules/argo/index',
+    //   },
+    //   {
+    //     type: 'doc',
+    //     label: 'Other',
+    //     id: 'built-in-rules/other/index',
+    //   },
+    // ],
+    // },
+    {
+      type: 'category',
+      label: '🤖  CUSTOM RULES',
+      collapsed: true,
+      items: [
+        'custom-rules/custom-rules-overview/index',
+        'custom-rules/basic-examples/index',
+        'custom-rules/multiple-property-paths/index',
+        'custom-rules/resource-quotas/index',
+      ],
+    },
+    {
+      type: 'category',
+      label: '🔌  OFFICIAL INTEGRATIONS',
+      link: {
+        type: 'doc',
+        id: 'official-integrations/index',
+      },
+      collapsed: true,
+      items: [
+        {
+          type: 'link',
+          label: 'Kubectl plugin',
+          href: 'https://github.com/datreeio/kubectl-datree',
+        },
+        {
+          type: 'link',
+          label: 'Github action',
+          href: 'https://github.com/datreeio/action-datree',
+        },
+        {
+          type: 'link',
+          label: 'Helm plugin',
+          href: 'https://github.com/datreeio/helm-datree',
+        },
+        'official-integrations/kustomize-support/index',
+        'official-integrations/git-hooks/index',
+        'official-integrations/pre-commit-hook/index',
+      ],
+    },
+    {
+      type: 'category',
+      label: '🙌  COMMUNITY INTEGRATIONS',
+      link: {
+        type: 'doc',
+        id: 'community-integrations/index',
+      },
+      collapsed: true,
+      items: [
+        {
+          type: 'link',
+          label: 'VSCode plugin',
+          href: 'https://github.com/SuyashSonawane/vscode-datree',
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: '⏩  CI/CD EXAMPLES',
+      link: {
+        type: 'doc',
+        id: 'cicd-examples/index',
+      },
+      collapsed: true,
+      items: [
+        'cicd-examples/circle-ci/index',
+        'cicd-examples/travis-ci/index',
+        'cicd-examples/gitlab-cicd/index',
+        'cicd-examples/jenkins-pipeline/index',
+      ],
+    },
+    {
+      type: 'doc',
+      label: '💬  FAQ',
+      id: 'faqs/index',
+    },
+    {
+      type: 'doc',
+      label: '🗃️  TROUBLESHOOTING',
+      id: 'troubleshooting/index',
+    },
+    {
+      type: 'link',
+      label: '📚  RESOURCES',
+      href: 'https://github.com/datreeio/awesome-datree/blob/main/README.md',
+    },
+  ],
 };
 
 module.exports = sidebars;

@@ -1,6 +1,7 @@
 ---
 title: ☑️ Prevent Workflow from having an empty retry strategy
 slug: /built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy
+displayed_sidebar: docs2
 ---
 
 The user can specify a `retryStrategy` that will dictate how failed or errored steps are retried in a workflow. Providing an empty `retryStrategy` (i.e. retryStrategy: {}) will cause a container to retry until completion and eventually cause OOM issues.
