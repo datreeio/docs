@@ -4,23 +4,24 @@ slug: /built-in-rules/ensure-hpa-maximum-replicas
 displayed_sidebar: docs2
 ---
 
-It's preferable to manage services and applications in clusters using higher-level resources such as Deployments, StatefulSets and DaemonSets instead of raw Pod resources. These constructs include standard default features which, in most scenarios, are necessary to configure and maintain a stable cluster.
+When auto-scaling resource utilization is triggered by HPA (*HorizontalPodAutoscaler*), a range of acceptable values must be set to prevent unintended scaling-up scenarios.
 
 **Targeted resources by this rule (types of **`kind`**): **Pod
 
-**Enabled by default?** False
+**Enabled by default?** True
 
-**Policy as code identifier:** K8S_INCORRECT_KIND_VALUE_POD
+**Policy as code identifier:** HPA_MISSING_MAXREPLICAS_KEY
 
 ---
 
 ## This rule will fail
 
-If `kind` type is set as _Pod_
+If an HPA doesn't have maximum replicas configured
 
 ```yaml
-apiVersion: apps/v1
-kind: Pod
+kind: HorizontalPodAutoscaler
+spec:
+  minReplicas: 1
 ```
 
 ### Rule output in the CLI
@@ -29,23 +30,23 @@ kind: Pod
 $ datree test *.yaml
 
 >> File: failExample.yaml
-❌ Prevent deploying naked pods [1 occurrence]
-💡 Incorrect value for key `kind` - raw pod won't be rescheduled in the event of a node failure
+❌ Ensure HPA has maximum replicas configured [1 occurrence]
+💡 Missing property object `maxReplicas` - the value should be within the accepted boundaries recommended by the organization
 ```
 
 ---
 
 ## How to fix this failure
 
-Deploy pods using higher-level resources
-
 ```yaml
-apiVersion: apps/v1
-kind: Deployment
+kind: HorizontalPodAutoscaler
+spec:
+  minReplicas: 1
+  maxReplicas: 10
 ```
 
 ---
 
 ## Read more
 
-- [Kubernetes docs - pods and controllers](https://kubernetes.io/docs/concepts/workloads/pods/#pods-and-controllers)
+- [Kubernetes docs - horizontal pod autoscale walkthrough](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/)

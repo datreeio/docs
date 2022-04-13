@@ -4,32 +4,23 @@ slug: /built-in-rules/prevent-naked-pods
 displayed_sidebar: docs2
 ---
 
-Having an bulk operations in specific environments or for filtering Deployments according to their stage. Recommended values for this key are: _prod / staging / qa / admin / testing_.
+It's preferable to manage services and applications in clusters using higher-level resources such as Deployments, StatefulSets and DaemonSets instead of raw Pod resources. These constructs include standard default features which, in most scenarios, are necessary to configure and maintain a stable cluster.
 
-:::tip
-
-## FYI
-
-Labels' keys and values are case-sensitive!
-:::
-
-**Targeted resources by this rule (types of **`kind`**): **Deployment
+**Targeted resources by this rule (types of **`kind`**):** Pod
 
 **Enabled by default?** False
 
-**Policy as code identifier:** DEPLOYMENT_MISSING_LABEL_ENV_VALUE
+**Policy as code identifier:** K8S_INCORRECT_KIND_VALUE_POD
 
 ---
 
 ## This rule will fail
 
-If the `env` key is missing from the `labels` section
+If `kind` type is set as _Pod_
 
 ```yaml
-kind: Deployment
-metadata:
-  labels:
-    owner: yoda-at-datree.io
+apiVersion: apps/v1
+kind: Pod
 ```
 
 ### Rule output in the CLI
@@ -38,24 +29,23 @@ metadata:
 $ datree test *.yaml
 
 >> File: failExample.yaml
-❌ Ensure Deployment has a configured `env` label [1 occurrence]
-💡 Missing label object `env` - add a proper environment description (e.g. `prod`, `testing`, etc.) to the Deployment config
+❌ Prevent deploying naked pods [1 occurrence]
+💡 Incorrect value for key `kind` - raw pod won't be rescheduled in the event of a node failure
 ```
 
 ---
 
 ## How to fix this failure
 
+Deploy pods using higher-level resources
+
 ```yaml
+apiVersion: apps/v1
 kind: Deployment
-metadata:
-  labels:
-    env: prod
-    owner: yoda-at-datree.io
 ```
 
 ---
 
 ## Read more
 
-- [A Kubernetes guide for labels and selectors - labels use cases](https://www.datree.io/resources/a-kubernetes-guide-for-labels-and-selectors#anchor5)
+- [Kubernetes docs - pods and controllers](https://kubernetes.io/docs/concepts/workloads/pods/#pods-and-controllers)
