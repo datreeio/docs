@@ -296,56 +296,61 @@ const sidebars = {
       ],
     },
     {
-      type: 'category',
+      type: 'doc',
       label: '🚔  BUILT-IN RULES',
-      link: {
-        type: 'doc',
-        id: 'built-in-rules/index',
-      },
-      collapsed: true,
-      items: [
-        {
-          type: 'doc',
-          label: 'Container',
-          id: 'built-in-rules/containers/index',
-        },
-        {
-          type: 'doc',
-          label: 'Workload',
-          id: 'built-in-rules/Workload/index',
-        },
-        {
-          type: 'doc',
-          label: 'CronJob',
-          id: 'built-in-rules/cronjob/index',
-        },
-        {
-          type: 'doc',
-          label: 'Networking',
-          id: 'built-in-rules/networking/index',
-        },
-        {
-          type: 'doc',
-          label: 'Security',
-          id: 'built-in-rules/security/index',
-        },
-        {
-          type: 'doc',
-          label: 'Deprecation',
-          id: 'built-in-rules/Deprecation/index',
-        },
-        {
-          type: 'doc',
-          label: 'Argo',
-          id: 'built-in-rules/argo/index',
-        },
-        {
-          type: 'doc',
-          label: 'Other',
-          id: 'built-in-rules/other/index',
-        },
-      ],
+      id: 'built-in-rules/index',
     },
+    // {
+    //   type: 'category',
+    //   label: '🚔  BUILT-IN RULES',
+    //   link: {
+    //     type: 'doc',
+    //     id: 'built-in-rules/index',
+    //   },
+    //   collapsed: true,
+    // items: [
+    //   {
+    //     type: 'doc',
+    //     label: 'Container',
+    //     id: 'built-in-rules/containers/index',
+    //   },
+    //   {
+    //     type: 'doc',
+    //     label: 'Workload',
+    //     id: 'built-in-rules/Workload/index',
+    //   },
+    //   {
+    //     type: 'doc',
+    //     label: 'CronJob',
+    //     id: 'built-in-rules/cronjob/index',
+    //   },
+    //   {
+    //     type: 'doc',
+    //     label: 'Networking',
+    //     id: 'built-in-rules/networking/index',
+    //   },
+    //   {
+    //     type: 'doc',
+    //     label: 'Security',
+    //     id: 'built-in-rules/security/index',
+    //   },
+    //   {
+    //     type: 'doc',
+    //     label: 'Deprecation',
+    //     id: 'built-in-rules/Deprecation/index',
+    //   },
+    //   {
+    //     type: 'doc',
+    //     label: 'Argo',
+    //     id: 'built-in-rules/argo/index',
+    //   },
+    //   {
+    //     type: 'doc',
+    //     label: 'Other',
+    //     id: 'built-in-rules/other/index',
+    //   },
+    // ],
+    // },
     {
       type: 'category',
       label: '🤖  CUSTOM RULES',
