@@ -1,31 +1,27 @@
 ---
-title: ☑️ Ensure CronJob has a configured deadline
-slug: /built-in-rules/ensure-cronjob-deadline
+title: ☑️ Ensure CronJob scheduler is valid
+slug: /built-in-rules/ensure-cronjob-scheduler-valid
 displayed_sidebar: docs2
 ---
 
-When the CronJob controller counts more than **100** missed schedules, the cron job is no longer scheduled. Missed CronJobs are considered failures.
+You should always confirm that the cron schedule expression is valid or your jobs won't be executed.
 
-By default, the CronJob controller counts how many missed schedules happen for a cron job since `status.lastScheduleTime` until now. When `startingDeadlineSeconds` is set, the CronJob controller counts how many missed jobs occurred between the value of `startingDeadlineSeconds` until now.
-
-Setting a deadline can reduce the number of missed schedules needed to mark a CronJob as a failure while increasing the CronJob reliability.
-
-**Targeted resources by this rule (types of **`kind`**): **CronJob
+**Targeted resources by this rule (types of **`kind`**):** CronJob
 
 **Enabled by default?** True
 
-**Policy as code identifier:** CRONJOB_MISSING_STARTINGDEADLINESECOND_KEY
+**Policy as code identifier:** CRONJOB_INVALID_SCHEDULE_VALUE
 
 ---
 
 ## This rule will fail
 
-If a CronJob doesn't have a `startingDeadlineSeconds` key configured
+If the `schedule` value is not a valid cron expression
 
 ```yaml
 kind: CronJob
 spec:
-  schedule: '*/1 * * * *'
+  schedule: "1 * * *"
 ```
 
 ### Rule output in the CLI
@@ -34,27 +30,25 @@ spec:
 $ datree test *.yaml
 
 >> File: failExample.yaml
-❌ Ensure CronJob has a configured deadline [1 occurrence]
-💡 Missing property object `startingDeadlineSeconds` - set a time limit for the cron execution to allow killing it if exceeded
+❌ Ensure CronJob scheduler is valid [1 occurrence]
+💡 Incorrect value for key `schedule` - the (cron) schedule expressions is not valid and, therefore, will not work as expected
 ```
 
 ---
 
 ## How to fix this failure
 
+Specify a valid cron expression
+
 ```yaml
 kind: CronJob
 spec:
-  schedule: '*/1 * * * *'
-  startingDeadlineSeconds: 100
+  schedule: "*/1 * * * *"
 ```
 
 ---
 
 ## Read more
 
-- [Kubernetes docs - starting deadline](https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/#starting-deadline)
-
-- [Kubernetes docs - CronJob limitations](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-job-limitations)
-
-- [Post-mortem: missing startingDeadlineSeconds from CronJob config](https://timewitch.net/post/2020-04-04-cronjob-retro/)
+- [On-line cron expression validator](https://crontab.guru/)
+- [Kubernetes docs - cron schedule syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax)

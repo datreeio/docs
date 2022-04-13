@@ -1,35 +1,31 @@
 ---
-title: ☑️ Ensure Deployment has a configured `env` label
+title: ☑️ Ensure CronJob has a configured deadline
 slug: /built-in-rules/ensure-cronjob-deadline
 displayed_sidebar: docs2
 ---
 
-Having an `env` label is useful for performing bulk operations in specific environments or for filtering Deployments according to their stage. Recommended values for this key are: *prod / staging / qa / admin / testing*.
+When the CronJob controller counts more than **100** missed schedules, the cron job is no longer scheduled. Missed CronJobs are considered failures.
 
-:::info
+By default, the CronJob controller counts how many missed schedules happen for a cron job since `status.lastScheduleTime` until now. When `startingDeadlineSeconds` is set, the CronJob controller counts how many missed jobs occurred between the value of `startingDeadlineSeconds` until now.
 
-## FYI
+Setting a deadline can reduce the number of missed schedules needed to mark a CronJob as a failure while increasing the CronJob reliability.
 
-Labels' keys and values are case-sensitive!
-:::
+**Targeted resources by this rule (types of **`kind`**): **CronJob
 
-**Targeted resources by this rule (types of **`kind`**): **Deployment
+**Enabled by default?** True
 
-**Enabled by default?** False
-
-**Policy as code identifier:** DEPLOYMENT_MISSING_LABEL_ENV_VALUE
+**Policy as code identifier:** CRONJOB_MISSING_STARTINGDEADLINESECOND_KEY
 
 ---
 
 ## This rule will fail
 
-If the `env` key is missing from the `labels` section
+If a CronJob doesn't have a `startingDeadlineSeconds` key configured
 
 ```yaml
-kind: Deployment
-metadata:
-  labels:
-    owner: yoda-at-datree.io
+kind: CronJob
+spec:
+  schedule: '*/1 * * * *'
 ```
 
 ### Rule output in the CLI
@@ -38,8 +34,8 @@ metadata:
 $ datree test *.yaml
 
 >> File: failExample.yaml
-❌ Ensure Deployment has a configured `env` label [1 occurrence]
-💡 Missing label object `env` - add a proper environment description (e.g. `prod`, `testing`, etc.) to the Deployment config
+❌ Ensure CronJob has a configured deadline [1 occurrence]
+💡 Missing property object `startingDeadlineSeconds` - set a time limit for the cron execution to allow killing it if exceeded
 ```
 
 ---
@@ -47,15 +43,18 @@ $ datree test *.yaml
 ## How to fix this failure
 
 ```yaml
-kind: Deployment
-metadata:
-  labels:
-    env: prod
-    owner: yoda-at-datree.io
+kind: CronJob
+spec:
+  schedule: '*/1 * * * *'
+  startingDeadlineSeconds: 100
 ```
 
 ---
 
 ## Read more
 
-- [A Kubernetes guide for labels and selectors - labels use cases](https://www.datree.io/resources/a-kubernetes-guide-for-labels-and-selectors#anchor5)
+- [Kubernetes docs - starting deadline](https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/#starting-deadline)
+
+- [Kubernetes docs - CronJob limitations](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-job-limitations)
+
+- [Post-mortem: missing startingDeadlineSeconds from CronJob config](https://timewitch.net/post/2020-04-04-cronjob-retro/)

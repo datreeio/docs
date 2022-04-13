@@ -1,5 +1,5 @@
 ---
-title: ☑️ Prevent CronJob from executing jobs concurrency
+title: ☑️ Prevent CronJob from executing jobs concurrently
 slug: /built-in-rules/prevent-cronjob-concurrency
 displayed_sidebar: docs2
 ---
@@ -36,7 +36,7 @@ spec:
 $ datree test *.yaml
 
 >> File: failExample.yaml
-❌ Prevent CronJob from executing jobs concurrency [1 occurrence]
+❌ Prevent CronJob from executing jobs concurrently [1 occurrence]
 💡 Missing property object `concurrencyPolicy` - the behavior will be more deterministic when the jobs run one at a time
 ```
 
