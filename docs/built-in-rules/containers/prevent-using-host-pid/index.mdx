@@ -29,15 +29,15 @@ spec:
 $ datree test *.yaml
 
 >> File: failExample.yaml
-❌ Prevent containers from sharing the host’s PID namespace [1 occurrence]
-💡 Incorrect value for key `hostPID` - running on the host’s PID namespace enables access to sensitive information from processes running outside the container
+❌ Prevent containers from sharing the host's PID namespace [1 occurrence]
+💡 Incorrect value for key `hostPID` - running on the host's PID namespace enables access to sensitive information from processes running outside the container
 ```
 
 ---
 
 ## How to fix this failure
 
-Set the `hostPID` to _false_ or removing it completely
+Set the `hostPID` to _false_ or remove it completely
 
 ```yaml
 spec:

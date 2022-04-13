@@ -4,31 +4,29 @@ slug: /built-in-rules/ensure-valid-restart-policy
 displayed_sidebar: docs2
 ---
 
-Labels are nothing more than custom key-value pairs that are attached to objects and are used to describe and manage different Kubernetes resources. If the labels do not follow Kubernetes label syntax requirements (see links below), they will not be applied properly.
+From the Kubernetes docs:
 
-:::tip
+*"Only a `.spec.template.spec.restartPolicy` equal to Always is allowed, which is the default if not specified."*
 
-## FYI
+Therefore, `restartPolicy` values like *OnFailure* or *Never* will be invalid and will not be applied as the user expect them to. 
 
-Labels' keys and values are case-sensitive!
-:::
-
-**Targeted resources by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+**Targeted resources by this rule (types of **`kind`**):** Deployment / Pod / DaemonSet / ReplicaSet / ReplicationController
 
 **Enabled by default?** True
 
-**Policy as code identifier:** WORKLOAD_INVALID_LABELS_VALUE
+**Policy as code identifier:** WORKLOAD_INCORRECT_RESTARTPOLICY_VALUE_ALWAYS
 
 ---
 
 ## This rule will fail
 
-If one of the keys under `labels` contains an invalid value
+If `restartPolicy` is set with any value other than *Always*
 
 ```yaml
-metadata:
-  labels:
-    on-call: yoda@datree.io
+spec:
+  template:
+    spec:
+      restartPolicy: Never
 ```
 
 ### Rule output in the CLI
@@ -37,24 +35,25 @@ metadata:
 $ datree test *.yaml
 
 >> File: failExample.yaml
-❌ Ensure workload has valid label values [1 occurrence]
-💡 Incorrect value for key(s) under `labels` - the vales syntax is not valid so the Kubernetes engine will not accept it
+❌ Ensure deployment-like resource is using a valid restart policy [1 occurrence]
+💡 Incorrect value for key `restartPolicy` - any other value than `Always` is not supported by this resource
 ```
 
 ---
 
 ## How to fix this failure
 
+Set `restartPolicy` to *Always* or don't include the `restartPolicy` key at all
+
 ```yaml
-metadata:
-  labels:
-    on-call: yoda-at-datree.io
+spec:
+  template:
+    spec:
+      restartPolicy: Always
 ```
 
 ---
 
 ## Read more
 
-- [Kubernetes docs - labels syntax](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set)
-
-- [A Kubernetes guide for labels](https://datree-io.webflow.io/resources/a-kubernetes-guide-for-labels-and-selectors#anchor10)
+- [stackoverflow - configure restart policy of pod from deployment](https://stackoverflow.com/a/63400639/959510)
