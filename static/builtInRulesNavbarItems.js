@@ -148,14 +148,14 @@ export const navItems = [
     id: uuid(),
     title: 'Ensure CronJob scheduler is valid',
     slug: '/built-in-rules/ensure-cronjob-scheduler-valid',
-    isEnabledByDefault: false,
+    isEnabledByDefault: true,
     isCronJob: true,
   },
   {
     id: uuid(),
     title: 'Ensure CronJob has a configured deadline',
     slug: '/built-in-rules/ensure-cronjob-deadline',
-    isEnabledByDefault: false,
+    isEnabledByDefault: true,
     isCronJob: true,
   },
   {
@@ -215,14 +215,14 @@ export const navItems = [
     id: uuid(),
     title: 'Prevent deprecated APIs in Kubernetes v1.16',
     slug: '/built-in-rules/prevent-deprecated-k8s-api-116',
-    isEnabledByDefault: false,
+    isEnabledByDefault: true,
     isDeprecation: true,
   },
   {
     id: uuid(),
     title: 'Prevent deprecated APIs in Kubernetes v1.17',
     slug: '/built-in-rules/prevent-deprecated-k8s-api-117',
-    isEnabledByDefault: false,
+    isEnabledByDefault: true,
     isDeprecation: true,
   },
   // Argo
