@@ -6,11 +6,13 @@ displayed_sidebar: docs2
 
 The v1.16 release stopped serving some API versions for different resource types. When a user deploys a resource with a deprecated API version, the Kubernetes engine rejects it.
 
-:::tip
+:::caution
+
 Kubernetes v1.16 is no longer (officially) supported since 2 September 2020, So if you are still running this version, consider upgrading it as soon as possible.
+
 :::
 
-**Targeted resources by this rule (types of **`kind`**): **NetworkPolicy / Deployment / DaemonSet / StatefulSet
+**Targeted resources by this rule (types of **`kind`**):** NetworkPolicy / Deployment / DaemonSet / StatefulSet
 
 **Enabled by default?** True
 
@@ -23,9 +25,7 @@ Kubernetes v1.16 is no longer (officially) supported since 2 September 2020, So 
 If one of the following API versions is used
 
 - _extensions/v1beta1_
-
 - _apps/v1beta1_
-
 - _apps/v1beta2_
 
 ```yaml
@@ -47,7 +47,7 @@ $ datree test *.yaml
 
 ## How to fix this failure
 
-Use \*apps/v1**\* **instead of the deprecated version
+Use *apps/v1* instead of the deprecated version
 
 ```yaml
 apiVersion: apps/v1

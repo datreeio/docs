@@ -160,7 +160,7 @@ export const navItems = [
   },
   {
     id: uuid(),
-    title: 'Prevent CronJob from executing jobs concurrency',
+    title: 'Prevent CronJob from executing jobs concurrently',
     slug: '/built-in-rules/prevent-cronjob-concurrency',
     isEnabledByDefault: false,
     isCronJob: true,
