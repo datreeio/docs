@@ -237,6 +237,11 @@ const sidebars = {
           label: 'VSCode plugin',
           href: 'https://github.com/SuyashSonawane/vscode-datree',
         },
+        {
+          type: 'link',
+          label: 'Tekton task',
+          href: 'https://github.com/avinashupadhya99/catalog/tree/add-datree-task/task/datree/0.1',
+        },
       ],
     },
     {
@@ -404,6 +409,11 @@ const sidebars = {
           type: 'link',
           label: 'VSCode plugin',
           href: 'https://github.com/SuyashSonawane/vscode-datree',
+        },
+        {
+          type: 'link',
+          label: 'Tekton task',
+          href: 'https://github.com/avinashupadhya99/catalog/tree/add-datree-task/task/datree/0.1',
         },
       ],
     },
