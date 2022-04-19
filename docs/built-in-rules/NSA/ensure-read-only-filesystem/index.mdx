@@ -1,0 +1,68 @@
+---
+title: ☑️ Ensure each container has a read-only root filesystem
+slug: /built-in-rules/ensure-read-only-filesystem
+displayed_sidebar: docs2
+---
+
+An immutable root filesystem prevents applications from writing to their local disk. This is desirable in the event of an intrusion as the attacker will not be able to tamper with the filesystem or write foreign executables to disk.
+
+**Targeted resources by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Enabled by default?** True
+
+**Policy as code identifier:** CONTAINERS_INCORRECT_READONLYROOTFILESYSTEM_VALUE
+
+---
+
+## This rule will fail
+
+If the key `readOnlyRootFilesystem` is not defined or set to *false*.
+
+```yaml
+kind: Deployment
+spec:
+  containers:
+  - name: myDeployment
+```
+
+### Rule output in the CLI
+
+```none
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure each container has a read-only root filesystem [1 occurrence]
+💡 Incorrect value for key `readOnlyRootFilesystem` - set to 'true' to protect filesystem from potential attacks
+```
+
+---
+
+## How to fix this failure
+
+Set the `readOnlyRootFilesystem` key with a value of *true* either at **pod** level or **container** level:
+
+```yaml
+kind: Pod
+spec:
+  securityContext:
+    readOnlyRootFilesystem : true
+```
+
+```yaml
+kind: Deployment
+spec:
+  containers:
+    - name: myContainer
+      securityContext:
+        readOnlyRootFilesystem : true
+```
+
+---
+
+## Read more
+
+- [Kubesec - read only root filesystem](https://kubesec.io/basics/containers-securitycontext-readonlyrootfilesystem-true/)
+- [Kubernetes.io - security best practices](https://kubernetes.io/blog/2016/08/security-best-practices-kubernetes-deployment/)
+
+
+

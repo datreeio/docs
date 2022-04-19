@@ -1,0 +1,60 @@
+---
+title: ☑️ Prevent containers from allowing command execution
+slug: /built-in-rules/prevent-allowing-command-execution
+displayed_sidebar: docs2
+---
+
+Kubectl is a command-line tool for managing Kubernetes clusters. 'kubectl exec' allows a user to execute a command in a container. Attackers with permissions could run 'kubectl exec' to execute malicious code and compromise resources within a cluster.
+
+**Targeted resources by this rule (types of **`kind`**):** Role / ClusterRole
+
+**Enabled by default?** True
+
+**Policy as code identifier:** CONTAINERS_INCORRECT_RESOURCES_VERBS_VALUE
+
+---
+
+## This rule will fail
+
+If the `pods/exec` resource and/or the `create` verb are used:
+
+```yaml
+kind: Role
+rules:
+-  resources: ["pods/exec"]
+```
+
+```yaml
+kind: Role
+rules:
+-  verbs: ["create"]
+```
+
+### Rule output in the CLI
+
+```none
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent containers from allowing command execution[1 occurrence]
+💡 Incorrect value for key `resources` and/or `verbs` - allowing containers to run the exec command can be exploited by attackers
+```
+
+---
+
+## How to fix this failure
+
+Refrain from setting these privilieges in your `Role` and `ClusterRole` resources.
+
+```yaml
+kind: Role
+rules:
+-  verbs: ["get"]
+```
+
+---
+
+## Read more
+
+- [Redhat - Protecting Kubernetes Against MITRE attack](https://cloud.redhat.com/blog/protecting-kubernetes-against-mitre-attck-execution)
+

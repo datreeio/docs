@@ -3,7 +3,7 @@ title: Understanding custom rules
 slug: /custom-rules/custom-rules-overview
 ---
 
-In addition to the tool's built-in rules, you can also write any tests that you wish and run them against your Kubernetes configurations to check for rule violations. The custom rule engine is based on [JSON Schema](https://json-schema.org/), so it supports both YAML and JSON declarative syntax.
+In addition to the tool's built-in rules, you can also write any tests that you wish and run them against your Kubernetes configurations to check for rule violations. The custom rule engine is based on [JSON Schema](https://json-schema.org/), so it supports both **YAML** and **JSON** declarative syntax.
 
 Note that using custom rules is possible only when in [Policy as code](/setup/policy-as-code) mode.
 
@@ -11,9 +11,9 @@ Note that using custom rules is possible only when in [Policy as code](/setup/po
 
 - **identifier** - a unique ID to associate with a policy
 
-- **name** \[OPTIONAL] - a title that will be shown when a rule fails
+- **name** [OPTIONAL] - a title that will be shown when a rule fails
 
-- **defaultMessageOnFailure** \[OPTIONAL] - a message that is shown when the property `policies.name[].rules.messageOnFailure` is empty (unique to each identifier)
+- **defaultMessageOnFailure** [OPTIONAL] - a message that is shown when the property `policies.name[].rules.messageOnFailure` is empty (unique to each identifier)
 
 - **schema** - a custom rule logic written in JSON Schema (as YAML)
 
