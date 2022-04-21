@@ -1,7 +1,6 @@
 ---
 title: ☑️ Ensure Rollout allows broadcasting IP table changes
-slug: /built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes
-displayed_sidebar: docs2
+slug: /built-in-rules/argo/ensure-rollout-allows-broadcasting-ip-table-changes
 ---
 
 When the Rollout changes the selector on a service, there is a propagation delay before all the nodes update their IP tables to send traffic to the new pods instead of the old. Traffic will be directed to the old pods if the nodes have not been updated yet during this delay. In order to prevent the packets from being sent to a node that killed the old pod, the rollout uses the `scaleDownDelaySeconds` field to give nodes enough time to broadcast the IP table changes.

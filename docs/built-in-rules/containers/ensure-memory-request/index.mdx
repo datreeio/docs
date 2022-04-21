@@ -1,7 +1,6 @@
 ---
 title: ☑️ Ensure each container has a configured memory request
-slug: /built-in-rules/ensure-memory-request
-displayed_sidebar: docs2
+slug: /built-in-rules/containers/ensure-memory-request
 ---
 
 Memory requests allow you to use memory resources efficiently and allow you to allocate a guaranteed minimum of computing resources for the pods running in your cluster.
@@ -46,7 +45,7 @@ spec:
       image: nginx:1.19.8
       resources:
         requests:
-          memory: '64Mi'
+          memory: "64Mi"
 ```
 
 ---

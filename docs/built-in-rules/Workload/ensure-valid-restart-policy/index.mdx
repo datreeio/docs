@@ -1,14 +1,13 @@
 ---
 title: ☑️ Ensure deployment-like resource is using a valid restart policy
-slug: /built-in-rules/ensure-valid-restart-policy
-displayed_sidebar: docs2
+slug: /built-in-rules/workload/ensure-valid-restart-policy
 ---
 
 From the Kubernetes docs:
 
-*"Only a `.spec.template.spec.restartPolicy` equal to Always is allowed, which is the default if not specified."*
+_"Only a `.spec.template.spec.restartPolicy` equal to Always is allowed, which is the default if not specified."_
 
-Therefore, `restartPolicy` values like *OnFailure* or *Never* will be invalid and will not be applied as the user expect them to. 
+Therefore, `restartPolicy` values like _OnFailure_ or _Never_ will be invalid and will not be applied as the user expect them to.
 
 **Targeted resources by this rule (types of **`kind`**):** Deployment / Pod / DaemonSet / ReplicaSet / ReplicationController
 
@@ -20,7 +19,7 @@ Therefore, `restartPolicy` values like *OnFailure* or *Never* will be invalid an
 
 ## This rule will fail
 
-If `restartPolicy` is set with any value other than *Always*
+If `restartPolicy` is set with any value other than _Always_
 
 ```yaml
 spec:
@@ -43,7 +42,7 @@ $ datree test *.yaml
 
 ## How to fix this failure
 
-Set `restartPolicy` to *Always* or don't include the `restartPolicy` key at all
+Set `restartPolicy` to _Always_ or don't include the `restartPolicy` key at all
 
 ```yaml
 spec:

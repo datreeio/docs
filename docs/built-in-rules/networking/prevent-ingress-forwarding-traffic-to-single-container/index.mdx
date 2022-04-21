@@ -1,7 +1,6 @@
 ---
 title: ☑️ Prevent Ingress from forwarding all traffic to a single container
-slug: /built-in-rules/prevent-ingress-forwarding-traffic-to-single-container
-displayed_sidebar: docs2
+slug: /built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container
 ---
 
 Misconfiguring the ingress host can unintended forward all traffic to a single pod instead of leveraging the load balancing capabilities. By verifying that ingress traffic is targeted by multiple pods, you will achieve higher application availability because you won't be dependent upon a single pod to serve all ingress traffic.
@@ -22,7 +21,7 @@ If only a wildcard character (\`\*\`) is used to describe the targeted `host`
 kind: Ingress
 spec:
   rules:
-    - host: '*'
+    - host: "*"
       http:
         - path: /foo
 ```
@@ -45,7 +44,7 @@ $ datree test *.yaml
 kind: Ingress
 spec:
   rules:
-    - host: '*.example.com'
+    - host: "*.example.com"
       http:
         - path: /foo
 ```

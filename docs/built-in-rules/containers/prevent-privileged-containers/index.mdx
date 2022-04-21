@@ -1,7 +1,6 @@
 ---
 title: ☑️ Prevent containers from having root access capabilities
-slug: /built-in-rules/prevent-privileged-containers
-displayed_sidebar: docs2
+slug: /built-in-rules/containers/prevent-privileged-containers
 ---
 
 Processes running in privileged containers have access to host-level resources such as the file system. These containers are much more secure when their access is limited to the pod level.
@@ -16,7 +15,7 @@ Processes running in privileged containers have access to host-level resources s
 
 ## This rule will fail
 
-If `privileged` is set as *true*
+If `privileged` is set as _true_
 
 ```yaml
 spec:
@@ -41,7 +40,7 @@ $ datree test *.yaml
 
 ## How to fix this failure
 
-Set `privileged` to *false* or remove this property completely
+Set `privileged` to _false_ or remove this property completely
 
 ```yaml
 spec:

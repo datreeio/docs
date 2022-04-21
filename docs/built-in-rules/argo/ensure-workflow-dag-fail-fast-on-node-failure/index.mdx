@@ -1,7 +1,6 @@
 ---
 title: ☑️ Ensure Workflow DAG fail-fast on node failure
-slug: /built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure
-displayed_sidebar: docs2
+slug: /built-in-rules/argo/ensure-workflow-dag-fail-fast-on-node-failure
 ---
 
 As an alternative to specifying sequences of steps in Workflow, you can define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each task.
@@ -18,7 +17,7 @@ The DAG logic has a built-in fail fast feature to stop scheduling new steps, as 
 
 ## This rule will fail
 
-If `failFast` is explicitly set to *false*:
+If `failFast` is explicitly set to _false_:
 
 ```yaml
 kind: Workflow
@@ -41,7 +40,7 @@ $ datree test *.yaml
 
 ## **How to fix this failure**
 
-Set the `failFast` key to *true* or omit it:
+Set the `failFast` key to _true_ or omit it:
 
 ```yaml
 kind: Workflow

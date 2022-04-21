@@ -1,7 +1,6 @@
 ---
 title: ☑️ Ensure each container has a configured memory limit
-slug: /built-in-rules/ensure-memory-limit
-displayed_sidebar: docs2
+slug: /built-in-rules/containers/ensure-memory-limit
 ---
 
 Memory limits enable you to use memory resources efficiently. By setting memory limits, you restrict the maximum amount of memory available to the pods running in your cluster.
@@ -46,7 +45,7 @@ spec:
       image: nginx:1.19.8
       resources:
         limits:
-          memory: '128Mi'
+          memory: "128Mi"
 ```
 
 ---
