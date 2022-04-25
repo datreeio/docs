@@ -31,7 +31,7 @@ If a token number is not found in one of those two locations, Datree will genera
 
 Open Datree's config file:
 
-```none
+```terminal
 nano ~/.datree/config.yaml
 ```
 
@@ -41,7 +41,7 @@ and copy the token value from your config file (e.g. token: rXG3u53tsQWyYYFS8GE.
 
 Type in the CLI:
 
-```none
+```terminal
 printenv DATREE_TOKEN
 ```
 
@@ -60,7 +60,7 @@ That means there no local environment variable set for Datree's CLI integration
 
 If you want to set up an installation of Datree on a new device (e.g. on a CI machine or someone else in your team) and connect it to your centralized policy, you'll need to override the new device account token. To do that, it's recommended to set your token value as a local environment variable on the new device environment:
 
-```none
+```terminal
 export DATREE_TOKEN=<token>
 ```
 
@@ -76,7 +76,7 @@ token: <token>
 
 You can also set the account token from Datree's CLI:
 
-```none
+```terminal
 datree config set token <token>
 ```
 

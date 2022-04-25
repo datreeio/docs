@@ -55,6 +55,11 @@ const config = {
         items: [
           {
             href: 'https://github.com/datreeio/datree',
+            position: 'right',
+            className: 'navbar-menu',
+          },
+          {
+            href: 'https://github.com/datreeio/datree',
             label: 'GitHub',
             position: 'right',
           },

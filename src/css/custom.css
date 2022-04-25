@@ -94,10 +94,22 @@ article a {
   font-weight: 700;
 }
 
-.theme-code-block.language-bash pre {
+.theme-code-block.language-terminal pre {
   background-color: black;
 }
 
-.theme-code-block.language-bash pre span {
+.theme-code-block.language-terminal pre span {
   color: white;
+}
+
+.navbar-menu:after {
+  transition: opacity 0.2s;
+  content: "";
+  width: 120px;
+  height: 30px;
+  display:flex;
+  background-image: url(https://img.shields.io/github/stars/datreeio/datree?style=social);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:contain;
 }

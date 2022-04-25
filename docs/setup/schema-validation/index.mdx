@@ -42,7 +42,7 @@ Passing a different schema version to the CLI _will override_ the global schema 
 
 The CLI accepts the flag `--schema-version`, `-s` with a version number (as string):
 
-```none
+```terminal
 $ datree test --schema-version "1.19.0" ~/.datree/k8s-demo.yaml
 ```
 
@@ -56,7 +56,7 @@ When the --schema-location parameter is not used, or set to "default", the CLI w
 
 - The `--schema-location` value of "default" is an alias for https\://raw\.githubusercontent.com/yannh/kubernetes-json-schema/master/{{ .*NormalizedKubernetesVersion* }}-standalone{{ .*StrictSuffix* }}/{{ .*ResourceKind* }}{{ .*KindSuffix* }}.json. All of the following command lines are equivalent:
 
-```none
+```terminal
 $ datree test fixtures/valid.yaml
 $ datree test fixtures/valid.yaml --schema-location default
 $ datree test fixtures/valid.yaml --schema-location 'https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/{{ .NormalizedKubernetesVersion }}-standalone{{ .StrictSuffix }}/{{ .ResourceKind }}{{ .KindSuffix }}.json'
