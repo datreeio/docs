@@ -65,7 +65,7 @@ blockquote {
 }
 
 .menu__link {
-  font-size: 0.90rem;
+  font-size: 0.87rem;
 }
 
 .footer__link-item {
@@ -86,4 +86,18 @@ article a {
   text-decoration: underline;
   color: #2166ae;
   font-weight: 700;
+}
+
+[data-theme='dark'] article a {
+  text-decoration: underline;
+  color: #61aaf9;
+  font-weight: 700;
+}
+
+.theme-code-block.language-bash pre {
+  background-color: black;
+}
+
+.theme-code-block.language-bash pre span {
+  color: white;
 }

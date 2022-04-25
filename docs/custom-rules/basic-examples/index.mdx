@@ -3,6 +3,46 @@ title: Basic examples
 slug: /custom-rules/basic-examples
 ---
 
+## Ensure a specific key exists
+
+The following schema ensures that the key `metadata.labels.app` exists (regardless of its value):
+```yaml
+properties:
+  metadata:
+    properties:
+      labels:
+        required:
+          - app
+    required:
+      - labels
+```
+
+## Set a minimum value for key of a specific kind
+
+The following schema ensures that in a YAML of kind `Deployment`, the key `spec.replicas` has a value of *3* or higher:
+```yaml
+if:
+  properties:
+    kind:
+      enum:
+        - Deployment
+then:
+  properties:
+    spec:
+      properties:
+        replicas:
+          minimum: 3
+```
+Note that the key `maximum` is also available.
+
+## Ensure value of a specific key is not one of predefined values
+
+The following schema defines a blacklist of values for the key `das`:
+
+```yaml
+
+```
+
 ## Example #1
 
 Here is an example of a [custom rule logic](https://www.jsonschemavalidator.net/s/QGe8g1l9) that will ensure only pre-approved values are used (allow-list) with the label key \`environment\`:
@@ -41,7 +81,7 @@ policies:
         # more rules... #
 ```
 
-And this is how the [Policy as code](/setup/policy-as-code) file should look:&#x20;
+And this is how the [Policy as code](/setup/policy-as-code) file should look:
 
 ```yaml
 apiVersion: v1
