@@ -1,0 +1,26 @@
+---
+title: How Datree works
+sidebar_position: 4
+slug: /welcome/how-datree-works
+description: How Datree works
+---
+
+Datree's CLI integration provides a policy enforcement solution to run automatic checks for rule violations and misconfigurations in your Kubernetes manifest files. When rule violations are found, Datree produces an alert which guides the developer to fix the issue while explaining the reason behind the rule.  
+Datree offers simple CI integration with [various popular platforms](/integrations) to make your development pipeline safe and stable.
+
+## What is a Datree policy check?
+
+Each policy check consists of 3 consecutive phases:
+- **YAML Validation** - verifies that the file is a valid YAML.
+- **Schema Validation** - verifies that the file is a valid Kubernetes file. This is done using [Kubeconform](https://github.com/yannh/kubeconform).
+- **Policy Check** - checks the YAML against the user's configured Datree policy.
+
+## Where does the policy check occur?
+
+:::info
+Datree's evaluation process in entirely local. Your files and their contents are not sent to our backend, as the CLI performs the policy check on your machine. Only metadata is sent to our backend, which is used to display your policy check history on your dashboard.
+:::
+
+<img src='/img/welcome/how-datree-works/architecture.png' alt='Architecture' />
+
+

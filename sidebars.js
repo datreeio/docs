@@ -22,9 +22,10 @@ const sidebars = {
       label: '👋\xa0\xa0\xa0WELCOME',
       collapsed: true,
       items: [
-        'intro/getting-started/index',
-        'intro/overview/index',
-        'intro/what-is-datree/index',
+        'welcome/getting-started/index',
+        'welcome/overview/index',
+        'welcome/what-is-datree/index',
+        'welcome/how-datree-works/index',
       ],
     },
     {
@@ -281,9 +282,10 @@ const sidebars = {
       label: '👋  WELCOME',
       collapsed: true,
       items: [
-        'intro/getting-started/index',
-        'intro/overview/index',
-        'intro/what-is-datree/index',
+        'welcome/getting-started/index',
+        'welcome/overview/index',
+        'welcome/what-is-datree/index',
+        'welcome/how-datree-works/index',
       ],
     },
     {
