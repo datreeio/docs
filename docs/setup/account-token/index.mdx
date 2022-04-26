@@ -18,6 +18,7 @@ When a policy check is triggered, Datree reads your account token from the confi
 Tokens are immutable. To change one of the token's properties, a new token needs to be created and set in the CLI.
 :::
 
+---
 ## Connect your dashboard to the CLI
 
 ### 1. Get your account token from the dashboard
@@ -41,6 +42,7 @@ datree config set token <token>
 
 This will replace the token inside the config file (`~/.datree/config.yaml`)
 
+---
 ## Token Management
 
 ### Creating new tokens
@@ -49,6 +51,7 @@ A single account can have multiple tokens. Creating new tokens is done via the T
 Policy checks executed with a certain token are reported only to the dashboard of that token's creator.
 :::
 
+---
 ## Using tokens in your CI
 Setting your token in your CI is done using an environment variable. The Datree CLI automatically checks this variable and uses its value as the token.  
 See our [CI/CD section](/cicd-examples) for examples using popular platforms.

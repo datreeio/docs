@@ -19,7 +19,7 @@ const sidebars = {
   docs: [
     {
       type: 'category',
-      label: '👋\xa0\xa0\xa0WELCOME',
+      label: '👋\xa0WELCOME',
       collapsed: true,
       items: [
         'welcome/getting-started/index',
@@ -30,7 +30,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🛠️\xa0\xa0\xa0SETUP',
+      label: '🛠️\xa0SETUP',
       collapsed: true,
       items: [
         'setup/centralized-policy/index',
@@ -40,11 +40,12 @@ const sidebars = {
         'setup/cli-arguments/index',
         'setup/history/index',
         'setup/account-token/index',
+        'setup/policy-customization/index',
       ],
     },
     {
       type: 'category',
-      label: '🚔\xa0\xa0\xa0BUILT-IN RULES',
+      label: '🚔\xa0BUILT-IN RULES',
       link: {
         type: 'doc',
         id: 'built-in-rules/index',
@@ -190,7 +191,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🤖\xa0\xa0\xa0CUSTOM RULES',
+      label: '🤖\xa0CUSTOM RULES',
       collapsed: true,
       items: [
         'custom-rules/custom-rules-overview/index',
@@ -201,7 +202,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🔌\xa0\xa0\xa0OFFICIAL INTEGRATIONS',
+      label: '🔌\xa0OFFICIAL INTEGRATIONS',
       link: {
         type: 'doc',
         id: 'official-integrations/index',
@@ -230,7 +231,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🙌\xa0\xa0\xa0COMMUNITY INTEGRATIONS',
+      label: '🙌\xa0COMMUNITY INTEGRATIONS',
       link: {
         type: 'doc',
         id: 'community-integrations/index',
@@ -251,7 +252,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '⏩\xa0\xa0\xa0CI/CD EXAMPLES',
+      label: '⏩\xa0CI/CD EXAMPLES',
       link: {
         type: 'doc',
         id: 'cicd-examples/index',
@@ -266,24 +267,24 @@ const sidebars = {
     },
     {
       type: 'doc',
-      label: '💬\xa0\xa0\xa0FAQ',
+      label: '💬\xa0FAQ',
       id: 'faqs/index',
     },
     {
       type: 'doc',
-      label: '🗃️\xa0\xa0\xa0TROUBLESHOOTING',
+      label: '🗃️\xa0TROUBLESHOOTING',
       id: 'troubleshooting/index',
     },
     {
       type: 'link',
-      label: '📚\xa0\xa0\xa0RESOURCES',
+      label: '📚\xa0RESOURCES',
       href: 'https://github.com/datreeio/awesome-datree/blob/main/README.md',
     },
   ],
   docs2: [
     {
       type: 'category',
-      label: '👋  WELCOME',
+      label: '👋\xa0WELCOME',
       collapsed: true,
       items: [
         'welcome/getting-started/index',
@@ -294,7 +295,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🛠️  SETUP',
+      label: '🛠️\xa0SETUP',
       collapsed: true,
       items: [
         'setup/centralized-policy/index',
@@ -304,11 +305,12 @@ const sidebars = {
         'setup/cli-arguments/index',
         'setup/history/index',
         'setup/account-token/index',
+        'setup/policy-customization/index',
       ],
     },
     {
       type: 'doc',
-      label: '🚔  BUILT-IN RULES',
+      label: '🚔\xa0BUILT-IN RULES',
       id: 'built-in-rules/index',
     },
     // {
@@ -364,7 +366,7 @@ const sidebars = {
     // },
     {
       type: 'category',
-      label: '🤖  CUSTOM RULES',
+      label: '🤖\xa0CUSTOM RULES',
       collapsed: true,
       items: [
         'custom-rules/custom-rules-overview/index',
@@ -375,7 +377,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🔌  OFFICIAL INTEGRATIONS',
+      label: '🔌\xa0OFFICIAL INTEGRATIONS',
       link: {
         type: 'doc',
         id: 'official-integrations/index',
@@ -404,7 +406,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🙌  COMMUNITY INTEGRATIONS',
+      label: '🙌\xa0COMMUNITY INTEGRATIONS',
       link: {
         type: 'doc',
         id: 'community-integrations/index',
@@ -425,7 +427,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '⏩  CI/CD EXAMPLES',
+      label: '⏩\xa0CI/CD EXAMPLES',
       link: {
         type: 'doc',
         id: 'cicd-examples/index',
@@ -440,17 +442,17 @@ const sidebars = {
     },
     {
       type: 'doc',
-      label: '💬  FAQ',
+      label: '💬\xa0FAQ',
       id: 'faqs/index',
     },
     {
       type: 'doc',
-      label: '🗃️  TROUBLESHOOTING',
+      label: '🗃️\xa0TROUBLESHOOTING',
       id: 'troubleshooting/index',
     },
     {
       type: 'link',
-      label: '📚  RESOURCES',
+      label: '📚\xa0RESOURCES',
       href: 'https://github.com/datreeio/awesome-datree/blob/main/README.md',
     },
   ],
