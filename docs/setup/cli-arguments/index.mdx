@@ -26,6 +26,8 @@ $ datree test kube-*/*.yaml
 | --ignore-missing-schemas | N/A   | N/A                                    | Skip files with missing schemas instead of failing the schema validation check                                                                     |
 | --policy                 | -p    | e.g. staging                           | Specify which policy to execute (by policy name)                                                                                                   |
 | --only-k8s-files         | N/A   | N/A                                    | Skip all non-K8s files.&#x20;Especially useful when scanning a dir with K8s and other config files:&#x20;`datree test *.yaml --only-k8s-files`     |
+| --no-record              | N/A   | N/A                                    | Don’t send policy checks metadata to the backend                                                                                                   |
+| --verbose                | N/A   | N/A                                    | Display 'How to Fix' link for failed rules in output                                                                                               |
 
 ## Additional options
 
