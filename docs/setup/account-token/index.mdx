@@ -3,81 +3,52 @@ title: Account token
 slug: /setup/account-token
 ---
 
-## How it works
+## What is a token
 
-Every account has its own token. The token connects the policy checks to your [Centralized policy](/setup/centralized-policy) to know which policies and rules to run. When a policy check is triggered, Datree attempts to read the account token from the following locations (in order):
+The token connects your policy checks to your [Centralized policy](/setup/centralized-policy), which determines your available policies.  
+Additionally, the token allows your CLI to report your policy check history to the dashboard.  
+When a policy check is triggered, Datree reads your account token from the config file (`~/.datree/config.yaml`).
 
-1.  Environment variable - `DATREE_TOKEN`
+**Each token has the following properties:**
 
-2.  Config file - `~/.datree/config.yaml`
+- **Label:** the name of the token, as presented in the history tab in your dashboard.
+- **Type:** can be set to either *read* or *write*, used to define the permissions for updating your account policies.
 
-If a token number is not found in one of those two locations, Datree will generate a new token and will place it inside the config file.
-
-## Getting the account token
-
-### From the centralized policy dashboard
-
-&#x20; 1\. Log into your account
-
-&#x20; 2\. Go to "SETTINGS" (click on the avatar in the upper-right corner)
-
-<img src='/img/setup/account-token/1.jpeg' alt='' />
-
-&#x20; 3\. Copy your account's token number
-
-<img src='/img/setup/account-token/2.png' alt='' />
-
-### From the config file
-
-Open Datree's config file:
-
-```terminal
-nano ~/.datree/config.yaml
-```
-
-and copy the token value from your config file (e.g. token: rXG3u53tsQWyYYFS8GE...)
-
-### From local environment variables
-
-Type in the CLI:
-
-```terminal
-printenv DATREE_TOKEN
-```
-
-and copy the output value (e.g. rXG3u53tsQWyYYFS8GE...).
-
-:::tip
-
-## Got an empty string?
-
-That means there no local environment variable set for Datree's CLI integration
+:::info
+Tokens are immutable. To change one of the token's properties, a new token needs to be created and set in the CLI.
 :::
 
-## Overriding account token
+## Connect your dashboard to the CLI
 
-### Environment variable
+### 1. Get your account token from the dashboard
 
-If you want to set up an installation of Datree on a new device (e.g. on a CI machine or someone else in your team) and connect it to your centralized policy, you'll need to override the new device account token. To do that, it's recommended to set your token value as a local environment variable on the new device environment:
+- Log into your account
 
-```terminal
-export DATREE_TOKEN=<token>
-```
+- Go to "SETTINGS" (click on the avatar in the upper-right corner)
+<img src='/img/setup/account-token/1.png' alt=''/>
 
-### Config file
+- Copy your account token
 
-Another way to override the account token is via the config file. If the device already ran at least one policy check from the CLI with the `datree test` command, you can override the token value that's in the file `~/.datree/config.yaml`. If the device never ran a policy check before, create a new file in the same location and write inside:
+<img src='/img/setup/account-token/2.png' alt=''/>
 
-```yaml
-token: <token>
-```
+### 2. Set your token in the CLI
 
-### CLI command
-
-You can also set the account token from Datree's CLI:
+To set your token, simply run the following command in your terminal using the same token you copied in the previous step:
 
 ```terminal
 datree config set token <token>
 ```
 
-This will replace the token number inside Datree's config file (`~/.datree/config.yaml`)
+This will replace the token inside the config file (`~/.datree/config.yaml`)
+
+## Token Management
+
+### Creating new tokens
+A single account can have multiple tokens. Creating new tokens is done via the Token Management tab in your dashboard settings.
+:::info
+Policy checks executed with a certain token are reported only to the dashboard of that token's creator.
+:::
+
+## Using tokens in your CI
+Setting your token in your CI is done using an environment variable. The Datree CLI automatically checks this variable and uses its value as the token.  
+See our [CI/CD section](/cicd-examples) for examples using popular platforms.

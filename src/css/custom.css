@@ -11,6 +11,8 @@
   --doc-sidebar-width: 320px !important;
 }
 
+
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #2bcdc3;
@@ -112,8 +114,4 @@ article a {
   background-repeat: no-repeat;
   background-position: center;
   background-size:contain;
-}
-
-.footer {
-
 }

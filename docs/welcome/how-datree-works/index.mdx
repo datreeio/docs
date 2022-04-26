@@ -13,13 +13,11 @@ Datree offers simple CI integration with [various popular platforms](/integratio
 Each policy check consists of 3 consecutive phases:
 - **YAML Validation** - verifies that the file is a valid YAML.
 - **Schema Validation** - verifies that the file is a valid Kubernetes file. This is done using [Kubeconform](https://github.com/yannh/kubeconform).
-- **Policy Check** - checks the YAML against the user's configured Datree policy.
+- **Policy Check** - checks the YAML against your configured policy.
 
 ## Where does the policy check occur?
 
-:::info
-Datree's evaluation process in entirely local. Your files and their contents are not sent to our backend, as the CLI performs the policy check on your machine. Only metadata is sent to our backend, which is used to display your policy check history on your dashboard.
-:::
+Datree's policy evaluation process is entirely local. Your files and their contents are **not** sent to our backend, as the CLI performs the policy check on your machine. Only metadata is sent to our backend, which is used to display your policy check history on your dashboard.
 
 <img src='/img/welcome/how-datree-works/architecture.png' alt='Architecture' />
 

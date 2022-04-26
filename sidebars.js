@@ -48,7 +48,9 @@ const sidebars = {
       link: {
         type: 'doc',
         id: 'built-in-rules/index',
+
       },
+      
       collapsed: true,
       items: [
         {
@@ -58,6 +60,7 @@ const sidebars = {
             type: 'doc',
             id: 'built-in-rules/containers/index',
           },
+          
           collapsed: true,
           items: [
             'built-in-rules/containers/ensure-image-pinned-version/index',
@@ -74,6 +77,7 @@ const sidebars = {
             'built-in-rules/containers/prevent-uid-conflicts/index',
             'built-in-rules/containers/prevent-mounting-docker-socket/index',
           ],
+          
         },
         {
           type: 'category',
