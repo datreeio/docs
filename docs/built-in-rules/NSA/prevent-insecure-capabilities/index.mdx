@@ -1,7 +1,6 @@
 ---
 title: ☑️ Prevent containers from having insecure capabilities
 slug: /built-in-rules/prevent-insecure-capabilities
-displayed_sidebar: docs2
 ---
 
 Capabilities permit certain named root actions without giving full root access. They are a more fine-grained permissions model, and all capabilities should be dropped from a pod, with only those required added back. Giving containers unnecessary capabilities may compromise them and allow attackers access to sensitive components.
@@ -36,9 +35,9 @@ If one or more of the following insecure capabilities are set:
 kind: Pod
 spec:
   containers:
-  - securityContext:
-      capabilities:
-        add: ["SYS_ADMIN", "PERFMON"]
+    - securityContext:
+        capabilities:
+          add: ["SYS_ADMIN", "PERFMON"]
 ```
 
 ### Rule output in the CLI
@@ -61,9 +60,9 @@ Refrain from setting any unnecessary insecure capabilities.
 kind: Pod
 spec:
   containers:
-  - securityContext:
-      capabilities:
-        add: ["SYS_TIME"]
+    - securityContext:
+        capabilities:
+          add: ["SYS_TIME"]
 ```
 
 ---
@@ -71,4 +70,3 @@ spec:
 ## Read more
 
 - [Redhat - container security guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html-single/container_security_guide/index)
-

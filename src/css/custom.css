@@ -11,10 +11,8 @@
   --doc-sidebar-width: 320px !important;
 }
 
-
-
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #2bcdc3;
   --ifm-color-primary-dark: #27b9b0;
   --ifm-color-primary-darker: #25aea6;
@@ -31,7 +29,7 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-[data-theme='dark'] .docusaurus-highlight-code-line {
+[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: #0f172a;
 }
 
@@ -90,7 +88,7 @@ article a {
   font-weight: 700;
 }
 
-[data-theme='dark'] article a {
+[data-theme="dark"] article a {
   text-decoration: underline;
   color: #61aaf9;
   font-weight: 700;
@@ -109,9 +107,15 @@ article a {
   content: "";
   width: 120px;
   height: 30px;
-  display:flex;
+  display: flex;
   background-image: url(https://img.shields.io/github/stars/datreeio/datree?style=social);
   background-repeat: no-repeat;
   background-position: center;
-  background-size:contain;
+  background-size: contain;
+}
+
+.footer {
+}
+.built-in-rules-navbar-items .menu__list {
+  display: none !important;
 }

@@ -1,7 +1,6 @@
 ---
 title: ☑️ Prevent containers from insecurely exposing workload
 slug: /built-in-rules/prevent-insecurely-exposing-workload
-displayed_sidebar: docs2
 ---
 
 Workloads listen on a private IP address and receive network traffic from the rest of the network by default. To be reachable outside of the cluster, you must explicitly add an ingress controller or a load balancer service, then route traffic to the workload. hostPort is a setting used to bind the private IP to the underlying IP.
@@ -55,4 +54,3 @@ spec:
 ## Read more
 
 - [Kubernetes - pod security standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/)
-

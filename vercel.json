@@ -1,156 +1,155 @@
 {
-    "redirects": [
-      { 
-        "source": "/view-source",
-        "destination": "https://github.com/vercel/vercel", 
-        "permanent": true
-      },
+  "redirects": [
+    {
+      "source": "/view-source",
+      "destination": "https://github.com/vercel/vercel",
+      "permanent": true
+    },
 
-      {
-        "source": "/centralized-policy",
-        "destination": "/setup/centralized-policy", 
-        "permanent": true
-      },
-      {
-        "source": "/schema-validation",
-        "destination": "/setup/schema-validation", 
-        "permanent": true
-      },
-      {
-        "source": "/policy-as-code",
-        "destination": "/setup/policy-as-code", 
-        "permanent": true
-      },
-      {
-        "source": "/cli-output",
-        "destination": "/setup/cli-output", 
-        "permanent": true
-      },
-      {
-        "source": "/cli-arguments",
-        "destination": "/setup/cli-arguments", 
-        "permanent": true
-      },
-      {
-        "source": "/history",
-        "destination": "/setup/history", 
-        "permanent": true
-      },
-
-      {
-        "source": "/ensure-image-pinned-version",
-        "destination": "/built-in-rules/ensure-image-pinned-version", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-memory-request",
-        "destination": "/built-in-rules/ensure-memory-request", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-cpu-request",
-        "destination": "/built-in-rules/ensure-cpu-request", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-memory-limit",
-        "destination": "/built-in-rules/ensure-memory-limit", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-cpu-limit",
-        "destination": "/built-in-rules/ensure-cpu-limit", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-liveness-probe",
-        "destination": "/built-in-rules/ensure-liveness-probe", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-readiness-probe",
-        "destination": "/built-in-rules/ensure-readiness-probe", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-privileged-containers",
-        "destination": "/built-in-rules/prevent-privileged-containers", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-digest-tag",
-        "destination": "/built-in-rules/ensure-digest-tag", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-using-host-pid",
-        "destination": "/built-in-rules/prevent-using-host-pid", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-using-host-ipc",
-        "destination": "/built-in-rules/prevent-using-host-ipc", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-using-host-network",
-        "destination": "/built-in-rules/prevent-using-host-network", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-uid-conflicts",
-        "destination": "/built-in-rules/prevent-uid-conflicts", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-mounting-docker-socket",
-        "destination": "/built-in-rules/prevent-mounting-docker-socket", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-labels-value-valid",
-        "destination": "/built-in-rules/ensure-labels-value-valid", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-valid-restart-policy",
-        "destination": "/built-in-rules/ensure-valid-restart-policy", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-deafult-namespce",
-        "destination": "/built-in-rules/prevent-deafult-namespce", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-minimum-two-replicas",
-        "destination": "/built-in-rules/ensure-minimum-two-replicas", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-owner-label",
-        "destination": "/built-in-rules/ensure-owner-label", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-env-label",
-        "destination": "/built-in-rules/ensure-env-label", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-cronjob-scheduler-valid",
-        "destination": "/built-in-rules/ensure-cronjob-scheduler-valid", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-cronjob-deadline",
-        "destination": "/built-in-rules/ensure-cronjob-deadline", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-cronjob-concurrency",
-        "destination": "/built-in-rules/prevent-cronjob-concurrency", 
-        "permanent": true
-      }
-    ]
-  }
+    {
+      "source": "/centralized-policy",
+      "destination": "/setup/centralized-policy",
+      "permanent": true
+    },
+    {
+      "source": "/schema-validation",
+      "destination": "/setup/schema-validation",
+      "permanent": true
+    },
+    {
+      "source": "/policy-as-code",
+      "destination": "/setup/policy-as-code",
+      "permanent": true
+    },
+    {
+      "source": "/cli-output",
+      "destination": "/setup/cli-output",
+      "permanent": true
+    },
+    {
+      "source": "/cli-arguments",
+      "destination": "/setup/cli-arguments",
+      "permanent": true
+    },
+    {
+      "source": "/history",
+      "destination": "/setup/history",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-image-pinned-version",
+      "destination": "/built-in-rules/ensure-image-pinned-version",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-memory-request",
+      "destination": "/built-in-rules/ensure-memory-request",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-cpu-request",
+      "destination": "/built-in-rules/ensure-cpu-request",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-memory-limit",
+      "destination": "/built-in-rules/ensure-memory-limit",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-cpu-limit",
+      "destination": "/built-in-rules/ensure-cpu-limit",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-liveness-probe",
+      "destination": "/built-in-rules/ensure-liveness-probe",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-readiness-probe",
+      "destination": "/built-in-rules/ensure-readiness-probe",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-privileged-containers",
+      "destination": "/built-in-rules/prevent-privileged-containers",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-digest-tag",
+      "destination": "/built-in-rules/ensure-digest-tag",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-using-host-pid",
+      "destination": "/built-in-rules/prevent-using-host-pid",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-using-host-ipc",
+      "destination": "/built-in-rules/prevent-using-host-ipc",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-using-host-network",
+      "destination": "/built-in-rules/prevent-using-host-network",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-uid-conflicts",
+      "destination": "/built-in-rules/prevent-uid-conflicts",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-mounting-docker-socket",
+      "destination": "/built-in-rules/prevent-mounting-docker-socket",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-labels-value-valid",
+      "destination": "/built-in-rules/ensure-labels-value-valid",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-valid-restart-policy",
+      "destination": "/built-in-rules/ensure-valid-restart-policy",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-deafult-namespce",
+      "destination": "/built-in-rules/prevent-deafult-namespce",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-minimum-two-replicas",
+      "destination": "/built-in-rules/ensure-minimum-two-replicas",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-owner-label",
+      "destination": "/built-in-rules/ensure-owner-label",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-env-label",
+      "destination": "/built-in-rules/ensure-env-label",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-cronjob-scheduler-valid",
+      "destination": "/built-in-rules/ensure-cronjob-scheduler-valid",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-cronjob-deadline",
+      "destination": "/built-in-rules/ensure-cronjob-deadline",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-cronjob-concurrency",
+      "destination": "/built-in-rules/prevent-cronjob-concurrency",
+      "permanent": true
+    }
+  ]
+}

@@ -1,7 +1,6 @@
 ---
 title: ☑️ Prevent CronJob from executing jobs concurrently
 slug: /built-in-rules/prevent-cronjob-concurrency
-displayed_sidebar: docs2
 ---
 
 By default, the cron job allows concurrently running jobs but generally speaking, the behavior of your cron jobs will be more deterministic if you prevent them from running concurrently. Allowing concurrent cron jobs often requires locking mechanisms (to avoid race conditions) in addition to startup/cleanup handling.
@@ -21,7 +20,7 @@ If a CronJob doesn't have `concurrencyPolicy` set or `concurrencyPolicy` is set 
 ```yaml
 kind: CronJob
 spec:
-  schedule: '*/1 * * * *'
+  schedule: "*/1 * * * *"
 ```
 
 ```yaml

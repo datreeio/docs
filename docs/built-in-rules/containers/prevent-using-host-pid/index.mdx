@@ -1,7 +1,6 @@
 ---
 title: ☑️ Prevent containers from sharing the host's PID namespace
 slug: /built-in-rules/prevent-using-host-pid
-displayed_sidebar: docs2
 ---
 
 When a container is allowed to share its host's PID namespace, it can see and in some cases even kill processes running on the host outside of the container. This violates the principle of least privilege - you will likely never need a pod to access other processes outside of its own namespace.

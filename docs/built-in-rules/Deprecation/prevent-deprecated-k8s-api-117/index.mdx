@@ -1,7 +1,6 @@
 ---
 title: ☑️ Prevent deprecated APIs in Kubernetes v1.17
 slug: /built-in-rules/prevent-deprecated-k8s-api-117
-displayed_sidebar: docs2
 ---
 
 The v1.17 release stopped serving some API versions for different resource types. When a user deploys a resource with a deprecated API version, the Kubernetes engine rejects it.
@@ -47,7 +46,7 @@ $ datree test *.yaml
 
 ## How to fix this failure
 
-Use *v1* instead of the deprecated version
+Use _v1_ instead of the deprecated version
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
