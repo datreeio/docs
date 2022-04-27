@@ -3,7 +3,7 @@ title: Policy customization
 slug: /setup/policy-customization
 ---
 
-## Rule Skipping
+## Rule skipping
 
 Rule skipping allows you to instrument your policy evaluation process, and specify which of your rules should not apply to a specific resource. 
 
@@ -11,12 +11,12 @@ Rule skipping allows you to instrument your policy evaluation process, and speci
 Skipping is allowed for a specific resource instance, skipping rules on a specific namespace or container is currently not supported.
 :::
 
-Skipping is done by adding the following annotation to a given resource manifest:
+Skipping is done by adding the following [annotation](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) to a given K8s manifest:
 ```yaml
-datree.io/skip/[PAC_identifier]: [skip message]
+datree.io/skip/[identifier]: [skip_message]
 ```
-**PAC_identifier** - the unique rule identifier.  
-**Skip message** - optional text to be presented in the policy check output (CLI and history tab at the dashboard).  <br/><br/>
+**identifier** - the unique rule identifier.  
+**skip_message** - optional text to be presented in the policy check output (CLI and history tab at the dashboard).  <br/><br/>
 
 Identifiers of *built-in rules* are available in the dashboard, in the policy page:  
 <img src='/img/setup/policy-customization/1.png' width='90%' /><br/><br/>
@@ -32,7 +32,7 @@ customRules:
 
 
 ---
-### Example YAML with skipped rules:  
+### [EXAMPLE] K8s manifest with skipped rule:  
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -43,6 +43,5 @@ metadata:
     environment: prod
     app: web
   annotations:
-    datree.io/skip/WORKLOAD_INVALID_LABELS_VALUE: irrelevant for deployments, skipping.
     datree.io/skip/CONTAINERS_MISSING_LIVENESSPROBE_KEY: irrelevant for prod environment, skipping.
 ```
