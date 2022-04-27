@@ -151,6 +151,111 @@
         "source": "/prevent-cronjob-concurrency",
         "destination": "/built-in-rules/prevent-cronjob-concurrency", 
         "permanent": true
+      },
+      {
+        "source": "/prevent-ingress-forwarding-traffic-to-single-container",
+        "destination": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container", 
+        "permanent": true
+      },
+      {
+        "source": "/prevent-node-port",
+        "destination": "/built-in-rules/prevent-node-port", 
+        "permanent": true
+      },
+      {
+        "source": "/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737",
+        "destination": "/built-in-rules/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737", 
+        "permanent": true
+      },
+      {
+        "source": "/prevent-container-security-vulnerability-cve-2021-25741",
+        "destination": "/built-in-rules/prevent-container-security-vulnerability-cve-2021-25741", 
+        "permanent": true
+      },
+      {
+        "source": "/prevent-ingress-security-vulnerability-cve-2021-25742",
+        "destination": "/built-in-rules/prevent-ingress-security-vulnerability-cve-2021-25742", 
+        "permanent": true
+      },
+      {
+        "source": "/prevent-configmap-security-vulnerability-cve-2021-25742",
+        "destination": "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742", 
+        "permanent": true
+      },
+      {
+        "source": "/prevent-deprecated-k8s-api-116",
+        "destination": "/built-in-rules/prevent-deprecated-k8s-api-116", 
+        "permanent": true
+      },
+      {
+        "source": "/prevent-deprecated-k8s-api-117",
+        "destination": "/built-in-rules/prevent-deprecated-k8s-api-117", 
+        "permanent": true
+      },
+      {
+        "source": "/ensure-workflow-dag-fail-fast-on-node-failure",
+        "destination": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure", 
+        "permanent": true
+      },
+      {
+        "source": "/-prevent-workflow-pods-from-using-the-default-service-account",
+        "destination": "/built-in-rules/prevent-workflow-pods-from-using-the-default-service-account", 
+        "permanent": true
+      },
+      {
+        "source": "/-ensure-configmap-is-recognized-by-argocd",
+        "destination": "/built-in-rules/ensure-configmap-is-recognized-by-argocd", 
+        "permanent": true
+      },
+      {
+        "source": "/-ensure-rollout-pause-step-has-a-configured-duration",
+        "destination": "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration", 
+        "permanent": true
+      },
+      {
+        "source": "/-ensure-application-and-appproject-are-part-of-the-argocd-namespace",
+        "destination": "/built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace", 
+        "permanent": true
+      },
+      {
+        "source": "/-prevent-workflow-from-having-an-empty-retry-strategy",
+        "destination": "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy", 
+        "permanent": true
+      },
+      {
+        "source": "/-ensure-rollout-has-revision-history-set",
+        "destination": "/built-in-rules/ensure-rollout-has-revision-history-set", 
+        "permanent": true
+      },
+      {
+        "source": "/-ensure-rollout-allows-broadcasting-ip-table-changes",
+        "destination": "/built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes", 
+        "permanent": true
+      },
+      {
+        "source": "/-ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset",
+        "destination": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset", 
+        "permanent": true
+      },
+      {
+        "source": "/-ensure-workflow-retry-policy-catches-relevant-errors-only",
+        "destination": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only", 
+        "permanent": true
+      },
+      {
+        "source": "/ensure-hpa-minimum-replicas",
+        "destination": "/built-in-rules/ensure-hpa-minimum-replicas", 
+        "permanent": true
+      },
+      {
+        "source": "/ensure-hpa-maximum-replicas",
+        "destination": "/built-in-rules/ensure-hpa-maximum-replicas", 
+        "permanent": true
+      },
+      {
+        "source": "/prevent-naked-pods",
+        "destination": "/built-in-rules/prevent-naked-pods", 
+        "permanent": true
       }
     ]
   }
