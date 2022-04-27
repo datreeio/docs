@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 import styled from "styled-components";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -71,6 +72,15 @@ const CustomTabs = () => {
   );
 };
 
+const BrowserCustomTabs = () => {
+  return (
+    <BrowserOnly fallback={<div>Loading...</div>}>
+      {() => {
+        return <CustomTabs />;
+      }}
+    </BrowserOnly>
+  );
+};
 const StyledTabs = styled(Tabs)`
   .MuiTab-root {
     font-weight: bold;
@@ -118,4 +128,4 @@ const StyledLink = styled(Link)`
   }
 `;
 
-export default CustomTabs;
+export default BrowserCustomTabs;
