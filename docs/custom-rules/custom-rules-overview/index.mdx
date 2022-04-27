@@ -5,7 +5,9 @@ slug: /custom-rules/custom-rules-overview
 
 In addition to the tool's built-in rules, you can also write any tests that you wish and run them against your Kubernetes configurations to check for rule violations. The custom rule engine is based on [JSON Schema](https://json-schema.org/), so it supports both **YAML** and **JSON** declarative syntax.
 
+:::info
 Note that using custom rules is possible only when in [Policy as code](/setup/policy-as-code) mode.
+:::
 
 ## customRules properties
 
@@ -17,80 +19,29 @@ Note that using custom rules is possible only when in [Policy as code](/setup/po
 
 - **schema** - a custom rule logic written in JSON Schema (as YAML)
 
+---
 ## Basic examples
 
 Here are some examples of basic use-cases:
 
 1. [Ensure a specific key exists](/custom-rules/basic-examples#ensure-a-specific-key-exists)
-2. [Set a minimum value for key of a specific kind](/custom-rules/Set-a-minimum-value-for-key-of-a-specific-kind)
+2. [Set a minimum value for key of a specific kind](/custom-rules/basic-examples#set-a-minimum-value-for-key-of-a-specific-kind)
+3. [Ensure value of a specific key is not one of predefined values](/custom-rules/basic-examples#ensure-value-of-a-specific-key-is-not-one-of-predefined-values)
+
 
 Here are three examples of custom rules to showcase how you can set it up:
 
-1.  [Ensure correct environment labels are used](/custom-rules/basic-examples#example-1)
+1.  [Ensure correct environment labels are used](/custom-rules/basic-examples#ensure-correct-environment-labels-are-used)
+2.  [Prevent workload from using the (system) default namespaces](/custom-rules/basic-examples#prevent-workload-from-using-the-system-default-namespaces)
+3.  [Ensure Deployment has replicas set between 2-10](/custom-rules/basic-examples#ensure-deployment-has-replicas-set-between-2-10)
 
-2.  [Prevent workload from using the (system) default namespaces](/custom-rules/basic-examples#example-2)
+<br/>
 
-3.  [Ensure Deployment has replicas set between 2-10](/custom-rules/basic-examples#example-3)
+:::tip
+The provided examples are written in YAML schema, but custom rules can also be specified as JSON strings.
+:::
 
-## JSON vs. YAML
-
-Schema logic can also be specified as JSON strings instead of YAML, for easier copy/pasting. This is an example of the same rule logic in both JSON string (jsonSchema) and YAML string (schema):
-
-```yaml
-customRules:
-  - identifier: CUSTOM_WORKLOAD_INCORRECT_ENVIRONMENT_LABELS
-    name: Ensure correct environment labels are used [CUSTOM RULE]
-    defaultMessageOnFailure: Use only approved environment labels (`prod`, `staging` and `test`)
-    jsonSchema: |
-      {
-        "properties": {
-          "metadata": {
-            "properties": {
-              "labels": {
-                "properties": {
-                  "environment": {
-                    "enum": [
-                      "prod",
-                      "staging",
-                      "test"
-                    ]
-                  }
-                },
-                "required": [
-                  "environment"
-                ]
-              }
-            },
-            "required": [
-              "labels"
-            ]
-          }
-        }
-      }
-```
-
-```yaml
-customRules:
-  - identifier: CUSTOM_WORKLOAD_INCORRECT_ENVIRONMENT_LABELS
-    name: Ensure correct environment labels are used [CUSTOM RULE]
-    defaultMessageOnFailure: Use only approved environment labels (`prod`, `staging` and `test`)
-    schema:
-      properties:
-        metadata:
-          properties:
-            labels:
-              properties:
-                environment:
-                  enum:
-                    - prod
-                    - staging
-                    - test
-              required:
-                - environment
-          required:
-            - labels
-```
-
+---
 ## Helpful links
 
 - [Getting started with JSON Schema](https://json-schema.org/learn/getting-started-step-by-step)

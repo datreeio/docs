@@ -3,7 +3,9 @@ title: Basic examples
 slug: /custom-rules/basic-examples
 ---
 
-## Ensure a specific key exists
+## Basic schema use-cases
+
+### Ensure a specific key exists
 
 The following schema ensures that the key `metadata.labels.app` exists (regardless of its value):
 ```yaml
@@ -17,7 +19,7 @@ properties:
       - labels
 ```
 
-## Set a minimum value for key of a specific kind
+### Set a minimum value for key of a specific kind
 
 The following schema ensures that in a YAML of kind `Deployment`, the key `spec.replicas` has a value of *3* or higher:
 ```yaml
@@ -35,15 +37,26 @@ then:
 ```
 Note that the key `maximum` is also available.
 
-## Ensure value of a specific key is not one of predefined values
+### Ensure value of a specific key is not one of predefined values
 
-The following schema defines a blacklist of values for the key `das`:
+The following schema defines a blacklist of values for the key `metadata.namespace`:
 
 ```yaml
-
+properties:
+  metadata:
+    properties:
+      namespace:
+        not:
+          enum:
+            - "default"
+            - "misc"
+            - "general"
 ```
 
-## Example #1
+---
+## Full custom rule examples
+
+### Ensure correct environment labels are used
 
 Here is an example of a [custom rule logic](https://www.jsonschemavalidator.net/s/QGe8g1l9) that will ensure only pre-approved values are used (allow-list) with the label key \`environment\`:
 
@@ -127,7 +140,9 @@ Enable PaC mode and publish the policies.yaml configuration ([read more](/custom
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
 | ![](https://archbee-image-uploads.s3.amazonaws.com/geX2Ub-NMLY6MZgYV2qPn/gVwyKXf5hwg-YeXKzghn4_group-254.png) | ![](https://archbee-image-uploads.s3.amazonaws.com/geX2Ub-NMLY6MZgYV2qPn/sqyz0p5K4LyhhsF87-7vr_group-255.png) |
 
-## Example #2
+<br/>
+
+### Prevent workload from using the (system) default namespaces
 
 Here is an example of a [custom rule logic](https://www.jsonschemavalidator.net/s/oKAzqu4L) that will ensure pre-defined \`namespace\` values are excluded (block-list):&#x20;
 
@@ -165,7 +180,9 @@ customRules:
 
 The above rule enforces similar logic to our built-in rule - [☑️ Prevent workload from using the default namespace](/built-in-rules/prevent-deafult-namespce)
 
-## Example #3
+<br/>
+
+### Ensure Deployment has replicas set between 2-10
 
 Here is an example of a [custom rule logic](https://www.jsonschemavalidator.net/s/9tvpDkP1) that will ensure the number of \`replicas\` is set between 2-10 for resources kind \`Deployment\`:
 
