@@ -36,6 +36,7 @@ const CustomTabs = () => {
   return (
     <>
       <StyledTabs
+        variant="scrollable"
         colormode={colorMode}
         value={selectedTab}
         onChange={handleSelectTab}
@@ -71,25 +72,28 @@ const CustomTabs = () => {
 };
 
 const StyledTabs = styled(Tabs)`
+  .MuiTab-root {
+    font-weight: bold;
+  }
   .MuiTabs-indicator {
     background-color: ${(props) =>
-      props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#000"};
+      props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#525860"};
   }
   .MuiTab-textColorPrimary.Mui-selected {
     color: ${(props) =>
-      props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#000"};
+      props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#002d49"};
   }
   .MuiTab-wrapper {
     color: ${(props) =>
-      props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#000"};
+      props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#525860"};
   }
   .MuiTab-wrapper:hover {
     color: ${(props) =>
-      props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#000"};
+      props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#525860"};
   }
   .MuiTab-textColorPrimary {
     color: ${(props) =>
-      props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#000"};
+      props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#525860"};
   }
 `;
 
