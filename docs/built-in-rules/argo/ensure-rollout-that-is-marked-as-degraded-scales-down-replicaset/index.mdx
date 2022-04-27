@@ -1,12 +1,11 @@
 ---
 title: ☑️ Ensure Rollout that is marked as degraded scales down ReplicaSet
 slug: /built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset
-displayed_sidebar: docs2
 ---
 
 Users can set the `progressDeadlineSeconds` key which states the maximum time in seconds in which a Rollout must make progress during an update before it is considered to be failed.
 
-If rollout pods get stuck in an error state (e.g. image pull back off), the rollout degrades after the progress deadline is exceeded but the bad ReplicaSet/Pods aren't scaled down. The pods would keep retrying and eventually the rollout message would read *ProgressDeadlineExceeded: The replicaset <name\> has timed out progressing*.
+If rollout pods get stuck in an error state (e.g. image pull back off), the rollout degrades after the progress deadline is exceeded but the bad ReplicaSet/Pods aren't scaled down. The pods would keep retrying and eventually the rollout message would read _ProgressDeadlineExceeded: The replicaset <name\> has timed out progressing_.
 
 To abort the rollout, the user should also set `progressDeadlineAbort`.
 

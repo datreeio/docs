@@ -1,7 +1,6 @@
 ---
 title: ☑️ Prevent containers from accessing host files by using high GIDs
 slug: /built-in-rules/prevent-accessing-host-files-by-using-high-gids
-displayed_sidebar: docs2
 ---
 
 It's recommended for containers to run under UIDs that are not used on the host system. With a high UID number, a container is blocked from accessing host-based files even if it manages to gain access to a host's file system.
@@ -16,7 +15,7 @@ It's recommended for containers to run under UIDs that are not used on the host 
 
 ## This rule will fail
 
-If `runAsGroup` is set to a value lower than *1000*:
+If `runAsGroup` is set to a value lower than _1000_:
 
 ```yaml
 kind: Pod
@@ -48,7 +47,7 @@ $ datree test *.yaml
 
 ## How to fix this failure
 
-Set runAsGroup to a value higher than *999*:
+Set runAsGroup to a value higher than _999_:
 
 ```yaml
 kind: Pod
@@ -72,4 +71,3 @@ spec:
 
 - [KubSec - runAsUser](https://kubesec.io/basics/containers-securitycontext-runasuser/)
 - [A guide for defining privileges and access control](https://medium.com/kubernetes-tutorials/defining-privileges-and-access-control-settings-for-pods-and-containers-in-kubernetes-2cef08fc62b7)
-

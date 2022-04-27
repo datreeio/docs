@@ -1,7 +1,6 @@
 ---
 title: ☑️ Ensure each container has a configured CPU request
 slug: /built-in-rules/ensure-cpu-request
-displayed_sidebar: docs2
 ---
 
 CPU requests enable you to use CPU resources efficiently and to allocate a guaranteed minimum of computing resources for the pods running in your cluster.
@@ -46,7 +45,7 @@ spec:
       image: nginx:1.19.8
       resources:
         requests:
-          cpu: '250m'
+          cpu: "250m"
 ```
 
 ---

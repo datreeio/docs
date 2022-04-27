@@ -1,7 +1,6 @@
 ---
 title: ☑️ Prevent service account token auto-mounting on pods
 slug: /built-in-rules/prevent-service-account-token-auto-mount
-displayed_sidebar: docs2
 ---
 
 By default, Kubernetes automatically provisions a service account when creating a Pod and mounts the account’s secret token within the Pod at runtime. Many containerized applications do not require direct access to the service account.
@@ -17,7 +16,7 @@ Therefore, it is recommended to disable the secret token being mounted.
 
 ## This rule will fail
 
-If `automountServiceAccountToken` is not set or set to *true*:
+If `automountServiceAccountToken` is not set or set to _true_:
 
 ```yaml
 kind: ServiceAccount
@@ -45,7 +44,7 @@ $ datree test *.yaml
 
 ## How to fix this failure
 
-Set `automountServiceAccountToken` to *false* either at the `ServiceAccount` level or at the individual `Pod` level (`Pod` level takes precedence):
+Set `automountServiceAccountToken` to _false_ either at the `ServiceAccount` level or at the individual `Pod` level (`Pod` level takes precedence):
 
 ```yaml
 kind: ServiceAccount
@@ -65,4 +64,3 @@ spec:
 ## Read more
 
 - [Kubernetes Hardening Guidance](https://media.defense.gov/2021/Aug/03/2002820425/-1/-1/1/CTR_KUBERNETES%20HARDENING%20GUIDANCE.PDF)
-

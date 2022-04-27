@@ -1,7 +1,6 @@
 ---
 title: ☑️ Prevent container from running with root privileges
 slug: /built-in-rules/prevent-running-with-root-privileges
-displayed_sidebar: docs2
 ---
 
 NSA encourages developers to build container applications to execute as a non-root user. Having non-root execution integrated at build time provides better assurance that applications will function correctly without root privileges. Therefore, it's recommended for containers to run with the least privileges possible.
@@ -16,7 +15,7 @@ NSA encourages developers to build container applications to execute as a non-ro
 
 ## This rule will fail
 
-If `runAsNonRoot` is not set or set to *false*:
+If `runAsNonRoot` is not set or set to _false_:
 
 ```yaml
 kind: Pod
@@ -31,7 +30,7 @@ spec:
   containers:
     - name: myContainer
       securityContext:
-        runAsNonRoot : false
+        runAsNonRoot: false
 ```
 
 ### Rule output in the CLI
@@ -63,7 +62,7 @@ spec:
   containers:
     - name: myContainer
       securityContext:
-        runAsNonRoot : true
+        runAsNonRoot: true
 ```
 
 ---
@@ -71,4 +70,3 @@ spec:
 ## Read more
 
 - [KubSec - Run as non-root](https://kubesec.io/basics/containers-securitycontext-runasnonroot-true/)
-

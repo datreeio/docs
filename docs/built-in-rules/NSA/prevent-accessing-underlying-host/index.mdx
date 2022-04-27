@@ -1,7 +1,6 @@
 ---
 title: ☑️ Prevent containers from accessing the underlying host
 slug: /built-in-rules/prevent-accessing-underlying-host
-displayed_sidebar: docs2
 ---
 
 Kubernetes pods can use host bind mounts (i.e. directories and volumes mounted on the container host) in containers. Using a hostPath mount can enable attackers to break from the container and gain access to the underlying host. Therefore, it's not recommended to use bind mounts for application pods.
@@ -21,7 +20,7 @@ If the key `hostPath` is used:
 ```yaml
 spec:
   volumes:
-  - name: myVolume
+    - name: myVolume
 ```
 
 ### Rule output in the CLI
@@ -43,7 +42,7 @@ Refrain from using the `hostPath` mount
 ```yaml
 spec:
   volumes:
-  - name: myVolume
+    - name: myVolume
 ```
 
 ---
@@ -51,6 +50,3 @@ spec:
 ## Read more
 
 - [Kubernetes.io - pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/)
-
-
-

@@ -1,7 +1,6 @@
 ---
 title: ☑️ Ensure each container has a configured CPU limit
 slug: /built-in-rules/ensure-cpu-limit
-displayed_sidebar: docs2
 ---
 
 CPU limits enable you to use CPU resources efficiently by restricting the maximum amount of CPU available to the pods running in your cluster.
@@ -46,7 +45,7 @@ spec:
       image: nginx:1.19.8
       resources:
         limits:
-          cpu: '500m'
+          cpu: "500m"
 ```
 
 ---
