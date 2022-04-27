@@ -11,10 +11,9 @@ Rule skipping allows you to instrument your policy evaluation process, and speci
 Skipping is allowed for a specific resource instance, skipping rules on a specific namespace or container is currently not supported.
 :::
 
-Skipping is done by adding the following annotation to a given resource manifest:
-```yaml
-datree.io/skip/[PAC_identifier]: [skip message]
-```
+Skipping is done by adding the following annotation to a given resource manifest:  
+> datree.io/skip/**[PAC_identifier]**: **[skip message]**
+
 **PAC_identifier** - the unique rule identifier.  
 **Skip message** - optional text to be presented in the policy check output (CLI and history tab at the dashboard).  <br/><br/>
 
