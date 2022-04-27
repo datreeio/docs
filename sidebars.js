@@ -30,6 +30,9 @@ const sidebars = {
     {
       type: "category",
       label: "🚔\xa0BUILT-IN RULES",
+      collapsible: false,
+      collapsed: false,
+      className: "built-in-rules-navbar-items",
       link: {
         type: "doc",
         id: "built-in-rules/index",
