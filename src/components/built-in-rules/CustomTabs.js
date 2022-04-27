@@ -38,12 +38,19 @@ const CustomTabs = () => {
     <>
       <StyledTabs
         variant="scrollable"
+        scrollButtons="auto"
         colormode={colorMode}
         value={selectedTab}
         onChange={handleSelectTab}
       >
         {tabsItems.map((item) => {
-          return <Tab key={item.value} label={item.label} value={item.value} />;
+          return (
+            <ResponsiveTab
+              key={item.value}
+              label={item.label}
+              value={item.value}
+            />
+          );
         })}
       </StyledTabs>
       <List>
@@ -59,8 +66,10 @@ const CustomTabs = () => {
                   }
                   secondary={
                     <StyledSubText colormode={colorMode}>
-                      Enabled by default?
-                      {item.isEnabledByDefault ? "True" : "False"}
+                      <span>Enabled by default?</span>
+                      <StyledSpan colormode={colorMode}>
+                        {item.isEnabledByDefault ? "True" : "False"}
+                      </StyledSpan>
                     </StyledSubText>
                   }
                 />
@@ -81,10 +90,30 @@ const BrowserCustomTabs = () => {
     </BrowserOnly>
   );
 };
+
+const StyledSpan = styled.span`
+  margin: 2px;
+  color: ${(props) =>
+    props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#002d49"};
+`;
+
+const ResponsiveTab = styled(Tab)`
+  && {
+    text-transform: none;
+    min-width: 0;
+    padding:0 10px;
+    margin: 0;
+    min-height: unset;
+    height: unset;
+`;
+
 const StyledTabs = styled(Tabs)`
   .MuiTab-root {
     font-weight: bold;
+    text-transform: none;
+    font-size: 16px;
   }
+
   .MuiTabs-indicator {
     background-color: ${(props) =>
       props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#525860"};
