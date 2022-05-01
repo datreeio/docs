@@ -163,22 +163,22 @@
         "permanent": true
       },
       {
-        "source": "/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737",
+        "source": "/-prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737",
         "destination": "/built-in-rules/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737", 
         "permanent": true
       },
       {
-        "source": "/prevent-container-security-vulnerability-cve-2021-25741",
+        "source": "/-prevent-container-security-vulnerability-cve-2021-25741",
         "destination": "/built-in-rules/prevent-container-security-vulnerability-cve-2021-25741", 
         "permanent": true
       },
       {
-        "source": "/prevent-ingress-security-vulnerability-cve-2021-25742",
+        "source": "/-prevent-ingress-security-vulnerability-cve-2021-25742",
         "destination": "/built-in-rules/prevent-ingress-security-vulnerability-cve-2021-25742", 
         "permanent": true
       },
       {
-        "source": "/prevent-configmap-security-vulnerability-cve-2021-25742",
+        "source": "/-prevent-configmap-security-vulnerability-cve-2021-25742",
         "destination": "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742", 
         "permanent": true
       },
