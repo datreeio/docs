@@ -41,7 +41,7 @@ const config = {
           priority: 0.5,
         },
         gtag: {
-          trackingID: 'GTM-K7BG7K2',
+          trackingID: 'GTM-M69NPS4',
           anonymizeIP: true,
         },
         docs: {
