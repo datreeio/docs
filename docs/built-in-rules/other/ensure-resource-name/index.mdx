@@ -1,0 +1,57 @@
+---
+title: ☑️ Ensure resource has a configured name
+slug: /built-in-rules/ensure-resource-name
+---
+
+`metadata.name` OR `metadata.generateName` is a mandatory property in every K8s resource type. 
+Validation that this property exists occurs is on the k8s server-side only, and is not enforced as part of the official schema. 
+Therefore, a YAML without this property will pass k8s schema validation, but will fail when pushed into a cluster (i.e. when running kubectl apply/create).
+
+**Targeted resources by this rule (types of **`kind`**):** All
+
+**Enabled by default?** True
+
+**Policy as code identifier:** RESOURCE_MISSING_NAME
+
+---
+
+## This rule will fail
+
+If a resource does not contain one of the propreties `name` or `generateName`
+
+```yaml
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  namespace: "myGreatNamespace"
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure resource has a configured name [1 occurrence]
+💡 Missing key `name` or `generateName` - one of them must be set to apply resource to a cluster
+```
+
+---
+
+## How to fix this failure
+
+Set either `name` or `generateName` and give it a value
+
+```yaml
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: "myGreatIngress"
+  namespace: "myGreatNamespace"
+```
+
+---
+
+## Read more
+
+- [Understanding Kubernetes Objects](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/)
