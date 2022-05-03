@@ -31,6 +31,12 @@ const config = {
         disableInDev: false,
       },
     ],
+    [
+      require.resolve('docusaurus-gtm-plugin'),
+      {
+        id: 'GTM-K7BG7K2',
+      },
+    ],
   ],
   presets: [
     [
@@ -40,10 +46,10 @@ const config = {
           changefreq: 'weekly',
           priority: 0.5,
         },
-        gtag: {
-          trackingID: 'GTM-K7BG7K2',
-          anonymizeIP: true,
-        },
+        //gtag: {
+        //  trackingID: 'GTM-K7BG7K2',
+        //  anonymizeIP: true,
+        //},
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           breadcrumbs: true,
