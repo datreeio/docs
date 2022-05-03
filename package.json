@@ -28,6 +28,7 @@
     "docusaurus-gtm-plugin": "^0.0.2",
     "docusaurus-plugin-clarity": "^2.1.0",
     "docusaurus-plugin-sass": "^0.2.2",
+    "docusaurus-plugin-smartlook": "^1.0.2",
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
