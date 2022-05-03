@@ -21,6 +21,7 @@ const config = {
       'docusaurus-plugin-sass', {
       },
     ],
+    ['docusaurus-plugin-clarity', {}],
     [
       '@docusaurus/plugin-ideal-image',
       {
@@ -161,6 +162,9 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      clarity: {
+        ID: "bpp35y2m6t",
+      }
     }),
 };
 
