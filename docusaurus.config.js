@@ -79,11 +79,6 @@ const config = {
             position: 'right',
             className: 'navbar-menu',
           },
-          //{
-            //href: 'https://github.com/datreeio/datree',
-            //label: 'GitHub',
-            //position: 'right',
-          //},
         ],
       },
       // footer

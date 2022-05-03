@@ -13,9 +13,18 @@ If you see this message in your dashboard, it means that we identified there are
 
 You will need to set your CLI token to match your dashboard token:
 
-1.  [Get your dashboard account token](/setup/account-token#from-the-centralized-policy-dashboard)
+1.  [Get your dashboard account token](/setup/account-token#1-get-your-account-token-from-the-dashboard)
 
-2.  [Set your dashboard account token in your CLI](/setup/account-token#overriding-account-token)
+2.  [Set your dashboard account token in your CLI](/setup/account-token#2-set-your-token-in-the-cli)
+
+---
+
+### Seems like your token does not exist
+
+If you deleted your account, then ran a policy check - you will get this output: "_Seems like your token does not exist_".  
+To fix this, delete your config file (`$HOME/.datree/config.yaml`), then run another policy check.
+
+---
 
 ## Running Datree on Alpine (Linux) image
 
