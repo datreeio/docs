@@ -36,6 +36,11 @@
         "destination": "/setup/history", 
         "permanent": true
       },
+      {
+        "source": "/argo",
+        "destination": "/built-in-rules#argo",
+        "permanent": true
+      },
 
       {
         "source": "/ensure-image-pinned-version",
