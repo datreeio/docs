@@ -17,11 +17,8 @@ const config = {
   projectName: 'Datree docs', // Usually your repo name.
 
   plugins: [
-    [
-      'docusaurus-plugin-sass', {
-      },
-    ],
-    ['docusaurus-plugin-clarity', {}],
+    'docusaurus-plugin-clarity',
+    'docusaurus-plugin-sass',
     [
       '@docusaurus/plugin-ideal-image',
       {
