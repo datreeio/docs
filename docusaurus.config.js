@@ -21,7 +21,7 @@ const config = {
       'docusaurus-plugin-sass', {
       },
     ],
-    ['docusaurus-plugin-clarity',{}],
+    ['docusaurus-plugin-clarity', {}],
     ['docusaurus-plugin-smartlook',{}],
     [
       '@docusaurus/plugin-ideal-image',
@@ -43,7 +43,7 @@ const config = {
           priority: 0.5,
         },
         gtag: {
-          trackingID: 'G-K7BG7K2',
+          trackingID: 'GTM-K7BG7K2',
           anonymizeIP: true,
         },
         docs: {
