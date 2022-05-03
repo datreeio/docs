@@ -71,19 +71,19 @@ const config = {
         },
         items: [
           {
+            type: 'search',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/datreeio/datree',
             position: 'right',
             className: 'navbar-menu',
           },
-          {
-            href: 'https://github.com/datreeio/datree',
-            label: 'GitHub',
-            position: 'right',
-          },
-          {
-            type: 'search',
-            position: 'right',
-          },
+          //{
+            //href: 'https://github.com/datreeio/datree',
+            //label: 'GitHub',
+            //position: 'right',
+          //},
         ],
       },
       // footer
@@ -168,6 +168,22 @@ const config = {
       },
       smartlook: {
         projectKey: '8d7a6e678156a44d1acb6c9dd00bbff5837fe353',
+      },
+      algolia: {
+        appId: 'VBCXPB7UFQ',
+  
+        // Public API key: it is safe to commit it
+        apiKey: '6a129ce5a599323761caf4ac37846eac',
+  
+        indexName: 'datree',
+  
+        // Optional: see doc section below
+        contextualSearch: true,
+  
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: 'search',
+  
+        container: 'div',
       },
     }),
 };
