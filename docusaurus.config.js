@@ -21,6 +21,8 @@ const config = {
       'docusaurus-plugin-sass', {
       },
     ],
+    ['docusaurus-plugin-clarity', {}],
+    ['docusaurus-plugin-smartlook',{}],
     [
       '@docusaurus/plugin-ideal-image',
       {
@@ -160,6 +162,12 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      clarity: {
+        ID: "bpp35y2m6t",
+      },
+      smartlook: {
+        projectKey: '8d7a6e678156a44d1acb6c9dd00bbff5837fe353',
       },
     }),
 };
