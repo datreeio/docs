@@ -106,6 +106,7 @@ const sidebars = {
         "built-in-rules/networking/index",
         "built-in-rules/networking/prevent-ingress-forwarding-traffic-to-single-container/index",
         "built-in-rules/networking/prevent-node-port/index",
+        //"built-in-rules/other/ensure-resource-name/index",
         "built-in-rules/other/ensure-hpa-maximum-replicas/index",
         "built-in-rules/other/ensure-hpa-minimum-replicas/index",
         "built-in-rules/other/index",
