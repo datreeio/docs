@@ -8,6 +8,7 @@ export const tabsItems = [
   { value: "security", label: "Security" },
   { value: "deprecation", label: "Deprecation" },
   { value: "argo", label: "Argo" },
+  { value: "NSA", label: "NSA"},
   { value: "other", label: "Other" },
 ];
 
@@ -307,7 +308,78 @@ export const navItems = [
     isEnabledByDefault: true,
     tabOwner: ["argo"],
   },
+  // NSA
+  {
+    id: uuid(),
+    title: "Ensure each container has a read-only root filesystem",
+    slug: "/built-in-rules/ensure-read-only-filesystem",
+    isEnabledByDefault: true,
+    tabOwner: ["NSA"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent containers from accessing host files by using high GIDs",
+    slug: "/built-in-rules/prevent-accessing-host-files-by-using-high-gids",
+    isEnabledByDefault: true,
+    tabOwner: ["NSA"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent containers from accessing the underlying host",
+    slug: "/built-in-rules/prevent-accessing-underlying-host",
+    isEnabledByDefault: true,
+    tabOwner: ["NSA"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent containers from allowing command execution",
+    slug: "/built-in-rules/prevent-allowing-command-execution",
+    isEnabledByDefault: true,
+    tabOwner: ["NSA"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent containers from escalating privileges",
+    slug: "/built-in-rules/prevent-escalating-privileges",
+    isEnabledByDefault: true,
+    tabOwner: ["NSA"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent containers from having insecure capabilities",
+    slug: "/built-in-rules/prevent-insecure-capabilities",
+    isEnabledByDefault: true,
+    tabOwner: ["NSA"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent containers from insecurely exposing workload",
+    slug: "/built-in-rules/prevent-insecurely-exposing-workload",
+    isEnabledByDefault: true,
+    tabOwner: ["NSA"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent container from running with root privileges",
+    slug: "/built-in-rules/prevent-running-with-root-privileges",
+    isEnabledByDefault: true,
+    tabOwner: ["NSA"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent service account token auto-mounting on pods",
+    slug: "/built-in-rules/prevent-service-account-token-auto-mount",
+    isEnabledByDefault: true,
+    tabOwner: ["NSA"],
+  },
   // other
+  /*{
+    id: uuid(),
+    title: "Ensure resource has a configured name",
+    slug: "/built-in-rules/ensure-resource-name",
+    isEnabledByDefault: true,
+    tabOwner: ["other"],
+  },*/
   {
     id: uuid(),
     title: "Ensure HPA has minimum replicas configured",
