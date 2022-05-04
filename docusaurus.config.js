@@ -21,8 +21,12 @@ const config = {
       'docusaurus-plugin-sass', {
       },
     ],
-    ['docusaurus-plugin-clarity', {}],
-    ['docusaurus-plugin-smartlook',{}],
+    [
+      require.resolve('docusaurus-gtm-plugin'),
+      {
+        id: 'GTM-K7BG7K2',
+      }
+    ],
     [
       '@docusaurus/plugin-ideal-image',
       {
@@ -41,10 +45,6 @@ const config = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
-        },
-        gtag: {
-          trackingID: 'GTM-K7BG7K2',
-          anonymizeIP: true,
         },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
@@ -157,12 +157,6 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-      },
-      clarity: {
-        ID: "bpp35y2m6t",
-      },
-      smartlook: {
-        projectKey: '8d7a6e678156a44d1acb6c9dd00bbff5837fe353',
       },
       algolia: {
         appId: 'VBCXPB7UFQ',
