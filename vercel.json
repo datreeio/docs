@@ -5,7 +5,11 @@
         "destination": "https://github.com/vercel/vercel", 
         "permanent": true
       },
-
+      {
+        "source": "/getting-started",
+        "destination": "/", 
+        "permanent": true
+      },
       {
         "source": "/centralized-policy",
         "destination": "/setup/centralized-policy", 
@@ -42,11 +46,20 @@
         "permanent": true
       },
       {
+        "source": "/containers",
+        "destination": "/built-in-rules#containers",
+        "permanent": true
+      },
+      {
         "source": "/argo",
         "destination": "/built-in-rules#argo",
         "permanent": true
       },
-
+      {
+        "source": "/helm-plugin",
+        "destination": "https://github.com/datreeio/helm-datree",
+        "permanent": true
+      },
       {
         "source": "/ensure-image-pinned-version",
         "destination": "/built-in-rules/ensure-image-pinned-version", 
