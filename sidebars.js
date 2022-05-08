@@ -39,7 +39,7 @@ const sidebars = {
         "setup/cli-arguments/index",
         "setup/history/index",
         "setup/account-token/index",
-        "setup/policy-customization/index",
+        //"setup/policy-customization/index",
       ],
     },
     {
