@@ -73,6 +73,11 @@ const config = {
             position: 'right',
             className: 'navbar-menu',
           },
+          {
+            href: 'https://app.datree.io',
+            position: 'right',
+            label: 'Sign up | Login',
+          },
         ],
       },
       // footer
