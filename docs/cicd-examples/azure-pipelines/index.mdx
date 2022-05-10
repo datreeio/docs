@@ -1,0 +1,31 @@
+---
+title: Azure Pipelines
+slug: /cicd-examples/azure-pipelines
+---
+
+<img src='/img/cicd/5.png' alt='' width='250px' />
+
+## TO-DO list for setting-up Datree in your CI
+
+- [x] Get your [account token](/setup/account-token)
+- [ ] Set DATREE_TOKEN as a [secret/environment variable](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#secret-variables)
+- [ ] Add datree to your CI script&#x20;
+
+## CI config example
+
+```yaml
+trigger:
+  - main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: curl https://get.datree.io | /bin/bash
+  displayName: 'Install Datree'
+
+- script: datree test ~/.datree/k8s-demo.yaml
+  env:
+    DATREE_TOKEN: $(DATREE_TOKEN)
+    displayName: 'Run Datree policy check'
+```

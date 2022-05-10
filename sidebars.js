@@ -192,6 +192,7 @@ const sidebars = {
         "cicd-examples/travis-ci/index",
         "cicd-examples/gitlab-cicd/index",
         "cicd-examples/jenkins-pipeline/index",
+        "cicd-examples/azure-pipelines/index",
       ],
     },
     {
