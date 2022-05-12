@@ -373,13 +373,13 @@ export const navItems = [
     tabOwner: ["NSA"],
   },
   // other
-  /*{
+  {
     id: uuid(),
     title: "Ensure resource has a configured name",
     slug: "/built-in-rules/ensure-resource-name",
     isEnabledByDefault: true,
     tabOwner: ["other"],
-  },*/
+  },
   {
     id: uuid(),
     title: "Ensure HPA has minimum replicas configured",
@@ -391,7 +391,7 @@ export const navItems = [
     id: uuid(),
     title: "Ensure HPA has maximum replicas configured",
     slug: "/built-in-rules/ensure-hpa-maximum-replicas",
-    isEnabledByDefault: true,
+    isEnabledByDefault: false,
     tabOwner: ["other"],
   },
   {
