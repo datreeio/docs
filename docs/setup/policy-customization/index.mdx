@@ -12,16 +12,18 @@ Skipping is allowed for a specific resource instance, skipping rules on a specif
 :::
 
 Skipping is done by adding the following annotation to a given resource manifest:  
-> datree.io/skip/**[PAC_identifier]**: **[skip message]**
+> datree.skip/**[identifier]**: **[message]**
 
-**PAC_identifier** - the unique rule identifier.  
-**Skip message** - optional text to be presented in the policy check output (CLI and history tab at the dashboard).  <br/><br/>
+**identifier** - the unique rule identifier.  
+**message** - optional text to be presented in the policy check output (CLI and history tab at the dashboard).  <br/><br/>
 
 To obtain identifiers of *built-in rules*, go to your [dashboard](https://app.datree.io/cli/policies/) and click on the 'i' icon of your desired rule:  
-<img src="/img/setup/policy-customization/1.png" width="50%" /> <br/><br/>
 
-This will lead you to the documentation of the rule, where you will find the identifier:
-<img src="/img/setup/policy-customization/2.png" width="80%" /> <br/><br/>
+![rule_i](/img/setup/policy-customization/1.png)
+
+This will lead you to the documentation of the rule, where you will find the identifier:  
+
+![rule_identifier_docs](/img/setup/policy-customization/2.png)
 
 Identifiers of *custom rules* can be found in the policy.yaml file, when in Policy-as-code mode.  For example:  
 ```yaml
@@ -31,7 +33,6 @@ customRules:
     defaultMessageOnFailure: Use only approved environment labels ('prod', 'staging' and 'test')
     schema:
 ```
-
 
 ---
 ### Example YAML with skipped rules:  
@@ -45,6 +46,11 @@ metadata:
     environment: prod
     app: web
   annotations:
-    datree.io/skip/WORKLOAD_INVALID_LABELS_VALUE: irrelevant for deployments, skipping.
-    datree.io/skip/CONTAINERS_MISSING_LIVENESSPROBE_KEY: irrelevant for prod environment, skipping.
+    datree.skip/WORKLOAD_INVALID_LABELS_VALUE: irrelevant for deployments, skipping.
+    datree.skip/CONTAINERS_MISSING_LIVENESSPROBE_KEY: irrelevant for prod environment, skipping.
 ```
+
+:::info Note
+`annotations` have a character limit - the key and value of an annotation cannot exceed 63 characters each.  
+For more information, see the [Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/#syntax-and-character-set)
+:::
