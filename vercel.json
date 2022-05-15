@@ -49,6 +49,11 @@
         "source": "/custom-rules-overview",
         "destination": "/custom-rules/custom-rules-overview", 
         "permanent": true
+      }, 
+      {
+        "source": "/kustomize-support",
+        "destination": "/integrations/kustomize-support",
+        "permanent": true
       },
       {
         "source": "/containers",
