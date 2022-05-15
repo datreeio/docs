@@ -46,6 +46,11 @@
         "permanent": true
       },
       {
+        "source": "/custom-rules-overview",
+        "destination": "/custom-rules/custom-rules-overview", 
+        "permanent": true
+      },
+      {
         "source": "/containers",
         "destination": "/built-in-rules#containers",
         "permanent": true
