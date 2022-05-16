@@ -49,10 +49,25 @@
         "source": "/custom-rules-overview",
         "destination": "/custom-rules/custom-rules-overview", 
         "permanent": true
-      }, 
+      },
+      {
+        "source": "/helm-plugin",
+        "destination": "https://github.com/datreeio/helm-datree",
+        "permanent": true
+      },
       {
         "source": "/kustomize-support",
         "destination": "/integrations/kustomize-support",
+        "permanent": true
+      },
+      {
+        "source": "/git-hooks",
+        "destination": "/integrations/git-hooks",
+        "permanent": true
+      },
+      {
+        "source": "/pre-commit-hook",
+        "destination": "/integrations/pre-commit-hook",
         "permanent": true
       },
       {
@@ -63,11 +78,6 @@
       {
         "source": "/argo",
         "destination": "/built-in-rules#argo",
-        "permanent": true
-      },
-      {
-        "source": "/helm-plugin",
-        "destination": "https://github.com/datreeio/helm-datree",
         "permanent": true
       },
       {
