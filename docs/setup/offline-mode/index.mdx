@@ -4,38 +4,38 @@ slug: /setup/offline-mode
 ---
 
 ## Air-gapped environment support
-It is possible to run Datree as a standalone in an air-gapped environment by downloading [Datree’s binary](https://github.com/datreeio/datree/releases/latest) manually and copying it to your offline environment and adding `offline=local` to your local config file:  
+It is possible to run Datree as a standalone in an air-gapped environment by downloading [Datree’s binary](https://github.com/datreeio/datree/releases/latest) manually, copying it to your offline environment and adding `offline=local` to your local config file:  
 ```terminal
 datree config set offline local
 ```
 
 When setting Datree to work without an internet connection, you will lose the following functionality:
 * Centralized policy registry
-* Seamless integration to the Kubernetes schema verification step
+* Seamless integration to the Kubernetes schema check
 * Access to the dashboard and all of his components (e.g. history page, token management, etc.)
 
 ### How to customize your policy check locally
 By design, Datree’s binary is compiled together with the [built-in policies](https://hub.datree.io/built-in-rules#containers) and their pre-configured (enabled) rules.  
 When running `datree test`, you will test your manifests against the "Default" policy.
 
-To overwrite the default policy setup, you will need to pass datree your own [policy-as-code](https://hub.datree.io/setup/policy-as-code#policiesyaml) (YAML) configuration file path with the `--policy-config` flag:
+To overwrite the "Default" policy setup, you will need to pass Datree your own [policy-as-code](https://hub.datree.io/setup/policy-as-code#policiesyaml) (YAML) configuration file path with the `--policy-config` flag:
 ```terminal
-E.g: datree test [manifest] --policy-config [policyAsCodeFile]
+datree test [manifest] --policy-config [policyAsCodeFile]
 ```
-```
+```terminal
 E.g: datree test k8s-demo.yaml --policy-config policies.yaml
 ```
 
 ### How to enable Kubernetes schema check locally
-When there is an internet connection, datree knows how to fetch the relevant Kubernetes schema from GitHub. 
+When there is an internet connection, datree knows how to fetch the relevant Kubernetes schema from [GitHub](https://github.com/yannh/kubernetes-json-schema). 
 
-Therefore, to enable this check in the offline mode, first, you will need to copy the relevant [schema version dir](https://github.com/yannh/kubeconform) (e.g. `v1.21.0-standalone-strict/`) to your air-gapped environment.
+Therefore, to enable this check in the offline mode, first, you will need to copy the relevant schema version dir (e.g. [v1.21.0-standalone-strict/](https://github.com/yannh/kubernetes-json-schema/tree/2e2c25d6ca2e59ebffaebb23a59eb4130b5ad2a4/v1.21.0-standalone-strict)) to your air-gapped environment.
 
-Then pass the dir location to datree with the `--schema-location` flag:
+Then pass the dir location to Datree CLI with the `--schema-location` flag:
 ```terminal
 datree test [manifest] --schema-location '[schemaVersionDir]/{{ .ResourceKind }}{{ .KindSuffix }}.json'
 ```
-```
+```terminal
 E.g: datree test k8s-demo.yaml --schema-location 'v1.21.0-standalone-strict/{{ .ResourceKind }}{{ .KindSuffix }}.json'
 ```
 ### Best practices
