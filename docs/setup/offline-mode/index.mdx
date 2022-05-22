@@ -14,8 +14,8 @@ datree config set offline local
 
 When setting Datree to work without an internet connection, you will lose the following functionality:
 * Centralized policy registry
-* Seamless integration to the Kubernetes schema check
-* Access to the dashboard and all of his components (e.g. history page, token management, etc.)
+* Automatic Kubernetes schema validation
+* Access to the dashboard and all of its components (e.g. history page, token management, etc.)
 
 ### How to customize your policy check locally
 By design, Datree’s binary is compiled together with the [built-in policies](https://hub.datree.io/built-in-rules#containers) and their pre-configured (enabled) rules.  
@@ -29,7 +29,7 @@ datree test [manifest] --policy-config [policyAsCodeFile]
 E.g: datree test k8s-demo.yaml --policy-config policies.yaml
 ```
 
-### How to enable Kubernetes schema check locally
+### How to enable Kubernetes schema validation locally
 When there is an internet connection, Datree knows how to fetch the relevant Kubernetes schema from [GitHub](https://github.com/yannh/kubernetes-json-schema). 
 
 Therefore, to enable this check in the offline mode, you will need to preform the following steps
@@ -41,3 +41,7 @@ datree test [manifest] --schema-location '[schemaVersionDir]/{{ .ResourceKind }}
 ```terminal
 E.g: datree test k8s-demo.yaml --schema-location 'v1.21.0-standalone-strict/{{ .ResourceKind }}{{ .KindSuffix }}.json'
 ```
+
+:::info
+Note that '{{ .ResourceKind }}{{ .KindSuffix }}.json' does not to be replaced with an actual filename, the CLI will be able to access all .json files with this name format in the specified directory.
+:::
