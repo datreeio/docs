@@ -40,6 +40,7 @@ const sidebars = {
         "setup/history/index",
         "setup/account-token/index",
         "setup/policy-customization/index",
+        "setup/offline-mode/index",
       ],
     },
     {
