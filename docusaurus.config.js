@@ -133,10 +133,6 @@ const config = {
                 href: '/integrations',
               },
               {
-                label: 'Community integrations',
-                href: '/community-integrations',
-              },
-              {
                 label: 'CI/CD examples',
                 href: '/cicd-examples',
               },

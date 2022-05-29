@@ -71,6 +71,11 @@
         "permanent": true
       },
       {
+        "source": "/community-integrations",
+        "destination": "/integrations",
+        "permanent": true
+      },
+      {
         "source": "/containers",
         "destination": "/built-in-rules#containers",
         "permanent": true
