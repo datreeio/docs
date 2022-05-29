@@ -19,7 +19,7 @@ const sidebars = {
   docs: [
     {
       type: "category",
-      label: "👋\xa0WELCOME",
+      label: "👋\xa0\xa0WELCOME",
       collapsed: true,
       items: [
         "welcome/getting-started/index",
@@ -29,7 +29,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "🛠️\xa0SETUP",
+      label: "🛠️\xa0\xa0SETUP",
       collapsed: true,
       items: [
         "setup/centralized-policy/index",
@@ -44,7 +44,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "🚔\xa0BUILT-IN RULES",
+      label: "🚔\xa0\xa0BUILT-IN RULES",
       collapsible: false,
       collapsed: false,
       className: "built-in-rules-navbar-items",
@@ -120,7 +120,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "🤖\xa0CUSTOM RULES",
+      label: "🤖\xa0\xa0CUSTOM RULES",
       collapsed: true,
       items: [
         "custom-rules/custom-rules-overview/index",
@@ -131,28 +131,25 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "⏩\xa0CI/CD",
+      label: "⏩\xa0\xa0CI/CD EXAMPLES",
       link: {
         type: "doc",
         id: "cicd-examples/index",
       },
       collapsed: true,
       items: [
-        {
-          type: "link",
-          label: "Github action",
-          href: "https://github.com/datreeio/action-datree",
-        },
+        "cicd-examples/github-workflow/index",
         "cicd-examples/circle-ci/index",
         "cicd-examples/travis-ci/index",
         "cicd-examples/gitlab-cicd/index",
         "cicd-examples/jenkins-pipeline/index",
+        "cicd-examples/drone-pipeline/index",
         "cicd-examples/azure-pipelines/index",
       ],
     },
     {
       type: "category",
-      label: "🔌\xa0INTEGRATIONS",
+      label: "🔌\xa0\xa0INTEGRATIONS",
       link: {
         type: "doc",
         id: "official-integrations/index",
@@ -161,14 +158,24 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'OFFICIAL',
+          label: '💼\xa0\xa0OFFICIAL',
           collapsible: true,
           collapsed: false,
           items: [
             {
               type: "link",
+              label: "Github action",
+              href: "https://github.com/datreeio/action-datree",
+            },
+            {
+              type: "link",
               label: "Kubectl plugin",
               href: "https://github.com/datreeio/kubectl-datree",
+            },
+            {
+              type: "link",
+              label: "Drone plugin",
+              href: "https://github.com/datreeio/drone-datree",
             },
             {
               type: "link",
@@ -182,7 +189,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'COMMUNITY',
+          label: '🙌\xa0\xa0COMMUNITY',
           collapsible: true,
           collapsed: false,
           items: [
@@ -202,17 +209,17 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "💬\xa0FAQ",
+      label: "💬\xa0\xa0FAQ",
       id: "faqs/index",
     },
     {
       type: "doc",
-      label: "🗃️\xa0TROUBLESHOOTING",
+      label: "🗃️\xa0\xa0TROUBLESHOOTING",
       id: "troubleshooting/index",
     },
     {
       type: "link",
-      label: "📚\xa0RESOURCES",
+      label: "📚\xa0\xa0RESOURCES",
       href: "https://github.com/datreeio/awesome-datree/blob/main/README.md",
     },
   ],

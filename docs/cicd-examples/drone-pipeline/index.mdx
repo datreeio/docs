@@ -1,0 +1,37 @@
+---
+title: Drone pipeline
+slug: /cicd-examples/drone-pipeline
+---
+
+<img src='/img/cicd/7.png' alt='' width='180px' />
+
+## TO-DO list for setting-up Datree in your CI
+
+- [x] Get your [account token](/setup/account-token)
+- [ ] Set DATREE_TOKEN as a [secret/environment variable](https://docs.drone.io/secret/repository/)
+- [ ] Add datree to your CI script
+
+## CI config example
+
+```yaml
+kind: pipeline
+type: docker
+name: default
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+- name: datree-policy-check  
+  image: datree/drone-datree
+  settings:
+    token:
+      from_secret: datree_token
+    path: "someDirectory/someFile.yaml"
+
+  when:
+    event:
+    - push
+    - pull_request
+```
