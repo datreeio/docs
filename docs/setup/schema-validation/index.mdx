@@ -48,13 +48,13 @@ $ datree test --schema-version "1.19.0" ~/.datree/k8s-demo.yaml
 
 ## Overriding schemas location - CRD support
 
-When the --schema-location parameter is not used, or set to "default", the CLI will be downloading schemas from [kubernetes-json-schema](https://github.com/yannh/kubernetes-json-schema). The CLI supports passing one, or multiple, schemas locations - HTTP(s) URLs, or local filesystem paths - in which case it will look for schema definitions in each of them, in order, stopping as soon as a matching file is found.
+When the --schema-location parameter is not used, or set to "default", the CLI will download schemas from [kubernetes-json-schema](https://github.com/yannh/kubernetes-json-schema). The CLI supports passing one, or multiple, schemas locations - HTTP(S) URLs, or local filesystem paths - in which case it will look for schema definitions in each of them, in order, stopping as soon as a matching file is found.
 
 - If the `--schema-location` value does not end with \`.json\`, the CLI will assume filenames / a file structure identical to [kubernetes-json-schema](https://github.com/yannh/kubernetes-json-schema).
 
 - If the `--schema-location` value ends with \`.json\` - the CLI assumes the value is a Go templated string that indicates how to search for JSON schemas.
 
-- The `--schema-location` value of "default" is an alias for https\://raw\.githubusercontent.com/yannh/kubernetes-json-schema/master/{{ .*NormalizedKubernetesVersion* }}-standalone{{ .*StrictSuffix* }}/{{ .*ResourceKind* }}{{ .*KindSuffix* }}.json. All of the following command lines are equivalent:
+- The `--schema-location` value of "default" is an alias for https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/{{ .*NormalizedKubernetesVersion* }}-standalone{{ .*StrictSuffix* }}/{{ .*ResourceKind* }}{{ .*KindSuffix* }}.json. All of the following command lines are equivalent:
 
 ```terminal
 $ datree test fixtures/valid.yaml

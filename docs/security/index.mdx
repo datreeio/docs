@@ -1,0 +1,99 @@
+---
+title: Security
+slug: /security
+---
+
+Datree was developed with security as a top priority, ensuring that sensitive data is never unnecessarily used or exposed.
+This page addresses security-related aspects of Datree and its components.
+
+
+## Policy checks
+
+### Where are the policy check evaluations performed?
+Datree's policy evaluation process is entirely local. Only metadata is sent to our backend, which is used to display your policy check history in your dashboard.  
+
+![history](/img/security/1.png)
+
+This is an example of a POST request that sends results to the backend after a policy check:
+```json
+{
+   "clientId":"1234",
+   "token":"a1a1a1a1-a1a1",
+   "metadata":{
+      "cliVersion":"1.4.4",
+      "os":"linux",
+      "platformVersion":"3.15.4",
+      "kernelVersion":"5.4.170+",
+      "ciContext":{
+         "isCI":true,
+         "ciMetadata":{
+            "ciEnvValue":"gitlab_ci",
+            "shouldHideEmojis":false
+         }
+      },
+      "evaluationDurationSeconds":2.321783468,
+      "ip":"1.1.1.1",
+      "flags":{
+         "policyconfig":"",
+         "schemalocations":"",
+         "onlyk8sfiles":"false",
+         "k8sversion":"",
+         "verbose":"false",
+         "policyname":"",
+         "ignoremissingschemas":"true",
+         "norecord":"false",
+         "output":""
+      }
+   },
+   "k8sVersion":"1.21.5",
+   "policyName":"Default",
+   "failedYamlFiles":null,
+   "failedK8sFiles":null,
+   "allExecutedRules":[
+      {
+         "ruleIdentifier":"DEPLOYMENT_INCORRECT_REPLICAS_VALUE",
+         "ruleName":"Ensure Deployment has more than one replica configured"
+      }
+   ],
+   "allEvaluatedFiles":[
+      {
+         "filepath":"/tmp/example.yaml",
+         "configurationsCount":1
+      }
+   ],
+   "policyCheckResults":{
+      "/tmp/example.yaml":{
+         "DEPLOYMENT_INCORRECT_REPLICAS_VALUE":{
+            "ruleName":"Ensure Deployment has more than one replica configured",
+            "DocumentationUrl":"https://hub.datree.io/ensure-minimum-two-replicas",
+            "messageOnFailure":"Incorrect value for key `replicas` - running 2 or more replicas will increase the availability of the service",
+            "configurations":[
+               {
+                  "metadataName":"depl",
+                  "kind":"Deployment",
+                  "occurrences":1,
+                  "isSkipped":false,
+                  "skipMessage":""
+               }
+            ]
+         }
+      }
+   }
+}
+```
+
+### Are my files and their content sent/stored anywhere?
+Your files and their contents are not sent to our backend, as the CLI performs the policy check on your machine. Datree does not have access to your files and their contents.
+
+### What network protocols are used for communication between the CLI and the dashboard?
+All communication is done via https, encrypted using SSL with industry best practices in mind.
+
+---
+
+## User/account data
+We do not require (and therefore do not store) any signup details, since we support registration via google or github only. Only your email address is stored.
+
+---
+
+## Tokens
+Tokens are used to connect your CLI to your dashboard. Should a token be stolen, it cannot be used to access any of your files. Having said that, we strongly encourage you to keep your tokens private and limit their exposure to relevant people only.
