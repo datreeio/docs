@@ -77,7 +77,7 @@
       },
       {
         "source": "/faq",
-        "destination": "/security",
+        "destination": "/data-safety",
         "permanent": true
       },
       {

@@ -210,8 +210,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "🔐\xa0\xa0SECURITY",
-      id: "security/index",
+      label: "🔐\xa0\xa0DATA SAFETY",
+      id: "data-safety/index",
     },
     {
       type: "doc",
