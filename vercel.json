@@ -77,7 +77,7 @@
       },
       {
         "source": "/faq",
-        "destination": "/data-safety",
+        "destination": "/data-privacy",
         "permanent": true
       },
       {
