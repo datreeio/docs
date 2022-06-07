@@ -16,17 +16,36 @@ $ datree test kube-*/*.yaml
 
 ### Flags
 
+A Datree policy check consists of [3 parts](/welcome/how-datree-works#what-is-a-datree-policy-check).  
+The following flags for the `datree test` command allow you to change the behavior of each part:
+
+**YAML validation flags:**
+
+| Flag                                                       | Alias | Values    | Description                                                                                                                            |
+| ---------------------------------------------------------- | ----- | ----------| -------------------------------------------------------------------------------------------------------------------------------------- |
+| --only-k8s-files &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | N/A   | N/A       | Skip all non-K8s files. Especially useful when scanning a dir with K8s and other config files: `datree test *.yaml --only-k8s-files`   |
+
+**Kubernetes schema validation flags:**
+
+| Flag                     | Alias | Values                               | Description                                                                                                                                        |
+| ------------------------ | ----- | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --schema-version         | -s    | e.g. "1.20.0"                        | Set Kubernetes version to validate against. Default can also be changed from the [dashboard](https://hub.datree.io/setup/schema-validation#changing-the-default-schema-version) |
+| --schema-location        | N/A   | e.g. "http://example.com/schema.json"| Override Kubernetes schema location. See [relevant page](/setup/schema-validation#overriding-schemas-location---crd-support) for more information. |
+| --ignore-missing-schemas | N/A   | N/A                                  | Skip files with missing schemas instead of failing the schema validation check                                                                     |
+
+**Policy check flags:**
+
 | Flag                     | Alias | Values                                 | Description                                                                                                                                        |
 | ------------------------ | ----- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| --help                   | -h    | N/A                                    | Print help. If a command is provided, help will be printed for that command                                                                        |
+| --policy                 | -p    | e.g. staging                           | Specify which policy to execute (by policy name)                                                                                                   |
+| --no-record              | N/A   | N/A                                    | Don’t send policy checks metadata to the backend                                                                                                   |
+
+**Output flags:**
+
+| Flag                     | Alias | Values                                 | Description                                                                                                                                        |
+| ------------------------ | ----- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | --output                 | -o    | json, yaml, xml, JUnit                 | Output the policy check results in the requested format                                                                                            |
 | --output                 | -o    | simple                                 | Output the policy check results in simple text (without emoji or colors)                                                                           |
-| --schema-version         | -s    | e.g. "1.20.0"                          | Set Kubernetes version to validate against.&#x20;Default can also be changed from the [dashboard](https://hub.datree.io/setup/schema-validation#changing-the-default-schema-version)                                                             |
-| --schema-location        | N/A   | e.g. "http\://example.com/schema.json" | Override Kubernetes schema location. See [relevant page](/setup/schema-validation#overriding-schemas-location---crd-support) for more information. |
-| --ignore-missing-schemas | N/A   | N/A                                    | Skip files with missing schemas instead of failing the schema validation check                                                                     |
-| --policy                 | -p    | e.g. staging                           | Specify which policy to execute (by policy name)                                                                                                   |
-| --only-k8s-files         | N/A   | N/A                                    | Skip all non-K8s files.&#x20;Especially useful when scanning a dir with K8s and other config files:&#x20;`datree test *.yaml --only-k8s-files`     |
-| --no-record              | N/A   | N/A                                    | Don’t send policy checks metadata to the backend                                                                                                   |
 | --verbose                | N/A   | N/A                                    | Display 'How to Fix' link for failed rules in output                                                                                               |
 
 ## Additional options
