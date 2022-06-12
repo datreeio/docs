@@ -216,7 +216,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "🔐\xa0\xa0DATA PRIVACY",
+      label: "🔐\xa0\xa0Data privacy",
       id: "data-privacy/index",
     },
     {
