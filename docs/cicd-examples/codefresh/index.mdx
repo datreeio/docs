@@ -1,0 +1,44 @@
+---
+title: Codefresh
+slug: /cicd-examples/codefresh
+---
+
+<img src='/img/cicd/8.png' alt='' width='260px' />
+
+<br/><br/>
+
+:::tip
+When working with Codefresh workflows, the best way to incorporate Datree is to use our official [Codefresh plugin](https://github.com/datreeio/codefresh-datree).  
+:::
+
+## TO-DO list for setting-up Datree in your CI
+
+- [x] Get your [account token](/setup/account-token)
+- [ ] Set DATREE_TOKEN as a [shared secret variable](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/shared-configuration/)
+- [ ] Add datree to your CI script
+
+## CI config example
+
+```yaml
+version: "1.0"
+stages:
+  - "clone"
+  - "datree-policy-check"
+
+steps:
+  clone:
+    title: "Cloning repository"
+    type: "git-clone"
+    repo: "myOrg/myRepo"
+    revision: "${{CF_BRANCH}}"
+    git: "github"
+    stage: "clone"
+    
+  datree-policy-check:
+    title: Run Datree policy check
+    type: datree/datree-policy-check
+    stage: "datree-policy-check"
+    arguments:
+      DATREE_TOKEN: "${{DATREE_TOKEN}}"
+      INPUT_PATH: 'fileName.yaml'
+```
