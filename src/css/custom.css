@@ -145,3 +145,11 @@ img[alt=pac_toggle] { width: 500px; }
     width: 15vh;
   }
 }
+
+.menu .menu__list-item-collapsible>a {
+  font-size: 1.1rem;
+}
+
+.theme-doc-sidebar-item-link>a {
+  font-size: 1.1rem;
+}

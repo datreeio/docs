@@ -19,7 +19,7 @@ const sidebars = {
   docs: [
     {
       type: "category",
-      label: "👋\xa0\xa0WELCOME",
+      label: "👋\xa0\xa0Welcome",
       collapsed: true,
       items: [
         "welcome/getting-started/index",
@@ -29,7 +29,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "🛠️\xa0\xa0SETUP",
+      label: "🛠️\xa0\xa0Setup",
       collapsed: true,
       items: [
         "setup/centralized-policy/index",
@@ -45,7 +45,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "🚔\xa0\xa0BUILT-IN RULES",
+      label: "🚔\xa0\xa0Built-in rules",
       collapsible: false,
       collapsed: false,
       className: "built-in-rules-navbar-items",
@@ -121,7 +121,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "🤖\xa0\xa0CUSTOM RULES",
+      label: "🤖\xa0\xa0Custom rules",
       collapsed: true,
       items: [
         "custom-rules/custom-rules-overview/index",
@@ -132,7 +132,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "⏩\xa0\xa0CI/CD EXAMPLES",
+      label: "⏩\xa0\xa0CI/CD examples",
       link: {
         type: "doc",
         id: "cicd-examples/index",
@@ -146,11 +146,12 @@ const sidebars = {
         "cicd-examples/jenkins-pipeline/index",
         "cicd-examples/drone-pipeline/index",
         "cicd-examples/azure-pipelines/index",
+        "cicd-examples/codefresh/index",
       ],
     },
     {
       type: "category",
-      label: "🔌\xa0\xa0INTEGRATIONS",
+      label: "🔌\xa0\xa0Integrations",
       link: {
         type: "doc",
         id: "official-integrations/index",
@@ -159,7 +160,7 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: '💼\xa0\xa0OFFICIAL',
+          label: '💼\xa0\xa0Official',
           collapsible: true,
           collapsed: false,
           items: [
@@ -180,6 +181,11 @@ const sidebars = {
             },
             {
               type: "link",
+              label: "Codefresh plugin",
+              href: "https://github.com/datreeio/codefresh-datree",
+            },
+            {
+              type: "link",
               label: "Helm plugin",
               href: "https://github.com/datreeio/helm-datree",
             },
@@ -190,7 +196,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '🙌\xa0\xa0COMMUNITY',
+          label: '🙌\xa0\xa0Community',
           collapsible: true,
           collapsed: false,
           items: [
@@ -215,12 +221,12 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "🗃️\xa0\xa0TROUBLESHOOTING",
+      label: "🗃️\xa0\xa0Troubleshooting",
       id: "troubleshooting/index",
     },
     {
       type: "link",
-      label: "📚\xa0\xa0RESOURCES",
+      label: "📚\xa0\xa0Resources",
       href: "https://github.com/datreeio/awesome-datree/blob/main/README.md",
     },
   ],
