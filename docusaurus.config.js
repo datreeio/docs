@@ -137,7 +137,7 @@ const config = {
                 href: '/cicd-examples',
               },
               {
-                label: "DATA PRIVACY",
+                label: "Data Privacy",
                 href: '/data-privacy',
               },
               {
