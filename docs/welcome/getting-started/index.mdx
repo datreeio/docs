@@ -191,9 +191,12 @@ After sign-up, you'll be automatically redirected to your [Centralized policy](/
 
 In addition to the tool's built-in rules, you can also write any rule that you wish and run it against your Kubernetes configurations to check for violations. Read how to set up custom rules at [Understanding custom rules](/custom-rules/custom-rules-overview).
 
-### 4. Integrate Datree into your workflow
+### 4. Integrate in your workflow
 
-🌟 Datree is with you every step of the way 🌟  
-Keep your repositories clean and stable using our [integrations](/integrations) within your favorite [CI/CD platforms](/cicd-examples), or check out our [admission webhook](https://github.com/datreeio/admission-webhook-datree) to ensure no faulty resources make their way into your cluster.
+From develop to runtime, you can use Datree in every step of your Kuberenetes pipeline to help you prevent misconfugurations:  
+⏩ Develop (code) - run the [CLI locally](https://docs-git-webhook-datree.vercel.app/#1-install-the-datree-cli) (or as a pre-commit hook) to get instant validation  
+⏩ Distrubute (CI) - integrate with your [CI platform](https://docs-git-webhook-datree.vercel.app/cicd-examples) to shift-left policy checks  
+⏩ Deploy (CD) - gate your cluster with the [admission webhook](https://github.com/datreeio/admission-webhook-datree)  
+⏩ Runtime (production) - query deployed resources with the [kubectl plugin](https://github.com/datreeio/kubectl-datree) to your know your status   
 
 ![lifecycle](/img/welcome/getting-started/offerings.png)
