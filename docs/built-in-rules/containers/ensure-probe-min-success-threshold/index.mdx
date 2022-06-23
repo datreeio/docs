@@ -1,0 +1,80 @@
+---
+title: ☑️ Ensure container probes have a configured minimum success threshold
+slug: /built-in-rules/ensure-probe-min-success-threshold
+---
+
+Probes have a number of fields that are used to control the behavior of liveness and readiness checks. A defect was found in one of these fields causing it to be ignored, and was corrected in Kubernetes v1.20.  
+To prevent such cases where unknown default behavior is used, we suggest to explicitly set these fields with your desired values. See the *Read more* section below for more information.  
+The field `successThreshold` defines the minimum consecutive successes required for the probe to be considered successful after having failed. It has a default value of 1, a minimum value of 1, and must have a value of 1 for liveness and startup probes.
+
+**Targeted resources by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Enabled by default?** False
+
+**Policy as code identifier:** CONTAINERS_INCORRECT_SUCCESSTHRESHOLD_VALUE
+
+---
+
+## This rule will fail
+
+If a container has a `livenessProbe`, `readinessProbe` and/or `startupProbe` configured, but the field `successThreshold` is not configured or has a value smaller than 1. For liveness and startup probes, this rule will also fail if the value of `successThreshold` is not 1
+
+```yaml
+spec:
+  containers:
+    - readinessProbe:
+        successThreshold: 0
+```
+```yaml
+spec:
+  containers:
+    - livenessProbe:
+        successThreshold: 2
+```
+```yaml
+spec:
+  containers:
+    - startupProbe:
+        periodSeconds: 1
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure container probes have a configured minimum success threshold [1 occurrence]
+💡 Incorrect value for key `successThreshold` - set to prevent unwanted default success threshold behavior
+```
+
+---
+
+## How to fix this failure
+
+Each each container probe has a configured `successThreshold` property with a valid value (see above for limitations)
+
+```yaml
+spec:
+  containers:
+    - readinessProbe:
+        successThreshold: 2
+```
+```yaml
+spec:
+  containers:
+    - livenessProbe:
+        successThreshold: 1
+```
+```yaml
+spec:
+  containers:
+    - startupProbe:
+        successThreshold: 1
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - configure probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#configure-probes)

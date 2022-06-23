@@ -1,0 +1,62 @@
+---
+title: ☑️ Ensure container probes have a configured frequency
+slug: /built-in-rules/ensure-probe-frequency
+---
+
+Probes have a number of fields that are used to control the behavior of liveness and readiness checks. A defect was found in one of these fields causing it to be ignored, and was corrected in Kubernetes v1.20.  
+To prevent such cases where unknown default behavior is used, we suggest to explicitly set these fields with your desired values. See the *Read more* section below for more information.  
+The field `periodSeconds` defines how often (in seconds) to perform the probe. It has a default value of 10 seconds, and a minimum value of 1 second.
+
+**Targeted resources by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Enabled by default?** False
+
+**Policy as code identifier:** CONTAINERS_INCORRECT_INITIALDELAYSECONDS_VALUE
+
+---
+
+## This rule will fail
+
+If a container has a `livenessProbe`, `readinessProbe` and/or `startupProbe` configured, but the field `periodSeconds` is not configured or has a value smaller than 1
+
+```yaml
+spec:
+  containers:
+    - readinessProbe:
+        periodSeconds: 0
+```
+```yaml
+spec:
+  containers:
+    - readinessProbe:
+        timeoutSeconds: 0
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure container probes have a configured frequency [1 occurrence]
+💡 Incorrect value for key `periodSeconds` - set to prevent unwanted default frequency behavior
+```
+
+---
+
+## How to fix this failure
+
+Each each container probe has a configured `periodSeconds` property with a minimum value of 1
+
+```yaml
+spec:
+  containers:
+    - readinessProbe:
+        periodSeconds: 2
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - configure probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#configure-probes)

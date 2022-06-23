@@ -112,6 +112,41 @@ export const navItems = [
     isEnabledByDefault: false,
     tabOwner: ["containers"],
   },
+  {
+    id: uuid(),
+    title: "Ensure container probes have an initial delay configured",
+    slug: "/built-in-rules/ensure-initial-probe-delay",
+    isEnabledByDefault: false,
+    tabOwner: ["containers"],
+  },
+  {
+    id: uuid(),
+    title: "Ensure container probes have a configured frequency",
+    slug: "/built-in-rules/ensure-probe-frequency",
+    isEnabledByDefault: false,
+    tabOwner: ["containers"],
+  },
+  {
+    id: uuid(),
+    title: "Ensure container probes have a configured timeout",
+    slug: "/built-in-rules/ensure-probe-timeout",
+    isEnabledByDefault: false,
+    tabOwner: ["containers"],
+  },
+  {
+    id: uuid(),
+    title: "Ensure container probes have a configured minimum success threshold",
+    slug: "/built-in-rules/ensure-probe-min-success-threshold",
+    isEnabledByDefault: false,
+    tabOwner: ["containers"],
+  },
+  {
+    id: uuid(),
+    title: "Ensure container probes have a configured failure threshold",
+    slug: "/built-in-rules/ensure-probe-failure-threshold",
+    isEnabledByDefault: false,
+    tabOwner: ["containers"],
+  },
   // workload
   {
     id: uuid(),
