@@ -1,5 +1,5 @@
 ---
-title: ☑️ Ensure container probes have a configured timeout
+title: ☑️ Ensure each container probe has a configured timeout
 slug: /built-in-rules/ensure-probe-timeout
 ---
 
@@ -38,7 +38,7 @@ spec:
 $ datree test *.yaml
 
 >> File: failExample.yaml
-❌ Ensure container probes have a configured timeout [1 occurrence]
+❌ Ensure each container probe has a configured timeout [1 occurrence]
 💡 Incorrect value for key `timeoutSeconds` - set explicitly to control when a probe times out (min 1)
 ```
 
