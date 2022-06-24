@@ -3,8 +3,9 @@ title: ☑️ Ensure each container probe has a configured failure threshold
 slug: /built-in-rules/ensure-probe-failure-threshold
 ---
 
-Probes have a number of fields that are used to control the behavior of liveness and readiness checks. A defect was found in one of these fields causing it to be ignored, and was corrected in Kubernetes v1.20.  
-To prevent such cases where unknown default behavior is used, we suggest to explicitly set these fields with your desired values. See the *Read more* section below for more information.  
+Probes have a number of fields that are used to control the behavior of liveness, readiness and startup checks. Though these fields have default values, we suggest to explicitly set them with your desired values.  
+One reason to do so is to prevent cases where unknown default behavior is used. For example, a defect was found in one of these fields causing it to be ignored, and was corrected in Kubernetes v1.20.  
+
 When a probe fails, Kubernetes will try `failureThreshold` times before giving up. The field has a default value of 3, and a minimum value of 1.
 
 **Targeted resources by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
