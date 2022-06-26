@@ -207,8 +207,13 @@ const sidebars = {
             },
             {
               type: "link",
+              label: "CircleCI orb",
+              href: "https://github.com/naorpeled/datree-circleci-orb",
+            },
+            {
+              type: "link",
               label: "Tekton task",
-              href: "https://github.com/avinashupadhya99/catalog/tree/add-datree-task/task/datree/0.1",
+              href: "https://hub.tekton.dev/tekton/task/datree",
             },
           ],
         },
