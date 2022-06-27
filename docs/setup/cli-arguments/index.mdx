@@ -66,3 +66,60 @@ The command `datree config` allows you to manage the datree config file. Use `da
 ```terminal
 $ datree config set token MY_EXAMPLE_TOKEN
 ```
+
+### Shell autocompletion
+
+The CLI supports autocompletion for commands when using various shells.  
+Run `datree completion -h` to see which shells are supported and how to enable autocompletion for each of them.  
+For your convenience, the instructions are laid out here as well. Simply choose the shell of your choice:
+
+<Tabs>
+  <TabItem value='Bash' label='Bash' default>
+
+    Run the following command:
+        source <(datree completion bash)
+    
+    To load completions for each session, run the following command once:
+	   Linux:
+		datree completion bash > /etc/bash_completion.d/datree
+	   MacOS:
+		datree completion bash > /usr/local/etc/bash_completion.d/datree
+
+  </TabItem>
+  <TabItem value='Zsh' label='Zsh'>
+
+    If shell completion is not already enabled in your environment, you will need to enable it.
+    To do that, run the following command once:
+	    echo "autoload -U compinit; compinit" >> ~/.zshrc
+		
+	To load completions for each session, run the following command once:
+		datree completion zsh > "${fpath[1]}/_datree"
+		
+	You will need to start a new shell for this setup to take effect.
+
+  </TabItem>
+  <TabItem value='fish' label='fish'>
+
+    Run the following command:
+        datree completion fish | source
+		
+	To load completions for each session, run the following command once:
+		datree completion fish > ~/.config/fish/completions/datree.fish
+
+  </TabItem>
+  <TabItem value='PowerShell' label='PowerShell'>
+
+    Run the following command:
+        PS> datree completion powershell | Out-String | Invoke-Expression
+		
+	To load completions for every new session, run the following command:
+	    PS> datree completion powershell > datree.ps1
+	Then, source this file from your PowerShell profile.
+
+  </TabItem>
+</Tabs>
+
+:::info
+Alternatively, autocompletion for the Datree CLI is also available automatically as a part of [Fig](https://fig.io/).  
+To install Fig, visit the [autocomplete github repository](https://github.com/withfig/autocomplete).
+:::
