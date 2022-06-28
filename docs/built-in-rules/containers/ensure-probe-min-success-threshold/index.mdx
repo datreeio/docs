@@ -23,19 +23,22 @@ If a container has a `livenessProbe`, `readinessProbe` and/or `startupProbe` con
 ```yaml
 spec:
   containers:
-    - readinessProbe:
+    - name: myContainer
+      readinessProbe:
         successThreshold: 0
 ```
 ```yaml
 spec:
   containers:
-    - livenessProbe:
+    - name: myContainer
+      livenessProbe:
         successThreshold: 2
 ```
 ```yaml
 spec:
   containers:
-    - startupProbe:
+    - name: myContainer
+      startupProbe:
         periodSeconds: 1
 ```
 
@@ -58,19 +61,22 @@ Each container probe should have a configured `successThreshold` property with a
 ```yaml
 spec:
   containers:
-    - readinessProbe:
+    - name: myContainer
+      readinessProbe:
         successThreshold: 2
 ```
 ```yaml
 spec:
   containers:
-    - livenessProbe:
+    - name: myContainer
+      livenessProbe:
         successThreshold: 1
 ```
 ```yaml
 spec:
   containers:
-    - startupProbe:
+    - name: myContainer
+      startupProbe:
         successThreshold: 1
 ```
 

@@ -23,13 +23,15 @@ If a container has a `livenessProbe`, `readinessProbe` and/or `startupProbe` con
 ```yaml
 spec:
   containers:
-    - readinessProbe:
+    - name: myContainer
+      readinessProbe:
         periodSeconds: 0
 ```
 ```yaml
 spec:
   containers:
-    - readinessProbe:
+    - name: myContainer
+      readinessProbe:
         timeoutSeconds: 0
 ```
 
@@ -52,7 +54,8 @@ Each container probe should have a configured `timeoutSeconds` property with a m
 ```yaml
 spec:
   containers:
-    - readinessProbe:
+    - name: myContainer
+      readinessProbe:
         timeoutSeconds: 2
 ```
 
