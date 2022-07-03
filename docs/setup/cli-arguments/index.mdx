@@ -12,6 +12,13 @@ $ datree test kube-prod/deployment.yaml
 $ datree test kube-*/*.yaml
 ```
 
+:::info Recursive globbing
+Testing all files recursively (also within subdirectories) is not supported automatically by all shells.  
+To enable this feature in bash, make sure your bash version is 4 or higher, and run the following command in your terminal:  
+`shopt -s globstar`  
+For more information, see the [bash documentation](https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html)
+:::
+
 ---
 
 ### Flags
