@@ -21,7 +21,7 @@ If the manifest schema is invalid, the policy check will not be calculated. This
 
 ## Changing the (default) schema version
 
-To achieve optimal coverage, the version of the schema that is validated should be the same as your Kubernetes cluster. By default, the Kubernetes schema version is 1.19.0.&#x20;
+To achieve optimal coverage, the version of the schema that is validated should be the same as your Kubernetes cluster. By default, the Kubernetes schema version is 1.20.0.&#x20;
 
 ### Globally
 
@@ -43,7 +43,7 @@ Passing a different schema version to the CLI _will override_ the global schema 
 The CLI accepts the flag `--schema-version`, `-s` with a version number (as string):
 
 ```terminal
-$ datree test --schema-version "1.19.0" ~/.datree/k8s-demo.yaml
+$ datree test --schema-version "1.22.0" ~/.datree/k8s-demo.yaml
 ```
 
 ## Overriding schemas location - CRD support
