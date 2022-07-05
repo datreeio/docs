@@ -130,6 +130,7 @@ img {
 }
 
 img[alt=pac_toggle] { width: 500px; }
+img[alt=schema_default_version] { width: 500px; }
 
 .built-in-rules-navbar-items .menu__list {
   display: none !important;
