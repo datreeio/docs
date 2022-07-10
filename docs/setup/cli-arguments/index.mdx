@@ -19,6 +19,8 @@ $ datree test kube-*/*.yaml
 Testing all files recursively (also within subdirectories) is not supported automatically by all shells.  
 To enable this feature in bash, make sure your bash version is 4 or higher, and run the following command in your terminal:  
 `shopt -s globstar`  
+or use the following workaround for bash version 3 or lower:  
+`find . -name '*.yaml' -print0 | xargs -0 datree test`  
 For more information, see the [bash documentation](https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html)
 :::
 
