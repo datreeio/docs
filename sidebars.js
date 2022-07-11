@@ -104,6 +104,7 @@ const sidebars = {
         "built-in-rules/containers/ensure-probe-timeout/index",
         "built-in-rules/containers/ensure-probe-min-success-threshold/index",
         "built-in-rules/containers/ensure-probe-failure-threshold/index",
+        "built-in-rules/containers/ensure-prestop/index",
         "built-in-rules/cronjob/ensure-cronjob-deadline/index",
         "built-in-rules/cronjob/ensure-cronjob-scheduler-valid/index",
         "built-in-rules/cronjob/index",

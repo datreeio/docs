@@ -147,6 +147,13 @@ export const navItems = [
     isEnabledByDefault: false,
     tabOwner: ["containers"],
   },
+  {
+    id: uuid(),
+    title: "Ensure each container probe has a configured prestop hook",
+    slug: "/built-in-rules/ensure-prestop",
+    isEnabledByDefault: false,
+    tabOwner: ["containers"],
+  },
   // workload
   {
     id: uuid(),
