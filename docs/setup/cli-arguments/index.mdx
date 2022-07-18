@@ -73,10 +73,27 @@ When using [Policy as code](/setup/policy-as-code) mode, the command `datree pub
 
 ### Configure the CLI
 
-The command `datree config` allows you to manage the datree config file. Use `datree config set` to change the value of a specific key in the datree config.yaml file (defaults to $HOME/.datree/config.yaml). For example:
+After running your first policy check, a default config file will be created (defaults to `$HOME/.datree/config.yaml`) with the following contents:  
+```yaml
+client_id: [your client ID]
+offline: fail
+token: [your token]
+```
+
+The command `datree config` allows you to manage the config file.  
+Use `datree config set` to change the value of the following keys in the file:  
+
+1. `token` - the [token](/setup/account-token) used to link the CLI to your dashboard.
 
 ```terminal
-$ datree config set token MY_EXAMPLE_TOKEN
+$ datree config set token NEW_TOKEN
+```
+
+2. `offline` - determines how your CLI will behave when there is no active internet connection.  
+The default behavior (`fail`) will cause the CLI to exit with an error.  
+When in [offline-mode](/setup/offline-mode), you will need to instruct the CLI to use a local policy file instead. Set the value to `local` by running the following command:  
+```terminal
+$ datree config set offline local
 ```
 
 ### Shell autocompletion
