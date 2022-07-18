@@ -12,6 +12,13 @@ It is possible to run Datree as a standalone in an air-gapped environment by pre
 datree config set offline local
 ```
 
+:::tip Back to online-mode
+To switch back to online-mode, run the following command:
+```terminal
+datree config set offline fail
+```
+:::
+
 When setting Datree to work without an internet connection, you will lose the following functionality:
 * Centralized policy registry
 * Automatic Kubernetes schema validation
