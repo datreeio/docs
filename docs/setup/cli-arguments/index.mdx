@@ -90,7 +90,7 @@ $ datree config set token NEW_TOKEN
 ```
 
 2. `offline` - determines how your CLI will behave when there is no active internet connection.  
-The default behavior (`fail`) will cause the CLI to exit with an error.  
+By default, when executing a policy check, the CLI attempts to pull your policy from your dashboard. If there is no internet connection, the default behavior (`fail`) will cause the CLI to exit with an error without performing the policy check.  
 When in [offline-mode](/setup/offline-mode), you will need to instruct the CLI to use a local policy file instead. Set the value to `local` by running the following command:  
 ```terminal
 $ datree config set offline local
