@@ -11,15 +11,12 @@ import styles from './styles.module.scss';
 
 # Getting started
 
-Prevent Kubernetes misconfigurations from reaching production (again 😤 )! The CLI integration provides a policy enforcement solution to run automatic checks for rule violations.
-
-Datree can be used on the command line to run policies against Kubernetes manifests YAML files or Helm charts.
+Prevent Kubernetes misconfigurations from reaching production (again 😤 )!  
+The CLI integration provides a policy enforcement solution to run automatic checks for rule violations in Kubernetes manifest files.
 
 :::tip
-
-  **No prerequisites to get started!**
-
-  We don't need access to your cluster, code or anything whatsoever for you to try it out
+**No prerequisites to get started!**  
+We don't need access to your cluster, code or anything whatsoever for you to try it out
 :::
 
 ## Quickstart
@@ -122,9 +119,10 @@ Binary releases can be downloaded from the [releases page](https://github.com/da
 
 ---
 
-### 2. Test a Kubernetes (demo) manifest
+### 2. Run a policy check against a Kubernetes manifest
 
-Run Datree to test it against a pre-compiled demo file - [`k8s-demo.yaml`](https://raw.githubusercontent.com/datreeio/datree/main/internal/fixtures/kube/k8s-demo.yaml):
+Run the CLI against any Kubernetes YAML file.  
+You can use our [demo file](https://raw.githubusercontent.com/datreeio/datree/main/internal/fixtures/kube/k8s-demo.yaml) if you wish:
 
 <Tabs>
   <TabItem value='Linux' label='Linux' default>
@@ -155,41 +153,29 @@ You will get the following output in your CLI:
 
 ### 3. Customize your policy
 
-#### Sign up to access your dashboard
+#### Connect your CLI to your dashboard
 
-Each policy check uses a "default" policy that includes 21 built-in rules. To configure the policy, switch back to your terminal, and sign up by clicking on the link at the bottom of the execution output:&#x20;
+Follow the link in the output summary:
+
+![gettingstarted_summary](/img/welcome/getting-started/summary.png)
+ 
+To start using your dashboard, easily sign-up using your private **GitHub** or **Google** account, no need to enter any personal information.
 
 ![gettingstarted_signup](/img/welcome/getting-started/signup.gif)
 
-**Follow the link in the test summary:**
-
-![gettingstarted_summary](/img/welcome/getting-started/summary.png)
-
-The link from the CLI will lead to a sign-up page. To make it easier for you, so you will not need to create a new user, you can sign up with your private **GitHub** or **Google** account.
-
-<div
-  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-  <img
-    src='/img/welcome/getting-started/signup.png'
-    alt='signup'
-    className={styles.image}
-    style={{ maxWidth: '300px' }}
-  />
-</div>
-
-After sign-up, you'll be automatically redirected to your [Centralized policy](/setup/centralized-policy) to set it according to your needs.
-
 #### Enable/disable built-in rules
 
-![gettingstarted_enable_disable](/img/welcome/getting-started/enable.png)
+After signing up, you'll be automatically redirected to your [Centralized policy](/setup/centralized-policy) where you can configure it according to your needs:
+
+![gettingstarted_enable_disable](/img/welcome/getting-started/enabledisable.png)
 
 #### [OPTIONAL] Add your custom rules
 
 In addition to the tool's built-in rules, you can also write any rule that you wish and run it against your Kubernetes configurations to check for violations. Read how to set up custom rules at [Understanding custom rules](/custom-rules/custom-rules-overview).
 
-### 4. Integrate Datree into your CI&#x20;
+### 4. Integrate Datree into your CI
 
-Keep your repositories clean and stable by preventing misconfigurations as early as possible.
+Keep your repositories clean and stable by preventing misconfigurations as early as possible.  
 Check out our [integrations](/integrations) and [CI/CD EXAMPLES](/cicd-examples) for best practices with the most popular CI/CD platforms.
 
 ![gettingstarted_integrate](/img/welcome/getting-started/integrate.png)
