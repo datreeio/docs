@@ -31,9 +31,7 @@ If you want to change the default version to match your Kubernetes cluster versi
 
 ### Locally
 
-:::tip
-
-## Use case
+:::tip Use case
 
 This functionality is useful if you want to migrate to a new Kubernetes version. This way, you can set the version and start the process of evaluating which configurations must be changed to support the cluster upgrade.
 :::
@@ -46,20 +44,29 @@ The CLI accepts the flag `--schema-version`, `-s` with a version number (as stri
 $ datree test --schema-version "1.22.0" ~/.datree/k8s-demo.yaml
 ```
 
-## Overriding schemas location - CRD support
+## CRD support
 
-When the --schema-location parameter is not used, or set to "default", the CLI will download schemas from [kubernetes-json-schema](https://github.com/yannh/kubernetes-json-schema). The CLI supports passing one, or multiple, schemas locations - HTTP(S) URLs, or local filesystem paths - in which case it will look for schema definitions in each of them, in order, stopping as soon as a matching file is found.
+When the `--schema-location` flag is **not** set or set to "default", the CLI will automatically look for schemas in the following locations:  
+1. [kubernetes-json-schema](https://github.com/yannh/kubernetes-json-schema) - a repository that contains schemas of built-in kubernetes objects. This repo is well-maintained, and is constantly updated with the latest schemas.  
+2. [CRDs-catalog](https://github.com/datreeio/crds-catalog) - a repository that aggregates over 100 popular CRDs, managed by Datree.  
+
+As a result, Datree supports a large variety of CRDs out-of-the-box.  
+
+**Using CRDs that are not listed in the catalog?** No problem! 
+
+The CLI supports passing one, or multiple, schemas locations - HTTP(S) URLs, or local filesystem paths - in which case it will look for schema definitions in each of them, in order, stopping as soon as a matching file is found.
 
 - If the `--schema-location` value does not end with \`.json\`, the CLI will assume filenames / a file structure identical to [kubernetes-json-schema](https://github.com/yannh/kubernetes-json-schema).
 
 - If the `--schema-location` value ends with \`.json\` - the CLI assumes the value is a Go templated string that indicates how to search for JSON schemas.
 
-- The `--schema-location` value of "default" is an alias for https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/{{ .*NormalizedKubernetesVersion* }}-standalone{{ .*StrictSuffix* }}/{{ .*ResourceKind* }}{{ .*KindSuffix* }}.json. All of the following command lines are equivalent:
+- The `--schema-location` value of "default" is an alias for "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/{{.*NormalizedKubernetesVersion*}}-standalone{{.*StrictSuffix*}}/{{.*ResourceKind*}}{{.*KindSuffix*}}.json".  
+All of the following command lines are equivalent:
 
 ```terminal
 $ datree test fixtures/valid.yaml
 $ datree test fixtures/valid.yaml --schema-location default
-$ datree test fixtures/valid.yaml --schema-location 'https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/{{ .NormalizedKubernetesVersion }}-standalone{{ .StrictSuffix }}/{{ .ResourceKind }}{{ .KindSuffix }}.json'
+$ datree test fixtures/valid.yaml --schema-location 'https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/{{.NormalizedKubernetesVersion}}-standalone{{.StrictSuffix}}/{{.ResourceKind}}{{.KindSuffix}}.json'
 ```
 
 ### Variables you can use with --schema-location
@@ -72,32 +79,23 @@ $ datree test fixtures/valid.yaml --schema-location 'https://raw.githubuserconte
 
 - **ResourceAPIVersion** - Version of API used for the resource - "v1" in "apiVersion: monitoring.coreos.com/v1"
 
+- **Group** - the group name as stated in this resource's definition - "monitoring.coreos.com" in "apiVersion: monitoring.coreos.com/v1"
+
 - **KindSuffix** - suffix computed from apiVersion - for compatibility with Kubeval schema registries
 
-### How to pull your CRD's schemas to validate your manifests
+### How to extract your CRDs' schemas to validate your manifests
 
-<div style={{ position: 'relative', paddingTop: '56.25%' }}>
-  <iframe
-    src='https://fast.wistia.net/embed/iframe/xajljgkjir'
-    title='Datree CRD Video'
-    style={{ position: 'absolute', top: '0', left: '0' }}
-    allow='autoplay; fullscreen'
-    allowtransparency='true'
-    frameBorder='0'
-    scrolling='no'
-    class='wistia_embed'
-    name='wistia_embed'
-    allowfullscreen
-    msallowfullscreen
-    width='100%'
-    height='100%'></iframe>
-</div>
-<script src='https://fast.wistia.net/assets/external/E-v1.js' async></script>
+The [CRDs-catalog repository](https://github.com/datreeio/crds-catalog) also contains a small and simple utility (currently supported only on Linux & MacOS) that does the following:  
+1. Extracts all CRDs from your cluster using kubectl.
+2. Downloads a script from the [kubeconform](https://github.com/yannh/kubeconform/blob/master/scripts/openapi2jsonschema.py) repo that converts your CRDs from openAPI to JSON schema.
+3. Runs the script, and saves the output to your machine under `$HOME/.datree/crdSchemas/`.
 
----
+After running the utility, simply add the `--schema-location` parameter followed by the location in which the CRDs reside.
+```
+datree test myCustomResource.yaml --schema-location '$HOME/.datree/crdSchemas/{{.ResourceKind}}_{{.ResourceAPIVersion}}.json'
+```
 
-1.  kubectl get crds -o yaml > crds_from_cluster.yaml
-
-2.  python3 [openapi2jsonschema.py](https://github.com/yannh/kubeconform/blob/d536a659bdb20ee6d06ab55886b348cd1c0fa21b/scripts/openapi2jsonschema.py) crds_from_cluster.yaml
-
-3.  datree test \*.yaml --schema-location default --schema-location '{{ .ResourceKind }}\_{{ .ResourceAPIVersion }}.json'
+:::tip
+To avoid needing to set the `--schema-location` argument for every policy check, you can add your CRD schemas to the CRDs-catalog where they will be used automatically.  
+Simply open a pull request with your CRDs in JSON schema format.
+:::
