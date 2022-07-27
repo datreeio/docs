@@ -7,7 +7,7 @@ slug: /setup/offline-mode
 It is possible to run Datree as a standalone in an air-gapped environment by preforming the following steps:
 1. Download [Datree’s binary](https://github.com/datreeio/datree/releases/latest) 
 2. Manually copy the binary to your offline environment 
-3. Set `offline=local` in your local config file:  
+3. Set `offline=local` in your local [config file](/setup/cli-arguments/#configure-the-cli):  
 ```terminal
 datree config set offline local
 ```
@@ -48,4 +48,7 @@ E.g: datree test k8s-demo.yaml --schema-location 'v1.21.0-standalone-strict/{{.R
 
 :::info
 Note that '{{.ResourceKind}}{{.KindSuffix}}.json' does not need to be replaced with an actual filename, the CLI will be able to access all .json files with this name format in the specified directory.
+=======
+datree test [manifest] --schema-location '[schemaVersionDir]/{{.ResourceKind}}{{.ResourceAPIVersion}}.json'
+```
 :::
