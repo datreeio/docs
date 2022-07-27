@@ -83,7 +83,7 @@ $ datree test fixtures/valid.yaml --schema-location 'https://raw.githubuserconte
 
 ### How to extract your CRDs' schemas to validate your manifests
 
-The [CRDs-catalog repository](https://github.com/datreeio/CRDs-catalog#crd-extractor) also contains a small and simple utility (currently supported only on Linux & MacOS).
+The [CRDs-catalog repository](https://github.com/datreeio/CRDs-catalog#crd-extractor) also contains a small and simple utility (aka CRD Extractor) to pull all the CRDs from your cluster and extract their schemas in JSON format. This way, you will have full coverage when "shifting left" your CRDs schema validation. 
 
 After running the utility, simply add the `--schema-location` parameter followed by the location in which the CRDs reside:
 ```
