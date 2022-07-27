@@ -12,37 +12,11 @@ import styles from './styles.module.scss';
 # Getting started
 
 Prevent Kubernetes misconfigurations from reaching production (again 😤 )! From code to production, Datree provides an E2E policy enforcement solution to run automatic checks for rule violations.
-
 Datree can be used on the command line, admission webhook, or even as a kubectl plugin to run policies against Kubernetes objects.
 
 :::tip
-
 **No prerequisites to get started!**
-
-We don't need access to your cluster, code or anything whatsoever for you to try it out
 :::
-
----
-
-<div style={{ position: 'relative', paddingTop: '56.25%' }}>
-  <iframe
-    src='https://fast.wistia.net/embed/iframe/m7eumvgf8y'
-    title='Datree Installation demo inc helm and schema Video'
-    style={{ position: 'absolute', top: '0', left: '0' }}
-    allow='autoplay; fullscreen'
-    allowtransparency='true'
-    frameBorder='0'
-    scrolling='no'
-    class='wistia_embed'
-    name='wistia_embed'
-    allowfullscreen
-    msallowfullscreen
-    width='100%'
-    height='100%'></iframe>
-</div>
-<script src='https://fast.wistia.net/assets/external/E-v1.js' async></script>
-
----
 
 ## Quickstart
 
@@ -126,9 +100,28 @@ Binary releases can be downloaded from the [releases page](https://github.com/da
   </div>
 </div>
 
-### 2. Test a Kubernetes (demo) manifest
+---
 
-Run Datree to test it against a pre-compiled demo file - [`k8s-demo.yaml`](https://raw.githubusercontent.com/datreeio/datree/main/internal/fixtures/kube/k8s-demo.yaml):
+<iframe 
+ src="https://fast.wistia.net/embed/iframe/m7eumvgf8y" 
+ title="Datree Installation demo inc helm and schema Video" 
+ allow="autoplay; fullscreen" 
+ allowtransparency="true" 
+ frameborder="0" 
+ scrolling="no" 
+ class="wistia_embed" n
+ ame="wistia_embed" 
+ msallowfullscreen 
+ width="100%" height="350rem">
+</iframe>
+<script src='https://fast.wistia.net/assets/external/E-v1.js' async></script>
+
+---
+
+### 2. Run a policy check against a Kubernetes manifest
+
+Run the CLI against any Kubernetes YAML file.  
+You can use our [demo file](https://raw.githubusercontent.com/datreeio/datree/main/internal/fixtures/kube/k8s-demo.yaml) if you wish:
 
 <Tabs>
   <TabItem value='Linux' label='Linux' default>
@@ -159,33 +152,21 @@ You will get the following output in your CLI:
 
 ### 3. Customize your policy
 
-#### Sign up to access your dashboard
+#### Connect your CLI to your dashboard
 
-Each policy check uses a "default" policy that includes 21 built-in rules. To configure the policy, switch back to your terminal, and sign up by clicking on the link at the bottom of the execution output:&#x20;
+Follow the link in the output summary:
+
+![gettingstarted_summary](/img/welcome/getting-started/summary.png)
+ 
+To start using your dashboard, easily sign-up using your private **GitHub** or **Google** account, no need to enter any personal information.
 
 ![gettingstarted_signup](/img/welcome/getting-started/signup.gif)
 
-**Follow the link in the test summary:**
-
-![gettingstarted_summary](/img/welcome/getting-started/summary.png)
-
-The link from the CLI will lead to a sign-up page. To make it easier for you, so you will not need to create a new user, you can sign up with your private **GitHub** or **Google** account.
-
-<div
-  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-  <img
-    src='/img/welcome/getting-started/signup.png'
-    alt='signup'
-    className={styles.image}
-    style={{ maxWidth: '300px' }}
-  />
-</div>
-
-After sign-up, you'll be automatically redirected to your [Centralized policy](/setup/centralized-policy) to set it according to your needs.
-
 #### Enable/disable built-in rules
 
-![gettingstarted_enable_disable](/img/welcome/getting-started/enable.png)
+After signing up, you'll be automatically redirected to your [Centralized policy](/setup/centralized-policy) where you can configure it according to your needs:
+
+![gettingstarted_enable_disable](/img/welcome/getting-started/enabledisable.png)
 
 #### [OPTIONAL] Add your custom rules
 
@@ -194,9 +175,9 @@ In addition to the tool's built-in rules, you can also write any rule that you w
 ### 4. Integrate into your workflow
 
 From develop to runtime, you can use Datree in every step of your Kuberenetes pipeline to help you prevent misconfigurations:  
-⏩ Develop (code) - run the [CLI locally](https://docs.datree.io/#1-install-the-datree-cli) (or as a pre-commit hook) to get instant validation  
-⏩ Distribute (CI) - integrate with your [CI platform](https://docs.datree.io/cicd-examples) to shift-left policy checks  
-⏩ Deploy (CD) - gate your cluster with the [admission webhook](https://github.com/datreeio/admission-webhook-datree)  
-⏩ Runtime (production) - query deployed resources with the [kubectl plugin](https://github.com/datreeio/kubectl-datree) to your know your status   
+⏩ [Develop (code)](https://hub.datree.io/#2-test-a-kubernetes-demo-manifest) - run the CLI locally (or as a pre-commit hook) to get instant validation  
+⏩ [Distribute (CI)](https://hub.datree.io/cicd-examples) - integrate with your CI platform to shift-left policy checks  
+⏩ [Deploy (CD)](https://github.com/datreeio/admission-webhook-datree) - gate your cluster with the admission webhook  
+⏩ [Runtime (production)](https://github.com/datreeio/kubectl-datree) - query deployed resources with the kubectl plugin to your know your status  
 
 ![lifecycle](/img/welcome/getting-started/offerings.png)

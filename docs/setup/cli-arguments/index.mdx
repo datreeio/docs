@@ -3,6 +3,9 @@ title: CLI arguments
 slug: /setup/cli-arguments
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Running a policy check
 
 The minimum input that's required to trigger a policy check is to use the command `datree test` and to provide a Kubernetes configuration file path or a [glob pattern](https://www.digitalocean.com/community/tools/glob):
@@ -11,6 +14,15 @@ The minimum input that's required to trigger a policy check is to use the comman
 $ datree test kube-prod/deployment.yaml
 $ datree test kube-*/*.yaml
 ```
+
+:::info Recursive globbing
+Testing all files recursively (also within subdirectories) is not supported automatically by all shells.  
+To enable this feature in bash, make sure your bash version is 4 or higher, and run the following command in your terminal:  
+`shopt -s globstar`  
+or use the following workaround for bash version 3 or lower:  
+`find . -name '*.yaml' -print0 | xargs -0 datree test`  
+For more information, see the [bash documentation](https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html)
+:::
 
 ---
 
@@ -59,10 +71,87 @@ For more information, options and examples, see the [Kustomize support](/integra
 
 When using [Policy as code](/setup/policy-as-code) mode, the command `datree publish fileName.yaml` will publish policies configuration for given fileName. Input should be the path to the Policy-as-Code yaml configuration file.
 
-### Configure the CLI
+### Configure the CLI via the `config.yaml` file
 
-The command `datree config` allows you to manage the datree config file. Use `datree config set` to change the value of a specific key in the datree config.yaml file (defaults to $HOME/.datree/config.yaml). For example:
+After running your first policy check, a default config file will be created (defaults to `$HOME/.datree/config.yaml`) with the following contents:  
+```yaml
+client_id: [your client ID]
+offline: fail
+token: [your token]
+```
+
+The command `datree config` allows you to manage the config file.  
+Use `datree config set` to change the value of the following keys in the file:  
+
+1. `token` - the [token](/setup/account-token) used to link the CLI to your dashboard.
 
 ```terminal
-$ datree config set token MY_EXAMPLE_TOKEN
+$ datree config set token NEW_TOKEN
 ```
+
+2. `offline` - determines how your CLI will behave when there is no active internet connection.  
+By default, when executing a policy check, the CLI attempts to pull your policy from your dashboard. If there is no internet connection, the default behavior (`fail`) will cause the CLI to exit with an error without performing the policy check.  
+When in [offline-mode](/setup/offline-mode), you will need to instruct the CLI to use a local policy file instead. Set the value to `local` by running the following command:  
+```terminal
+$ datree config set offline local
+```
+
+### Shell autocompletion
+
+The CLI supports autocompletion for commands when using various shells.  
+Run `datree completion -h` to see which shells are supported and how to enable autocompletion for each of them.  
+For your convenience, the instructions are laid out here as well. Simply choose the shell of your choice:
+
+<Tabs>
+  <TabItem value='Bash' label='Bash' default>
+
+    Run the following command:
+        source <(datree completion bash)
+    
+    To load completions for each session, run the following command once:
+      Linux:
+    datree completion bash > /etc/bash_completion.d/datree
+      MacOS:
+    datree completion bash > /usr/local/etc/bash_completion.d/datree
+
+  </TabItem>
+  <TabItem value='Zsh' label='Zsh'>
+
+    If shell completion is not already enabled in your environment, you will need to enable it.
+    To do that, run the following command once:
+      echo "autoload -U compinit; compinit" >> ~/.zshrc
+    
+    To load completions for each session, run the following command once:
+      datree completion zsh > "${fpath[1]}/_datree"
+    
+    You will need to start a new shell for this setup to take effect.
+
+  </TabItem>
+  <TabItem value='fish' label='fish'>
+
+    Run the following command:
+        datree completion fish | source
+    
+    To load completions for each session, run the following command once:
+      datree completion fish > ~/.config/fish/completions/datree.fish
+
+  </TabItem>
+  <TabItem value='PowerShell' label='PowerShell'>
+
+    Run the following command:
+        PS> datree completion powershell | Out-String | Invoke-Expression
+		
+    To load completions for every new session, run the following command:
+        PS> datree completion powershell > datree.ps1
+        
+    Then, source this file from your PowerShell profile.
+
+  </TabItem>
+</Tabs>  
+
+
+
+:::tip
+Alternatively, autocompletion for the Datree CLI is also available automatically as a part of [Fig](https://fig.io/).  
+To install Fig, visit the [autocomplete github repository](https://github.com/withfig/autocomplete).
+:::
