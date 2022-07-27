@@ -47,7 +47,7 @@ E.g: datree test k8s-demo.yaml --schema-location 'v1.21.0-standalone-strict/{{.R
 ```
 
 :::info
-Note that '{{.ResourceKind}}{{.KindSuffix}}.json' does not need to be replaced with an actual filename, the CLI will be able to access all .json files with this name format in the specified directory.
+Note that `{{.ResourceKind}}{{.KindSuffix}}.json` does not need to be replaced with an actual filename, the CLI will be able to access all .json files with this name format in the specified directory.
 ```terminal
 datree test [manifest] --schema-location '[schemaVersionDir]/{{.ResourceKind}}{{.ResourceAPIVersion}}.json'
 ```
