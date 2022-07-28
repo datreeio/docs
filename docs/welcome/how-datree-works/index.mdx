@@ -5,6 +5,10 @@ slug: /welcome/how-datree-works
 description: How Datree works
 ---
 
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useColorMode } from '@docusaurus/theme-common';
+
 Datree's CLI integration provides a policy enforcement solution to run automatic checks for rule violations and misconfigurations in your Kubernetes manifest files. When rule violations are found, Datree produces an alert which guides the developer to fix the issue while explaining the reason behind the rule.  
 
 ### From develop to runtime
@@ -26,5 +30,4 @@ Each policy check consists of 3 consecutive phases:
 
 Datree's policy evaluation process is entirely local. Your files and their contents are **not** sent to our backend, as the CLI performs the policy check on your machine. Only metadata is sent to our backend, which is used to display your policy check history on your dashboard.
 
-![architecture](/img/welcome/how-datree-works/architecture.png)
-
+![architecture](/img/welcome/how-datree-works/architecture_light.png)

@@ -137,6 +137,11 @@ const sidebars = {
       ],
     },
     {
+      type: "link",
+      label: "☸️\xa0\xa0Admission webhook",
+      href: "https://github.com/datreeio/admission-webhook-datree",
+    },
+    {
       type: "category",
       label: "🔌\xa0\xa0Integrations",
       link: {
@@ -151,11 +156,6 @@ const sidebars = {
           collapsible: true,
           collapsed: false,
           items: [
-            {
-              type: "link",
-              label: "Admission webhook",
-              href: "https://github.com/datreeio/admission-webhook-datree",
-            },
             {
               type: "link",
               label: "Github action",
