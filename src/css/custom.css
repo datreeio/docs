@@ -132,7 +132,7 @@ img {
 img[alt=pac_toggle] { width: 500px; }
 img[alt=schema_default_version] { width: 500px; }
 img[alt=gettingstarted_cli_output] { width: 80%; }
-img[gettingstarted_signup] { width: 80%; }
+img[alt=gettingstarted_signup] { width: 80%; }
 img[alt=gettingstarted_enable_disable] { width: 80%; }
 
 .built-in-rules-navbar-items .menu__list {
