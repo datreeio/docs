@@ -138,25 +138,6 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "⏩\xa0\xa0CI/CD examples",
-      link: {
-        type: "doc",
-        id: "cicd-examples/index",
-      },
-      collapsed: true,
-      items: [
-        "cicd-examples/github-workflow/index",
-        "cicd-examples/circle-ci/index",
-        "cicd-examples/travis-ci/index",
-        "cicd-examples/gitlab-cicd/index",
-        "cicd-examples/jenkins-pipeline/index",
-        "cicd-examples/drone-pipeline/index",
-        "cicd-examples/azure-pipelines/index",
-        "cicd-examples/codefresh/index",
-      ],
-    },
-    {
-      type: "category",
       label: "🔌\xa0\xa0Integrations",
       link: {
         type: "doc",
@@ -170,6 +151,11 @@ const sidebars = {
           collapsible: true,
           collapsed: false,
           items: [
+            {
+              type: "link",
+              label: "Admission webhook",
+              href: "https://github.com/datreeio/admission-webhook-datree",
+            },
             {
               type: "link",
               label: "Github action",
@@ -223,6 +209,25 @@ const sidebars = {
             },
           ],
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "⏩\xa0\xa0CI/CD examples",
+      link: {
+        type: "doc",
+        id: "cicd-examples/index",
+      },
+      collapsed: true,
+      items: [
+        "cicd-examples/github-workflow/index",
+        "cicd-examples/circle-ci/index",
+        "cicd-examples/travis-ci/index",
+        "cicd-examples/gitlab-cicd/index",
+        "cicd-examples/jenkins-pipeline/index",
+        "cicd-examples/drone-pipeline/index",
+        "cicd-examples/azure-pipelines/index",
+        "cicd-examples/codefresh/index",
       ],
     },
     {

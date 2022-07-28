@@ -2,7 +2,7 @@
 sidebar_position: 1
 slug: /
 title: Getting started
-description: Datree is a CLI tool to prevent Kubernetes misconfigurations by ensuring that manifests and Helm charts follow best practices as well as your organization's policies
+description: Datree is an E2E solution to prevent misconfigurations by ensuring Kubernetes objects follow best practices as well as your organization's policies
 ---
 
 import Tabs from '@theme/Tabs';
@@ -11,12 +11,11 @@ import styles from './styles.module.scss';
 
 # Getting started
 
-Prevent Kubernetes misconfigurations from reaching production (again 😤 )!  
-The CLI integration provides a policy enforcement solution to run automatic checks for rule violations in Kubernetes manifest files.
+Prevent Kubernetes misconfigurations from reaching production (again 😤 )! From code to production, Datree provides an E2E policy enforcement solution to run automatic checks for rule violations.
+Datree can be used on the command line, admission webhook, or even as a kubectl plugin to run policies against Kubernetes objects.
 
-:::tip
-**No prerequisites to get started!**  
-We don't need access to your cluster, code or anything whatsoever for you to try it out
+:::tip 
+**No prerequisites to get started!**
 :::
 
 ## Quickstart
@@ -68,12 +67,12 @@ Binary releases can be downloaded from the [releases page](https://github.com/da
         Using Helm?
       </h4>
       <p>
-        Take a look at{' '}
+        Take a look at our{' '}
         <a
           className={styles.underline}
           href='https://github.com/datreeio/helm-datree'
           rel='nofollow noreferrer noopener'>
-          our Helm plugin
+          Helm plugin
         </a>
       </p>
     </div>
@@ -103,19 +102,21 @@ Binary releases can be downloaded from the [releases page](https://github.com/da
 
 ---
 
+<div align="center">
 <iframe 
  src="https://fast.wistia.net/embed/iframe/m7eumvgf8y" 
  title="Datree Installation demo inc helm and schema Video" 
  allow="autoplay; fullscreen" 
  allowtransparency="true" 
- frameborder="0" 
+ frameBorder="0" 
  scrolling="no" 
- class="wistia_embed" n
- ame="wistia_embed" 
+ class="wistia_embed" 
+ name="wistia_embed" 
  msallowfullscreen 
- width="100%" height="350rem">
+ width="70%" height="350rem">
 </iframe>
 <script src='https://fast.wistia.net/assets/external/E-v1.js' async></script>
+</div>
 
 ---
 
@@ -173,9 +174,12 @@ After signing up, you'll be automatically redirected to your [Centralized policy
 
 In addition to the tool's built-in rules, you can also write any rule that you wish and run it against your Kubernetes configurations to check for violations. Read how to set up custom rules at [Understanding custom rules](/custom-rules/custom-rules-overview).
 
-### 4. Integrate Datree into your CI
+### 4. Integrate into your workflow
 
-Keep your repositories clean and stable by preventing misconfigurations as early as possible.  
-Check out our [integrations](/integrations) and [CI/CD EXAMPLES](/cicd-examples) for best practices with the most popular CI/CD platforms.
-
-![gettingstarted_integrate](/img/welcome/getting-started/integrate.png)
+From develop to runtime, you can use Datree in every step of your Kuberenetes pipeline to help you prevent misconfigurations:  
+⏩ &nbsp;[Develop (code)](https://hub.datree.io/#2-test-a-kubernetes-demo-manifest) - run the CLI locally (or as a pre-commit hook) to get instant validation  
+⏩ &nbsp;[Distribute (CI)](https://hub.datree.io/cicd-examples) - integrate with your CI platform to shift-left policy checks  
+⏩ &nbsp;[Deploy (CD)](https://github.com/datreeio/admission-webhook-datree) - gate your cluster with the admission webhook  
+⏩ &nbsp;[Runtime (production)](https://github.com/datreeio/kubectl-datree) - query deployed resources with the kubectl plugin to your know your status  
+  
+![lifecycle](/img/welcome/getting-started/offerings.png)
