@@ -151,64 +151,43 @@ const sidebars = {
       collapsed: true,
       items: [
         {
-          type: 'category',
-          label: '💼\xa0\xa0Official',
-          collapsible: true,
-          collapsed: false,
-          items: [
-            {
-              type: "link",
-              label: "Github action",
-              href: "https://github.com/datreeio/action-datree",
-            },
-            {
-              type: "link",
-              label: "Kubectl plugin",
-              href: "https://github.com/datreeio/kubectl-datree",
-            },
-            {
-              type: "link",
-              label: "Drone plugin",
-              href: "https://github.com/datreeio/drone-datree",
-            },
-            {
-              type: "link",
-              label: "Codefresh plugin",
-              href: "https://github.com/datreeio/codefresh-datree",
-            },
-            {
-              type: "link",
-              label: "Helm plugin",
-              href: "https://github.com/datreeio/helm-datree",
-            },
-            "official-integrations/kustomize-support/index",
-            "official-integrations/git-hooks/index",
-            "official-integrations/pre-commit-hook/index",
-          ],
+          type: "link",
+          label: "Github action",
+          href: "https://github.com/datreeio/action-datree",
         },
         {
-          type: 'category',
-          label: '🙌\xa0\xa0Community',
-          collapsible: true,
-          collapsed: false,
-          items: [
-            {
-              type: "link",
-              label: "VSCode plugin",
-              href: "https://github.com/SuyashSonawane/vscode-datree",
-            },
-            {
-              type: "link",
-              label: "CircleCI orb",
-              href: "https://github.com/naorpeled/datree-circleci-orb",
-            },
-            {
-              type: "link",
-              label: "Tekton task",
-              href: "https://hub.tekton.dev/tekton/task/datree",
-            },
-          ],
+          type: "link",
+          label: "Kubectl plugin",
+          href: "https://github.com/datreeio/kubectl-datree",
         },
+        {
+          type: "link",
+          label: "Drone plugin",
+          href: "https://github.com/datreeio/drone-datree",
+        },
+        {
+          type: "link",
+          label: "CircleCI orb",
+          href: "https://github.com/datreeio/datree-circleci-orb",
+        },
+        {
+          type: "link",
+          label: "Tekton task",
+          href: "https://hub.tekton.dev/tekton/task/datree",
+        },
+        {
+          type: "link",
+          label: "Codefresh plugin",
+          href: "https://github.com/datreeio/codefresh-datree",
+        },
+        {
+          type: "link",
+          label: "Helm plugin",
+          href: "https://github.com/datreeio/helm-datree",
+        },
+        "official-integrations/kustomize-support/index",
+        "official-integrations/git-hooks/index",
+        "official-integrations/pre-commit-hook/index",
       ],
     },
     {
