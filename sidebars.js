@@ -168,7 +168,7 @@ const sidebars = {
         {
           type: "link",
           label: "CircleCI orb",
-          href: "https://github.com/naorpeled/datree-circleci-orb",
+          href: "https://github.com/datreeio/datree-circleci-orb",
         },
         {
           type: "link",
