@@ -5,6 +5,11 @@ slug: /custom-rules/basic-examples
 
 ## Basic schema use-cases
 
+:::tip
+The following examples may include keywords you are not familiar with.  
+To learn more about JSON schema and how to use it, see the [official documentation](https://json-schema.org/)
+:::
+
 ### Ensure a specific key exists
 
 The following schema ensures that the key `metadata.labels.app` exists (regardless of its value):
@@ -51,6 +56,28 @@ properties:
             - default
             - misc
             - general
+```
+
+### Ensure a specific key is not found in any container
+
+The following schema ensures that the key "badKey" is not defined under any container in the YAML:
+
+```yaml
+definitions:
+  specContainers:
+    properties:
+      spec:
+        properties:
+          containers:
+            type: array
+            items:
+              not:
+                required:
+                  - badKey
+allOf:
+  - $ref: "#/definitions/specContainers"
+additionalProperties:
+  $ref: "#"
 ```
 
 ---
