@@ -5,6 +5,10 @@ slug: /setup/centralized-policy
 
 "Centralized policy" is the concept of controlling distributed policy execution from a centralized location. This enables the policy owner to easily control the rules that are evaluated in each run of Datree without creating operation overhead. Logging into the dashboard allows you to manage the centralized policy.
 
+:::tip 
+If you want to manage your policy via code - checkout the [policy-as-code section](https://hub.datree.io/setup/policy-as-code)
+:::
+
 ## Enable and disable rules in a policy
 
 Each of the [53 built-in](/built-in-rules) rules can be toggled "ON" or "OFF" in the [dashboard](https://app.datree.io) to suit your needs. Once a rule is disabled or enabled, it will automatically propagate to all policy checks executed against that policy (via [account token](/setup/account-token)). This way, the policy owner is not required to manually update all of the devices connected to this policy.
