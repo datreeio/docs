@@ -36,3 +36,39 @@ Assuming "/path/to/dir/" is a directory containing a 'kustomization.yaml' file, 
 The following command will also perform a policy check against all generated resources, this time using k8s schema version 1.23.0 and a Datree policy named "staging":
 
 > datree kustomize test /path/to/dir/ -s 1.23.0 -p staging
+
+### Testing multiple kustomizations
+
+If you have multiple kustomization directories inside a single directory, you can test all of them sequentially using the following script:
+
+```
+#!/bin/bash
+
+path="${1:-.}"
+final_exit_code=0
+
+while read -r kustomization; do
+	dir="$(dirname "$kustomization")"
+    echo "Datree Kustomization Test: $kustomization"
+	set +e
+	datree kustomize test "$dir"
+	exitcode=$?
+	set -e
+	if [ "$exitcode" -gt "$final_exit_code" ]; then
+        final_exit_code="$exitcode"
+    fi
+    # Datree outputs enough space at the end of each run already
+    #echo
+done < <(find "$path" -type f -name 'kustomization.y*ml')
+
+if [ "$final_exit_code" = 0 ]; then
+    echo "Success"
+else
+    echo "Violations found, returning exit code $final_exit_code"
+fi
+exit "$final_exit_code"
+```
+
+The script will run a policy check against all kustomizations before exiting, and return 0 only if no violations were found in any of them.  
+This is useful for CI, to avoid the need to call `datree test` multiple times.  
+Thanks to [Hari Sekhon](https://github.com/HariSekhon) for contributing the script 😎
