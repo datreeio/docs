@@ -57,8 +57,6 @@ while read -r kustomization; do
 	if [ "$exitcode" -gt "$final_exit_code" ]; then
         final_exit_code="$exitcode"
     fi
-    # Datree outputs enough space at the end of each run already
-    #echo
 done < <(find "$path" -type f -name 'kustomization.y*ml')
 
 if [ "$final_exit_code" = 0 ]; then
