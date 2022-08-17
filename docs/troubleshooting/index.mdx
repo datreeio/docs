@@ -38,3 +38,20 @@ This will add curl and bash commands which our install scripts require in order 
 ## Haven't found a solution to your problem?
 
 Let us know by opening an issue in our [github](https://github.com/datreeio/datree) and we will gladly help!
+
+---
+
+## Schema validation failures
+
+If you get the following message in your CLI: 
+❌  k8s schema validation error: could not find schema for `type` - it means that the resource's schema which is used to perform the schema valiation was not found, and it can be caused by any of the following-
+
+1. Wrong K8s version is used in the schema validation check
+To perform the schema validation check, the CLI pulls the relevant schema according to your default K8s schema, or the value of the `--schema-version` flag. 
+To fix this failure, make sure that your default K8s version equals the one you use in your cluster. Instructions for how to update your default K8s version can be found here [URL]
+
+2. Missing schema for a CRD
+
+3. Deprecated APIversion
+Some resources' API version got deprecated in the latest k8s version releases, it could be that you should migrate your resources to the newer version. 
+Please refer to K8s release notes to verify that your manifests up-to-date: [URL]
