@@ -45,23 +45,17 @@ If you get the following message in your CLI:
 ```terminal
 ❌  k8s schema validation error: could not find schema for [KIND]  
 ``` 
-It means that the resource's schema which is used to perform the schema valiation was not found, and it can be caused by any of the following-
+It means that the resource's schema which is used to perform the schema valiation was not found, and it can be caused by any of the following:
 
 ### Wrong K8s version is used in the schema validation check
 To perform the schema validation check, the CLI pulls the relevant schema according to your default K8s schema, or the value of the `--schema-version` flag.  
 To fix this failure, update your default K8s version in the dashboard to the same K8s version as your cluster, or pass the `--schema-version` flag.  
 Instructions for how to update your default K8s version can be found [here](https://hub.datree.io/setup/schema-validation#changing-the-default-schema-version)
 
-### Missing schema for a CRD
-As part of the schema validation phase, the CLI looks for the schemas in multiple GitHub repositories that contain the schema of native K8s objects and popular CRDs.  
-If you're testing a CRD that is neither a native K8s object, nor listed in the CRDs catalog, you can extract the schema to validate your manifests.  
-Find the instructions [here](https://hub.datree.io/setup/schema-validation#crd-support)
-
 ### Deprecated APIversion
-Some resources' API version got deprecated in the latest k8s version releases, it could be that you should migrate your resources to the newer version. 
-#### Example:
-The beta API versoins of Ingress are no longer served on K8s version 1.22 on, therefore the schema will not be found.
-
+Some of k8s version releases consist of deprecated APIs.  
+When validating objects with a deprecated API version, the CLI will not be able to find the schema since it's removed for the version that you validate against.  
+For example, the beta API versions of Ingress are no longer served from K8s version 1.22.
 <Tabs>
   <TabItem value='Deprecated API version' label='Deprecated API version' default>   
 
@@ -87,9 +81,13 @@ The beta API versoins of Ingress are no longer served on K8s version 1.22 on, th
           port:
             number: 80
   </TabItem>
-</Tabs>
+</Tabs>  
+To fix this issue, migrate your resources to the newer API version.  
 
-
+### Missing schema for a CRD
+As part of the schema validation phase, the CLI looks for the schemas in multiple GitHub repositories that contain the schema of native K8s objects and popular CRDs.  
+If you're testing a CRD that is neither a native K8s object, nor listed in the CRDs catalog, you can extract the schema to validate your manifests.  
+Find the instructions [here](https://hub.datree.io/setup/schema-validation#crd-support)
 ---
 
 ## Haven't found a solution to your problem?
