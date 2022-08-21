@@ -53,37 +53,26 @@ To fix this failure, update your default K8s version in the dashboard to the sam
 Instructions for how to update your default K8s version can be found [here](https://hub.datree.io/setup/schema-validation#changing-the-default-schema-version)
 
 ### Deprecated APIversion
-Some of k8s version releases consist of deprecated APIs.  
-When validating objects with a deprecated API version, the CLI will not be able to find the schema since it's removed for the version that you validate against.  
-For example, the beta API versions of Ingress are no longer served from K8s version 1.22.
+K8s releases may contain deprecations of APIs of different K8s objects- for example, the beta API versions of Ingress are no longer served from version 1.22.  
 <Tabs>
   <TabItem value='Deprecated API version' label='Deprecated API version' default>   
 
-    apiVersion: networking.k8s.io/v1beta1  
+    apiVersion: networking.k8s.io/v1beta1 # deprecated API version
     kind: Ingress  
     metadata:  
       name: example  
-    spec:  
-      backend:  
-        serviceName: default-backend   
-        servicePort: 80
   </TabItem>
   <TabItem value='Valid API version' label='Valid API version'>
 
-    apiVersion: networking.k8s.io/v1
+    apiVersion: networking.k8s.io/v1 # supported API version
     kind: Ingress
     metadata:
       name: example
-    spec:
-      defaultBackend:
-        service:
-          name: default-backend
-          port:
-            number: 80
   </TabItem>
 </Tabs>  
-To fix this issue, migrate your resources to the newer API version.  
 
+When validating objects with deprecated API configured, the CLI will not be able to pull the schema since it's removed.  
+To fix this issue, migrate your resources to the newer API version.  
 ### Missing schema for a CRD
 As part of the schema validation phase, the CLI looks for the schemas in multiple GitHub repositories that contain the schema of native K8s objects and popular CRDs.  
 If you're testing a CRD that is neither a native K8s object, nor listed in the CRDs catalog, you can extract the schema to validate your manifests.  
