@@ -2,6 +2,8 @@
 title: Troubleshooting
 slug: /troubleshooting
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Tokens mismatch
 
@@ -47,7 +49,7 @@ It means that the resource's schema which is used to perform the schema valiatio
 
 ### Wrong K8s version is used in the schema validation check
 To perform the schema validation check, the CLI pulls the relevant schema according to your default K8s schema, or the value of the `--schema-version` flag.  
-To fix this failure, update your default K8s version in the dashboard to the same K8s version as your cluster, or pass the --schema-version flag.  
+To fix this failure, update your default K8s version in the dashboard to the same K8s version as your cluster, or pass the `--schema-version` flag.  
 Instructions for how to update your default K8s version can be found [here](https://hub.datree.io/setup/schema-validation#changing-the-default-schema-version)
 
 ### Missing schema for a CRD
@@ -70,8 +72,7 @@ The beta API versoins of Ingress are no longer served on K8s version 1.22 on, th
     spec:  
       backend:  
         serviceName: default-backend   
-        servicePort: 80  
-        
+        servicePort: 80
   </TabItem>
   <TabItem value='Valid API version' label='Valid API version'>
 
@@ -85,7 +86,6 @@ The beta API versoins of Ingress are no longer served on K8s version 1.22 on, th
           name: default-backend
           port:
             number: 80
-
   </TabItem>
 </Tabs>
 
