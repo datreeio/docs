@@ -59,20 +59,19 @@ To check your Kubernetes cluster version, you can run `kubectl version --short` 
 ➜ kubectl version --short
 Server Version: v1.20.0 
 ```  
-Your Datree's schema validation version can be found on your dashboard (under SETTINGS) or in your policy check summary:  
+Your Datree's schema validation version can be found on your dashboard (under _SETTINGS_) or in your policy check summary:  
 ```terminal
 (Summary)
 - Passing YAML validation: 1/1
 - Passing Kubernetes (1.20.0) schema validation: 0/1
-- Passing policy check: 0/1
 ```  
 
 #### How to solve this?
-Update Datree's schema validation version in the dashboard to be the same Kubernetes version as your cluster, or pass the `--schema-version` flag ([read more](https://hub.datree.io/setup/schema-validation#changing-the-default-schema-version))
+Update Datree's schema validation version in the dashboard to be the same Kubernetes version as your cluster, or pass the `--schema-version` flag ([read more](https://hub.datree.io/setup/schema-validation#changing-the-default-schema-version)).
 
 ### Deprecated API versions
 
-New Kubernetes releases may contain deprecations of APIs for different K8s objects. For example, the `v1beta1` API of Ingress are no longer served on Kubernetes version _1.22.0_. Therefore, if the Kubernetes schema validion is set to _1.22.0_ and a manifest with the `v1beta1` API will be passed to Datree, it will not be found and the schema validation step will fail.
+New Kubernetes releases may contain deprecations of APIs for different K8s objects. For example, Ingress `v1beta1` API is no longer served on Kubernetes version _1.22.0_. Therefore, if the Kubernetes schema validation version is set to _1.22.0_ and an Ingress config with the `v1beta1` API will be passed to Datree, it will not be found, and the schema validation step will fail.
 
 <Tabs>
   <TabItem value='Deprecated API version' label='Deprecated API version' default>   
@@ -93,11 +92,11 @@ New Kubernetes releases may contain deprecations of APIs for different K8s objec
 </Tabs>
 
 #### How to solve this?
-Update your manifests to match the Kubernetes schema defanition or it will not be accepted by your cluster ([read more](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#removed-apis-by-release)).
+Update your manifests to match the Kubernetes schema definition, or your cluster will not accept it ([read more](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#removed-apis-by-release)).
 
 ### Missing schema for a CRD
 
-CustomResources (CRs) are not Kubernetes native objects and therefore, they are not part Kubernetes offical schema. To overcome this, we crated the CRDs-catalog project but if you're trying to validate CRs that **don't exist in the CRD-catalog**, the schema validation step will fail.
+CustomResources (CRs) are not Kubernetes native objects, so they are not part of the official Kubernetes schema. To overcome this, we created the CRDs-catalog project, but if you're trying to validate CRs that **don't exist in the CRD-catalog**, the schema validation step will fail.
 
 #### How to solve this?
 You will need to use the **CRD Extractor** to validate them ([read more](https://github.com/datreeio/CRDs-catalog#usage)).  
