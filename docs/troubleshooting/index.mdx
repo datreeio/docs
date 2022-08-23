@@ -53,18 +53,26 @@ It means the schema validation check failed and there are three possible root ca
 
 ### Worng Kubernetes schema version
 
-If Datree's schema validation version does not match your Kubernetes cluster version, it can produce this type of error.
+If Datree's schema validation version does not match your Kubernetes cluster version, it can produce this type of error.  
 To check your Kubernetes cluster version, you can run `kubectl version --short` and read your **Server Version**:  
-![image](https://user-images.githubusercontent.com/19731161/186085079-9b55a416-f185-473f-bcf3-ad6ef9bac8e3.png)  
+```terminal
+➜ kubectl version --short
+Server Version: v1.20.0 
+```  
 Your Datree's schema validation version can be found on your dashboard (under SETTINGS) or in your policy check summary:  
-![image](https://user-images.githubusercontent.com/19731161/186085584-66d8edae-b03e-4f0f-baf4-fb8ac851cb6a.png)  
+```terminal
+(Summary)
+- Passing YAML validation: 1/1
+- Passing Kubernetes (1.20.0) schema validation: 0/1
+- Passing policy check: 0/1
+```  
 
 #### How to solve this?
 Update Datree's schema validation version in the dashboard to be the same Kubernetes version as your cluster, or pass the `--schema-version` flag ([read more](https://hub.datree.io/setup/schema-validation#changing-the-default-schema-version))
 
 ### Deprecated API versions
 
-New Kubernetes releases may contain deprecations of APIs for different K8s objects. For example, the `v1beta1` API of Ingress are no longer served on Kubernetes version 1.22.0. Therefore, if the Kubernetes schema validion is set to 1.22.0 and a manifest with the `v1beta1` API will be passed to Datree, it will not be found and the schema validation step will fail.
+New Kubernetes releases may contain deprecations of APIs for different K8s objects. For example, the `v1beta1` API of Ingress are no longer served on Kubernetes version _1.22.0_. Therefore, if the Kubernetes schema validion is set to _1.22.0_ and a manifest with the `v1beta1` API will be passed to Datree, it will not be found and the schema validation step will fail.
 
 <Tabs>
   <TabItem value='Deprecated API version' label='Deprecated API version' default>   
