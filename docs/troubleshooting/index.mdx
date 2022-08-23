@@ -39,21 +39,40 @@ This will add curl and bash commands which our install scripts require in order 
 
 ---
 
-## Schema validation failures
+## Schema validation failure
 
+**TL;DR**  
 If you get the following message in your CLI: 
 ```terminal
-❌  k8s schema validation error: could not find schema for [KIND]  
+❌  k8s schema validation error: could not find schema for [kindName]  
 ``` 
-It means that the resource's schema which is used to perform the schema valiation was not found, and it can be caused by any of the following:
+It means the schema validation check failed and there are three possible root causes:
+* [Worng Kubernetes schema version](troubleshooting#worng-kubernetes-schema-version) - you need to update the schema version on your dashboard
+* [Deprecated API versions](troubleshooting#deprecated-api-versions) - you need to fix your manifest
+* [Missing schema for a CRD](troubleshooting#missing-schema-for-a-crd) - you need to use the CRD Extractor
 
-### Wrong K8s version is used in the schema validation check
-To perform the schema validation check, the CLI pulls the relevant schema according to your default K8s schema, or the value of the `--schema-version` flag.  
-To fix this failure, update your default K8s version in the dashboard to the same K8s version as your cluster, or pass the `--schema-version` flag.  
-Instructions for how to update your default K8s version can be found [here](https://hub.datree.io/setup/schema-validation#changing-the-default-schema-version)
+### Worng Kubernetes schema version
+
+If Datree's schema validation version does not match your Kubernetes cluster version, it can produce this type of error.  
+To check your Kubernetes cluster version, you can run `kubectl version --short` and read your **Server Version**:  
+```terminal
+➜ kubectl version --short
+Server Version: v1.20.0 
+```  
+Your Datree's schema validation version can be found on your dashboard (under _SETTINGS_) or in your policy check summary:  
+```terminal
+(Summary)
+- Passing YAML validation: 1/1
+- Passing Kubernetes (1.20.0) schema validation: 0/1
+```  
+
+#### How to solve this?
+Update Datree's schema validation version in the dashboard to be the same Kubernetes version as your cluster, or pass the `--schema-version` flag ([read more](https://hub.datree.io/setup/schema-validation#changing-the-default-schema-version)).
 
 ### Deprecated API versions
-K8s releases may contain deprecations of APIs of different K8s objects- for example, the beta API versions of Ingress are no longer served from version 1.22.
+
+New Kubernetes releases may contain deprecations of APIs for different K8s objects. For example, Ingress `v1beta1` API is no longer served on Kubernetes version _1.22.0_. Therefore, if the Kubernetes schema validation version is set to _1.22.0_ and an Ingress config with the `v1beta1` API will be passed to Datree, it will not be found, and the schema validation step will fail.
+
 <Tabs>
   <TabItem value='Deprecated API version' label='Deprecated API version' default>   
 
@@ -62,6 +81,7 @@ K8s releases may contain deprecations of APIs of different K8s objects- for exam
     metadata:  
       name: example  
   </TabItem>
+  
   <TabItem value='Valid API version' label='Valid API version'>
 
     apiVersion: networking.k8s.io/v1 # supported API version
@@ -69,16 +89,20 @@ K8s releases may contain deprecations of APIs of different K8s objects- for exam
     metadata:
       name: example
   </TabItem>
-</Tabs>  
+</Tabs>
 
-When validating objects with deprecated API configured, the CLI will not be able to pull the schema since it's removed.  
-To fix this issue, migrate your resources to the newer API version.  
+#### How to solve this?
+Update your manifests to match the Kubernetes schema definition, or your cluster will not accept it ([read more](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#removed-apis-by-release)).
+
 ### Missing schema for a CRD
-As part of the schema validation phase, the CLI looks for the schemas in multiple GitHub repositories that contain the schema of native K8s objects and popular CRDs.  
-If you're testing a CRD that is neither a native K8s object, nor listed in the CRDs catalog, you can extract the schema to validate your manifests.  
-Find the instructions [here](https://hub.datree.io/setup/schema-validation#crd-support)
+
+CustomResources (CRs) are not Kubernetes native objects, so they are not part of the official Kubernetes schema. To overcome this, we created the CRDs-catalog project, but if you're trying to validate CRs that **don't exist in the CRD-catalog**, the schema validation step will fail.
+
+#### How to solve this?
+You will need to use the **CRD Extractor** to validate them ([read more](https://github.com/datreeio/CRDs-catalog#usage)).  
+
 ---
 
 ## Haven't found a solution to your problem?
 
-Let us know by opening an issue in our [github](https://github.com/datreeio/datree) and we will gladly help!
+Let us know by opening an issue in our [GitHub open-source project](https://github.com/datreeio/datree) and we will gladly help!
