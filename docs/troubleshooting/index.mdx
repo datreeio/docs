@@ -68,28 +68,18 @@ New Kubernetes releases may contain deprecations of APIs for different K8s objec
 <Tabs>
   <TabItem value='Deprecated API version' label='Deprecated API version' default>   
 
-    apiVersion: networking.k8s.io/v1beta1  
+    apiVersion: networking.k8s.io/v1beta1 # deprecated API version
     kind: Ingress  
     metadata:  
       name: example  
-    spec:  
-      backend:  
-        serviceName: default-backend   
-        servicePort: 80
   </TabItem>
   
   <TabItem value='Valid API version' label='Valid API version'>
 
-    apiVersion: networking.k8s.io/v1
+    apiVersion: networking.k8s.io/v1 # supported API version
     kind: Ingress
     metadata:
       name: example
-    spec:
-      defaultBackend:
-        service:
-          name: default-backend
-          port:
-            number: 80
   </TabItem>
 </Tabs>
 
@@ -100,7 +90,7 @@ Update your manifests to match the Kubernetes schema defanition or it will not b
 
 CustomResources (CRs) are not Kubernetes native objects and therefore, they are not part Kubernetes offical schema. To overcome this, we crated the CRDs-catalog project but if you're trying to validate CRs that _don't exist in the CRD-catalog_, the schema validation step will fail.
 
-#### Hot to solve this?
+#### How to solve this?
 You will need to use the _CRD Extractor_ to validate them ([read more](https://github.com/datreeio/CRDs-catalog#usage)).  
 
 ---
