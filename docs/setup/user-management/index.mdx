@@ -1,0 +1,60 @@
+---
+title: User Management
+slug: /setup/user-management
+---
+
+:::info
+Feature Availability  
+Inviting team members to collaborate is available as part of certain payment plans. Plan details can be found in our pricing page(add link).
+:::
+
+## Invite a user
+
+### 1. In the dashboard, navigate to the [user management tab](https://app.datree.io/settings/user-management)  
+- Go to "SETTINGS" (click on the avatar in the upper-right corner)  
+![settings](/img/setup/account-token/1.png)
+- Click on the ‘invite user’ button  
+2. Insert the user’s email address and the desired permission (role)
+3. Once the invitation is successfully sent, the token of the newly invited user will be displayed in the dashboard and can be shared with the new workspace members  
+- The token is used to connect the CLI with the dashboard to determine the available policies and report policy check history to the dashboard  
+4. The newly invited user is added to the users’ table, where you can also track his/her invitation status (pending/accepted)  
+
+## Edit user’s role
+1. In the dashboard, navigate to the user management tab  
+2. Click on the ‘...’ icon displayed for each member  
+![settings](/img/setup/user-management/1.png)
+3. Click on "Edit"
+4. Select the new role and save the change  
+
+## Inivtation expired
+In cases where an invitation to join the workspace has reached the expiration date, reinvite the user by clicking on the "invite user" button and insert the email and permission.
+
+## User Roles 
+There are 3 levels of permissions, and they are defined by the user’s role:  
+- Owner
+- Admin
+- Viewer
+
+## Roles Permissions
+| Function | Owner | Admin | Viewer |
+|----------|-------|-------|--------|
+|Create/delete policies|X|X||
+|Edit policies (toggle rules on/off)|X|X||
+|Create cusotm rules|X|X||
+|Execute workspace policies|X|X|X|
+|Create/delete/copy tokens|X|X||
+|Access policy check history|X|X|X|
+|Edit/delete workspace members|X|X||
+|Toggle Policy-As-Code|X|X||
+|Change default K8s schema version|X|X||
+|Invite new members|X|X||
+|Delete workspace|X|||
+|Update/cancel plan subscription|X|X||
+|Create custom policies|X|X||
+|Update Email subscription frequency|X|X||
+|Edit rules’ fail suggestion text|X|X||
+
+
+
+
+

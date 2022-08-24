@@ -41,6 +41,7 @@ const sidebars = {
         "setup/account-token/index",
         "setup/policy-customization/index",
         "setup/offline-mode/index",
+        "setup/user-management/index",
       ],
     },
     {
