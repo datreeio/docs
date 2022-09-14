@@ -1,0 +1,63 @@
+---
+title: Integration guide
+slug: /setup/integration-guide
+---
+
+# Integrating Datree into your organization
+
+*So you’re familiar with Datree, but you’re not quite sure how to implement it effectively? Whether you’re a one-person team, or part of a big organization, we’ve got you covered. This article lays out best practices and tips intended to allow you to make the most out of Datree.*
+
+Say you’re a devops engineer, and like most - you’ve had your fair share of production outages, so you decide to do something about it. You install Datree and are now ready to prevent those pesky misconfigurations.
+
+**Before you proceed to the technical stuff, there are some preliminary steps we highly recommend on taking:**
+* Have a meeting with relevant people in the organization, where you discuss why you need Datree, and what problems you’d like to solve with it. This will give you clarity when you proceed to configure Datree.
+* List the different teams that will use Datree along with their needs and requirements.
+* Introduce the CLI to chosen members of your organization. Implementing a new tool is always a challenge, and letting the relevant people use it before proceeding to more advanced features can save a lot of time.
+
+### Establishing and enforcing a baseline
+
+The first thing we recommend is to have a look at the status of your production (run-time) environment. This can be achieved by using Datree’s [kubectl plugin](https://github.com/datreeio/kubectl-datree), simply follow these steps:
+* Run the plugin against your desired namespace within your cluster to check for existing misconfigurations.
+* Look at the output to see which rules failed, then disable them in your Default policy.
+This will leave you with a lenient policy that your production environment complies with.
+
+Then, we recommend setting guardrails on your clusters using Datree’s [admission webhook](https://github.com/datreeio/admission-webhook-datree), using the policy you just customized. The webhook will catch commands that create or change resources in your cluster, and run policy checks against them. This will establish your current status as a standard for your production environment that will now be automatically kept.
+
+### Closing the gap
+
+Once your baseline is set with the Default policy, we strongly suggest setting Datree as part of your [CI pipeline](/cicd-examples). Here you should create a new, strict policy based on your needs. This will ensure that from this point on, only configs that meet your desired standards will enter your codebase.
+From here you can start to smoothly bridge the gap between your policies - when you see that a rule is now consistently passing in your strict CI policy, you can add it to your webhook policy as well. This way you can raise your standard at a pace that works for you and your teams.
+
+Additionally, we recommend the zero-warnings approach - don’t ignore CI failures, instead either revise your policies by disabling unwanted rules, or fix the misconfigurations. Talk to the relevant devs, understand why this is happening, and agree on a solution.
+
+### Creating your CI policies
+
+**When proceeding to create and customize your strict policies, it may not be very clear how to proceed. How many policies should you create and for what purpose?**  
+The answer to this question heavily depends on your organization’s structure and needs. Use the list of teams you created in the preliminary steps and decide which rules each team needs for their work. The focus should be maintaining the autonomy of the teams, especially cross-functional ones. In our experience, the main factors that determine which set of rules to use are the teams’ product and the environment they’re working on (i.e. prod, stg).  
+Therefore, we recommend creating policies by **`product(cross-functional team) X environment`**. Separating your policies this way will make it easy to keep track of your organization’s policy check history. If you feel like this isn’t right for your organization, you can always reach out to us and we help you tailor the experience according to your needs.
+
+When creating these policies, you may be overwhelmed by all of the available rules.  
+**How do you know which rules are relevant for you and the different developer teams in your organization?**  
+Datree’s default policy contains 21 rules that are enabled by default. These rules are the lowest-common-denominator of industry best-practices when working with k8s, and are therefore recommended for all users.
+As for the other built-in rules provided with Datree - we understand that not everyone has a use for them. For this reason, we made the policy system flexible, allowing you to enable/disable rules for every policy according to your needs.
+The preliminary work you did should make this step much smoother. Now that you have your policies figured out, the rules in each of them should reflect the team’s needs.
+Make sure you standardize how your developers should fix violated rules by taking advantage of the customizable [error message](/setup/centralized-policy#edit-rule-fail-suggestion-text) that is displayed when a rule fails.
+
+You go over the rules, enabling some and disabling others as needed, but then you think of a policy you’d like to enforce that doesn’t have a built-in rule. **That’s where custom rules come in.**
+You can write any rule you wish to enforce and add it to your policies. Check out the [documentation](/custom-rules/custom-rules-overview) to get started, and if you’re having trouble - feel free to open an issue in our [Github repo](https://github.com/datreeio/datree) and someone from our team or our community will assist you.
+
+### Token Management
+
+So now you might have multiple policies, but you notice that you have only one token configured - the default token that came with your account.  
+**Should you use it and share it with all of your teams, or create new ones?**  
+It’s important to understand why we would want to create additional tokens at all. Firstly, tokens enable you to manage the permissions of other people who use your policies - read tokens allow using the policies, while write tokens also allow editing them and creating new ones. Secondly, token labels make your policy check history much clearer by differentiating between checks that come from different sources.  
+Generally, we recommend the following setup:
+* 1 read token for your CI machine.
+* 1 read token for your cluster integration.
+* 1 write token if using [policy-as-code](/setup/policy-as-code).
+
+
+### Conclusion
+
+Hopefully, you now have a better understanding of how to integrate Datree in a way that best suits your needs.
+At this point, it’s all about optimizing the process. We urge you to **invite feedback**. Tools such as Datree work best when everyone involved is aligned. After a predefined period of time, ask your developers about their experience with Datree, what do they like/dislike about it? Are the policies clear to them? Mutual feedback will guarantee less friction, smoother workflows, and of course - stable and healthy clusters.
