@@ -34,7 +34,7 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Basic',
+          label: '◉ Basic',
           collapsed: false,
           items: [
             "setup/centralized-policy/index",
@@ -48,7 +48,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Advanced',
+          label: '◉ Advanced',
           collapsed: false,
           items: [
             "setup/policy-as-code/index",

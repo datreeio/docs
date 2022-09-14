@@ -33,7 +33,8 @@ Additionally, we recommend the zero-warnings approach - don’t ignore CI failur
 ### Creating your CI policies
 
 **When proceeding to create and customize your strict policies, it may not be very clear how to proceed. How many policies should you create and for what purpose?**  
-The answer to this question heavily depends on your organization’s structure and needs. Use the list of teams you created in the preliminary steps and decide which rules each team needs for their work. The focus should be maintaining the autonomy of the teams, especially cross-functional ones. In our experience, the main factors that determine which set of rules to use are the teams’ product and the environment they’re working on (i.e. prod, stg). Therefore, we recommend creating policies by **product(cross-functional team) X environment**. Separating your policies this way will make it easy to keep track of your organization’s policy check history. If you feel like this isn’t right for your organization, you can always reach out to us and we help you tailor the experience according to your needs.
+The answer to this question heavily depends on your organization’s structure and needs. Use the list of teams you created in the preliminary steps and decide which rules each team needs for their work. The focus should be maintaining the autonomy of the teams, especially cross-functional ones. In our experience, the main factors that determine which set of rules to use are the teams’ product and the environment they’re working on (i.e. prod, stg).  
+Therefore, we recommend creating policies by **`product(cross-functional team) X environment`**. Separating your policies this way will make it easy to keep track of your organization’s policy check history. If you feel like this isn’t right for your organization, you can always reach out to us and we help you tailor the experience according to your needs.
 
 When creating these policies, you may be overwhelmed by all of the available rules.  
 **How do you know which rules are relevant for you and the different developer teams in your organization?**  
@@ -42,8 +43,7 @@ As for the other built-in rules provided with Datree - we understand that not ev
 The preliminary work you did should make this step much smoother. Now that you have your policies figured out, the rules in each of them should reflect the team’s needs.
 Make sure you standardize how your developers should fix violated rules by taking advantage of the customizable [error message](/setup/centralized-policy#edit-rule-fail-suggestion-text) that is displayed when a rule fails.
 
-You go over the rules, enabling some and disabling others as needed, but then you think of a policy you’d like to enforce that doesn’t have a built-in rule.  
-**That’s where custom rules come in.**
+You go over the rules, enabling some and disabling others as needed, but then you think of a policy you’d like to enforce that doesn’t have a built-in rule. **That’s where custom rules come in.**
 You can write any rule you wish to enforce and add it to your policies. Check out the [documentation](/custom-rules/custom-rules-overview) to get started, and if you’re having trouble - feel free to open an issue in our [Github repo](https://github.com/datreeio/datree) and someone from our team or our community will assist you.
 
 ### Token Management
