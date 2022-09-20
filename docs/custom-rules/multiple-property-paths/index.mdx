@@ -18,7 +18,7 @@ Here is an example of what that would look like:
 ```yaml
 customRules:
   - identifier: CUSTOM_CONTAINERS_MISSING_IMAGE_VALUE_VERSION
-    name: Ensure each container image has a pinned (tag) version [CUSTOM RULE]
+    name: Prevent tag `latest` as container image version [CUSTOM RULE]
     defaultMessageOnFailure: |
       Not setting image version for your containers is like going to the casino 🎰 - you don't know which version you'll get
     schema:
@@ -32,8 +32,8 @@ customRules:
                   items:
                     properties:
                       image:
-                        type: string
-                        pattern: ^(?=.*[:|@](?=.+)(?!latest)).*$
+                        not:
+                          - pattern: .*:(latest|LATEST)$
       allOf:
         - $ref: '#/definitions/imagePattern'
       additionalProperties:
@@ -41,5 +41,97 @@ customRules:
       items:
         $ref: '#'
 ```
+The above rule is enforcing the same logic as our built-in rule - [☑️ Ensure each container image has a pinned (tag) version](/built-in-rules/ensure-image-pinned-version).
 
-The above rule is enforcing the same logic as our built-in rule - [☑️ Ensure each container image has a pinned (tag) version](/built-in-rules/ensure-image-pinned-version)
+---
+
+Here is another example - the following rule schema will verify that all images are pulled from the approved registry (allow list) or not from the unapproved registry (block list):
+
+```yaml
+customRules:
+  - identifier: CUSTOM_CONTAINERS_INCORRECT_IMAGE_REGISTRY
+    name: Ensure each container image is pulled from approved registry [CUSTOM RULE]
+    defaultMessageOnFailure: |
+      You(r) shell not passed! 🧙‍♂️ All images must be pulled from pre-approved registries 
+    schema:
+      definitions:
+        imagePattern:
+          properties:
+            spec:
+              properties:
+                containers:
+                  type: array
+                  items:
+                    properties:
+                      image:
+                        # allow list example
+                        anyOf:
+                          - pattern: ^allow.list.com/repo-name/.*
+                        # block list example
+                        not:
+                          anyOf:
+                            - pattern: ^block.list.com/repo-name/.*
+allOf:
+  - $ref: "#/definitions/imagePattern"
+additionalProperties:
+  $ref: "#"
+items:
+  $ref: "#"
+      allOf:
+        - $ref: '#/definitions/imagePattern'
+      additionalProperties:
+        $ref: '#'
+      items:
+        $ref: '#'
+```
+And the full `polices.yaml` file for this rule will like that:
+
+```yaml
+apiVersion: v1
+policies:
+  - name: custom_policy
+    isDefault: true
+    rules:
+      - identifier: CUSTOM_CONTAINERS_INCORRECT_IMAGE_REGISTRY
+        messageOnFailure: This message will override the rule's `defaultMessageOnFailure` property
+  # - name: staging
+  #   rules:
+  #     - identifier: CUSTOM_CONTAINERS_INCORRECT_IMAGE_REGISTRY
+  #       messageOnFailure: ''
+
+customRules:
+  - identifier: CUSTOM_CONTAINERS_INCORRECT_IMAGE_REGISTRY
+    name: Ensure each container image is pulled from approved registry [CUSTOM RULE]
+    defaultMessageOnFailure: |
+      You(r) shell not passed! 🧙‍♂️ All images must be pulled from pre-approved registries 
+    schema:
+      definitions:
+        imagePattern:
+          properties:
+            spec:
+              properties:
+                containers:
+                  type: array
+                  items:
+                    properties:
+                      image:
+                        # allow list example
+                        anyOf:
+                          - pattern: ^allow.list.com/repo-name/.*
+                        # block list example
+                        not:
+                          anyOf:
+                            - pattern: ^block.list.com/repo-name/.*
+allOf:
+  - $ref: "#/definitions/imagePattern"
+additionalProperties:
+  $ref: "#"
+items:
+  $ref: "#"
+      allOf:
+        - $ref: '#/definitions/imagePattern'
+      additionalProperties:
+        $ref: '#'
+      items:
+        $ref: '#'
+```
