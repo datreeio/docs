@@ -5,6 +5,8 @@ title: Getting started
 description: Datree is an E2E solution to prevent misconfigurations by ensuring Kubernetes objects follow best practices as well as your organization's policies
 ---
 
+import Admonition from '@theme/Admonition';
+import CodeBlock from '@theme/CodeBlock';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import styles from './styles.module.scss';
@@ -50,6 +52,15 @@ Binary releases can be downloaded from the [releases page](https://github.com/da
 
     docker pull datree/datree
 
+  </TabItem>
+  <TabItem value='Others' label='Others'>
+    <Admonition type="caution" title="disclaimer">
+      <p>The following packages are not maintained by the Datree project, any issues should be reported to their authors. By using these, you understand they are not supported or guaranteed in any way.</p>
+    </Admonition>
+    <h4>MacPorts</h4>
+    <CodeBlock>
+      sudo port install datree
+    </CodeBlock>
   </TabItem>
 </Tabs>
 
