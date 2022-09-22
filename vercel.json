@@ -127,7 +127,7 @@
       },
       {
         "source": "/built-in-rules/nsa",
-        "destination": "/built-in-rules#nsa",
+        "destination": "/built-in-rules#NSA",
         "permanent": true
       },
       {
