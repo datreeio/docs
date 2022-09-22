@@ -86,8 +86,53 @@
         "permanent": true
       },
       {
+        "source": "/built-in-rules/containers",
+        "destination": "/built-in-rules#containers",
+        "permanent": true
+      },
+      {
+        "source": "/built-in-rules/workload",
+        "destination": "/built-in-rules#workload",
+        "permanent": true
+      },
+      {
+        "source": "/built-in-rules/cronjob",
+        "destination": "/built-in-rules#cronjob",
+        "permanent": true
+      },
+      {
+        "source": "/built-in-rules/networking",
+        "destination": "/built-in-rules#networking",
+        "permanent": true
+      },
+      {
+        "source": "/built-in-rules/security",
+        "destination": "/built-in-rules#security",
+        "permanent": true
+      },
+      {
+        "source": "/built-in-rules/deprecation",
+        "destination": "/built-in-rules#deprecation",
+        "permanent": true
+      },
+      {
+        "source": "/built-in-rules/argo",
+        "destination": "/built-in-rules#argo",
+        "permanent": true
+      },
+      {
         "source": "/argo",
         "destination": "/built-in-rules#argo",
+        "permanent": true
+      },
+      {
+        "source": "/built-in-rules/nsa",
+        "destination": "/built-in-rules#nsa",
+        "permanent": true
+      },
+      {
+        "source": "/built-in-rules/other",
+        "destination": "/built-in-rules#other",
         "permanent": true
       },
       {
