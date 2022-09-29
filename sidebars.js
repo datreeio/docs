@@ -147,7 +147,7 @@ const sidebars = {
     {
       type: "link",
       label: "☸️\xa0\xa0Admission webhook",
-      href: "https://github.com/datreeio/admission-webhook-datree",
+      href: "https://github.com/datreeio/datree/tree/main/cluster-integration",
     },
     {
       type: "category",
