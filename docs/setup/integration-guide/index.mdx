@@ -21,7 +21,7 @@ The first thing we recommend is to have a look at the status of your production 
 * Look at the output to see which rules failed, then disable them in your Default policy.
 This will leave you with a lenient policy that your production environment complies with.
 
-Then, we recommend setting guardrails on your clusters using Datree’s [admission webhook](https://github.com/datreeio/admission-webhook-datree), using the policy you just customized. The webhook will catch commands that create or change resources in your cluster, and run policy checks against them. This will establish your current status as a standard for your production environment that will now be automatically kept.
+Then, we recommend setting guardrails on your clusters using Datree’s [admission webhook](https://github.com/datreeio/datree/tree/main/cluster-integration), using the policy you just customized. The webhook will catch commands that create or change resources in your cluster, and run policy checks against them. This will establish your current status as a standard for your production environment that will now be automatically kept.
 
 ### Closing the gap
 
