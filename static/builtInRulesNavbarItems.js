@@ -535,6 +535,13 @@ export const navItems = [
     isEnabledByDefault: true,
     tabOwner: ["secrets"],
   },
+  {
+    id: uuid(),
+    title: "Prevent exposed private keys in objects",
+    slug: "/built-in-rules/prevent-exposed-secrets-privatekey",
+    isEnabledByDefault: true,
+    tabOwner: ["secrets"],
+  },
   // other
   {
     id: uuid(),

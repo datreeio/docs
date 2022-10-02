@@ -148,6 +148,7 @@ const sidebars = {
         "built-in-rules/Secrets/prevent-exposed-secrets-sumologic/index",
         "built-in-rules/Secrets/prevent-exposed-secrets-twilio/index",
         "built-in-rules/Secrets/prevent-exposed-secrets-vault/index",
+        "built-in-rules/Secrets/prevent-exposed-secrets-privatekey/index",
       ],
     },
     {
