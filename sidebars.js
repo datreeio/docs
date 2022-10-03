@@ -137,7 +137,7 @@ const sidebars = {
         "built-in-rules/Secrets/prevent-exposed-secrets-aws/index",
         "built-in-rules/Secrets/prevent-exposed-secrets-github/index",
         "built-in-rules/Secrets/prevent-exposed-secrets-gitlab/index",
-        "built-in-rules/Secrets/prevent-exposed-secrets-hashicorp/index",
+        "built-in-rules/Secrets/prevent-exposed-secrets-terraform/index",
         "built-in-rules/Secrets/prevent-exposed-secrets-heroku/index",
         "built-in-rules/Secrets/prevent-exposed-secrets-jwt/index",
         "built-in-rules/Secrets/prevent-exposed-secrets-launchdarkly/index",
