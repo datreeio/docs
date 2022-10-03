@@ -5,7 +5,7 @@ slug: /built-in-rules/prevent-accessing-underlying-host
 
 Kubernetes pods can use host bind mounts (i.e. directories and volumes mounted on the container host) in containers. Using a hostPath mount can enable attackers to break from the container and gain access to the underlying host. Therefore, it's not recommended to use bind mounts for application pods.
 
-**Targeted resources by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
 **Enabled by default?** True
 

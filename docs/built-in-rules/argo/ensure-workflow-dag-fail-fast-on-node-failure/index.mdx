@@ -7,7 +7,7 @@ As an alternative to specifying sequences of steps in Workflow, you can define t
 
 The DAG logic has a built-in fail fast feature to stop scheduling new steps, as soon as it detects that one of the DAG nodes is failed. Then it waits until all DAG nodes are completed before failing the DAG itself. The FailFast flag default is true. If set to false, it will allow a DAG to run all branches of the DAG to completion (either success or failure), regardless of the failed outcomes of branches in the DAG.
 
-**Targeted resources by this rule (types of kind): **Workflow
+**Targeted objects by this rule (types of kind): **Workflow
 
 **Enabled by default?** True
 
