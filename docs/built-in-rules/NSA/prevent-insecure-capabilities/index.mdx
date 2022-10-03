@@ -5,7 +5,7 @@ slug: /built-in-rules/prevent-insecure-capabilities
 
 Capabilities permit certain named root actions without giving full root access. They are a more fine-grained permissions model, and all capabilities should be dropped from a pod, with only those required added back. Giving containers unnecessary capabilities may compromise them and allow attackers access to sensitive components.
 
-**Targeted resources by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
 **Enabled by default?** True
 
