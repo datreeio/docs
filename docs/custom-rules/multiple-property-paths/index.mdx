@@ -77,13 +77,8 @@ additionalProperties:
   $ref: "#"
 items:
   $ref: "#"
-      allOf:
-        - $ref: '#/definitions/imagePattern'
-      additionalProperties:
-        $ref: '#'
-      items:
-        $ref: '#'
 ```
+
 And the full `polices.yaml` file for this rule will like that:
 
 ```yaml
@@ -122,16 +117,10 @@ customRules:
                         not:
                           anyOf:
                             - pattern: ^block.list.com/repo-name/.*
-allOf:
-  - $ref: "#/definitions/imagePattern"
-additionalProperties:
-  $ref: "#"
-items:
-  $ref: "#"
       allOf:
-        - $ref: '#/definitions/imagePattern'
+        - $ref: "#/definitions/imagePattern"
       additionalProperties:
-        $ref: '#'
+        $ref: "#"
       items:
-        $ref: '#'
+        $ref: "#"
 ```
