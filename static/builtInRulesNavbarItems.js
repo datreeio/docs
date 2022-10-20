@@ -155,6 +155,13 @@ export const navItems = [
     isEnabledByDefault: false,
     tabOwner: ["containers"],
   },
+  {
+    id: uuid(),
+    title: "Prevent containers from having unnecessary system call privileges",
+    slug: "/built-in-rules/prevent-system-call-privileges",
+    isEnabledByDefault: false,
+    tabOwner: ["containers"],
+  },
   // workload
   {
     id: uuid(),
