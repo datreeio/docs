@@ -7,9 +7,46 @@ slug: /setup/policy-customization
 
 Rule skipping allows you to instrument your policy evaluation process, and specify which of your rules should not apply to a specific resource. 
 
-:::info
-Skipping is allowed for a specific resource instance, skipping rules on a specific namespace or container is currently not supported.
+### Skipping rules within the admission webhook
+
+The admission webhook can be configured to skip certain rules by using a dedicated `ConfigMap` (see example below).  
+* The `ConfigMap` must be named 'webhook-scanning-filters.yaml' and must reside in the 'datree' namespace.
+* Enter the resources you wish to skip under the `data.skiplist` key, in the format of *namespace;resourceKind;resourceName*.
+* You can use a regular expression for any of the aformentioned properties.
+
+:::info Important
+After creating/changing your `ConfigMap`, run `kubectl rollout restart deployment -n datree` to restart the webhook and apply your changes.
 :::
+
+The following example will cause the webhook to skip all resources of type (kind) `ServiceAccount` in all namespaces, regardless of their name:
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webhook-scanning-filters
+  namespace: datree
+data:
+  skiplist: |
+    - (.*);ServiceAccount;(.*)
+```
+
+The following example will skip all resources in the namespace 'myNs':
+```yaml
+data:
+  skiplist: |
+    - myNs;(.*);(.*)
+```
+
+The following example will skip all resources in all namespaces if the resource name starts with the prefix 'appName-':
+```yaml
+data:
+  skiplist: |
+    - (.*);(.*);(^appName-.*)
+```
+
+### Skipping rules when using the CLI
+
+Rule skipping in the CLI is allowed for a specific resource instance. Skipping rules in a specific namespace or container is currently not supported.
 
 Skipping is done by adding the following annotation to a given resource manifest:  
 > datree.skip/**[identifier]**: **[message]**
