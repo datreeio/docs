@@ -14,7 +14,7 @@ The admission webhook can be configured to skip certain rules by using a dedicat
 * Enter the resources you wish to skip under the `data.skiplist` key, in the format of *namespace;resourceKind;resourceName*.
 * You can use `(.*?)` as a wild-card for any of the aformentioned properties.
 
-:::info
+:::info Important
 After creating/changing your `ConfigMap`, run `kubectl rollout restart deployment -n datree` to restart the webhook and apply your changes.
 :::
 
