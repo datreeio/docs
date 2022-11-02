@@ -10,6 +10,7 @@ import Link from "@mui/material/Link";
 import { navItems, tabsItems } from "../../../static/builtInRulesNavbarItems";
 import { useHistory } from "@docusaurus/router";
 import { useColorMode } from "@docusaurus/theme-common";
+import { Typography } from "@mui/material";
 
 const handleTabChange = () => {
   const path = location.hash.split("#")[1];
@@ -36,7 +37,10 @@ const CustomTabs = () => {
 
   return (
     <>
-      <StyledTabs
+      <Typography align="center" fontSize="h5.fontSize" fontWeight="medium">
+        The following rules are enabled in policy <b>{location.hash.split("#")[1]}</b>:
+      </Typography>
+      {/*<StyledTabs
         variant="scrollable"
         scrollButtons="auto"
         colormode={colorMode}
@@ -52,7 +56,7 @@ const CustomTabs = () => {
             />
           );
         })}
-      </StyledTabs>
+      </StyledTabs>*/}
       <List>
         {navItems.map(
           (item) =>

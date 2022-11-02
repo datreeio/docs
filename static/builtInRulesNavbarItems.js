@@ -1,6 +1,7 @@
 import uuid from "react-uuid";
 
 export const tabsItems = [
+  { value: "Default", label: "Default" },
   { value: "containers", label: "Containers" },
   { value: "workload", label: "Workload" },
   { value: "cronjob", label: "CronJob" },
@@ -11,6 +12,7 @@ export const tabsItems = [
   { value: "NSA", label: "NSA"},
   { value: "secrets", label: "Secrets"},
   { value: "other", label: "Other" },
+  { value: "cdk8s", label: "cdk8s" },
 ];
 
 export const navItems = [
@@ -19,7 +21,7 @@ export const navItems = [
     title: "Ensure each container image has a pinned (tag) version",
     slug: "/built-in-rules/ensure-image-pinned-version",
     isEnabledByDefault: true,
-    tabOwner: ["containers"],
+    tabOwner: ["containers", "cdk8s"],
   },
   {
     id: uuid(),

@@ -7,9 +7,34 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import styles from "./styles.module.scss";
 import BrowserCustomTabs from "@site/src/components/built-in-rules/CustomTabs.js";
+import PolicyCard from "@site/src/components/built-in-rules/PolicyCard.js";
+import Grid from "@mui/material/Grid";
+
 
 # Built in rules
 
-There are dozens of battle-tested rules for you to choose from, that cover different Kubernetes resources and use cases:
+Datree comes with dozens of battle-tested rules that cover different Kubernetes resources and use cases.  
+The rules are also grouped into the following policies which you can use out-of-the-box:
 
-<BrowserCustomTabs />
+<Grid container spacing={1.5}>
+    <Grid item>
+        <PolicyCard title="Default" subtitle="Datree's recommended starter policy, enforcing a wide variety of best practices" link="/built-in-rules/rules/#default" image="/img/built-in-rules/default.png" />
+    </Grid>
+    <Grid item>
+        <PolicyCard title="Argo" subtitle="Best practices for the popular ArgoCD, as well as Rollouts and Workflows" link="/built-in-rules/rules/#argo" image="/img/built-in-rules/argo.png" />
+    </Grid>
+     <Grid item>
+        <PolicyCard title="cdk8s" subtitle="A more lenient policy, intended for use as a validator for AWS's framework" link="/built-in-rules/rules/#cdk8s" image="/img/built-in-rules/cdk8sc.png" />
+    </Grid>
+     <Grid item>
+        <PolicyCard title="Strict" subtitle="A no-nonsense policy that is comprised of all available rules" link="/built-in-rules/rules/#strict" image="/img/built-in-rules/strict.png" />
+    </Grid>
+    <Grid item>
+        <PolicyCard title="NSA" subtitle="A security-focused policy enforcing the NSA hardening guide for Kubernetes" link="/built-in-rules/rules/#NSA" image="/img/built-in-rules/nsa.png" />
+    </Grid>
+    <Grid item>
+        <PolicyCard title="Secrets" subtitle="Detect a variety of passwords and other sensitive data in your manifests" link="/built-in-rules/rules/#secrets" image="/img/built-in-rules/secrets.png" />
+    </Grid>
+</Grid>
+
+<!--BrowserCustomTabs /-->
