@@ -40,23 +40,6 @@ const CustomTabs = () => {
       <Typography align="center" fontSize="h5.fontSize" fontWeight="medium">
         The following rules are enabled in policy <b>{location.hash.split("#")[1]}</b>:
       </Typography>
-      {/*<StyledTabs
-        variant="scrollable"
-        scrollButtons="auto"
-        colormode={colorMode}
-        value={selectedTab}
-        onChange={handleSelectTab}
-      >
-        {tabsItems.map((item) => {
-          return (
-            <ResponsiveTab
-              key={item.value}
-              label={item.label}
-              value={item.value}
-            />
-          );
-        })}
-      </StyledTabs>*/}
       <List>
         {navItems.map(
           (item) =>
@@ -64,17 +47,17 @@ const CustomTabs = () => {
               <ListItem key={item.id}>
                 <ListItemText
                   primary={
-                    <StyledLink colormode={colorMode} href={item.slug}>
+                    <Link colormode={colorMode} href={item.slug}>
                       {item.title}
-                    </StyledLink>
+                    </Link>
                   }
                   secondary={
-                    <StyledSubText colormode={colorMode}>
+                    <Typography colormode={colorMode}>
                       <span>Enabled by default?</span>
                       <StyledSpan colormode={colorMode}>
                         {item.isEnabledByDefault ? "True" : "False"}
                       </StyledSpan>
-                    </StyledSubText>
+                    </Typography>
                   }
                 />
               </ListItem>
@@ -137,27 +120,6 @@ const StyledTabs = styled(Tabs)`
   .MuiTab-textColorPrimary {
     color: ${(props) =>
       props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#525860"};
-  }
-`;
-
-const StyledSubText = styled.span`
-  color: ${(props) => (props.colormode === "dark" ? "#fff" : "#000")};
-`;
-
-const StyledLink = styled(Link)`
-  color: ${(props) =>
-    props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#000"};
-  .MuiTab-wrapper {
-    color: ${(props) =>
-      props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#000"};
-  }
-  .MuiTab-wrapper:hover {
-    color: ${(props) =>
-      props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#000"};
-  }
-  .MuiTab-textColorPrimary {
-    color: ${(props) =>
-      props.colormode === "dark" ? "var(--ifm-menu-color-active)" : "#000"};
   }
 `;
 
