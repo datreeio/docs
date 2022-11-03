@@ -2,17 +2,20 @@ import uuid from "react-uuid";
 
 export const tabsItems = [
   { value: "Default", label: "Default" },
+  { value: "Argo", label: "Argo" },
+  { value: "cdk8s", label: "cdk8s" },
+  { value: "Strict", label: "Strict"},
+  { value: "NSA", label: "NSA"},
+  { value: "Secrets", label: "Secrets"},
+
   { value: "containers", label: "Containers" },
   { value: "workload", label: "Workload" },
   { value: "cronjob", label: "CronJob" },
   { value: "networking", label: "Networking" },
   { value: "security", label: "Security" },
   { value: "deprecation", label: "Deprecation" },
-  { value: "argo", label: "Argo" },
-  { value: "NSA", label: "NSA"},
-  { value: "secrets", label: "Secrets"},
   { value: "other", label: "Other" },
-  { value: "cdk8s", label: "cdk8s" },
+  
 ];
 
 export const navItems = [
@@ -21,13 +24,15 @@ export const navItems = [
     title: "Ensure each container image has a pinned (tag) version",
     slug: "/built-in-rules/ensure-image-pinned-version",
     isEnabledByDefault: true,
-    tabOwner: ["containers", "cdk8s"],
+    pacIdentifier: "CONTAINERS_MISSING_IMAGE_VALUE_VERSION",
+    tabOwner: ["Strict", "Default", "cdk8s"],
   },
   {
     id: uuid(),
     title: "Ensure each container has a configured memory request",
     slug: "/built-in-rules/ensure-memory-request",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -35,6 +40,7 @@ export const navItems = [
     title: "Ensure each container has a configured CPU request",
     slug: "/built-in-rules/ensure-cpu-request",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -42,6 +48,7 @@ export const navItems = [
     title: "Ensure each container has a configured memory limit",
     slug: "/built-in-rules/ensure-memory-limit",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
 
@@ -50,6 +57,7 @@ export const navItems = [
     title: "Ensure each container has a configured CPU limit",
     slug: "/built-in-rules/ensure-cpu-limit",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -57,6 +65,7 @@ export const navItems = [
     title: "Ensure each container has a configured liveness probe",
     slug: "/built-in-rules/ensure-liveness-probe",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -64,6 +73,7 @@ export const navItems = [
     title: "Ensure each container has a configured readiness probe",
     slug: "/built-in-rules/ensure-readiness-probe",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -71,6 +81,7 @@ export const navItems = [
     title: "Prevent containers from having root access capabilities",
     slug: "/built-in-rules/prevent-privileged-containers",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -78,6 +89,7 @@ export const navItems = [
     title: "Ensure each container image has a digest tag",
     slug: "/built-in-rules/ensure-digest-tag",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -85,6 +97,7 @@ export const navItems = [
     title: "Prevent containers from sharing the host's PID namespace",
     slug: "/built-in-rules/prevent-using-host-pid",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -92,6 +105,7 @@ export const navItems = [
     title: "Prevent containers from sharing the host's IPC namespace",
     slug: "/built-in-rules/prevent-using-host-ipc",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -99,6 +113,7 @@ export const navItems = [
     title: "Prevent containers from sharing the host's network namespace",
     slug: "/built-in-rules/prevent-using-host-network",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -106,6 +121,7 @@ export const navItems = [
     title: "Prevent containers from accessing host files by using high UIDs",
     slug: "/built-in-rules/prevent-uid-conflicts",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -113,6 +129,7 @@ export const navItems = [
     title: "Prevent containers from mounting Docker socket",
     slug: "/built-in-rules/prevent-mounting-docker-socket",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -120,6 +137,7 @@ export const navItems = [
     title: "Ensure each container probe has an initial delay configured",
     slug: "/built-in-rules/ensure-initial-probe-delay",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -127,6 +145,7 @@ export const navItems = [
     title: "Ensure each container probe has a configured frequency",
     slug: "/built-in-rules/ensure-probe-frequency",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -134,6 +153,7 @@ export const navItems = [
     title: "Ensure each container probe has a configured timeout",
     slug: "/built-in-rules/ensure-probe-timeout",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -141,6 +161,7 @@ export const navItems = [
     title: "Ensure each container probe has a configured minimum success threshold",
     slug: "/built-in-rules/ensure-probe-min-success-threshold",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -148,6 +169,7 @@ export const navItems = [
     title: "Ensure each container probe has a configured failure threshold",
     slug: "/built-in-rules/ensure-probe-failure-threshold",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -155,6 +177,7 @@ export const navItems = [
     title: "Ensure each container probe has a configured prestop hook",
     slug: "/built-in-rules/ensure-prestop",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   {
@@ -162,6 +185,7 @@ export const navItems = [
     title: "Prevent containers from having unnecessary system call privileges",
     slug: "/built-in-rules/prevent-system-call-privileges",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["containers"],
   },
   // workload
@@ -170,6 +194,7 @@ export const navItems = [
     title: "Ensure workload has valid label values",
     slug: "/built-in-rules/ensure-labels-value-valid",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["workload"],
   },
   {
@@ -177,6 +202,7 @@ export const navItems = [
     title: "Ensure deployment-like resource is using a valid restart policy",
     slug: "/built-in-rules/ensure-valid-restart-policy",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["workload"],
   },
   {
@@ -184,6 +210,7 @@ export const navItems = [
     title: "Prevent workload from using the default namespace",
     slug: "/built-in-rules/prevent-deafult-namespce",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["workload"],
   },
   {
@@ -191,6 +218,7 @@ export const navItems = [
     title: "Ensure Deployment has more than one replica configured",
     slug: "/built-in-rules/ensure-minimum-two-replicas",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["workload"],
   },
   {
@@ -198,6 +226,7 @@ export const navItems = [
     title: "Ensure workload has a configured `owner` label",
     slug: "/built-in-rules/ensure-owner-label",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["workload"],
   },
   {
@@ -205,6 +234,7 @@ export const navItems = [
     title: "Ensure Deployment has a configured `env` label",
     slug: "/built-in-rules/ensure-env-label",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["workload"],
   },
   //CronJob
@@ -213,6 +243,7 @@ export const navItems = [
     title: "Ensure CronJob scheduler is valid",
     slug: "/built-in-rules/ensure-cronjob-scheduler-valid",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["cronjob"],
   },
   {
@@ -220,6 +251,7 @@ export const navItems = [
     title: "Ensure CronJob has a configured deadline",
     slug: "/built-in-rules/ensure-cronjob-deadline",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["cronjob"],
   },
   {
@@ -227,6 +259,7 @@ export const navItems = [
     title: "Prevent CronJob from executing jobs concurrently",
     slug: "/built-in-rules/prevent-cronjob-concurrency",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["cronjob"],
   },
   // Networking
@@ -235,6 +268,7 @@ export const navItems = [
     title: "Prevent Ingress from forwarding all traffic to a single container",
     slug: "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["networking"],
   },
   {
@@ -242,6 +276,7 @@ export const navItems = [
     title: "Prevent Service from exposing node port",
     slug: "/built-in-rules/prevent-node-port",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["networking"],
   },
   // Security
@@ -251,6 +286,7 @@ export const navItems = [
       "Prevent EndpointSlice validation from enabling host network hijack (CVE-2021-25737)",
     slug: "/built-in-rules/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["security"],
   },
   {
@@ -258,6 +294,7 @@ export const navItems = [
     title: "Prevent container security vulnerability (CVE-2021-25741)",
     slug: "/built-in-rules/prevent-container-security-vulnerability-cve-2021-25741",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["security"],
   },
   {
@@ -265,6 +302,7 @@ export const navItems = [
     title: "Prevent Ingress security vulnerability (CVE-2021-25742)",
     slug: "/built-in-rules/prevent-ingress-security-vulnerability-cve-2021-25742",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["security"],
   },
   {
@@ -272,6 +310,7 @@ export const navItems = [
     title: "Prevent ConfigMap security vulnerability (CVE-2021-25742)",
     slug: "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["security"],
   },
   // Deprecation
@@ -280,6 +319,7 @@ export const navItems = [
     title: "Prevent deprecated APIs in Kubernetes v1.16",
     slug: "/built-in-rules/prevent-deprecated-k8s-api-116",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["deprecation"],
   },
   {
@@ -287,6 +327,7 @@ export const navItems = [
     title: "Prevent deprecated APIs in Kubernetes v1.17",
     slug: "/built-in-rules/prevent-deprecated-k8s-api-117",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["deprecation"],
   },
   // Argo
@@ -295,6 +336,7 @@ export const navItems = [
     title: "Ensure Workflow DAG fail-fast on node failure",
     slug: "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["argo"],
   },
   {
@@ -302,6 +344,7 @@ export const navItems = [
     title: "Prevent Workflow pods from using the default service account",
     slug: "/built-in-rules/prevent-workflow-pods-from-using-the-default-service-account",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["argo"],
   },
   {
@@ -309,6 +352,7 @@ export const navItems = [
     title: "Ensure ConfigMap is recognized by ArgoCD",
     slug: "/built-in-rules/ensure-configmap-is-recognized-by-argocd",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["argo"],
   },
   {
@@ -316,6 +360,7 @@ export const navItems = [
     title: "Ensure Rollout pause step has a configured duration",
     slug: "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["argo"],
   },
   {
@@ -323,6 +368,7 @@ export const navItems = [
     title: "Ensure Application and AppProject are part of the argocd namespace",
     slug: "/built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["argo"],
   },
   {
@@ -330,6 +376,7 @@ export const navItems = [
     title: "Prevent Workflow from having an empty retry strategy",
     slug: "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["argo"],
   },
   {
@@ -337,6 +384,7 @@ export const navItems = [
     title: "Ensure Rollout has revision history set",
     slug: "/built-in-rules/ensure-rollout-has-revision-history-set",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["argo"],
   },
   {
@@ -344,6 +392,7 @@ export const navItems = [
     title: "Ensure Rollout allows broadcasting IP table changes",
     slug: "/built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["argo"],
   },
   {
@@ -351,6 +400,7 @@ export const navItems = [
     title: "Ensure Rollout that is marked as degraded scales down ReplicaSet",
     slug: "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["argo"],
   },
   {
@@ -358,6 +408,7 @@ export const navItems = [
     title: "Ensure Workflow retry policy catches relevant errors only",
     slug: "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["argo"],
   },
   // NSA
@@ -366,6 +417,7 @@ export const navItems = [
     title: "Ensure each container has a read-only root filesystem",
     slug: "/built-in-rules/ensure-read-only-filesystem",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["NSA"],
   },
   {
@@ -373,6 +425,7 @@ export const navItems = [
     title: "Prevent containers from accessing host files by using high GIDs",
     slug: "/built-in-rules/prevent-accessing-host-files-by-using-high-gids",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["NSA"],
   },
   {
@@ -380,6 +433,7 @@ export const navItems = [
     title: "Prevent containers from accessing the underlying host",
     slug: "/built-in-rules/prevent-accessing-underlying-host",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["NSA"],
   },
   {
@@ -387,6 +441,7 @@ export const navItems = [
     title: "Prevent containers from allowing command execution",
     slug: "/built-in-rules/prevent-allowing-command-execution",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["NSA"],
   },
   {
@@ -394,6 +449,7 @@ export const navItems = [
     title: "Prevent containers from escalating privileges",
     slug: "/built-in-rules/prevent-escalating-privileges",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["NSA"],
   },
   {
@@ -401,6 +457,7 @@ export const navItems = [
     title: "Prevent containers from having insecure capabilities",
     slug: "/built-in-rules/prevent-insecure-capabilities",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["NSA"],
   },
   {
@@ -408,6 +465,7 @@ export const navItems = [
     title: "Prevent containers from insecurely exposing workload",
     slug: "/built-in-rules/prevent-insecurely-exposing-workload",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["NSA"],
   },
   {
@@ -415,6 +473,7 @@ export const navItems = [
     title: "Prevent container from running with root privileges",
     slug: "/built-in-rules/prevent-running-with-root-privileges",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["NSA"],
   },
   {
@@ -422,6 +481,7 @@ export const navItems = [
     title: "Prevent service account token auto-mounting on pods",
     slug: "/built-in-rules/prevent-service-account-token-auto-mount",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["NSA"],
   },
   // secrets
@@ -430,126 +490,144 @@ export const navItems = [
     title: "Prevent exposed BitBucket secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-bitbucket",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed Datadog secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-datadog",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed GCP secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-gcp",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed AWS secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-aws",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed GitHub secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-github",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed GitLab secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-gitlab",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed Terraform secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-terraform",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed Heroku secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-heroku",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed JWT secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-jwt",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed LaunchDarkly secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-launchdarkly",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed New Relic secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-newrelic",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed npm secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-npm",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed Okta secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-okta",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed Stripe secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-stripe",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed SumoLogic secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-sumologic",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed Twilio secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-twilio",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed Vault secrets in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-vault",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   {
     id: uuid(),
     title: "Prevent exposed private keys in objects",
     slug: "/built-in-rules/prevent-exposed-secrets-privatekey",
     isEnabledByDefault: true,
-    tabOwner: ["secrets"],
+    pacIdentifier: "",
+    tabOwner: ["Secrets"],
   },
   // other
   {
@@ -557,6 +635,7 @@ export const navItems = [
     title: "Ensure resource has a configured name",
     slug: "/built-in-rules/ensure-resource-name",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["other"],
   },
   {
@@ -564,6 +643,7 @@ export const navItems = [
     title: "Ensure HPA has minimum replicas configured",
     slug: "/built-in-rules/ensure-hpa-minimum-replicas",
     isEnabledByDefault: true,
+    pacIdentifier: "",
     tabOwner: ["other"],
   },
   {
@@ -571,6 +651,7 @@ export const navItems = [
     title: "Ensure HPA has maximum replicas configured",
     slug: "/built-in-rules/ensure-hpa-maximum-replicas",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["other"],
   },
   {
@@ -578,6 +659,7 @@ export const navItems = [
     title: "Prevent deploying naked pods",
     slug: "/built-in-rules/prevent-naked-pods",
     isEnabledByDefault: false,
+    pacIdentifier: "",
     tabOwner: ["other"],
   },
 ];

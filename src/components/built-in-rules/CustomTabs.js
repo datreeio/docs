@@ -29,15 +29,9 @@ const CustomTabs = () => {
     history.push(`#${selectedTab}`);
   }, [selectedTab]);
 
-  const handleSelectTab = (event, value) => {
-    const findSelectedTab = tabsItems.findIndex((item) => item.value === value);
-    if (findSelectedTab === -1) setSelectedTab(tabsItems[0].value);
-    setSelectedTab(tabsItems[findSelectedTab].value);
-  };
-
   return (
     <>
-      <Typography align="center" fontSize="h5.fontSize" fontWeight="medium">
+      <Typography align="left" fontSize="h5.fontSize" fontWeight="medium">
         The following rules are enabled in policy <b>{location.hash.split("#")[1]}</b>:
       </Typography>
       <List>
@@ -53,9 +47,9 @@ const CustomTabs = () => {
                   }
                   secondary={
                     <Typography colormode={colorMode}>
-                      <span>Enabled by default?</span>
+                      <span>Policy-as-code identifier: </span>
                       <StyledSpan colormode={colorMode}>
-                        {item.isEnabledByDefault ? "True" : "False"}
+                        {item.pacIdentifier}
                       </StyledSpan>
                     </Typography>
                   }
