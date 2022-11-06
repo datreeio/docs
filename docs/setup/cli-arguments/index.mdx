@@ -51,6 +51,7 @@ The following flags for the `datree test` command allow you to change the behavi
 | ------------------------ | ----- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | --policy                 | -p    | e.g. staging                           | Specify which policy to execute (by policy name)                                                                                                   |
 | --no-record              | N/A   | N/A                                    | Don’t send policy checks metadata to the backend                                                                                                   |
+| --policy-config          | N/A   | e.g. "myPolicyConfig.yaml"             | Specify a path to a local policies-configuration file                                                                                              |
 
 **Output flags:**
 
@@ -59,6 +60,7 @@ The following flags for the `datree test` command allow you to change the behavi
 | --output                 | -o    | json, yaml, xml, JUnit                 | Output the policy check results in the requested format                                                                                            |
 | --output                 | -o    | simple                                 | Output the policy check results in simple text (without emoji or colors)                                                                           |
 | --verbose                | N/A   | N/A                                    | Display 'How to Fix' link for failed rules in output                                                                                               |
+| --save-rendered          | N/A   | N/A                                    | Don't delete rendered files after the policy check (e.g helm, kustomize)                                                                           |
 
 ## Additional options
 
