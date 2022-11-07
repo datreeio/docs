@@ -44,6 +44,7 @@ The following flags for the `datree test` command allow you to change the behavi
 | --schema-version         | -s    | e.g. "1.20.0"                        | Set Kubernetes version to validate against. Default can also be changed from the [dashboard](https://hub.datree.io/setup/schema-validation#changing-the-default-schema-version) |
 | --schema-location        | N/A   | e.g. "http://example.com/schema.json"| Override Kubernetes schema location. See [relevant page](/setup/schema-validation#overriding-schemas-location---crd-support) for more information. |
 | --ignore-missing-schemas | N/A   | N/A                                  | Skip files with missing schemas instead of failing the schema validation check                                                                     |
+| --permissive-schema      | N/A   | N/A                                  | Allow duplicated keys and/or additional properties that are not part of the schema                                                                 |
 
 **Policy check flags:**
 
