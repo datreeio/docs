@@ -44,6 +44,7 @@ The following flags for the `datree test` command allow you to change the behavi
 | --schema-version         | -s    | e.g. "1.20.0"                        | Set Kubernetes version to validate against. Default can also be changed from the [dashboard](https://hub.datree.io/setup/schema-validation#changing-the-default-schema-version) |
 | --schema-location        | N/A   | e.g. "http://example.com/schema.json"| Override Kubernetes schema location. See [relevant page](/setup/schema-validation#overriding-schemas-location---crd-support) for more information. |
 | --ignore-missing-schemas | N/A   | N/A                                  | Skip files with missing schemas instead of failing the schema validation check                                                                     |
+| --permissive-schema      | N/A   | N/A                                  | Allow duplicated keys and/or additional properties that are not part of the schema                                                                 |
 
 **Policy check flags:**
 
@@ -51,6 +52,7 @@ The following flags for the `datree test` command allow you to change the behavi
 | ------------------------ | ----- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | --policy                 | -p    | e.g. staging                           | Specify which policy to execute (by policy name)                                                                                                   |
 | --no-record              | N/A   | N/A                                    | Don’t send policy checks metadata to the backend                                                                                                   |
+| --policy-config          | N/A   | e.g. "myPolicyConfig.yaml"             | Specify a path to a local policies-configuration file                                                                                              |
 
 **Output flags:**
 
@@ -59,6 +61,7 @@ The following flags for the `datree test` command allow you to change the behavi
 | --output                 | -o    | json, yaml, xml, JUnit                 | Output the policy check results in the requested format                                                                                            |
 | --output                 | -o    | simple                                 | Output the policy check results in simple text (without emoji or colors)                                                                           |
 | --verbose                | N/A   | N/A                                    | Display 'How to Fix' link for failed rules in output                                                                                               |
+| --save-rendered          | N/A   | N/A                                    | Don't delete rendered files after the policy check (e.g helm, kustomize)                                                                           |
 
 ## Additional options
 
@@ -67,9 +70,13 @@ The following flags for the `datree test` command allow you to change the behavi
 Run `datree kustomize test [path]` to render resources defined in a kustomization.yaml file located in `[path]` and run a policy check against them.
 For more information, options and examples, see the [Kustomize support](/integrations/kustomize-support) page.
 
+---
+
 ### Publish policy-as-code configuration
 
 When using [Policy as code](/setup/policy-as-code) mode, the command `datree publish fileName.yaml` will publish policies configuration for given fileName. Input should be the path to the Policy-as-Code yaml configuration file.
+
+---
 
 ### Configure the CLI via the `config.yaml` file
 
@@ -95,6 +102,26 @@ When in [offline-mode](/setup/offline-mode), you will need to instruct the CLI t
 ```terminal
 $ datree config set offline local
 ```
+
+---
+
+### Upgrade the CLI to the latest version
+
+To upgrade your CLI, simply run `datree upgrade`.
+
+---
+
+### Print the current CLI version
+
+To print your CLI version, run `datree version`.
+
+---
+
+### Open the documentation website
+
+Run `datree docs` to open the Datree documentation website in your browser.
+
+---
 
 ### Shell autocompletion
 
