@@ -32,16 +32,16 @@ export const navItems = [
     title: "Ensure each container has a configured memory request",
     slug: "/built-in-rules/ensure-memory-request",
     isEnabledByDefault: true,
-    pacIdentifier: "",
-    tabOwner: ["Strict"],
+    pacIdentifier: "CONTAINERS_MISSING_MEMORY_REQUEST_KEY",
+    tabOwner: ["Strict", "Default"],
   },
   {
     id: uuid(),
     title: "Ensure each container has a configured CPU request",
     slug: "/built-in-rules/ensure-cpu-request",
     isEnabledByDefault: true,
-    pacIdentifier: "",
-    tabOwner: ["Strict"],
+    pacIdentifier: "CONTAINERS_MISSING_CPU_REQUEST_KEY",
+    tabOwner: ["Strict", "Default"],
   },
   {
     id: uuid(),
@@ -246,6 +246,20 @@ export const navItems = [
     pacIdentifier: "",
     tabOwner: ["Strict"],
   },
+
+
+
+
+////////////////////
+
+
+
+
+
+
+
+
+
   {
     id: uuid(),
     title: "Ensure CronJob has a configured deadline",
@@ -468,6 +482,11 @@ export const navItems = [
     pacIdentifier: "",
     tabOwner: ["Strict"],
   },
+
+  
+////////////////
+
+
   {
     id: uuid(),
     title: "Prevent container from running with root privileges",
