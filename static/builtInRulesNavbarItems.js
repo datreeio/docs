@@ -7,15 +7,6 @@ export const tabsItems = [
   { value: "Strict", label: "Strict"},
   { value: "NSA", label: "NSA"},
   { value: "Secrets", label: "Secrets"},
-
-  { value: "containers", label: "Containers" },
-  { value: "workload", label: "Workload" },
-  { value: "cronjob", label: "CronJob" },
-  { value: "networking", label: "Networking" },
-  { value: "security", label: "Security" },
-  { value: "deprecation", label: "Deprecation" },
-  { value: "other", label: "Other" },
-  
 ];
 
 export const navItems = [
@@ -122,7 +113,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-uid-conflicts",
     isEnabledByDefault: false,
     pacIdentifier: "CONTAINERS_INCORRECT_RUNASUSER_VALUE_LOWUID",
-    tabOwner: ["Strict"],
+    tabOwner: ["Strict", "NSA"],
   },
   {
     id: uuid(),
@@ -482,11 +473,6 @@ export const navItems = [
     pacIdentifier: "CONTAINERS_INCORRECT_KEY_HOSTPORT",
     tabOwner: ["Strict", "NSA", "cdk8s"],
   },
-
-
-////////////////
-
-
   {
     id: uuid(),
     title: "Prevent container from running with root privileges",

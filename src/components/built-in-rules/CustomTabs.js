@@ -47,7 +47,7 @@ const CustomTabs = () => {
                   }
                   secondary={
                     <Typography colormode={colorMode}>
-                      <span>Policy-as-code identifier: </span>
+                      <span><b>Policy-as-code identifier: </b></span>
                       <StyledSpan colormode={colorMode}>
                         {item.pacIdentifier}
                       </StyledSpan>
