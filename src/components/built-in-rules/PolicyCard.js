@@ -1,35 +1,30 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import Link from "@mui/material/Link";
 import CardMedia from "@mui/material/CardMedia";
 import CardHeader from "@mui/material/CardHeader";
 import Box from "@mui/material/Box";
 
-class PolicyCard extends Component {
-  state= {
-    border: 1,
-    borderColor: "grey.500",
-  }
-
-  onMouseOver = () => this.setState({ border: 1, borderColor: "cornflowerblue" });
-
-  onMouseOut = () => this.setState({ border: 1, borderColor: "grey.500" });
-
-  render(props) {
-    return (
-      <Link href={this.props.link} style={{ textDecoration: 'none' }} >
-        <Card sx={{ maxWidth: 370, border: this.state.border, borderStyle: 2, boxShadow: 5, borderRadius: 4, borderColor: this.state.borderColor }} onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut} >
+const PolicyCard = ({ title, subtitle, link, image, }) => {
+ 
+return (
+      <Link href={link} style={{ textDecoration: 'none' }} >
+        <StyledCard sx={{ maxWidth: 370, border: 0.5 , borderStyle: 2, boxShadow: 5, borderRadius: 4, borderColor: "gray.500" }} >
           <Box sx={{ my: 1 }}>
-            <CardMedia component="img" image={this.props.image} height="80" sx={{ objectFit: "contain" }} style={{ margin: "1rem 0" }} className="not-zoomable" />
+            <CardMedia component="img" image={image} height="80" sx={{ objectFit: "contain" }} style={{ margin: "1rem 0" }} className="not-zoomable" />
           </Box>
           <Divider variant="middle" light />  
-          <CardHeader style={{ margin: "1rem", padding: 0 }} title={this.props.title} align="center" subheader={this.props.subtitle} titleTypographyProps={{ fontWeight: "medium" }} />   
-        </Card>
+          <CardHeader style={{ margin: "1rem", padding: 0 }} title={title} align="center" subheader={subtitle} titleTypographyProps={{ fontWeight: "medium" }} />   
+        </StyledCard>
       </Link>
     );
-  };
 };
+
+const StyledCard = styled(Card)`
+  &:hover {
+    border-color: cornflowerblue;
+  }
+`
 export default PolicyCard;
