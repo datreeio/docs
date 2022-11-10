@@ -25,6 +25,7 @@ return (
 const StyledCard = styled(Card)`
   &:hover {
     border-color: cornflowerblue;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
 `
 export default PolicyCard;

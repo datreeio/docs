@@ -14,7 +14,7 @@ const handleTabChange = () => {
   return tabsItems[findSelectedTab].value;
 };
 
-const BrowserCustomTabs = () => {
+const CustomTabs = () => {
   const [selectedTab, setSelectedTab] = useState(() => handleTabChange());
 
   return (<BrowserOnly fallback={<div>Loading...</div>}>
@@ -51,6 +51,15 @@ const BrowserCustomTabs = () => {
   );
 };
 
+const BrowserCustomTabs = () => {
+  return (
+    <BrowserOnly fallback={<div>Loading...</div>}>
+      {() => {
+        return <CustomTabs />;
+      }}
+    </BrowserOnly>
+  );
+};
 
 
 export default BrowserCustomTabs;
