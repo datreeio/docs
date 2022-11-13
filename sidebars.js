@@ -70,6 +70,7 @@ const sidebars = {
         id: "built-in-rules/index",
       },
       items: [
+        "built-in-rules/rules/index",
         "built-in-rules/Deprecation/prevent-deprecated-k8s-api-116/index",
         "built-in-rules/Deprecation/prevent-deprecated-k8s-api-117/index",
         "built-in-rules/NSA/ensure-read-only-filesystem/index",

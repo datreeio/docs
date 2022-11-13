@@ -170,7 +170,8 @@ const config = {
         container: 'div',
       },
       zoom: {
-        selector: '.markdown :not(em) > img',
+        // To disable zoom for a specific image, add the className "not-zoomable" to it
+        selector: '.markdown :not(em) > img:not(.not-zoomable)',
         config: {
           // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
           background: {

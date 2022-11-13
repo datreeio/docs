@@ -12,7 +12,9 @@ When a policy check is triggered, Datree reads your account token from the confi
 **Each token has the following properties:**
 
 - **Label:** the name of the token, as presented in the history tab in your dashboard.
-- **Type:** can be set to either *read* or *write*, used to define the permissions for updating your account policies.
+- **Type:** can be one of the following:
+    * *read* - allows using the policies in the dashboard, but forbids editing/creating them.
+    * *write* - allows using/editing/creating policies and tokens.
 
 :::info
 Tokens are immutable. To change one of the token's properties, a new token needs to be created and set in the CLI.
