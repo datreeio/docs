@@ -11,188 +11,39 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import styles from './styles.module.scss';
 
-# Getting started
-
 Prevent Kubernetes misconfigurations from reaching production (again 😤 )! From code to production, Datree provides an E2E policy enforcement solution to run automatic checks for rule violations.
-Datree can be used on the command line, admission webhook, or even as a kubectl plugin to run policies against Kubernetes objects.
+Datree can be used as a cluster guardrail, on the command line, or even as a kubectl plugin to run policies against Kubernetes objects.
 
 :::tip 
-**No prerequisites to get started!**
+This page demonstrates how to install Datree as an admission webhook. To install the CLI, click [here](/cli/).
 :::
 
 ## Quickstart
 
-### 1. Install the Datree CLI
+Install Datree to get insights on the status of your cluster and enforce your desired policies on new resources.
 
-Binary releases can be downloaded from the [releases page](https://github.com/datreeio/datree/releases) or can be installed directly
 
-<Tabs>
-  <TabItem value='Linux' label='Linux' default>
+:::info
+The webhook officially supports Kubernetes version 1.19 and higher, and has been tested with EKS.
+:::
 
-    curl https://get.datree.io | /bin/bash
+### Install Datree with Helm
 
-  </TabItem>
-  <TabItem value='MacOS' label='MacOS'>
+1. Add the Datree Helm repository by running the following command in your terminal:
+```terminal
+helm repo add datree-webhook https://datreeio.github.io/admission-webhook-datree
+helm repo update
+```
 
-    curl https://get.datree.io | /bin/bash
+2. Get your personal token by [creating an account](https://app.datree.io/) with a single click
 
-  </TabItem>
-  <TabItem value='Windows (PowerShell)' label='Windows (PowerShell)'>
+3. Install Datree on your cluster by running the following command in your terminal (replace `<TOKEN>` with your personal token):
+```terminal
+helm install -n datree datree-webhook datree-webhook/datree-admission-webhook \
+--create-namespace \
+--set datree.token=<TOKEN>
+```
 
-    iwr -useb https://get.datree.io/windows_install.ps1 | iex
+4. Go to your [dashboard](https://app.datree.io/), enter your email address, and start getting valuable data about the stability of your cluster.
 
-  </TabItem>
-  <TabItem value='Homebrew' label='Homebrew'>
-
-    brew tap datreeio/datree
-    brew install datreeio/datree/datree
-
-  </TabItem>
-  <TabItem value='Docker' label='Docker'>
-
-    docker pull datree/datree
-
-  </TabItem>
-  <TabItem value='Other' label='Other'>
-    <Admonition type="caution" title="disclaimer">
-      <p>The following packages are not maintained by Datree, and therefore may not be up to date.</p>
-    </Admonition>
-    <h4>MacPorts</h4>
-    <CodeBlock>
-      sudo port install datree
-    </CodeBlock>
-  </TabItem>
-</Tabs>
-
----
-
-<div className='container py-5'>
-  <div className={styles.row}>
-    <div className={styles.card}>
-      <img
-        src='/img/welcome/getting-started/helm.png'
-        alt='helm'
-        width='90'
-        height='90'
-      />
-      <h4
-        style={{ margin: '16px 0 5px 0', fontSize: '21px', fontWeight: '800' }}>
-        Using Helm?
-      </h4>
-      <p>
-        Take a look at our{' '}
-        <a
-          className={styles.underline}
-          href='https://github.com/datreeio/helm-datree'
-          rel='nofollow noreferrer noopener'>
-          Helm plugin
-        </a>
-      </p>
-    </div>
-    <div className={styles.card}>
-      <img
-        src='/img/welcome/getting-started/kustomize.png'
-        alt='kustomize'
-        width='90'
-        height='90'
-      />
-      <h4
-        style={{ margin: '16px 0 5px 0', fontSize: '21px', fontWeight: '800' }}>
-        Using Kustomize?
-      </h4>
-      <p>
-        Check out our built-in{' '}
-        <a
-          className={styles.underline}
-          href='/integrations/kustomize-support'
-          rel='nofollow noreferrer noopener'>
-          Kustomize support
-        </a>
-      </p>
-    </div>
-  </div>
-</div>
-
----
-
-<div align="center">
-<iframe 
- src="https://fast.wistia.net/embed/iframe/m7eumvgf8y" 
- title="Datree Installation demo inc helm and schema Video" 
- allow="autoplay; fullscreen" 
- allowtransparency="true" 
- frameBorder="0" 
- scrolling="no" 
- class="wistia_embed" 
- name="wistia_embed" 
- msallowfullscreen 
- width="70%" height="350rem">
-</iframe>
-<script src='https://fast.wistia.net/assets/external/E-v1.js' async></script>
-</div>
-
----
-
-### 2. Run a policy check against a Kubernetes manifest
-
-Run the CLI against any Kubernetes YAML file.  
-You can use our [demo file](https://raw.githubusercontent.com/datreeio/datree/main/internal/fixtures/kube/k8s-demo.yaml) if you wish:
-
-<Tabs>
-  <TabItem value='Linux' label='Linux' default>
-
-    datree test ~/.datree/k8s-demo.yaml
-
-  </TabItem>
-  <TabItem value='MacOS' label='MacOS'>
-
-    datree test ~/.datree/k8s-demo.yaml
-
-  </TabItem>
-  <TabItem value='Windows (PowerShell)' label='Windows (PowerShell)'>
-
-    datree.exe test $env:USERPROFILE\.datree\k8s-demo.yaml
-
-  </TabItem>
-  <TabItem value='Docker' label='Docker'>
-
-    cat ~/.datree/k8s-demo.yaml | docker run -i datree/datree test -
-
-  </TabItem>
-</Tabs>
-
-You will get the following output in your CLI:
-
-![gettingstarted_cli_output](/img/welcome/getting-started/output.png)
-
-### 3. Customize your policy
-
-#### Connect your CLI to your dashboard
-
-Follow the link in the output summary:
-
-![gettingstarted_summary](/img/welcome/getting-started/summary.png)
- 
-To start using your dashboard, easily sign-up using your private **GitHub** or **Google** account, no need to enter any personal information.
-
-![gettingstarted_signup](/img/welcome/getting-started/signup.gif)
-
-#### Enable/disable built-in rules
-
-After signing up, you'll be automatically redirected to your [Centralized policy](/setup/centralized-policy) where you can configure it according to your needs:
-
-![gettingstarted_enable_disable](/img/welcome/getting-started/enabledisable.png)
-
-#### [OPTIONAL] Add your custom rules
-
-In addition to the tool's built-in rules, you can also write any rule that you wish and run it against your Kubernetes configurations to check for violations. Read how to set up custom rules at [Understanding custom rules](/custom-rules/custom-rules-overview).
-
-### 4. Integrate into your workflow
-
-From develop to runtime, you can use Datree in every step of your Kuberenetes pipeline to help you prevent misconfigurations:  
-⏩ &nbsp;[Develop (code)](https://hub.datree.io/#2-test-a-kubernetes-demo-manifest) - run the CLI locally (or as a pre-commit hook) to get instant validation  
-⏩ &nbsp;[Distribute (CI)](https://hub.datree.io/cicd-examples) - integrate with your CI platform to shift-left policy checks  
-⏩ &nbsp;[Deploy (CD)](https://github.com/datreeio/datree/tree/main/cluster-integration) - gate your cluster with the admission webhook  
-⏩ &nbsp;[Runtime (production)](https://github.com/datreeio/kubectl-datree) - query deployed resources with the kubectl plugin to your know your status  
-  
-![lifecycle](/img/welcome/getting-started/offerings.png)
+#### You're all set! 🎉 Proceed to [configure](/setup/usage) Datree according to your needs.
