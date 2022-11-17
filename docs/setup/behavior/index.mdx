@@ -3,26 +3,60 @@ title: Behavior
 slug: /setup/behavior
 ---
 
+## Set/change token
+
+
+Since your token is sensitive 🤫 and you would not want to keep it in your repository, we recommend to set/change it by running a separate `kubectl patch` command:
+
+```yaml
+kubectl patch deployment webhook-server -n datree -p '
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          env:
+            - name: DATREE_TOKEN
+              value: "<your-token>"'
+```
+Simply replace `<your-token>` with your actual [token](https://app.datree.io/settings/token-management), then copy the entire command and run it in your terminal.
+
+## Options
+
 The following options are available for configuring Datree's behavior:
 
-### Options
+| **Option** | **Description** | **Type** |
+|---|---|---|
+| `policy` | The name of the policy to check, e.g: "Argo" | string |
+| `verbose` | Display 'How to Fix' link for failed rules in output | boolean |
+| `output` | The format output of the policy check results: yaml, json, xml, simple, JUnit, sarif | string |
+| `noRecord` | Don’t send policy checks metadata to the dashboard | boolean |
+| `enforce` | Block resources that fail the policy check from being applied to the cluster | boolean |  
 
-    # The token used to link the CLI to your dashboard.
-    token: <DATREE_TOKEN>
-    # The name of the policy to check, e.g: staging. (string, optional)
-    policy: ""
-    # Display 'How to Fix' link for failed rules in output. (boolean ,optional)
-    verbose: ""
-    # The format output of the policy check results: yaml, json, xml, simple, JUnit. (string ,optional)
-    output: ""
-    # Don’t send policy checks metadata to the backend. (boolean ,optional)
-    noRecord: ""
-    # Block resources that fail the policy check. (boolean ,optional)
-    enforce: ""
+<br/>
 
----
+### Changing options
+To change one or more options, choose one of the following methods:
 
-### Set/change token
+#### 1. Using Helm
+
+Up a new `values.yaml` file with, or 
+
+```terminal
+helm upgrade -f newValues.yaml datree-webhook
+```
+
+```terminal
+helm upgrade -n datree datree-webhook --reuse-values --set datree.enforce="true" --set datree.noRecord="true"
+```
+
+check if we can do helm upgrade with a values.yaml file
+
+#### 2. Using kubectl
+
+```terminal
+use kubectl patch
+```
 
 ---
 
@@ -67,6 +101,7 @@ customRules:
 ```
 
 ---
+
 ### Example YAML with skipped rules:  
 ```yaml
 apiVersion: apps/v1
