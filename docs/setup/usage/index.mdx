@@ -16,3 +16,8 @@ When installed on your cluster, other policy enforcement tools will validate bot
 
 * **Kubectl** - validate objects that were created or updated using kubectl `create`, `edit`, and `apply` commands. Objects that were implicitly created (e.g., pods created via deployment) are ignored since the webhook validates the deployment that generated them and is accessible to the user.
 * **Gitops CD tools** - validate objects that were explicitly created and distinguish them from other objects (custom resources) that were implicitly created during the installation and are required for the ongoing operation of these tools (e.g., ArgoCD, FluxCD, etc.)
+
+
+
+
+---add info about enforce=off by default

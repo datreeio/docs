@@ -1,0 +1,88 @@
+---
+title: Behavior
+slug: /setup/behavior
+---
+
+The following options are available for configuring Datree's behavior:
+
+### Options
+
+    # The token used to link the CLI to your dashboard.
+    token: <DATREE_TOKEN>
+    # The name of the policy to check, e.g: staging. (string, optional)
+    policy: ""
+    # Display 'How to Fix' link for failed rules in output. (boolean ,optional)
+    verbose: ""
+    # The format output of the policy check results: yaml, json, xml, simple, JUnit. (string ,optional)
+    output: ""
+    # Don’t send policy checks metadata to the backend. (boolean ,optional)
+    noRecord: ""
+    # Block resources that fail the policy check. (boolean ,optional)
+    enforce: ""
+
+---
+
+### Set/change token
+
+---
+
+### Ignore a namespace
+Add the label `"admission.datree/validate=skip"` to the configuration of the namespace you would like to ignore:
+
+```terminal
+kubectl label namespaces default "admission.datree/validate=skip"
+```
+
+To delete the label and resume running the datree webhook on the namespace again:
+
+```terminal
+kubectl label namespaces default "admission.datree/validate-"
+```
+
+---
+
+### Skip specific rules for a single object
+
+To skip a rule for a specific object, add the following annotation to its manifest:  
+> datree.skip/**[identifier]**: **[message]**
+
+**identifier** - the unique rule identifier.  
+**message** - optional text to be presented in the policy check output (CLI and history tab at the dashboard).  <br/><br/>
+
+To obtain identifiers of *built-in rules*, go to your [dashboard](https://app.datree.io/cli/policies/) and click on the 'i' icon of your desired rule:  
+
+![rule_i](/img/setup/policy-customization/1.png)
+
+This will lead you to the documentation of the rule, where you will find the identifier:  
+
+![rule_identifier_docs](/img/setup/policy-customization/2.png)
+
+Identifiers of *custom rules* can be found in the policy.yaml file, when in Policy-as-code mode.  For example:  
+```yaml
+customRules:
+  - identifier: CUSTOM_WORKLOAD_INCORRECT_ENVIRONMENT_LABELS
+    name: Ensure correct environment labels are used [CUSTOM RULE]
+    defaultMessageOnFailure: Use only approved environment labels ('prod', 'staging' and 'test')
+    schema:
+```
+
+---
+### Example YAML with skipped rules:  
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rss-site
+  namespace: test
+  labels:
+    environment: prod
+    app: web
+  annotations:
+    datree.skip/WORKLOAD_INVALID_LABELS_VALUE: irrelevant for deployments, skipping.
+    datree.skip/CONTAINERS_MISSING_LIVENESSPROBE_KEY: irrelevant for prod environment, skipping.
+```
+
+:::info Note
+`annotations` have a character limit - the key and value of an annotation cannot exceed 63 characters each.  
+For more information, see the [Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/#syntax-and-character-set)
+:::

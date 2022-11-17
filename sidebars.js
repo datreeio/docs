@@ -33,6 +33,7 @@ const sidebars = {
       collapsed: true,
       items: [
         "setup/usage/index",
+        "setup/behavior/index",
         "setup/output/index",
         "setup/policy-as-code/index",
         "setup/policy-customization/index",

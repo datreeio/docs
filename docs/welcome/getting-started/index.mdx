@@ -24,26 +24,28 @@ Install Datree to get insights on the status of your cluster and enforce your de
 
 
 :::info
-The webhook officially supports Kubernetes version 1.19 and higher, and has been tested with EKS.
+The webhook officially supports and has been tested with Kubernetes version 1.19 and higher.
 :::
 
-### Install Datree with Helm
+## Install Datree with Helm
 
-1. Add the Datree Helm repository by running the following command in your terminal:
+### 1. Add the Datree Helm repository
+Run the following command in your terminal:
 ```terminal
 helm repo add datree-webhook https://datreeio.github.io/admission-webhook-datree
 helm repo update
 ```
 
-2. Get your personal token by [creating an account](https://app.datree.io/) with a single click
-
-3. Install Datree on your cluster by running the following command in your terminal (replace `<TOKEN>` with your personal token):
+### 2. Install Datree on your cluster
+Replace `<TOKEN>` with the token from your [dashboard](https://app.datree.io/), and run the following command in your terminal:  
 ```terminal
 helm install -n datree datree-webhook datree-webhook/datree-admission-webhook \
 --create-namespace \
 --set datree.token=<TOKEN>
 ```
 
-4. Go to your [dashboard](https://app.datree.io/), enter your email address, and start getting valuable data about the stability of your cluster.
+This will create a new namespace (datree), where Datree’s services and application resources will reside. `datree.token` is used to connect your dashboard to your cluster.  
 
-#### You're all set! 🎉 Proceed to [configure](/setup/usage) Datree according to your needs.
+### 3. You're all set! 🎉
+Datree will now run in the background, scanning your cluster for misconfigurations. A report will be sent to the email connected to your account.  
+You can now proceed to [configure](/setup/usage) Datree according to your needs.
