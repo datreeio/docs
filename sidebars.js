@@ -32,11 +32,9 @@ const sidebars = {
       label: "🛠️\xa0\xa0Configuration",
       collapsed: true,
       items: [
-        "setup/usage/index",
+        "setup/overview/index",
         "setup/behavior/index",
         "setup/output/index",
-        "setup/policy-as-code/index",
-        "setup/policy-customization/index",
       ],
     },
     {

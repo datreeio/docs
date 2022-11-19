@@ -33,34 +33,27 @@ The following options are available for configuring Datree's behavior:
 | `noRecord` | Don’t send policy checks metadata to the dashboard | boolean |
 | `enforce` | Block resources that fail the policy check from being applied to the cluster | boolean |  
 
-<br/>
 
-### Changing options
-To change one or more options, choose one of the following methods:
+### Configure options
+To set/change one or more options, choose one of the following methods:
 
-#### 1. Using Helm
+#### 1. Using a Helm inline command
 
-Up a new `values.yaml` file with, or 
-
+The following example will enable enforce mode and block resources that fail the policy check:
 ```terminal
-helm upgrade -f newValues.yaml datree-webhook
+helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set datree.enforce="true"
 ```
 
+#### 2. Using a new Helm values file
+
+Create a YAML file with your desired values, then run the following command to apply it:
 ```terminal
-helm upgrade -n datree datree-webhook --reuse-values --set datree.enforce="true" --set datree.noRecord="true"
-```
-
-check if we can do helm upgrade with a values.yaml file
-
-#### 2. Using kubectl
-
-```terminal
-use kubectl patch
+helm upgrade -n datree -f newValues.yaml datree-webhook datree-webhook/datree-admission-webhook
 ```
 
 ---
 
-### Ignore a namespace
+## Ignore a namespace
 Add the label `"admission.datree/validate=skip"` to the configuration of the namespace you would like to ignore:
 
 ```terminal
@@ -75,10 +68,12 @@ kubectl label namespaces default "admission.datree/validate-"
 
 ---
 
-### Skip specific rules for a single object
+## Skip specific rules for a single object
 
 To skip a rule for a specific object, add the following annotation to its manifest:  
-> datree.skip/**[identifier]**: **[message]**
+```yaml
+datree.skip/[identifier]: [message]
+```
 
 **identifier** - the unique rule identifier.  
 **message** - optional text to be presented in the policy check output (CLI and history tab at the dashboard).  <br/><br/>
@@ -100,9 +95,7 @@ customRules:
     schema:
 ```
 
----
-
-### Example YAML with skipped rules:  
+#### Example of a Deployment with skipped rules:  
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -121,3 +114,42 @@ metadata:
 `annotations` have a character limit - the key and value of an annotation cannot exceed 63 characters each.  
 For more information, see the [Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/#syntax-and-character-set)
 :::
+
+---
+
+## Custom skipping
+
+Datree can be configured to skip certain rules by using a dedicated `ConfigMap` (see example below).  
+* The `ConfigMap` must be named 'webhook-scanning-filters.yaml' and must reside in the 'datree' namespace.
+* Enter the resources you wish to skip under the `data.skiplist` key, in the format of *namespace;resourceKind;resourceName*.
+* You can use a regular expression for any of the aformentioned properties.
+
+:::info Important
+After creating/changing your `ConfigMap`, run `kubectl rollout restart deployment -n datree` to restart the webhook and apply your changes.
+:::
+
+The following example will cause the webhook to skip all resources of type (kind) `ServiceAccount` in all namespaces, regardless of their name:
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webhook-scanning-filters
+  namespace: datree
+data:
+  skiplist: |
+    - (.*);ServiceAccount;(.*)
+```
+
+The following example will skip all resources in the namespace 'myNs':
+```yaml
+data:
+  skiplist: |
+    - myNs;(.*);(.*)
+```
+
+The following example will skip all resources in all namespaces if the resource name starts with the prefix 'appName-':
+```yaml
+data:
+  skiplist: |
+    - (.*);(.*);(^appName-.*)
+```
