@@ -5,7 +5,7 @@ slug: /welcome/how-datree-works
 description: How Datree works
 ---
 
-Datree's CLI integration provides a policy enforcement solution to run automatic checks for rule violations and misconfigurations in your Kubernetes config files. When rule violations are found, Datree produces an alert which guides the developer to fix the issue while explaining the reason behind the rule.  
+Datree provides a policy enforcement solution to run automatic checks for rule violations and misconfigurations in your Kubernetes config files. When rule violations are found, Datree produces an alert which guides the developer to fix the issue while explaining the reason behind the rule.  
 
 ### From develop to runtime
 
@@ -24,6 +24,6 @@ Each policy check consists of 3 consecutive phases:
 
 ## Where does the policy check occur?
 
-Datree's policy evaluation process is entirely local. Your files and their contents are **not** sent to our backend, as the CLI performs the policy check on your machine. Only metadata is sent to our backend, which is used to display your policy check history on your dashboard.
+Datree's policy evaluation process is entirely local. Your files and their contents are **not** sent to our backend, as all policy checks are performed on your machine. Only metadata is sent to our backend, which is used to display your policy check history on your dashboard.
 
 ![architecture](/img/welcome/how-datree-works/architecture_light.png)
