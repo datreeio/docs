@@ -46,6 +46,11 @@
         "permanent": true
       },
       {
+        "source": "/setup/policy-customization",
+        "destination": "/setup/behavior", 
+        "permanent": true
+      },
+      {
         "source": "/custom-rules-overview",
         "destination": "/custom-rules/custom-rules-overview", 
         "permanent": true
