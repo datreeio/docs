@@ -1,0 +1,32 @@
+.underline {
+  text-decoration: underline;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  .card {
+    width: 95%;
+  }
+}
+
+.image {
+  max-width: 90%;
+  margin: 1rem auto;
+}

@@ -29,34 +29,36 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "🛠️\xa0\xa0Setup",
+      label: "🛠️\xa0\xa0Configuration",
       collapsed: true,
       items: [
-        {
-          type: 'category',
-          label: '◉ Basic',
-          collapsed: false,
-          items: [
-            "setup/centralized-policy/index",
-            'setup/schema-validation/index',
-            'setup/cli-output/index',
-            "setup/cli-arguments/index",
-            "setup/history/index",
-            "setup/account-token/index",
-            "setup/user-management/index",
-          ],
-        },
-        {
-          type: 'category',
-          label: '◉ Advanced',
-          collapsed: false,
-          items: [
-            "setup/policy-as-code/index",
-            "setup/policy-customization/index",
-            "setup/offline-mode/index",
-            "setup/integration-guide/index",
-          ],
-        },
+        "setup/overview/index",
+        "setup/behavior/index",
+        "setup/output/index",
+      ],
+    },
+    {
+      type: "category",
+      label: "📊\xa0\xa0Dashboard",
+      collapsed: true,
+      items: [
+        "setup/centralized-policy/index",
+        "setup/history/index",
+        "setup/account-token/index",
+        "setup/user-management/index",
+        "setup/policy-as-code/index",
+      ],
+    },
+    {
+      type: "category",
+      label: "🖥\xa0\xa0CLI",
+      collapsed: true,
+      items: [
+        "cli/index",
+        "setup/schema-validation/index",
+        "setup/cli-output/index",
+        "setup/cli-arguments/index",
+        "setup/offline-mode/index",
       ],
     },
     {
@@ -165,11 +167,6 @@ const sidebars = {
       ],
     },
     {
-      type: "link",
-      label: "☸️\xa0\xa0Admission webhook",
-      href: "https://github.com/datreeio/datree/tree/main/cluster-integration",
-    },
-    {
       type: "category",
       label: "🔌\xa0\xa0Integrations",
       link: {
@@ -246,6 +243,14 @@ const sidebars = {
       type: "doc",
       label: "🗃️\xa0\xa0Troubleshooting",
       id: "troubleshooting/index",
+    },
+    {
+      type: "category",
+      label: "📕\xa0\xa0Guides & articles",
+      collapsed: true,
+      items: [
+        "setup/integration-guide/index",
+      ]
     },
     {
       type: "link",
