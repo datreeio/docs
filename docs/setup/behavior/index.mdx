@@ -153,3 +153,14 @@ data:
   skiplist: |
     - (.*);(.*);(^appName-.*)
 ```
+
+---
+
+## Uninstall
+
+To uninstall Datree, run the following command in your terminal:
+
+```terminal
+helm uninstall datree-webhook -n datree
+kubectl delete ns datree
+```
