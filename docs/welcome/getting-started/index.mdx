@@ -11,20 +11,15 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import styles from './styles.module.scss';
 
-Prevent Kubernetes misconfigurations from reaching production (again 😤 )! From code to production, Datree provides an E2E policy enforcement solution to run automatic checks for rule violations.
-Datree can be used as a cluster guardrail, on the command line, or even as a kubectl plugin to run policies against Kubernetes objects.
-
-:::tip 
-This page demonstrates how to install Datree on your cluster. To shift-left your policy checks using our CLI, click [here](/cli/).
-:::
+Datree prevents misconfigurations by blocking resources that do not meet your policy.
 
 ## Quickstart
 
 Install Datree to get insights on the status of your cluster and enforce your desired policies on new resources.
 
-
-:::info
-The webhook officially supports and has been tested with Kubernetes version 1.19 and higher.
+:::caution Note
+By default, Datree does not block misconfigured resources, it only monitors and alerts on them.  
+To enable **enforcement mode**, see the [behavior](/setup/behavior) page.
 :::
 
 ## Install Datree with Helm
@@ -41,11 +36,15 @@ Replace `<TOKEN>` with the token from your [dashboard](https://app.datree.io/), 
 ```terminal
 helm install -n datree datree-webhook datree-webhook/datree-admission-webhook \
 --create-namespace \
---set datree.token=<TOKEN>
+--set datree.token=<TOKEN> \
+--debug
 ```
 
-This will create a new namespace (datree), where Datree’s services and application resources will reside. `datree.token` is used to connect your dashboard to your cluster.  
-Note that the installation can take up to 5 minutes.
+This will create a new namespace (datree), where Datree’s services and application resources will reside. `datree.token` is used to connect your dashboard to your cluster. Note that the installation can take up to 5 minutes.
+
+:::info
+The webhook officially supports and has been tested with Kubernetes version 1.19 and higher.
+:::
 
 ### 3. You're all set! 🎉
 Datree will now run in the background, scanning your cluster for misconfigurations. A report will be sent to the email connected to your account.  
