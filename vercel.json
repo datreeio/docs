@@ -359,6 +359,11 @@
         "source": "/prevent-naked-pods",
         "destination": "/built-in-rules/prevent-naked-pods", 
         "permanent": true
+      },
+      {
+        "source": "/guides/eks-addon",
+        "destination": "/", 
+        "permanent": true
       }
     ]
   }
