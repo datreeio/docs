@@ -1,0 +1,58 @@
+---
+title: Account token
+slug: /dashboard/account-token
+---
+
+## What is a token
+
+The token connects your policy checks to your [Centralized policy](/dashboard/centralized-policy), which determines your available policies.  
+Additionally, the token allows your CLI to report your policy check history to the dashboard.  
+When a policy check is triggered, Datree reads your account token from the config file (`~/.datree/config.yaml`).
+
+**Each token has the following properties:**
+
+- **Label:** the name of the token, as presented in the history tab in your dashboard.
+- **Type:** can be one of the following:
+    * *read* - allows using the policies in the dashboard, but forbids editing/creating them.
+    * *write* - allows using/editing/creating policies and tokens.
+
+:::info
+Tokens are immutable. To change one of the token's properties, a new token needs to be created and set in the CLI.
+:::
+
+---
+## Connect your dashboard to the CLI
+
+### 1. Get your account token from the dashboard
+
+- Log into your account
+
+- Go to "SETTINGS" (click on the avatar in the upper-right corner)  
+![settings](/img/dashboard/account-token/1.png)
+
+- Copy your account token  
+![get_token](/img/dashboard/account-token/2.png)
+
+### 2. Set your token in the CLI
+
+To set your token, simply run the following command in your terminal using the same token you copied in the previous step:
+
+```terminal
+datree config set token <token>
+```
+
+This will replace the token inside the config file (`~/.datree/config.yaml`)
+
+---
+## Token Management
+
+### Creating new tokens
+A single account can have multiple tokens. Creating new tokens is done via the Token Management tab in your dashboard settings.
+:::info
+Policy checks executed with a certain token are reported only to the dashboard of that token's creator.
+:::
+
+---
+## Using tokens in your CI
+Setting your token in your CI is done using the `DATREE_TOKEN` environment variable. The Datree CLI automatically checks this variable and uses its value as the token.  
+See our [CI/CD section](/cicd-examples) for examples using popular platforms.

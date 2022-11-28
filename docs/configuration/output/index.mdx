@@ -1,0 +1,17 @@
+---
+title: Output
+slug: /configuration/output
+---
+
+Once Datree is installed, every [hooked operation](/configuration/overview) will trigger a policy check.  
+
+By default, enforce mode is **disabled**, meaning that if any misconfigurations were found, Datree will warn you about them but will not fail the operation:
+
+![warn_example](/img/configuration/output/warn-example.png)
+
+---
+
+When enforce mode is **enabled**, Datree will provide a detailed output of the detected misconfigurations, deny the operation and the resource will not be applied/updated:
+
+![deny_example](/img/configuration/output/deny-example.png)
+

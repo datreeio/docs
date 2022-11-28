@@ -1,0 +1,126 @@
+---
+title: Policy as code
+slug: /dashboard/policy-as-code
+---
+
+## What is Policy as code?
+
+Policy-as-code, similar to Infrastructure-as-code, is the concept of using declarative code to replace actions that require using a user interface. By representing policies in code, proven software development best practices can be adopted, such as version control, collaboration, and automation.
+
+## How does it work?
+
+Once the Policy-as-code (PaC) mode is enabled, the only way to change the policies in your account is by publishing a YAML configuration file ([policies.yaml](/dashboard/policy-as-code#policiesyaml)) with the defined policies.
+
+### 1. Enable Policy-as-code (PaC) mode
+
+On the [Settings page](https://app.datree.io/settings), toggle on the Policy-as-code switch.
+
+![pac_toggle](/img/dashboard/policy-as-code/1.png)
+
+### 2. Apply a new policies configuration
+
+To change the policies in your account you will need to update the policies configuration YAML file ([policies.yaml](/dashboard/policy-as-code#policiesyaml)) and publish it:
+
+```terminal
+datree publish policies.yaml
+```
+
+:::tip
+Once a new policy configuration file is published, it will override the existing policies set up in your account.
+:::
+
+## policies.yaml
+
+You can export your policies configurations via the dashboard or write a new policies configuration YAML file from scratch:
+
+- **name** - the name of your policy (e.g. "staging")
+
+- **isDefault **- policy to evaluate when `-policy` flag is not used
+
+- **identifier **- unique rule ID (can be also found in the rule docs)
+
+- **messageOnFailure **- message to show when the rule is failing
+
+### [Example] single policy configuration
+
+```yaml
+apiVersion: v1
+policies:
+  - name: Default
+    isDefault: true
+    rules:
+      - identifier: CONTAINERS_MISSING_IMAGE_VALUE_VERSION
+        messageOnFailure: Incorrect value for key `image` - specify an image version to avoid unpleasant "version surprises" in the future
+      - identifier: DEPLOYMENT_MISSING_LABEL_ENV_VALUE
+        messageOnFailure: 'Missing label object `env` - add a proper environment description (e.g. "prod", "testing", etc.) to the Deployment config'
+```
+
+### \[Example] multiple policies configuration
+
+```yaml
+apiVersion: v1
+policies:
+  - name: Default
+    isDefault: true
+    rules:
+      - identifier: CONTAINERS_MISSING_IMAGE_VALUE_VERSION
+        messageOnFailure: Incorrect value for key `image` - specify an image version to avoid unpleasant "version surprises" in the future
+      - identifier: DEPLOYMENT_MISSING_LABEL_ENV_VALUE
+        messageOnFailure: 'Missing label object `env` - add a proper environment description (e.g. "prod", "testing", etc.) to the Deployment config'
+  - name: Mandatory_resources
+    rules:
+      - identifier: CONTAINERS_MISSING_CPU_LIMIT_KEY
+        messageOnFailure: Missing property object `limits.cpu` - value should be within the accepted boundaries recommended by the organization
+      - identifier: CONTAINERS_MISSING_MEMORY_LIMIT_KEY
+        messageOnFailure: Missing property object `limits.memory` - value should be within the accepted boundaries recommended by the organization
+```
+
+:::info
+
+### Disabling a rule from a policy
+
+Delete the rule or comment out (#) from the rules list property
+:::
+
+```yaml
+apiVersion: v1
+policies:
+  - name: Default
+    isDefault: true
+    rules:
+    #   - identifier: INGRESS_INCORRECT_HOST_VALUE_PERMISSIVE
+    #     messageOnFailure: Incorrect value for key `host` - specify host instead of using a wildcard character ("*")
+```
+
+### Default policies YAML file
+
+The default policies file looks like this: [policies.yaml](https://github.com/datreeio/datree/blob/main/examples/defaultPaC/policies.yaml)
+
+## Best practice
+
+To make your delivery as simple and smooth as possible, keep your policy-as-code yaml file in its own repository, and as part of your CI/CD workflow run `datree publish policies.yaml`. This will ensure your policy file is valid and updated. Github workflow example:
+
+```yaml
+name: CI
+
+on:
+  push:
+    branches: [main]
+
+env:
+  DATREE_TOKEN: ${{ secrets.DATREE_TOKEN }}
+
+jobs:
+  publish-policy-as-code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Datree
+        run: curl https://get.datree.io | /bin/bash
+
+      - name: Publish Policies
+        run: datree publish policies.yaml
+```
