@@ -1,0 +1,60 @@
+---
+title: User management
+slug: /dashboard/user-management
+---
+
+:::info Feature availability  
+Inviting team members to collaborate is available as part of certain payment plans. Plan details can be found on our [pricing page](https://www.datree.io/pricing)
+:::
+
+## Invite a user
+
+1. In the dashboard, navigate to the [user management tab](https://app.datree.io/settings/user-management)  
+- Go to "SETTINGS" (click on the avatar in the upper-right corner)  
+![settings](/img/dashboard/account-token/1.png)
+- Click on the "USER MANAGEMENT" tab, then click "Invite User"
+![settings](/img/dashboard/user-management/invite-user.png)
+2. Insert the user’s email address and the desired permission (role)
+3. Once the invitation is successfully sent, the token of the newly invited user will be displayed in the dashboard and can be shared with the new workspace members  
+- The token is used to connect the CLI with the dashboard to determine the available policies and report policy check history to the dashboard  
+4. The newly invited user is added to the users’ table, where you can also track his/her invitation status (pending/accepted)  
+
+## Edit user roles
+1. In the dashboard, navigate to the [user management tab](https://app.datree.io/settings/user-management)  
+2. Click on the "..." icon displayed for each member  
+![settings](/img/dashboard/user-management/edit-user.png)
+3. Click on "Edit"
+4. Select the new role and save the change  
+
+## Invitation expired
+If an invitation to join a workspace has reached it expiration date, you can re-invite the user by clicking on the "invite user" button and providing the desired email and permission.
+
+## User roles 
+There are 3 levels of permissions, defined by the user’s role:  
+- Owner
+- Admin
+- Viewer
+
+## Roles Permissions  
+| Function | Owner | Admin | Viewer |
+|----------|-------|-------|--------|
+|Create/delete policies|V|V||
+|Edit policies (toggle rules on/off)|V|V||
+|Create cusotm rules|V|V||
+|Execute workspace policies|V|V|V|
+|Create/delete/copy tokens|V|V||
+|Access policy check history|V|V|V|
+|Edit/delete workspace members|V|V||
+|Toggle Policy-As-Code|V|V||
+|Change default K8s schema version|V|V||
+|Invite new members|V|V||
+|Delete workspace|V|||
+|Update/cancel plan subscription|V|V||
+|Create custom policies|V|V||
+|Update Email subscription frequency|V|V||
+|Edit rules’ fail suggestion text|V|V||
+
+
+
+
+

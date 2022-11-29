@@ -51,6 +51,71 @@
         "permanent": true
       },
       {
+        "source": "/setup/overview",
+        "destination": "/configuration/overview", 
+        "permanent": true
+      },
+      {
+        "source": "/setup/behavior",
+        "destination": "/configuration/behavior", 
+        "permanent": true
+      },
+      {
+        "source": "/setup/output",
+        "destination": "/configuration/output", 
+        "permanent": true
+      },
+      {
+        "source": "/setup/centralized-policy",
+        "destination": "/dashboard/centralized-policy", 
+        "permanent": true
+      },
+      {
+        "source": "/setup/history",
+        "destination": "/dashboard/history", 
+        "permanent": true
+      },
+      {
+        "source": "/setup/account-token",
+        "destination": "/dashboard/account-token", 
+        "permanent": true
+      },
+      {
+        "source": "/setup/policy-as-code",
+        "destination": "/dashboard/policy-as-code", 
+        "permanent": true
+      },
+      {
+        "source": "/setup/user-management",
+        "destination": "/dashboard/user-management", 
+        "permanent": true
+      },
+      {
+        "source": "/setup/schema-validation",
+        "destination": "/cli/schema-validation", 
+        "permanent": true
+      },
+      {
+        "source": "/setup/cli-output",
+        "destination": "/cli/cli-output", 
+        "permanent": true
+      },
+      {
+        "source": "/setup/cli-arguments",
+        "destination": "/cli/cli-arguments", 
+        "permanent": true
+      },
+      {
+        "source": "/setup/offline-mode",
+        "destination": "/cli/offline-mode", 
+        "permanent": true
+      },
+      {
+        "source": "/setup/integration-guide",
+        "destination": "/guides/integration-guide", 
+        "permanent": true
+      },
+      {
         "source": "/custom-rules-overview",
         "destination": "/custom-rules/custom-rules-overview", 
         "permanent": true

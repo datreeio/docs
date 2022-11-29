@@ -9,15 +9,15 @@ import TabItem from '@theme/TabItem';
 
 ![troubleshooting_token_mismatch](/img/troubleshooting/1.avif)
 
-If you see this message in your dashboard, it means that we identified there are two [account tokens](/setup/account-token) associate with your account - one in your CLI and a different one in your dashboard. This can be an issue because it will break the connection between the policy checks that are executed (CLI) and the centralized policy (dashboard). As a result, you will not be able to control your policies or see results on your history page.
+If you see this message in your dashboard, it means that we identified there are two [account tokens](/dashboard/account-token) associate with your account - one in your CLI and a different one in your dashboard. This can be an issue because it will break the connection between the policy checks that are executed (CLI) and the centralized policy (dashboard). As a result, you will not be able to control your policies or see results on your history page.
 
 ### How to fix tokens mismatch?
 
 You will need to set your CLI token to match your dashboard token:
 
-1.  [Get your dashboard account token](/setup/account-token#1-get-your-account-token-from-the-dashboard)
+1.  [Get your dashboard account token](/dashboard/account-token#1-get-your-account-token-from-the-dashboard)
 
-2.  [Set your dashboard account token in your CLI](/setup/account-token#2-set-your-token-in-the-cli)
+2.  [Set your dashboard account token in your CLI](/dashboard/account-token#2-set-your-token-in-the-cli)
 
 ---
 
@@ -67,7 +67,7 @@ Your Datree schema validation version can be found on your dashboard (under _SET
 ```  
 
 #### How to solve this?
-Update the default schema version in the dashboard to be the same Kubernetes version as your cluster, or pass the `--schema-version` flag ([read more](https://hub.datree.io/setup/schema-validation#changing-the-default-schema-version)).
+Update the default schema version in the dashboard to be the same Kubernetes version as your cluster, or pass the `--schema-version` flag ([read more](https://hub.datree.io/cli/schema-validation#changing-the-default-schema-version)).
 
 ### Deprecated API versions
 

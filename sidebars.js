@@ -32,9 +32,9 @@ const sidebars = {
       label: "🛠️\xa0\xa0Configuration",
       collapsed: true,
       items: [
-        "setup/overview/index",
-        "setup/behavior/index",
-        "setup/output/index",
+        "configuration/overview/index",
+        "configuration/behavior/index",
+        "configuration/output/index",
       ],
     },
     {
@@ -42,11 +42,11 @@ const sidebars = {
       label: "📊\xa0\xa0Dashboard",
       collapsed: true,
       items: [
-        "setup/centralized-policy/index",
-        "setup/history/index",
-        "setup/account-token/index",
-        "setup/user-management/index",
-        "setup/policy-as-code/index",
+        "dashboard/centralized-policy/index",
+        "dashboard/history/index",
+        "dashboard/account-token/index",
+        "dashboard/policy-as-code/index",
+        "dashboard/user-management/index",
       ],
     },
     {
@@ -54,11 +54,11 @@ const sidebars = {
       label: "🖥\xa0\xa0CLI",
       collapsed: true,
       items: [
-        "cli/index",
-        "setup/schema-validation/index",
-        "setup/cli-output/index",
-        "setup/cli-arguments/index",
-        "setup/offline-mode/index",
+        "cli/getting-started/index",
+        "cli/schema-validation/index",
+        "cli/cli-output/index",
+        "cli/cli-arguments/index",
+        "cli/offline-mode/index",
       ],
     },
     {
@@ -249,7 +249,7 @@ const sidebars = {
       label: "📕\xa0\xa0Guides & articles",
       collapsed: true,
       items: [
-        "setup/integration-guide/index",
+        "guides/integration-guide/index",
       ]
     },
     {
