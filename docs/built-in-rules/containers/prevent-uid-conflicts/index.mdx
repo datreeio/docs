@@ -3,7 +3,7 @@ title: ☑️ Prevent containers from accessing host files by using high UIDs
 slug: /built-in-rules/prevent-uid-conflicts
 ---
 
-It's recommended for containers to run under UIDs that are not used on the host system. With a high UID number, a container is blocked from accessing host-based files even if it manages to gain access to a host's file system.
+It's recommended for containers to use UIDs that are not used on the host system. With a high UID number, a container is blocked from accessing host-based files even if it manages to gain access to a host's file system.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
