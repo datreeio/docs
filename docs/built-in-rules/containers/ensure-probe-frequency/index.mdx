@@ -6,7 +6,7 @@ slug: /built-in-rules/ensure-probe-frequency
 Probes have a number of fields that are used to control the behavior of liveness, readiness and startup checks. Though these fields have default values, we suggest to explicitly set them with your desired values.  
 One reason to do so is to prevent cases where unknown default behavior is used. For example, a defect was found in one of these fields causing it to be ignored, and was corrected in Kubernetes v1.20.  
 
-The field `periodSeconds` defines how often (in seconds) to perform the probe. It has a default value of 10 seconds, and a minimum value of 1 second.
+The field `periodSeconds` defines how often (in seconds) the kubelet should perform a liveness probe. It has a default value of 10 seconds, and a minimum value of 1 second.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
