@@ -8,7 +8,7 @@ slug: /configuration/behavior
 Since your token is sensitive 🤫 and you would not want to keep it in your repository, we recommend to set/change it using the `helm upgrade` command:
 
 ```terminal
-helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set datree.token="<your-token>"
+helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set datree.token=<your-token>
 ```
 
 (simply replace `<your-token>` with your actual [token](https://app.datree.io/settings/token-management))
