@@ -5,21 +5,15 @@ slug: /configuration/behavior
 
 ## Set/change token
 
+Since your token is sensitive 🤫 and you would not want to keep it in your repository, we recommend to set/change it using the `helm upgrade` command:
 
-Since your token is sensitive 🤫 and you would not want to keep it in your repository, we recommend to set/change it by running a separate `kubectl patch` command:
-
-```yaml
-kubectl patch deployment webhook-server -n datree -p '
-spec:
-  template:
-    spec:
-      containers:
-        - name: server
-          env:
-            - name: DATREE_TOKEN
-              value: "<your-token>"'
+```terminal
+helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set datree.token="<your-token>"
 ```
-Simply replace `<your-token>` with your actual [token](https://app.datree.io/settings/token-management), then copy the entire command and run it in your terminal.
+
+(simply replace `<your-token>` with your actual [token](https://app.datree.io/settings/token-management))
+
+---
 
 ## Options
 
