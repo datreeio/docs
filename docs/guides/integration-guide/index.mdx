@@ -12,25 +12,24 @@ Say you’re a devops engineer, and like most - you’ve had your fair share of 
 **Before you proceed to the technical stuff, there are some preliminary steps we highly recommend on taking:**
 * Have a meeting with relevant people in the organization, where you discuss why you need Datree, and what problems you’d like to solve with it. This will give you clarity when you proceed to configure Datree.
 * List the different teams that will use Datree along with their needs and requirements.
-* Introduce the CLI to chosen members of your organization. Implementing a new tool is always a challenge, and letting the relevant people use it before proceeding to more advanced features can save a lot of time.
 
-### Establishing and enforcing a baseline
+### Establishing a baseline
 
-The first thing we recommend is to have a look at the status of your production (run-time) environment. This can be achieved by using Datree’s [kubectl plugin](https://github.com/datreeio/kubectl-datree), simply follow these steps:
-* Run the plugin against your desired namespace within your cluster to check for existing misconfigurations.
-* Look at the output to see which rules failed, then disable them in your Default policy.
-This will leave you with a lenient policy that your production environment complies with.
-
-Then, we recommend setting guardrails on your clusters using Datree’s [admission webhook](https://github.com/datreeio/datree/tree/main/cluster-integration), using the policy you just customized. The webhook will catch commands that create or change resources in your cluster, and run policy checks against them. This will establish your current status as a standard for your production environment that will now be automatically kept.
+The first thing we recommend is to have a look at the status of your production (run-time) environment. After installing Datree, an automatic scan of your entire cluster will be performed, and its results will be available in your [dashboard](https://app.datree.io/).  
+You can use the results to create an initial policy that will serve as your baseline. Moving forward, Datree will warn you (but not block) when you apply new resources that do not meet this policy.
 
 ### Closing the gap
 
-Once your baseline is set with the Default policy, we strongly suggest setting Datree as part of your [CI pipeline](/cicd-examples). Here you should create a new, strict policy based on your needs. This will ensure that from this point on, only configs that meet your desired standards will enter your codebase.
-From here you can start to smoothly bridge the gap between your policies - when you see that a rule is now consistently passing in your strict CI policy, you can add it to your webhook policy as well. This way you can raise your standard at a pace that works for you and your teams.
+At this point we suggest setting Datree as part of your [CI pipeline](/cicd-examples). Here you should create a new, strict policy based on your needs. This will ensure that from this point on, only configs that meet your desired standards will enter your codebase.
+From here you can start to smoothly bridge the gap between your policies - when you see that a rule is now consistently passing in your strict CI policy, you can add it to your baseline policy as well. This way you can raise your standard at a pace that works for you and your teams.
 
 Additionally, we recommend the zero-warnings approach - don’t ignore CI failures, instead either revise your policies by disabling unwanted rules, or fix the misconfigurations. Talk to the relevant devs, understand why this is happening, and agree on a solution.
 
-### Creating your CI policies
+### Enforcing your policy on your cluster
+
+Once you feel you are ready, enable enforcement mode on your cluster, blocking any applied resources that do not meet your policy. You should now be comfortable using your strict policy which covers all aspects that are important to you.
+
+### Creating your policies
 
 **When proceeding to create and customize your strict policies, it may not be very clear how to proceed. How many policies should you create and for what purpose?**  
 The answer to this question heavily depends on your organization’s structure and needs. Use the list of teams you created in the preliminary steps and decide which rules each team needs for their work. The focus should be maintaining the autonomy of the teams, especially cross-functional ones. In our experience, the main factors that determine which set of rules to use are the teams’ product and the environment they’re working on (i.e. prod, stg).  
