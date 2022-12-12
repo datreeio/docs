@@ -7,13 +7,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Datree docs',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  tagline: 'Prevent Kubernetes misconfigurations',
+  url: 'https://hub.datree.io',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'Datree.io', // Usually your GitHub org/user name.
+  organizationName: 'Datreeio', // Usually your GitHub org/user name.
   projectName: 'Datree docs', // Usually your repo name.
 
   plugins: [
