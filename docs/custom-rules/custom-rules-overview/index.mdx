@@ -9,6 +9,13 @@ In addition to the tool's built-in rules, you can also write any tests that you 
 Note that using custom rules is possible only when in [Policy as code](/dashboard/policy-as-code) mode.
 :::
 
+## Quick start
+
+1. Enable [Policy-as-code mode](/dashboard/policy-as-code#1-enable-policy-as-code-pac-mode)
+2. Create a [policies YAML file](/custom-rules/basic-examples#full-custom-rule-examples) with your custom rule (attached to any policy)
+3. [Publish](/dashboard/policy-as-code#2-apply-a-new-policies-configuration) the policies YAML file
+
+---
 ## customRules properties
 
 - **identifier** - a unique ID to associate with a policy
@@ -27,6 +34,7 @@ Here are some examples of basic use-cases:
 1. [Ensure a specific key exists](/custom-rules/basic-examples#ensure-a-specific-key-exists)
 2. [Set a minimum value for key of a specific kind](/custom-rules/basic-examples#set-a-minimum-value-for-key-of-a-specific-kind)
 3. [Ensure value of a specific key is not one of predefined values](/custom-rules/basic-examples#ensure-value-of-a-specific-key-is-not-one-of-predefined-values)
+4. [Ensure a specific key is not found in any container](/custom-rules/basic-examples#ensure-a-specific-key-is-not-found-in-any-container)
 
 
 Here are three examples of custom rules to showcase how you can set it up:
