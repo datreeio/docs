@@ -250,6 +250,7 @@ const sidebars = {
       collapsed: true,
       items: [
         "guides/integration-guide/index",
+        "guides/argo-integration/index",
       ]
     },
     {

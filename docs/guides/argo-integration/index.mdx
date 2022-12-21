@@ -1,0 +1,113 @@
+---
+title: ArgoCD Integration
+slug: /guides/argo-integration
+---
+
+# How to integrate Datree when working with ArgoCD
+
+This article describes the challenges and pitfalls of policy management when working with ArgoCD, and shows how to combat them using Datree.
+
+### **🫵🏼 Argo… we got a problem**
+
+As Kubernetes grew, the infrastructure became easier to manage even with multiple technologies. This has influenced and contributed to the evolution of IaC, and enabled the creation of tools for policy management and implementing GitOps. However, policy management can be a very challenging task when working with GitOps and particularly when working with ArgoCD.
+
+One of the main reasons for this is the fact that ArgoCD is installed on our K8s cluster and handles almost everything in he CD process for us. This makes it very hard to decide where where we want the enforcement to take place - in the CD or in the CI? On the one hand, since the CD is more important it seems like the obvious choice. But on the other hand if the “Sync” call gets blocked due to a misconfiguration, how we should handle it in our code? 
+In the same way, integrating policy enforcement in the CI in not that easy - since we often use Helm or patterns like App-Of-Apps that delegate the majority of the templating work to Argo and therefore make it harder to properly inspect the objects that will eventually be applied to the cluster.
+
+### 🛟 **Policy management to the rescue!**
+
+There’s no doubt that GitOps and policy management can significantly simplify, improve and speed up development processes - policy management allows organizations to streamline their compliance processes, while GitOps allows managing deployments while controlling and tracking code changes to verify them. When combined correctly, they create a powerful cocktail that unleashes the power of automation!
+
+### 🐾 **How to integrate Datree when working with ArgoCD?**
+
+#### Step 1: where in the pipeline do you want the enforcement to take place?
+
+The first question we should ask is where we want the enforcement to take place - in the CD or in the CI?
+
+This is an important question because enforcing policies might affect the entire organization. For example, integrating policy enforcement in the CD usually means that DevOps teams working on infrastructure will have to take care of misconfigurations. The more misconfigurations (especially if they are not handled in the development phase), the more developers will feel frustrated because their code cannot be deployed in production.
+
+**So, which one should it be, CI or CD?** TL;DR: Both!
+
+Integrating policy enforcement in the CD, (**AFTER** they are applied to the cluster) allows validating resources in production conditions that usually can’t be simulated in the CI. Kubernetes resources are static files contains instructions for Kubernetes of what the state our infrastructure should be in. When we apply our resources (and it doesn’t matter if we use ArgoCD, Flux, or any other tool) the real magic happens. Then, `CronJob`s start to execute `Job`s, `Deployment`s turns into `ReplicaSet`s, `Pod`s are created and applications start running. It's like Kubernetes gives them life! This is very hard to simulate in the CI. Moreover, when working with ArgoCD we often use Helm or patterns like App-Of-Apps that delegate the majority of the templating work to Argo, and are even harder to simulate. Thus, validating the resources upon every “apply” allows us to properly inspect the objects that will eventually be applied to the cluster, and can significantly help in preventing misconfigurations from reaching production.
+
+Nevertheless, the CI(of our GitOps repo) is the second primary point for policy enforcement. In support of this, we would like to share a metaphor: Imagine you just bought a new jewelry box and you filled it with all your precious, expensive jewels. Obviously you wouldn’t just keep it open around the house right? Rather, you would hide it in a safe protected by an alarm. Now, would you set the alarm on top of the jewelry box or at the front of the house? The same goes for your production - the sooner you identify a problem, the less likely it is to bring your production down. 💎
+
+#### 🏆**Use Datree to help you decide**
+
+Deciding where would be the best place for policy enforcement integration is not an easy task. This is why the first thing we recommend is to have a look at the status of your production environment and gather information like what type of misconfigurations you have in your cluster, how many of them you have on each namespace and how you should fix them. The main goal is to collect enough information to analyze which failures meet your organization's priorities and goals, then create a remediation plan to squash them all efficiently and effectively.
+
+To do so, start by installing Datree on a k8s cluster* (by default Datree will run in warning mode, meaning that it won’t prevent you from applying resources, it will only warn you). After installing Datree an automatic scan of the entire cluster will be performed and the results will be available in your [dashboard](https://app.datree.io) with all misconfigurations that were found. We know that you are responsible for each one, but it's important to be aware of the full picture. 😊 
+
+**Feel free to select the K8s cluster that is more practical for you; you can start with any non-production cluster, but it's best to use one that is utilized regularly and as similar as possible to your production environment.*
+
+#### Step 2: Build **a remediation plan to quash all failures efficiently**
+
+At this point we recommend to check out the [policy rules](/built-in-rules) and try to fix your first failure. 
+
+Then, there are different actions that you can choose: 
+
+1. Fix the misconfiguration immediately, by creating a fix pull request.
+2. [Ignore the misconfiguration](/configuration/behavior#ignore-a-namespace), permanently or temporarily. We strongly recommend the zero-warnings approach – do not ignore policy failures, but instead either disable unwanted rules, or correct the misconfigurations.
+3. Create a task/action item and assign the fix/research to someone else in the team  😊
+
+Moving forward, Datree will warn you when you apply resources that do not meet this policy.
+
+This is where the remediation plan takes in - choose the actions that follow your development lifecycle and best meet your organizational requirements, then configure the policy rules to accommodate the cluster's current state and decide how do you plan to remediate. 
+
+Since you work with Argo we suggest to also check out our [ArgoCD policy](/built-in-rules/rules/#Argo). 
+
+#### Step 3: **Enable continuous monitoring to regularly check for violations**
+
+We’re big shift-left believers. We believe that the sooner you identify a mistake, the less likely it is to bring your production down. Thus, in this step we suggest setting Datree as part of your **[CI pipeline](/cicd-examples).** This will ensure that from this point on, only configs that meet your desired standards will enter your codebase. From here you can start to smoothly bridge the gap between your policies - when you see that a rule is now consistently passing in your strict CI policy, you can add it to your baseline policy as well. This way you can raise your standard at a pace that works for you and your teams.
+
+#### Step 4: Gradually add more workloads
+
+Here, we recommend inspecting the integration of your remediation plan within your organization. Check how well your team is using Datree and fine-tune your remediation plan accordingly: are you seeing fewer misconfigurations on your cluster? Has your cluster score improved? Does everyone know how to use Datree and what to do if a policy fails?
+Then, as you gain confidence, extend the policy governance to more teams and workloads by gradually installing Datree on more clusters and integrating Datree into more CIs. For each workload we recommend to use your Datree dashboard[link to app] to benchmark continuous improvement and monitor the value you're getting. 
+
+**Bonus: use Datree to shift left**
+
+The thing about Kubernetes is that it brings together developers, IT, security stake-holders, and - of course - DevOps engineers. Most of the time, only DevOps knows how to use it. Therefore, one of the most challenging tasks for DevOps engineers is how to shift left and delegate k8s responsibilities to other engineering teams. Combined with policy enforcement, it’s important to provide guidelines and communicate the policies that are being enforced. 
+
+The ultimate way to do this is by providing clear guidelines on every failure. This way, when a policy fails everyone will know why it happened and how to fix it. For this you can leverage the “Message On Failure” via the Datree CLI which is the text we display on every failure (that can be changed from the centralized policy dashboard). 
+
+#### Step 5: Start enforcing! S**top builds & deployments for specific threat levels (but only if you can handle the disruption)**
+
+Having enforcement that corresponds with your development lifecycle places quality gates in and around the CICD pipelines in your organization. When you feel ready, gradually enable the enforcement mode on your clusters to block any resources that do not meet your policies. It is important to remember that the policy should cover all the aspects that are important to you, and you should feel comfortable using it. Ensure that all relevant steak-holders are aware to the process - don't start enforcing the rules on everyone at once.
+
+#### Step ∞: Review  & Monitor & Manage team work using reporting.
+---
+### **How to deal with ArgoCD ‘special’ use cases**
+
+We’re also a big GitOps believers. We believe every k8s manifest should be handled exactly the same as your source code. However, when working with ArgoCD there are a couple of scenarios that make it difficult to integrate policy enforcement or even decide where is the most suitable place to do so. 
+
+#### #1: **Using ArgoCD App-Of-Apps/ApplicationSet patterns**
+
+App-Of-Apps and ApplicationSet patterns were designed to make deployments of micro-services architecture more efficient and manageable - instead of having a separate `Application` manifest for each micro-service, we can create a Root-App manifest that points to all the child-applications we want to deploy. Once that root application is monitored, ArgoCD generates the child applications and synchronizes them automatically. Rather than deploying 6 individual Argo CD applications, you can deploy one Argo CD application. 
+[Under the hood](https://vscode.dev/github/argoproj/argo-cd/blob/5b13997786ede27b736255c0e7ff56beb7adf3a2/util/helm/cmd.go#L310), Argo CD generates all the `Application` manifests, runs `helm template` on each application’s manifests, and then applies them with `kubectl client`. 
+
+For validating `Application`s with a Chart’s changes you can use the `diff` command using ArgoCD CLI. This allows you to get the generated Application manifests according to the given Chart revision. 
+
+```bash
+argocd app diff <APP-NAME> --local <DIR-PATH>
+```
+
+As for validating `Application` manifest changes (or other ArgoCD CRDs), we recommend using Datree directly on your cluster. The reason why is that App-Of-Apps and ApplicationSet patterns shift-right and delegate the majority of the templating work to Argo, i.e. the CD part of the pipeline. Therefore, in order to properly inspect the objects that are actually applied, the best place for integrating policy enforcement would be in the CD. 
+
+#### #2**: Overriding `values.yaml` values in Applications manifests**
+
+Helm has the ability to use different, or even multiple "values.yaml" files to derive its parameters from. Similarly, Argo provides a way to pass specific values to a helm template by overriding values in the `values.yaml`parameters using the `argocd app set`command or through `Application` manifest: 
+
+<img src='/img/guides/argo-app.png' width='60%' alt='' />
+
+However, as with App-Of-Apps/ApplicationSets, this pattern also shifts a lot of the templating work to the CD part of the pipeline, and the CD is the best place for policy enforcement if we want to properly validate and inspect the objects that are actually applied to our cluster. 
+
+Nonetheless, as long as you manage your application’s manifests manually we encourage you to try to shift-left the policy enforcement DIY style.  One way to do so is to create a CI pipeline that will clone all the repos that contain the `values.yaml` files in one place. Then, run a script that will parse your `Application` config, grab the relevant `values.yaml` resources from the local (cloned) git repos, and build the manifest (just like Argo does it). Now that you have your composed manifests, you can test them with Datree's CLI 😊
+
+👉🏽  Until then, you can upvote [the PR](https://github.com/argoproj/argo-cd/issues/11129) in the ArgoCD project on GitHub 🤩
+
+### **Summary**
+
+Governing policies are only the beginning of achieving reliability, security, and stability for your Kubernetes cluster. We were surprised to find out that centralized policy management might also be a key solution for resolving the DevOps vs Development deadlock once and for all.
+
+Check out the [Datree open source project](https://github.com/datreeio/datree) - we highly encourage you to review the code and submit a PR, and don’t hesitate to reach out 😊
