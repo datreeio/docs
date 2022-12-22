@@ -121,7 +121,9 @@ Datree can be configured to skip certain rules by using a dedicated `ConfigMap` 
 * You can use a regular expression for any of the aformentioned properties.
 
 :::info Important
-After creating/changing your `ConfigMap`, run `kubectl rollout restart deployment -n datree` to restart the webhook and apply your changes.
+After creating/changing your `ConfigMap`,
+run `kubectl rollout restart deployment -n datree` to restart the webhook.
+and `kubectl get job "scan-job" -n datree -o json | jq 'del(.spec.selector)' | jq 'del(.spec.template.metadata.labels)' | kubectl replace --force -f -` to rescan your cluster and apply your changes.
 :::
 
 The following example will cause the webhook to skip all resources of type (kind) `ServiceAccount` in all namespaces, regardless of their name:
