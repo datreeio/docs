@@ -71,7 +71,7 @@ The thing about Kubernetes is that it brings together developers, IT, security s
 
 The ultimate way to do this is by providing clear guidelines on every failure. This way, when a policy fails everyone will know why it happened and how to fix it. For this you can leverage the “Message On Failure” via the Datree CLI which is the text we display on every failure (that can be changed from the centralized policy dashboard). 
 
-#### Step 5: Start enforcing! S**top builds & deployments for specific threat levels (but only if you can handle the disruption)**
+#### Step 5: Start enforcing! Stop builds & deployments for specific threat levels (but only if you can handle the disruption)
 
 Having enforcement that corresponds with your development lifecycle places quality gates in and around the CICD pipelines in your organization. When you feel ready, gradually enable the enforcement mode on your clusters to block any resources that do not meet your policies. It is important to remember that the policy should cover all the aspects that are important to you, and you should feel comfortable using it. Ensure that all relevant steak-holders are aware to the process - don't start enforcing the rules on everyone at once.
 
