@@ -8,6 +8,7 @@ export const tabsItems = [
   { value: "NSA", label: "NSA"},
   { value: "Secrets", label: "Secrets"},
   { value: "Starter", label: "Starter" },
+  { value: "EKS", label: "EKS"}
 ];
 
 export const navItems = [
@@ -667,5 +668,29 @@ export const navItems = [
     isEnabledByDefault: false,
     pacIdentifier: "K8S_INCORRECT_KIND_VALUE_POD",
     tabOwner: ["Strict", "cdk8s"],
+  },
+  {
+    id: uuid(),
+    title: "Ensure each container fully utilizes CPU with no limitations",
+    slug: "/built-in-rules/ensure-no-cpu-limit",
+    isEnabledByDefault: false,
+    pacIdentifier: "EKS_INVALID_CPU_LIMIT",
+    tabOwner: ["Strict", "EKS"],
+  },
+  {
+    id: uuid(),
+    title: "Ensure container memory request and memory limit are equal",
+    slug: "/built-in-rules/ensure-memory-request-limit-equal",
+    isEnabledByDefault: false,
+    pacIdentifier: "EKS_INVALID_MEMORY_REQUEST_LIMIT",
+    tabOwner: ["Strict", "EKS"],
+  },
+  {
+    id: uuid(),
+    title: "Ensure containers have limited capabilities",
+    slug: "/built-in-rules/ensure-containers-limited-capabilities",
+    isEnabledByDefault: false,
+    pacIdentifier: "EKS_INVALID_CAPABILITIES_EKS",
+    tabOwner: ["Strict", "EKS"],
   },
 ];

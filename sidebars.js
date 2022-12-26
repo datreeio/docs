@@ -153,6 +153,9 @@ const sidebars = {
         "built-in-rules/Secrets/prevent-exposed-secrets-twilio/index",
         "built-in-rules/Secrets/prevent-exposed-secrets-vault/index",
         "built-in-rules/Secrets/prevent-exposed-secrets-privatekey/index",
+        "built-in-rules/EKS/ensure-no-cpu-limit/index",
+        "built-in-rules/EKS/ensure-memory-request-limit-equal/index",
+        "built-in-rules/EKS/ensure-containers-limited-capabilities/index",
       ],
     },
     {
