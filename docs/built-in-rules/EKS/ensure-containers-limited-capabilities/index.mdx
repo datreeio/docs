@@ -1,0 +1,73 @@
+---
+title: ☑️ Ensure containers have limited capabilities
+slug: /built-in-rules/ensure-containers-limited-capabilities
+---
+
+[Linux kernel capabilities](http://man7.org/linux/man-pages/man7/capabilities.7.html) are a set of privileges. Docker, by default, runs with only a subset of capabilities. You can change it and drop some capabilities (using `--cap-drop`) to harden your docker containers, or add some capabilities (using `--cap-add`) if needed. 
+
+:::caution Note
+Remember not to run containers with the `--privileged` flag - this will add ALL Linux kernel capabilities to the container.
+:::
+
+**The following capabilities are considered safe, any others should be avoided:**
+- AUDIT_WRITE
+- CHOWN
+- DAC_OVERRIDE
+- FOWNER
+- FSETID
+- KILL
+- MKNOD
+- NET_BIND_SERVICE
+- SETFCAP
+- SETGID
+- SETPCAP
+- SETUID
+- SYS_CHROOT
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Enabled by default?** False
+
+**Policy as code identifier:** EKS_INVALID_CAPABILITIES_EKS
+
+---
+
+## This rule will fail
+
+If a container has an unsafe capability:
+
+```yaml
+securityContext:
+  capabilities:
+    add:
+      - SYS_ADMIN
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure containers have limited capabilities [1 occurrence]
+💡 Incorrect value for key `add` - refrain from using insecure capabilities to prevent access to sensitive components
+```
+
+---
+
+## How to fix this failure
+
+```yaml
+securityContext:
+  capabilities:
+    add:
+      - AUDIT_WRITE
+```
+
+---
+
+## Read more
+
+- [OWASP Docker cheat sheet](https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html#rule-3-limit-capabilities-grant-only-specific-capabilities-needed-by-a-container)
+
+- [K8s pods security standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/)
