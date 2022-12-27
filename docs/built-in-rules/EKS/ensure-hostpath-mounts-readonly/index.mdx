@@ -1,0 +1,69 @@
+---
+title: ☑️ Ensure hostPath volume mounts are read-only
+slug: /built-in-rules/ensure-hostpath-mounts-readonly
+---
+
+A `hostPath` volume mounts a file or directory from the host node's filesystem into a Pod.  
+
+By default pods that run as root will have write access to the file system exposed by `hostPath`. This could allow an attacker to modify the `kubelet` settings, create symbolic links to directories or files not directly exposed by the hostPath, install ssh keys, read secrets mounted to the host, and other malicious things.
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Enabled by default?** False
+
+**Policy as code identifier:** EKS_INVALID_HOSTPATH_MOUNT_READONLY_VALUE
+
+---
+
+## This rule will fail
+
+If a `hostPath` volume is mounted without being set as read-only:
+
+```yaml
+spec:
+  volumes:
+    - name: mount-this
+      hostPath: 
+        path: /cache
+        type: Directory
+  containers:
+  - volumeMounts:
+    - mountPath: /cache
+      name: mount-this
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure hostPath volume mounts are read-only [1 occurrence]
+💡 Invalid key `readOnly` - set to 'true' to prevent potential attacks on the host filesystem
+```
+
+---
+
+## How to fix this failure
+
+```yaml
+spec:
+  volumes:
+    - name: mount-this
+      hostPath: 
+        path: /cache
+        type: Directory
+  containers:
+  - volumeMounts:
+    - mountPath: /cache
+      name: mount-this
+      readOnly: true
+```
+
+---
+
+## Read more
+
+- [OWASP Docker cheat sheet](https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html#rule-3-limit-capabilities-grant-only-specific-capabilities-needed-by-a-container)
+
+- [K8s pods security standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/)

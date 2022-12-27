@@ -1,0 +1,57 @@
+---
+title: ☑️ Prevent SELinux containers from setting a user
+slug: /built-in-rules/prevent-selinux-containers-user
+---
+
+SELinux defines access controls for the applications, processes, and files on a system. SELinux uses security policies, which are a set of rules that tell SELinux what can or can't be accessed, to enforce the access allowed by a policy.  
+SELinux options can be used to escalate privileges and should not be allowed.
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Enabled by default?** False
+
+**Policy as code identifier:** EKS_INVALID_SELINUXOPTIONS_USER_VALUE
+
+---
+
+## This rule will fail
+
+If an SELinux `user` is set:
+
+```yaml
+spec:
+  containers:
+    - securityContext:
+        seLinuxOptions:
+          user: usr
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent SELinux containers from setting a user [1 occurrence]
+💡 Invalid key `user` - refrain from setting this key to prevent potential access to the host filesystem
+```
+
+---
+
+## How to fix this failure
+
+```yaml
+spec:
+  containers:
+  - securityContext:
+      seLinuxOptions:
+        type: container_kvm_t
+```
+
+---
+
+## Read more
+
+- [K8s pods security standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/)
+
+- [Understanding SELinux File Labelling and SELinux Context](https://www.thegeekdiary.com/understanding-selinux-file-labelling-and-selinux-context/)

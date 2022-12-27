@@ -156,6 +156,13 @@ const sidebars = {
         "built-in-rules/EKS/ensure-no-cpu-limit/index",
         "built-in-rules/EKS/ensure-memory-request-limit-equal/index",
         "built-in-rules/EKS/ensure-containers-limited-capabilities/index",
+        "built-in-rules/EKS/ensure-replicas-different-nodes/index",
+        "built-in-rules/EKS/prevent-pods-becoming-unschedulable/index",
+        "built-in-rules/EKS/prevent-windows-containers-unnecessary-privileges/index",
+        "built-in-rules/EKS/prevent-selinux-containers-unnecessary-privileges/index",
+        "built-in-rules/EKS/prevent-selinux-containers-user/index",
+        "built-in-rules/EKS/prevent-selinux-containers-role/index",
+        "built-in-rules/EKS/ensure-hostpath-mounts-readonly/index",
       ],
     },
     {

@@ -1,0 +1,68 @@
+---
+title: ☑️ Ensure multiple replicas run on different nodes
+slug: /built-in-rules/ensure-replicas-different-nodes
+---
+
+Running multiple replicas won’t be very useful if all the replicas are running on the same node and the node becomes unavailable.  
+It is recommended to use pod `anti-affinity` to spread replicas across multiple worker nodes by running the application across multiple `availability zones`.
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Enabled by default?** False
+
+**Policy as code identifier:** EKS_MISSING_KEY_TOPOLOGYKEY
+
+---
+
+## This rule will fail
+
+If a `podAffinityTerm` is configured without a `topologyKey`:
+
+```yaml
+podAntiAffinity:
+  preferredDuringSchedulingIgnoredDuringExecution:
+  - podAffinityTerm:
+      labelSelector:
+        matchExpressions:
+        - key: app
+          operator: In
+          values:
+          - web-server
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure multiple replicas run on different nodes [1 occurrence]
+💡 Missing key `topologyKey` - add it to ensure replicas are spread across multiple nodes
+```
+
+---
+
+## How to fix this failure
+
+```yaml
+podAntiAffinity:
+  preferredDuringSchedulingIgnoredDuringExecution:
+  - podAffinityTerm:
+      labelSelector:
+        matchExpressions:
+        - key: app
+          operator: In
+          values:
+          - web-server
+      topologyKey: topology.kubernetes.io/zone
+```
+
+---
+
+## Read more
+
+- [K8s Pod topology](https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints/)
+
+- [Node Affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity)
+
+- [EKS best practices](https://aws.github.io/aws-eks-best-practices/reliability/docs/application/#schedule-replicas-across-nodes)
