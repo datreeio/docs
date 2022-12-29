@@ -3,11 +3,13 @@ title: ☑️ Prevent Ingress from forwarding all traffic to a single container
 slug: /built-in-rules/prevent-ingress-forwarding-traffic-to-single-container
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Misconfiguring the ingress host can unintended forward all traffic to a single pod instead of leveraging the load balancing capabilities. By verifying that ingress traffic is targeted by multiple pods, you will achieve higher application availability because you won't be dependent upon a single pod to serve all ingress traffic.
 
 **Targeted objects by this rule (types of **`kind`**): **Ingress
 
-**Enabled by default?** True
+**Complexity:** **medium** (<Complexity/>)
 
 **Policy as code identifier:** INGRESS_INCORRECT_HOST_VALUE_PERMISSIVE
 

@@ -3,11 +3,13 @@ title: ☑️ Ensure each container has a configured memory limit
 slug: /built-in-rules/ensure-memory-limit
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Memory limits enable you to use memory resources efficiently. By setting memory limits, you restrict the maximum amount of memory available to the pods running in your cluster.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** True
+**Complexity:** **hard** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_MISSING_MEMORY_LIMIT_KEY
 

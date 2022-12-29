@@ -5,6 +5,17 @@ slug: /troubleshooting
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## Installation failure
+
+If you fail to install Datree for any reason, run the following command to generate a log:
+```terminal
+curl https://raw.githubusercontent.com/datreeio/admission-webhook-datree/main/scripts/troubleshoot.sh | /bin/bash > troubleshoot.logs 2>&1
+cat troubleshoot.logs
+```
+
+Then, send us the `troubleshoot.log` file.
+
+---
 ## Tokens mismatch
 
 ![troubleshooting_token_mismatch](/img/troubleshooting/1.avif)

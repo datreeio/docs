@@ -3,12 +3,14 @@ title: ☑️ Prevent service account token auto-mounting on pods
 slug: /built-in-rules/prevent-service-account-token-auto-mount
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 By default, Kubernetes automatically provisions a service account when creating a Pod and mounts the account’s secret token within the Pod at runtime. Many containerized applications do not require direct access to the service account.
 Therefore, it is recommended to disable the secret token being mounted.
 
 **Targeted objects by this rule (types of **`kind`**):** ServiceAccount / Pod
 
-**Enabled by default?** True
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** SRVACC_INCORRECT_AUTOMOUNTSERVICEACCOUNTTOKEN_VALUE
 

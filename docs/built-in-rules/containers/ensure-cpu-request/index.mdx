@@ -3,11 +3,13 @@ title: ☑️ Ensure each container has a configured CPU request
 slug: /built-in-rules/ensure-cpu-request
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 CPU requests enable you to use CPU resources efficiently and to allocate a guaranteed minimum of computing resources for the pods running in your cluster.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** True
+**Complexity:** **hard** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_MISSING_CPU_REQUEST_KEY
 

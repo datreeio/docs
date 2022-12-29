@@ -3,11 +3,13 @@ title: ☑️ Prevent Service from exposing node port
 slug: /built-in-rules/prevent-node-port
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Exposing a _NodePort_ will open a network port on all nodes to be reached by the cluster's external network. Using this method to expose the application is less secure and forces you to create unnecessary coupling between services in order to expose them all to external traffic.
 
 **Targeted objects by this rule (types of **`kind`**): **Service
 
-**Enabled by default?** True
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** SERVICE_INCORRECT_TYPE_VALUE_NODEPORT
 

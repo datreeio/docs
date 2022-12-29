@@ -3,11 +3,13 @@ title: ☑️ Ensure each container image has a pinned (tag) version
 slug: /built-in-rules/ensure-image-pinned-version
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 When an image tag is not descriptive (e.g. lacking the version tag like _1.19.8_), every time that image is pulled, the version will be a different version and might break your code. Also, a non-descriptive image tag does not allow you to easily roll back (or forward) to different image versions. It is better to use concrete and meaningful tags such as version strings or an image SHA.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** True
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_MISSING_IMAGE_VALUE_VERSION
 

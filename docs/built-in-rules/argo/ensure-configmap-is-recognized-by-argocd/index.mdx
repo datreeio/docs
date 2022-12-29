@@ -3,11 +3,13 @@ title: ☑️ Ensure ConfigMap is recognized by ArgoCD
 slug: /built-in-rules/ensure-configmap-is-recognized-by-argocd
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 A relevant ConfigMap resource that isn’t labeled with `app.kubernetes.io/part-of: argocd` will not be used by Argo CD.
 
 **Targeted objects by this rule (types of kind): **ConfigMap
 
-**Enabled by default?** True
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** ARGO_CONFIGMAP_MISSING_PART_OF_LABEL_VALUE_ARGOCD
 

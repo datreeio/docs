@@ -3,11 +3,13 @@ title: ☑️ Prevent containers from mounting Docker socket
 slug: /built-in-rules/prevent-mounting-docker-socket
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 It is recommended to disallow Docker socket access to all pods running on a cluster. When a container has access to the Docker socket, it can effectively manage other containers on the host.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** False
+**Complexity:** **medium** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_INCORRECT_PATH_VALUE_DOCKERSOCKET
 

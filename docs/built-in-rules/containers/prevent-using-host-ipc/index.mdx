@@ -3,11 +3,13 @@ title: ☑️ Prevent containers from sharing the host's IPC namespace
 slug: /built-in-rules/prevent-using-host-ipc
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 By default, containers only share IPC resources within the same pod. When a container is allowed to share its host's IPC namespace, it has access to the same inter-process mechanisms as other processes running outside of the container runtime.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** False
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_INCORRECT_HOSTIPC_VALUE_TRUE
 

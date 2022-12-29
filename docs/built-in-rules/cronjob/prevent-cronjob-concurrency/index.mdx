@@ -3,11 +3,13 @@ title: ☑️ Prevent CronJob from executing jobs concurrently
 slug: /built-in-rules/prevent-cronjob-concurrency
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 By default, the cron job allows concurrently running jobs but generally speaking, the behavior of your cron jobs will be more deterministic if you prevent them from running concurrently. Allowing concurrent cron jobs often requires locking mechanisms (to avoid race conditions) in addition to startup/cleanup handling.
 
 **Targeted objects by this rule (types of **`kind`**): **CronJob
 
-**Enabled by default?** False
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** CRONJOB_MISSING_CONCURRENCYPOLICY_KEY
 

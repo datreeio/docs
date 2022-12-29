@@ -32,6 +32,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-uuid": "^1.0.2",
+    "reactjs-popup": "^2.0.5",
     "sass": "^1.49.9",
     "styled-components": "^5.3.5",
     "tailwindcss": "^3.0.23"

@@ -3,11 +3,13 @@ title: ☑️ Prevent containers from sharing the host’s network namespace
 slug: /built-in-rules/prevent-using-host-network
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 When a container is allowed to share its host's network namespace, it can access local network listeners and leverage it to probe the host's local network.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** False
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_INCORRECT_HOSTNETWORK_VALUE_TRUE
 

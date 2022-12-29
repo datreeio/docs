@@ -3,6 +3,8 @@ title: ☑️ Ensure Rollout pause step has a configured duration
 slug: /built-in-rules/ensure-rollout-pause-step-has-a-configured-duration
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Users can define a list of steps the controller uses to manipulate the ReplicaSets during the rollout. Each step can have one of two fields.
 
 The `setWeight` field dictates the percentage of traffic that should be sent to the canary, and the `pause` struct instructs the rollout to pause.
@@ -13,7 +15,7 @@ By using the `setWeight` and the `pause` fields, a user can declaratively descri
 
 **Targeted objects by this rule (types of kind): **Rollout
 
-**Enabled by default?** True
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** ARGO_ROLLOUT_MISSING_PAUSE_DURATION
 

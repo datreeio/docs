@@ -3,6 +3,8 @@ title: ☑️ Ensure Deployment has a configured `env` label
 slug: /built-in-rules/ensure-env-label
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Having an `env` label is useful for performing bulk operations in specific environments or for filtering Deployments according to their stage. Recommended values for this key are: _prod / staging / qa / admin / testing_.
 
 :::tip
@@ -14,7 +16,7 @@ Labels' keys and values are case-sensitive!
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment
 
-**Enabled by default?** False
+**Complexity:** **medium** (<Complexity/>)
 
 **Policy as code identifier:** DEPLOYMENT_MISSING_LABEL_ENV_VALUE
 

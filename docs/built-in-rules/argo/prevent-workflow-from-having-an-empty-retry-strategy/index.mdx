@@ -3,11 +3,13 @@ title: ☑️ Prevent Workflow from having an empty retry strategy
 slug: /built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 The user can specify a `retryStrategy` that will dictate how failed or errored steps are retried in a workflow. Providing an empty `retryStrategy` (i.e. retryStrategy: {}) will cause a container to retry until completion and eventually cause OOM issues.
 
 **Targeted objects by this rule (types of kind): **Workflow
 
-**Enabled by default?** True
+**Complexity:** **medium** (<Complexity/>)
 
 **Policy as code identifier:** ARGO_WORKFLOW_INCORRECT_RETRY_STRATEGY_VALUE_EMPTY
 

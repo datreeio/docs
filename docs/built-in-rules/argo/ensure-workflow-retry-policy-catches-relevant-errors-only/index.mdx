@@ -3,6 +3,8 @@ title: ☑️ Ensure Workflow retry policy catches relevant errors only
 slug: /built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 `retryStrategy` is an optional field of the Workflow CRD that provides control over how to retry a workflow step. One of its fields is `retryPolicy`, which defines the policy of NodePhase statuses that will be retried (NodePhase is the condition of a node at the current time).
 
 The value of `retryPolicy` can be either: _Always_, _OnError_, or _OnTransientError_. In addition, the user can use the[ **_expression_**](https://argoproj.github.io/argo-workflows/retries/#conditional-retries) key to control more of the retries.
@@ -21,7 +23,7 @@ It is recommended to use Always, along with this expression that filters out unn
 
 **Targeted objects by this rule (types of kind): **Workflow
 
-**Enabled by default?** True
+**Complexity:** **medium** (<Complexity/>)
 
 **Policy as code identifier:** ARGO_WORKFLOW_ENSURE_RETRY_ON_BOTH_ERROR_AND_TRANSIENT_ERROR
 

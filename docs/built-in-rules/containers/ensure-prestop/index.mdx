@@ -3,6 +3,8 @@ title: ☑️ Ensure each container has a configured pre-stop hook
 slug: /built-in-rules/ensure-prestop
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Once Kubernetes has decided to terminate one of your pods, it will proceed to send a `SIGTERM` signal to it. If your application doesn't gracefully shut down when receiving a `SIGTERM`, this can cause undesired behavior and loss of data.  
 For this and other reasons, Kubernetes provides containers with lifecycle hooks that enable them to be aware of events in their management lifecycle and run code implemented in a handler when the corresponding lifecycle hook is executed.  
 The `preStop` hook is called immediately before a container is terminated, allowing you to properly clean up your application and ensure a graceful shutdown.
@@ -13,7 +15,7 @@ Note that the output/result of the code running within the hook will not affect 
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** False
+**Complexity:** **hard** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_MISSING_PRESTOP_KEY
 
