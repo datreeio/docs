@@ -17,8 +17,8 @@ const Complexity = () => (
         <div className="content">
           {' '}
           A rule's complexity describes how simple/difficult it is to fix the relevant misconfiguration:<br/><br/>
-          <b>Easy - </b>set/unset/change a boolean key/value.<br/>
-          <b>Medium - </b>set/change a key/value from a pre-defined list of possible options.<br/>
+          <b>Easy - </b>set or refrain from setting a boolean key/value.<br/>
+          <b>Medium - </b>set or refrain from setting a key/value from a pre-defined list of possible options. May require simple human intervention<br/>
           <b>Hard - </b>the fix requires research, changes in other resources, and/or more intricate human intervention.<br/>
           
         </div>
