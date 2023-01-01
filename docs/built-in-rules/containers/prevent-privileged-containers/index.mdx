@@ -3,11 +3,13 @@ title: ☑️ Prevent containers from having root access capabilities
 slug: /built-in-rules/prevent-privileged-containers
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Processes running in privileged containers have access to host-level resources such as the file system. These containers are much more secure when their access is limited to the pod level.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** True
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_INCORRECT_PRIVILEGED_VALUE_TRUE
 

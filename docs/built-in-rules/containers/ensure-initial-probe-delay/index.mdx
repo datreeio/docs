@@ -3,6 +3,8 @@ title: ☑️ Ensure each container probe has an initial delay configured
 slug: /built-in-rules/ensure-initial-probe-delay
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Probes have a number of fields that are used to control the behavior of liveness, readiness and startup checks. Though these fields have default values, we suggest to explicitly set them with your desired values.  
 One reason to do so is to prevent cases where unknown default behavior is used. For example, a defect was found in one of these fields causing it to be ignored, and was corrected in Kubernetes v1.20.  
 
@@ -10,7 +12,7 @@ The field `initialDelaySeconds` defines the number of seconds after the containe
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** False
+**Complexity:** **medium** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_INCORRECT_INITIALDELAYSECONDS_VALUE
 

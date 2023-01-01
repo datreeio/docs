@@ -3,13 +3,15 @@ title: ☑️ Prevent containers from insecurely exposing workload
 slug: /built-in-rules/prevent-insecurely-exposing-workload
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Workloads listen on a private IP address and receive network traffic from the rest of the network by default. To be reachable outside of the cluster, you must explicitly add an ingress controller or a load balancer service, then route traffic to the workload. hostPort is a setting used to bind the private IP to the underlying IP.
 
 With the hostPort defined, the workloads become exposed as the node, but without the firewall rules and access control attached to the host.
 
 **Targeted objects by this rule (types of **`kind`**):** Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** True
+**Complexity:** **medium** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_INCORRECT_KEY_HOSTPORT
 

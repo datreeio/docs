@@ -3,11 +3,13 @@ title: ☑️ Prevent containers from escalating privileges
 slug: /built-in-rules/prevent-escalating-privileges
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Privileged escalation allows a process to change the security context under which its running. In their default state, containers allow privilege escalation*. *Attackers may use this default behavior to manipulate the application or process and to gain more permissions than they should have.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** True
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_MISSING_KEY_ALLOWPRIVILEGEESCALATION
 

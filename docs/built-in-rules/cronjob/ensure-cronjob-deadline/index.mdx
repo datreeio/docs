@@ -3,6 +3,8 @@ title: ☑️ Ensure CronJob has a configured deadline
 slug: /built-in-rules/ensure-cronjob-deadline
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 When the CronJob controller counts more than **100** missed schedules, the cron job is no longer scheduled. Missed CronJobs are considered failures.
 
 By default, the CronJob controller counts how many missed schedules happen for a cron job since `status.lastScheduleTime` until now. When `startingDeadlineSeconds` is set, the CronJob controller counts how many missed jobs occurred between the value of `startingDeadlineSeconds` until now.
@@ -11,7 +13,7 @@ Setting a deadline can reduce the number of missed schedules needed to mark a Cr
 
 **Targeted objects by this rule (types of **`kind`**): **CronJob
 
-**Enabled by default?** True
+**Complexity:** **medium** (<Complexity/>)
 
 **Policy as code identifier:** CRONJOB_MISSING_STARTINGDEADLINESECOND_KEY
 

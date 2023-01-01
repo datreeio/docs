@@ -3,13 +3,15 @@ title: ☑️ Ensure Application and AppProject are part of the argocd namespace
 slug: /built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 ArgoCD is installed in a specific namespace (by default it's '_argocd_'). All of its resources, including Application and AppProject instances, have to be installed in that namespace.
 
 NOTE: This rule will enforce using the 'argocd' namespace. If you wish to use another namespace and still want to enforce this rule, disable this rule in your dashboard and create a custom rule for your namespace.
 
 **Targeted objects by this rule (types of kind):** AppProject / Application
 
-**Enabled by default?** True
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** ARGO_APP_PROJECT_INCORRECT_NAMESPACE_VALUE
 

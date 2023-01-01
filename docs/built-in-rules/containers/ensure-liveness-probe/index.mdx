@@ -3,11 +3,13 @@ title: ☑️ Ensure each container has a configured liveness probe
 slug: /built-in-rules/ensure-liveness-probe
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Liveness probes allow Kubernetes to determine when a pod should be replaced. They are fundamental in configuring a resilient cluster architecture.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** True
+**Complexity:** **hard** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_MISSING_LIVENESSPROBE_KEY
 

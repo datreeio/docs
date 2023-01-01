@@ -3,6 +3,8 @@ title: ☑️ Prevent deprecated APIs in Kubernetes v1.17
 slug: /built-in-rules/prevent-deprecated-k8s-api-117
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 The v1.17 release stopped serving some API versions for different resource types. When a user deploys a resource with a deprecated API version, the Kubernetes engine rejects it.
 
 :::caution
@@ -13,7 +15,7 @@ Kubernetes v1.17 is no longer (officially) supported since 30 January 2021, So i
 
 **Targeted objects by this rule (types of **`kind`**):** NetworkPolicy / Deployment / DaemonSet / StatefulSet
 
-**Enabled by default?** True
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** K8S_DEPRECATED_APIVERSION_1.17
 

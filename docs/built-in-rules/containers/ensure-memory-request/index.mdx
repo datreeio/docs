@@ -3,11 +3,13 @@ title: ☑️ Ensure each container has a configured memory request
 slug: /built-in-rules/ensure-memory-request
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Memory requests allow you to use memory resources efficiently and allow you to allocate a guaranteed minimum of computing resources for the pods running in your cluster.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** True
+**Complexity:** **hard** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_MISSING_MEMORY_REQUEST_KEY
 

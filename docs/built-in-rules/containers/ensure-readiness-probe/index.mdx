@@ -3,11 +3,13 @@ title: ☑️ Ensure each container has a configured readiness probe
 slug: /built-in-rules/ensure-readiness-probe
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Readiness probes allow Kubernetes to determine when a pod is ready to accept traffic. This ensures that client requests will not be routed to pods that are unable to process them.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** True
+**Complexity:** **hard** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_MISSING_READINESSPROBE_KEY
 

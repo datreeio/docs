@@ -16,7 +16,7 @@ return (
             <CardMedia component="img" image={image} height="80" sx={{ objectFit: "contain" }} style={{ margin: "1rem 0" }} className="not-zoomable" />
           </Box>
           <Divider variant="middle" light />  
-          <CardHeader style={{ margin: "1rem", padding: 0 }} title={title} align="center" subheader={subtitle} titleTypographyProps={{ fontWeight: "medium" }} />   
+          <StyledCardHeader style={{ margin: "1rem", padding: 0 }} title={title} align="center" subheader={subtitle} titleTypographyProps={{ fontWeight: "medium" }} />   
         </StyledCard>
       </Link>
     );
@@ -27,5 +27,17 @@ const StyledCard = styled(Card)`
     border-color: cornflowerblue;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
+  [data-theme="dark"] & {
+    background-color: #1e1e1e;
+    color: #FFFFFF;
+  }
 `
+
+const StyledCardHeader = styled(CardHeader)`
+[data-theme="dark"] & .MuiCardHeader-subheader {
+  background-color: #1e1e1e;
+  color: #FFFFFF;
+}
+`
+
 export default PolicyCard;

@@ -3,6 +3,8 @@ title: ☑️ Prevent Workflow pods from using the default service account
 slug: /built-in-rules/prevent-workflow-pods-from-using-the-default-service-account
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 All pods in a Workflow run with the service account. The service account can be specified in `workflow.spec.serviceAccountName`, or if omitted, the default service account of the workflow's namespace is used.  This provides the workflow(i.e the pod) the ability to interact with the Kubernetes API server and because this behavior is enabled by default, it creates a great way for attackers with access to a single container, to abuse Kubernetes with the AutomountServiceAccountToken.
 
 If by any chance, the user disabled the option for AutomountServiceAccountToken the default service account that Argo is using does not have any permissions, and the workflow will fail.
@@ -11,7 +13,7 @@ We recommend that users create their own user-managed service accounts and grant
 
 **Targeted objects by this rule (types of kind): **Workflow / WorkflowTemplate
 
-**Enabled by default?** True
+**Complexity:** **hard** (<Complexity/>)
 
 **Policy as code identifier:** ARGO_WORKFLOW_INCORRECT_SERVICE_ACCOUNT_NAME_VALUE_DEFAULT
 

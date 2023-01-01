@@ -3,6 +3,8 @@ title: ☑️ Ensure workload has valid label values
 slug: /built-in-rules/ensure-labels-value-valid
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Labels are nothing more than custom key-value pairs that are attached to objects and are used to describe and manage different Kubernetes resources. If the labels do not follow Kubernetes label syntax requirements (see links below), they will not be applied properly.
 
 :::info
@@ -12,7 +14,7 @@ Labels' keys and values are case-sensitive!
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** True
+**Complexity:** **medium** (<Complexity/>)
 
 **Policy as code identifier:** WORKLOAD_INVALID_LABELS_VALUE
 

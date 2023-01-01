@@ -3,11 +3,13 @@ title: ☑️ Ensure HPA has minimum replicas configured
 slug: /built-in-rules/ensure-hpa-minimum-replicas
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 When auto-scaling resource utilization is triggered with HPA (_HorizontalPodAutoscaler_), a range of acceptable values must be set to prevent unintended scaling down scenarios.
 
 **Targeted objects by this rule (types of **`kind`**): **HorizontalPodAutoscaler
 
-**Enabled by default?** True
+**Complexity:** **medium** (<Complexity/>)
 
 **Policy as code identifier:** HPA_MISSING_MINREPLICAS_KEY
 

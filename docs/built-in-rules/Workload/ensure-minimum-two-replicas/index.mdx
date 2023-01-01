@@ -3,11 +3,13 @@ title: ☑️ Ensure Deployment has more than one replica configured
 slug: /built-in-rules/ensure-minimum-two-replicas
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 When you run two or more replicas per service, you are increasing the availability of the containerized service because you are not relying on a single pod to do all of the work. Furthermore, scaling horizontally by adding pods allows your service to scale and handle larger loads.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment
 
-**Enabled by default?** True
+**Complexity:** **medium** (<Complexity/>)
 
 **Policy as code identifier:** DEPLOYMENT_INCORRECT_REPLICAS_VALUE
 

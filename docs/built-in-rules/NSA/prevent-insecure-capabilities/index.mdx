@@ -3,11 +3,13 @@ title: ☑️ Prevent containers from having insecure capabilities
 slug: /built-in-rules/prevent-insecure-capabilities
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Capabilities permit certain named root actions without giving full root access. They are a more fine-grained permissions model, and all capabilities should be dropped from a pod, with only those required added back. Giving containers unnecessary capabilities may compromise them and allow attackers access to sensitive components.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** True
+**Complexity:** **medium** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_INVALID_CAPABILITIES_VALUE
 

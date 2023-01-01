@@ -3,11 +3,13 @@ title: ☑️ Prevent containers from accessing host files by using high UIDs
 slug: /built-in-rules/prevent-uid-conflicts
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 It's recommended for containers to use UIDs that are not used on the host system. With a high UID number, a container is blocked from accessing host-based files even if it manages to gain access to a host's file system.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** False
+**Complexity:** **medium** (<Complexity/>)
 
 **Policy as code identifier:** CONTAINERS_INCORRECT_RUNASUSER_VALUE_LOWUID
 
