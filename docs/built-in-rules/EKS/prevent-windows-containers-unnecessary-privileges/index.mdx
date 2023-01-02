@@ -3,6 +3,8 @@ title: ☑️ Prevent Windows containers from running with unnecessary privilege
 slug: /built-in-rules/prevent-windows-containers-unnecessary-privileges
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Windows `HostProcess` containers enable you to run containerized workloads on a Windows host. These containers operate as normal processes but have access to the host network namespace, storage, and devices when given the appropriate user privileges. 
 
 HostProcess containers run directly on the host and maintain behavior and access similar to that of a regular process. With HostProcess containers, users can package and distribute management operations and functionalities that require host access.
