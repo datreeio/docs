@@ -3,6 +3,8 @@ title: ☑️ Ensure container memory request and memory limit are equal
 slug: /built-in-rules/ensure-memory-request-limit-equal
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 A pod will be placed on a node only if the node's capacity allows the Pod’s `spec.resources.requests`. The pod's `spec.resources.limits` are not factored into pod scheduling but help protect from a single pod runaway with all resources on a node due to an error or bug.  
 If pods try to exceed their memory limit they will be OOM and need to be evicted. 
 
@@ -12,7 +14,7 @@ Configuring `requests=limits` for memory provides the most predictable behavior.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** False
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** EKS_INVALID_MEMORY_REQUEST_LIMIT
 

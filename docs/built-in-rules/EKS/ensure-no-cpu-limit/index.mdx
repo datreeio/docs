@@ -3,13 +3,15 @@ title: ☑️ Ensure each container fully utilizes CPU with no limitations
 slug: /built-in-rules/ensure-no-cpu-limit
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 A container's CPU request typically defines a priority. If several different containers (CGroups) want to run on a contended system, workloads with larger CPU requests are allocated more CPU time than workloads with small requests.  
 Kubernetes configures CPU shares for a CGroup. At times of congestion, the CFS will allocate more CPU time to the higher priority processes.  
 In the absence of a CPU limit, the request acts as a priority for how much relative CPU time containers get. This allows your workloads to use the CPU without an artificial limit or starvation.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** False
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** EKS_INVALID_CPU_LIMIT
 

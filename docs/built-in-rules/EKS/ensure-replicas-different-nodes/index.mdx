@@ -3,12 +3,14 @@ title: ☑️ Ensure multiple replicas run on different nodes
 slug: /built-in-rules/ensure-replicas-different-nodes
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 Running multiple replicas won’t be very useful if all the replicas are running on the same node and the node becomes unavailable.  
 It is recommended to use pod `anti-affinity` to spread replicas across multiple worker nodes by running the application across multiple `availability zones`.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** False
+**Complexity:** **medium** (<Complexity/>)
 
 **Policy as code identifier:** EKS_MISSING_KEY_TOPOLOGYKEY
 

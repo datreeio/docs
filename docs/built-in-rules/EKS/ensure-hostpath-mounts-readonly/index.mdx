@@ -3,13 +3,15 @@ title: ☑️ Ensure hostPath volume mounts are read-only
 slug: /built-in-rules/ensure-hostpath-mounts-readonly
 ---
 
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
 A `hostPath` volume mounts a file or directory from the host node's filesystem into a Pod.  
 
 By default pods that run as root will have write access to the file system exposed by `hostPath`. This could allow an attacker to modify the `kubelet` settings, create symbolic links to directories or files not directly exposed by the hostPath, install ssh keys, read secrets mounted to the host, and other malicious things.
 
 **Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
 
-**Enabled by default?** False
+**Complexity:** **easy** (<Complexity/>)
 
 **Policy as code identifier:** EKS_INVALID_HOSTPATH_MOUNT_READONLY_VALUE
 
