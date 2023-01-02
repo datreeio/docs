@@ -1,0 +1,58 @@
+---
+title: ☑️ Prevent Windows containers from running with unnecessary privileges
+slug: /built-in-rules/prevent-windows-containers-unnecessary-privileges
+---
+
+Windows `HostProcess` containers enable you to run containerized workloads on a Windows host. These containers operate as normal processes but have access to the host network namespace, storage, and devices when given the appropriate user privileges. 
+
+HostProcess containers run directly on the host and maintain behavior and access similar to that of a regular process. With HostProcess containers, users can package and distribute management operations and functionalities that require host access.
+
+Since [HostProcess containers](https://kubernetes.io/docs/tasks/configure-pod-container/create-hostprocess-pod) enable privileged access to the Windows node, it's recommended to disallow privileged access to the host.
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Enabled by default?** False
+
+**Policy as code identifier:** EKS_INVALID_HOSTPROCESS_VALUE
+
+---
+
+## This rule will fail
+
+If `hostProcess` is set to `true`:
+
+```yaml
+spec:
+  securityContext:
+    windowsOptions:
+      hostProcess: true
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent Windows containers from running with unnecessary privileges [1 occurrence]
+💡 Incorrect value for key `hostProcess` - don't set or set to false to prevent unnecessary privileges
+```
+
+---
+
+## How to fix this failure
+
+```yaml
+spec:
+  securityContext:
+    windowsOptions:
+      runAsUserName: "ContainerUser"
+```
+
+---
+
+## Read more
+
+- [K8s pods security standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/)
+
+- [Windows HostProcess containers](https://kubernetes.io/blog/2021/08/16/windows-hostprocess-containers/)

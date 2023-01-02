@@ -1,0 +1,61 @@
+---
+title: ☑️ Ensure container memory request and memory limit are equal
+slug: /built-in-rules/ensure-memory-request-limit-equal
+---
+
+A pod will be placed on a node only if the node's capacity allows the Pod’s `spec.resources.requests`. The pod's `spec.resources.limits` are not factored into pod scheduling but help protect from a single pod runaway with all resources on a node due to an error or bug.  
+If pods try to exceed their memory limit they will be OOM and need to be evicted. 
+
+When pods attempt to use more resources than are available, the node their in gives priority to one pod over another. In order to make this decision, every Pod has its own Quality of Service (QoS) class. In any case that `requests`!=`limits`, the container also has its [QOS](https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/#qos-classes) reduced from `Guaranteed` to `Burstable` making it more likely to be evicted in the event of [node pressure](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/).
+
+Configuring `requests=limits` for memory provides the most predictable behavior. 
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Enabled by default?** False
+
+**Policy as code identifier:** EKS_INVALID_MEMORY_REQUEST_LIMIT
+
+---
+
+## This rule will fail
+
+If a container's memory limit and request are different:
+
+```yaml
+resources:
+	requests:
+	  memory: "500Mi"
+	limits:
+	  memory: "128Mi"
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure container memory request and memory limit are equal [1 occurrence]
+💡 Invalid value for memory request and/or memory limit - ensure they are equal to prevent unpredictable behavior
+```
+
+---
+
+## How to fix this failure
+
+```yaml
+resources:
+	requests:
+	  memory: "128Mi"
+	limits:
+	  memory: "128Mi"
+```
+
+---
+
+## Read more
+
+- [EKS best practices](https://aws.github.io/aws-eks-best-practices/reliability/docs/dataplane/#configure-and-size-resource-requestslimits-for-all-workloads)
+
+- [Kubernetes Node Overcommitted](https://medium.com/pareture/kubernetes-node-overcommitted-57ec7c3dfe9e)
