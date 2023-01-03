@@ -21,6 +21,7 @@ const CustomTabs = () => {
     {() => {
       return (
         <>
+          <img display="block" margin="auto" width="90rem" src={`/img/built-in-rules/${selectedTab}.png`} />
           <Typography align="left" fontSize="h5.fontSize" fontWeight="medium">
             The following rules are enabled in policy <b>{selectedTab}</b>:
           </Typography>
