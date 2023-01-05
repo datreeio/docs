@@ -186,10 +186,26 @@ const sidebars = {
       collapsed: true,
       items: [
         {
-          type: "link",
-          label: "Github action",
-          href: "https://github.com/datreeio/action-datree",
+          type: "category",
+          label: "Github",
+          link: {
+            type: "doc",
+            id: "official-integrations/github/index",
+          },
+          items: [
+            {
+              type: "link",
+              label: "Github action",
+              href: "https://github.com/datreeio/action-datree",
+            },
+            {
+              type: "link",
+              label: "Github code scanning",
+              href: "https://github.com/datreeio/action-datree#github-code-scanning-sarif",
+            },
+          ],
         },
+        
         {
           type: "link",
           label: "Kubectl plugin",

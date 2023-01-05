@@ -152,9 +152,19 @@ data:
 
 ---
 
+## Update
+
+To update Datree to the latest version, run the following commands:
+
+```terminal
+helm repo update
+helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --debug
+```
+---
+
 ## Uninstall
 
-To uninstall Datree, run the following command in your terminal:
+To uninstall Datree, run the following commands:
 
 ```terminal
 helm uninstall datree-webhook -n datree
