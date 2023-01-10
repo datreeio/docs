@@ -277,6 +277,7 @@ const sidebars = {
       items: [
         "guides/integration-guide/index",
         "guides/argo-integration/index",
+        "guides/downgrading-to-community/index",
       ]
     },
     {
