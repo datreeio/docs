@@ -5,8 +5,8 @@ slug: /guides/downgrading-to-community
 
 ## Community vs paid versions of Datree
 
-Datree core components are open-source and therefore, you can always use them (free forever) in your own environment.
-The community (open-source) version of Datree does not includes the management and UI components that are available at https://app.datree.io
+Datree's core components are open-source and therefore, you can always use them (free forever) in your own environment.
+The community (open-source) version of Datree does not includes the management and UI components that are available at https://app.datree.io.
 
 ## Downgrading to community version
 
@@ -22,24 +22,24 @@ This file contains all the policies that you have created in Datree. You can dow
 
 ### 3. Use the `policies.yaml` file locally
 
-You can use the `policies.yaml` file with Datree CLI by passing it as an argument to the `--policy-config` flag:
+You can use the `policies.yaml` file with the Datree CLI by passing it as an argument to the `--policy-config` flag:
 
 ```bash
 datree test [MANIFEST_PATH] --policy-config policies.yaml
 ```
 
-## Q&a
+## Q&A
 
 ### Can I create custom rules and policies in the community version?
-Yes, you can. The process will be the same but instead of publishing your `policies.yaml` file to your dashboard, you can use it locally with the `--policy-config`.
+Yes, you can. The process will be the same but instead of publishing your `policies.yaml` file to your dashboard, you can use it locally with the `--policy-config` flag.
 
 ### What will happen to my data when I downgrade?
-Nothing. Your data will still be sent to your dashboard so once you will upgrade back, your data will still be up-to-date.
+Nothing. Your data will still be sent to your dashboard, so once you upgrade back it will still be up-to-date.
 If you don't want to keep your dashboard updated you can use the `--no-record` flag.
 
 ### Which CLI arguments will be blocked in the community version?
 None. All the CLI arguments will still be available in the community version because they are also core components in the open-source projects.
 
 ### Can I still use the community version in my CI?
-Yes, you can. You will not be blocked in any way from using Datree CLI in your CI.
+Yes, you can. You will not be blocked in any way from using the CLI in your CI.
 
