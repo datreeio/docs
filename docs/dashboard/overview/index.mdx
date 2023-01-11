@@ -1,0 +1,24 @@
+---
+title: Overview
+slug: /dashboard/overview
+---
+
+The [overview page](https://app.datree.io/overview) contains information about your clusters and their health.
+
+### Cluster score
+
+Each cluster that has Datree installed in it has a score (A - E), based on the amount of misconfigurations found in Datree's scans. This provides a picture of the validity and stability of your resources.
+
+![cluster_score](/img/dashboard/overview/cluster-score.png)
+
+### Failing configurations per namespace
+
+The pie chart can be used to determine your most problematic namespaces. Clicking on a namespace will take you to the [drilldown](/dashboard/drilldown) page, containing more information about the resources for which the rule failed.
+
+![failing_configurations](/img/dashboard/overview/failing-configurations.png)
+
+### Rules
+
+On the bottom of the page, you can see 2 lists of rules - one for the rules that failed in the last scan, and the other for rules that passed. Clicking on a failed rule will take you to the [drilldown](/dashboard/drilldown) page, where you can see more information about the rule and its violations in your cluster.
+
+![failing_rules](/img/dashboard/overview/failing-rules.png)

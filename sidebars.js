@@ -42,6 +42,8 @@ const sidebars = {
       label: "📊\xa0\xa0Dashboard",
       collapsed: true,
       items: [
+        "dashboard/overview/index",
+        "dashboard/drilldown/index",
         "dashboard/centralized-policy/index",
         "dashboard/history/index",
         "dashboard/account-token/index",
