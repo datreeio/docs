@@ -25,15 +25,3 @@ When installed on your cluster, other policy enforcement tools will validate bot
 * **Gitops CD tools** - validate objects that were explicitly created and distinguish them from other objects (custom resources) that were implicitly created during the installation and are required for the ongoing operation of these tools (e.g., ArgoCD, FluxCD, etc.)
 
 ---
-
-### Background policy check
-
-After installation, Datree will run a policy check against all resources in your cluster. The results will be displayed in your dashboard, detailing any found misconfigurations and how to fix them.  
-
-To manually trigger this scan again, run the following command:
-```terminal
-kubectl get job "scan-job" -n datree -o json | jq 'del(.spec.selector)' | jq 'del(.spec.template.metadata.labels)' | kubectl replace --force -f -
-```
-**Note that you need to have [jq](https://stedolan.github.io/jq/) installed to run this command.**
-
----

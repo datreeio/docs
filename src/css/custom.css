@@ -140,7 +140,8 @@ img[alt=gettingstarted_signup] { width: 80%; }
 img[alt=gettingstarted_enable_disable] { width: 80%; }
 img[alt=cluster_score] {width: 60%}
 img[alt=failing_configurations] {width: 60%}
-img[alt=failing_rules] {width: 60%; border: solid; border-color: gray; border-width: 0.01rem;}
+img[alt=scan_out_of_date] {width: 60%}
+img[alt=failing_rules] {width: 90%; border: solid; border-color: gray; border-width: 0.01rem;}
 img[alt=drilldown-rule-details] {width: 80%; border: solid; border-color: gray; border-width: 0.01rem;}
 
 .built-in-rules-navbar-items .menu__list {

@@ -11,14 +11,36 @@ Each cluster that has Datree installed in it has a score (A - E), based on the a
 
 ![cluster_score](/img/dashboard/overview/cluster-score.png)
 
+---
+
+### Background scan
+
+Datree runs a scan every hour, checking your cluster for misconfigurations and displaying the results on this page.
+
+The sync status of your cluster is updated in real time and displayed on this page.  
+For example, if a change is made in your cluster before a new scan was performed:
+
+![scan_out_of_date](/img/dashboard/overview/scan-out-of-date.png)
+
+To initiate a scan manually, run the following command:
+
+```terminal
+kubectl delete jobs/scan-job -n datree; kubectl create job --from=cronjob/scan-cronjob scan-job -n datree
+```
+
+---
+
 ### Failing configurations per namespace
 
 The pie chart can be used to determine your most problematic namespaces. Clicking on a namespace will take you to the [drilldown](/dashboard/drilldown) page, containing more information about the resources for which the rule failed.
 
 ![failing_configurations](/img/dashboard/overview/failing-configurations.png)
 
+---
+
 ### Rules
 
-On the bottom of the page, you can see 2 lists of rules - one for the rules that failed in the last scan, and the other for rules that passed. Clicking on a failed rule will take you to the [drilldown](/dashboard/drilldown) page, where you can see more information about the rule and its violations in your cluster.
+On the bottom of the page, you can see 2 lists of rules - one for the rules that failed in the last scan, and the other for rules that passed.  
+Clicking on a failed rule will take you to the [drilldown](/dashboard/drilldown) page, where you can see more information about the rule and its violations in your cluster.
 
-![failing_rules](/img/dashboard/overview/failing-rules.png)
+![overview_rules_list](/img/dashboard/overview/rules-list.png)
