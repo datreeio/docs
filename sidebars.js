@@ -187,6 +187,7 @@ const sidebars = {
       },
       collapsed: true,
       items: [
+        "official-integrations/eks-integration/index",
         {
           type: "category",
           label: "Github",

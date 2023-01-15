@@ -1,0 +1,25 @@
+---
+title: EKS
+slug: /integrations/eks-integration
+---
+
+<img display="block" margin="auto" width="90rem" src="/img/built-in-rules/EKS.png" />
+
+### Datree installation alternatives
+
+If you're working with EKS, you can install Datree in additional ways:
+1. Via the [AWS marketplace](https://aws.amazon.com/marketplace/pp/prodview-x3bz6wjgnfxu4).
+2. As an EKS addon:
+    * Log into your AWS account and navigate to the EKS console.
+    * Select your cluster and click on the `Add-ons` tab.
+    * Click on `Get more add-ons`, search for `Datree` and select it.
+     
+---
+
+### Set your Datree token
+
+When using EKS, use the following command to set your Datree token (replace `<YOUR_TOKEN>` with your token):
+
+```terminal
+kubectl get deployment datree-webhook-server -n datree -o yaml | yq '(.spec.template.spec.containers[].env[] | select(.name=="DATREE_TOKEN")) |= .value="<YOUR_TOKEN>"' | kubectl replace -f -
+```
