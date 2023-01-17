@@ -24,7 +24,6 @@ const sidebars = {
       items: [
         "welcome/getting-started/index",
         "welcome/what-is-datree/index",
-        "welcome/how-datree-works/index",
       ],
     },
     {
@@ -49,18 +48,6 @@ const sidebars = {
         "dashboard/account-token/index",
         "dashboard/policy-as-code/index",
         "dashboard/user-management/index",
-      ],
-    },
-    {
-      type: "category",
-      label: "🖥\xa0\xa0CLI",
-      collapsed: true,
-      items: [
-        "cli/getting-started/index",
-        "cli/schema-validation/index",
-        "cli/cli-output/index",
-        "cli/cli-arguments/index",
-        "cli/offline-mode/index",
       ],
     },
     {
@@ -187,7 +174,7 @@ const sidebars = {
       },
       collapsed: true,
       items: [
-        "official-integrations/eks-integration/index",
+        "official-integrations/eks-integration/index", 
         {
           type: "category",
           label: "Github",
@@ -207,8 +194,7 @@ const sidebars = {
               href: "https://github.com/datreeio/action-datree#github-code-scanning-sarif",
             },
           ],
-        },
-        
+        },    
         {
           type: "link",
           label: "Kubectl plugin",
@@ -242,6 +228,18 @@ const sidebars = {
         "official-integrations/kustomize-support/index",
         "official-integrations/git-hooks/index",
         "official-integrations/pre-commit-hook/index",
+      ],
+    },
+    {
+      type: "category",
+      label: "🖥\xa0\xa0CLI",
+      collapsed: true,
+      items: [
+        "cli/getting-started/index",
+        "cli/schema-validation/index",
+        "cli/cli-output/index",
+        "cli/cli-arguments/index",
+        "cli/offline-mode/index",
       ],
     },
     {
