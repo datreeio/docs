@@ -6,8 +6,7 @@ slug: /dashboard/account-token
 ## What is a token
 
 The token connects your policy checks to your [Centralized policy](/dashboard/centralized-policy), which determines your available policies.  
-Additionally, the token allows your CLI to report your policy check history to the dashboard.  
-When a policy check is triggered, Datree reads your account token from the config file (`~/.datree/config.yaml`).
+Additionally, the token allows Datree to report your policy check history to the dashboard.  
 
 **Each token has the following properties:**
 
@@ -21,7 +20,7 @@ Tokens are immutable. To change one of the token's properties, a new token needs
 :::
 
 ---
-## Connect your dashboard to the CLI
+## Connect your dashboard to your cluster
 
 ### 1. Get your account token from the dashboard
 
@@ -33,9 +32,13 @@ Tokens are immutable. To change one of the token's properties, a new token needs
 - Copy your account token  
 ![get_token](/img/dashboard/account-token/2.png)
 
-### 2. Set your token in the CLI
+### 2. Set your token in your cluster
 
-To set your token, simply run the following command in your terminal using the same token you copied in the previous step:
+To set your token, simply copy it and run the command specified [here](/configuration/behavior#setchange-token).
+
+#### Setting your token in the CLI
+
+To set your token when using the **CLI**, run the following command in your terminal (replace `<token>` with your token):
 
 ```terminal
 datree config set token <token>
@@ -44,6 +47,7 @@ datree config set token <token>
 This will replace the token inside the config file (`~/.datree/config.yaml`)
 
 ---
+
 ## Token Management
 
 ### Creating new tokens
@@ -53,6 +57,7 @@ Policy checks executed with a certain token are reported only to the dashboard o
 :::
 
 ---
+
 ## Using tokens in your CI
 Setting your token in your CI is done using the `DATREE_TOKEN` environment variable. The Datree CLI automatically checks this variable and uses its value as the token.  
 See our [CI/CD section](/cicd-examples) for examples using popular platforms.
