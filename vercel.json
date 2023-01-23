@@ -11,6 +11,11 @@
         "permanent": true
       },
       {
+        "source": "/welcome/what-is-datree",
+        "destination": "/", 
+        "permanent": true
+      },
+      {
         "source": "/centralized-policy",
         "destination": "/setup/centralized-policy", 
         "permanent": true
