@@ -1,0 +1,22 @@
+---
+title: How Datree works
+slug: /welcome/how-datree-works
+---
+
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+Datree provides a policy enforcement solution to monitor and prevent misconfigurations in your Kubernetes clusters. 
+When a violation of your policy is found, Datree provides an explanation of the issue and how to fix it.  
+
+## Where does the policy check occur?
+
+Datree's policy evaluation process is entirely local. Your files and their contents are **not** sent to our backend, as all policy checks are performed in your environment. Only metadata is sent to our backend, which is used to display your policy check history on your dashboard.
+
+<ThemedImage
+  alt="architecture"
+  sources={{
+    light: useBaseUrl('/img/welcome/how-datree-works/architecture-light.png'),
+    dark: useBaseUrl('/img/welcome/how-datree-works/architecture-dark.png'),
+  }}
+/>;

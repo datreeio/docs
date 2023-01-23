@@ -23,7 +23,7 @@ const sidebars = {
       collapsed: true,
       items: [
         "welcome/getting-started/index",
-        "welcome/what-is-datree/index",
+        "welcome/how-datree-works/index",
       ],
     },
     {
