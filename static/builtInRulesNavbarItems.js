@@ -8,7 +8,8 @@ export const tabsItems = [
   { value: "NSA", label: "NSA"},
   { value: "Secrets", label: "Secrets"},
   { value: "Starter", label: "Starter" },
-  { value: "EKS", label: "EKS"}
+  { value: "EKS", label: "EKS"},
+  { value: "Deprecation", label: "Deprecation"},
 ];
 
 export const navItems = [
@@ -336,6 +337,14 @@ export const navItems = [
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.17",
     tabOwner: ["Strict", "Default"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent use of deprecated APIs in Kubernetes v1.16",
+    slug: "/built-in-rules/prevent-deprecated-api-116",
+    isEnabledByDefault: true,
+    pacIdentifier: "DEPRECATION_VERSION_1.16",
+    tabOwner: ["Strict", "Default", "Deprecation"],
   },
   // Argo
   {
