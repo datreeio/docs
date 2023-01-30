@@ -15,6 +15,8 @@ The following resources are deprecated in version 1.19:
 | `storage.k8s.io/v1beta1` | `CSIDriver` |
 | `certificates.k8s.io/v1beta1` | `CertificateSigningRequest` |
 | `events.k8s.io/v1beta1` | `Event` |
+| `coordination.k8s.io/v1beta1` | `Lease`<br/>`LeaseList` |
+| `apiregistration.k8s.io/v1beta1` | `APIService`<br/>`APIServiceList` |
 
 **Targeted objects by this rule (types of **`kind`**):** (See table above)
 
@@ -55,6 +57,8 @@ Use a supported API version instead of the deprecated one:
 | `storage.k8s.io/v1beta1` | `storage.k8s.io/v1` |
 | `certificates.k8s.io/v1beta1` | `certificates.k8s.io/v1` |
 | `events.k8s.io/v1beta1` | `events.k8s.io/v1` |
+| `coordination.k8s.io/v1beta1` | `coordination.k8s.io/v1` |
+| `apiregistration.k8s.io/v1beta1` | `apiregistration.k8s.io/v1` |
 
 **Example**:  
 
