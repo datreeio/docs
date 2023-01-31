@@ -4,7 +4,7 @@ import "./ComplexityWindow.css";
 
 const Complexity = (props) => (
   <Popup
-    trigger={<a href className="complexity-text" style={{cursor: "pointer"}}>{props.text ? props.text : "What does this mean?"} </a>}
+    trigger={<a href className="complexity-text" style={{cursor: "pointer"}}>{props.text ? props.text : "What does this mean?"}</a>}
     modal
     nested
   >

@@ -8,7 +8,8 @@ export const tabsItems = [
   { value: "NSA", label: "NSA"},
   { value: "Secrets", label: "Secrets"},
   { value: "Starter", label: "Starter" },
-  { value: "EKS", label: "EKS"}
+  { value: "EKS", label: "EKS"},
+  { value: "Deprecation", label: "Deprecation"},
 ];
 
 export const navItems = [
@@ -81,7 +82,7 @@ export const navItems = [
     id: uuid(),
     title: "Ensure each container image has a digest tag",
     slug: "/built-in-rules/ensure-digest-tag",
-    isEnabledByDefault: false,
+    isEnabledByDefult: false,
     pacIdentifier: "CONTAINERS_MISSING_IMAGE_VALUE_DIGEST",
     tabOwner: ["Strict"],
   },
@@ -323,19 +324,59 @@ export const navItems = [
   // Deprecation
   {
     id: uuid(),
-    title: "Prevent deprecated APIs in Kubernetes v1.16",
+    title: "Prevent use of deprecated APIs in Kubernetes v1.16",
     slug: "/built-in-rules/prevent-deprecated-k8s-api-116",
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.16",
-    tabOwner: ["Strict", "Default"],
+    tabOwner: ["Strict", "Default", "Deprecation"],
   },
   {
     id: uuid(),
-    title: "Prevent deprecated APIs in Kubernetes v1.17",
+    title: "Prevent use of deprecated APIs in Kubernetes v1.17",
     slug: "/built-in-rules/prevent-deprecated-k8s-api-117",
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.17",
-    tabOwner: ["Strict", "Default"],
+    tabOwner: ["Strict", "Default", "Deprecation"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent use of deprecated APIs in Kubernetes v1.19",
+    slug: "/built-in-rules/prevent-deprecated-k8s-api-119",
+    isEnabledByDefault: true,
+    pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.19",
+    tabOwner: ["Strict", "Deprecation"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent use of deprecated APIs in Kubernetes v1.21",
+    slug: "/built-in-rules/prevent-deprecated-k8s-api-121",
+    isEnabledByDefault: true,
+    pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.21",
+    tabOwner: ["Strict", "Deprecation"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent use of deprecated APIs in Kubernetes v1.22",
+    slug: "/built-in-rules/prevent-deprecated-k8s-api-122",
+    isEnabledByDefault: true,
+    pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.22",
+    tabOwner: ["Strict", "Deprecation"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent use of deprecated APIs in Kubernetes v1.23",
+    slug: "/built-in-rules/prevent-deprecated-k8s-api-123",
+    isEnabledByDefault: true,
+    pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.23",
+    tabOwner: ["Strict", "Deprecation"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent use of deprecated APIs in Kubernetes v1.24",
+    slug: "/built-in-rules/prevent-deprecated-k8s-api-124",
+    isEnabledByDefault: true,
+    pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.24",
+    tabOwner: ["Strict", "Deprecation"],
   },
   // Argo
   {

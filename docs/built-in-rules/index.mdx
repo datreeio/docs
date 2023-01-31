@@ -18,16 +18,22 @@ The rules are also grouped into the following policies which you can use out-of-
 
 <Grid container spacing={1.5}>
     <Grid item>
-        <PolicyCard title="NSA" subtitle="A security-focused policy enforcing the NSA hardening guide for Kubernetes" link="/built-in-rules/rules/#NSA" image="/img/built-in-rules/NSA.png" />
+        <PolicyCard title="EKS" subtitle="EKS security best practices, ensuring stability of your workloads" link="/built-in-rules/rules/#EKS" image="/img/built-in-rules/EKS.png" />
     </Grid>
     <Grid item>
-        <PolicyCard title="EKS" subtitle="EKS security best practices, ensuring stability of your workloads" link="/built-in-rules/rules/#EKS" image="/img/built-in-rules/EKS.png" />
+        <PolicyCard title="NSA" subtitle="A security-focused policy enforcing the NSA hardening guide for Kubernetes" link="/built-in-rules/rules/#NSA" image="/img/built-in-rules/NSA.png" />
     </Grid>
     <Grid item>
         <PolicyCard title="Secrets" subtitle="Detect a variety of passwords and other sensitive data in your manifests" link="/built-in-rules/rules/#Secrets" image="/img/built-in-rules/Secrets.png" />
     </Grid>
     <Grid item>
+        <PolicyCard title="Deprecation" subtitle="Prevent the use of deprecated APIs in your resources" link="/built-in-rules/rules/#Deprecation" image="/img/built-in-rules/Deprecation.png" />
+    </Grid>
+    <Grid item>
         <PolicyCard title="Argo" subtitle="Best practices for the popular ArgoCD, as well as Rollouts and Workflows" link="/built-in-rules/rules/#Argo" image="/img/built-in-rules/Argo.png" />
+    </Grid>
+     <Grid item>
+        <PolicyCard title="cdk8s" subtitle="A more lenient policy, intended for use as a validator for AWS's framework" link="/built-in-rules/rules/#cdk8s" image="/img/built-in-rules/cdk8s.png" />
     </Grid>
     <Grid item>
         <PolicyCard title="Default" subtitle="A robust initial policy, enforcing a wide variety of best practices" link="/built-in-rules/rules/#Default" image="/img/built-in-rules/Default.png" />
@@ -36,9 +42,7 @@ The rules are also grouped into the following policies which you can use out-of-
         <PolicyCard title="Starter" subtitle="Datree's recommended starting policy for your cluster" link="/built-in-rules/rules/#Starter" image="/img/built-in-rules/Starter.png" />
     </Grid>
      <Grid item>
-        <PolicyCard title="cdk8s" subtitle="A more lenient policy, intended for use as a validator for AWS's framework" link="/built-in-rules/rules/#cdk8s" image="/img/built-in-rules/cdk8s.png" />
-    </Grid>
-     <Grid item>
         <PolicyCard title="Strict" subtitle="A harsh policy that is comprised of all available rules" link="/built-in-rules/rules/#Strict" image="/img/built-in-rules/Strict.png" />
     </Grid>
+
 </Grid>
