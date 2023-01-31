@@ -5,7 +5,15 @@ slug: /built-in-rules/prevent-deprecated-k8s-api-116
 
 import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
 
-The v1.16 release stopped serving some API versions for different resource types. When a user deploys a resource with a deprecated API version, the Kubernetes engine rejects it.
+Kubernetes version 1.16 stopped serving several APIs for different resource types. When deploying a resource with a deprecated API version, the Kubernetes engine will reject it.
+
+The following resources are deprecated in version 1.16:
+
+| API version | Resource kind |
+|-------------|---------------|
+| `apiextensions.k8s.io/v1beta1` | `CustomResourceDefinition` |
+| `admissionregistration.k8s.io/v1beta1` | `MutatingWebhookConfiguration`<br/>`ValidatingWebhookConfiguration` |
+
 
 :::caution
 
@@ -13,25 +21,21 @@ Kubernetes v1.16 is no longer (officially) supported since 2 September 2020, So 
 
 :::
 
-**Targeted objects by this rule (types of **`kind`**):** NetworkPolicy / Deployment / DaemonSet / StatefulSet
+**Targeted objects by this rule (types of **`kind`**):** (See table above)
 
 **Complexity:** **easy** (<Complexity/>)
 
-**Policy as code identifier:** K8S_DEPRECATED_APIVERSION_1.16
+**Policy as code identifier:** DEPRECATION_VERSION_1.16
 
 ---
 
 ## This rule will fail
 
-If one of the following API versions is used:
-
-- _extensions/v1beta1_
-- _apps/v1beta1_
-- _apps/v1beta2_
+If one of the deprecated API versions is used for a resource:
 
 ```yaml
-apiVersion: apps/v1beta2
-kind: Deployment
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
 ```
 
 ### Rule output in the CLI
@@ -40,19 +44,26 @@ kind: Deployment
 $ datree test *.yaml
 
 >> File: failExample.yaml
-❌ Prevent deprecated APIs in Kubernetes v1.16 [1 occurrence]
-💡 Incorrect value for key `apiVersion` - the version you are trying to use is not supported by the Kubernetes cluster version (>=1.16)
+❌ Prevent use of deprecated APIs in Kubernetes v1.16 [1 occurrence]
+💡 Incorrect value for key `apiVersion` - the version of the resource you are trying to use is deprecated in k8s v1.16
 ```
 
 ---
 
 ## How to fix this failure
 
-Use _apps/v1_ instead of the deprecated version
+Use a supported API version instead of the deprecated one:
+
+| Deprecated API version | Supported API version |
+|-------------|---------------|
+| `apiextensions.k8s.io/v1beta1` | `apiextensions.k8s.io/v1` |
+| `admissionregistration.k8s.io/v1beta1` | `admissionregistration.k8s.io/v1` |
+
+**Example**:  
 
 ```yaml
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
 ```
 
 ---
