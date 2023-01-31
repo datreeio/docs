@@ -70,6 +70,7 @@ const sidebars = {
         "built-in-rules/Deprecation/prevent-deprecated-k8s-api-121/index",
         "built-in-rules/Deprecation/prevent-deprecated-k8s-api-122/index",
         "built-in-rules/Deprecation/prevent-deprecated-k8s-api-123/index",
+        "built-in-rules/Deprecation/prevent-deprecated-k8s-api-124/index",
         "built-in-rules/NSA/ensure-read-only-filesystem/index",
         "built-in-rules/NSA/prevent-accessing-host-files-by-using-high-gids/index",
         "built-in-rules/NSA/prevent-accessing-underlying-host/index",
