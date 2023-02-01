@@ -341,7 +341,7 @@ export const navItems = [
   {
     id: uuid(),
     title: "Prevent use of deprecated APIs in Kubernetes v1.19",
-    slug: "/built-in-rules/prevent-deprecated-k8s-api-119",
+    slug: "/built-in-rules/prevent-deprecated-api-119",
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.19",
     tabOwner: ["Strict", "Deprecation"],
@@ -349,7 +349,7 @@ export const navItems = [
   {
     id: uuid(),
     title: "Prevent use of deprecated APIs in Kubernetes v1.21",
-    slug: "/built-in-rules/prevent-deprecated-k8s-api-121",
+    slug: "/built-in-rules/prevent-deprecated-api-121",
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.21",
     tabOwner: ["Strict", "Deprecation"],
@@ -357,7 +357,7 @@ export const navItems = [
   {
     id: uuid(),
     title: "Prevent use of deprecated APIs in Kubernetes v1.22",
-    slug: "/built-in-rules/prevent-deprecated-k8s-api-122",
+    slug: "/built-in-rules/prevent-deprecated-api-122",
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.22",
     tabOwner: ["Strict", "Deprecation"],
@@ -365,7 +365,7 @@ export const navItems = [
   {
     id: uuid(),
     title: "Prevent use of deprecated APIs in Kubernetes v1.23",
-    slug: "/built-in-rules/prevent-deprecated-k8s-api-123",
+    slug: "/built-in-rules/prevent-deprecated-api-123",
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.23",
     tabOwner: ["Strict", "Deprecation"],
@@ -373,7 +373,7 @@ export const navItems = [
   {
     id: uuid(),
     title: "Prevent use of deprecated APIs in Kubernetes v1.24",
-    slug: "/built-in-rules/prevent-deprecated-k8s-api-124",
+    slug: "/built-in-rules/prevent-deprecated-api-124",
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.24",
     tabOwner: ["Strict", "Deprecation"],
