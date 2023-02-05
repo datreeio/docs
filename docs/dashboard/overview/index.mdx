@@ -22,11 +22,7 @@ For example, if a change is made in your cluster before a new scan was performed
 
 ![scan_out_of_date](/img/dashboard/overview/scan-out-of-date.png)
 
-To initiate a scan manually, run the following command:
-
-```terminal
-kubectl delete jobs/scan-job -n datree; kubectl create job --from=cronjob/scan-cronjob scan-job -n datree
-```
+For more information, see [cluster scan](/configuration/cluster-scan).
 
 ---
 
