@@ -33,6 +33,7 @@ const sidebars = {
       items: [
         "configuration/overview/index",
         "configuration/behavior/index",
+        "configuration/cluster-scan/index",
         "configuration/output/index",
       ],
     },
