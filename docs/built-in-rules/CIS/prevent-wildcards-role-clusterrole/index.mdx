@@ -1,0 +1,61 @@
+---
+title: ☑️ Prevent use of wildcards in Roles and ClusterRoles
+slug: /built-in-rules/prevent-wildcards-role-clusterrole
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Kubernetes Roles and ClusterRoles provide access to resources based on sets of objects and actions that can be taken on those objects. It is possible to set either of these to be the wildcard "*" which matches all items.  
+
+Use of wildcards is not optimal from a security perspective as it may allow for inadvertent access to be granted when new resources are added to the Kubernetes API either as CRDs or in later versions of the product.
+
+*Targeted objects by this rule (types of **`kind`**):** Role / ClusterRole
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** CIS_INVALID_WILDCARD_ROLE
+
+---
+
+## This rule will fail
+
+If wildcards are used in the `resources` or `verbs` fields of a Role or ClusterRole:
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+rules:
+  - resources: ["*"]
+    verbs: ["get", "watch", "list"]
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent use of wildcards in Roles and ClusterRoles [1 occurrence]
+💡 Incorrect value for key `apiGroups`/`resources`/`verbs` - wildcards may provide excessive rights and should only be used when necessary
+```
+
+---
+
+## How to fix this failure
+
+Explicitly define your desired `resources`/`verbs`:
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+rules:
+  - resources: ["pods"]
+    verbs: ["get", "watch", "list"]
+```
+
+---
+
+## Read more
+
+- [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes)
+- [Kubernetes docs - RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#referring-to-resources)

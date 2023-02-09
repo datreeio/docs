@@ -10,6 +10,7 @@ export const tabsItems = [
   { value: "Starter", label: "Starter" },
   { value: "EKS", label: "EKS"},
   { value: "Deprecation", label: "Deprecation"},
+  { value: "CIS", label: "CIS"},
 ];
 
 export const navItems = [
@@ -789,5 +790,54 @@ export const navItems = [
     isEnabledByDefault: false,
     pacIdentifier: "EKS_INVALID_HOSTPATH_MOUNT_READONLY_VALUE",
     tabOwner: ["Strict", "EKS"],
+  },
+  // CIS
+  {
+    id: uuid(),
+    title: "Prevent use of the `cluster-admin` role",
+    slug: "/built-in-rules/prevent-cluster-admin-role",
+    isEnabledByDefault: false,
+    pacIdentifier: "CIS_INVALID_ROLE_CLUSTER_ADMIN",
+    tabOwner: ["Strict", "CIS"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent access to secrets",
+    slug: "/built-in-rules/prevent-access-to-secrets",
+    isEnabledByDefault: false,
+    pacIdentifier: "CIS_INVALID_VERB_SECRETS",
+    tabOwner: ["Strict", "CIS"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent use of wildcards in Roles and ClusterRoles",
+    slug: "/built-in-rules/prevent-wildcards-role-clusterrole",
+    isEnabledByDefault: false,
+    pacIdentifier: "CIS_INVALID_WILDCARD_ROLE",
+    tabOwner: ["Strict", "CIS"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent use of secrets as environment variables",
+    slug: "/built-in-rules/prevent-secrets-as-env-variables",
+    isEnabledByDefault: false,
+    pacIdentifier: "CIS_INVALID_KEY_SECRETKEYREF_SECRETREF",
+    tabOwner: ["Strict", "CIS"],
+  },
+  {
+    id: uuid(),
+    title: "Ensure seccomp profile is set to docker/default or runtime/default",
+    slug: "/built-in-rules/ensure-seccomp-profile-default",
+    isEnabledByDefault: false,
+    pacIdentifier: "CIS_INVALID_VALUE_SECCOMP_PROFILE",
+    tabOwner: ["Strict", "CIS"],
+  },
+  {
+    id: uuid(),
+    title: "Ensure containers and pods have a configured security context",
+    slug: "/built-in-rules/ensure-containers-pods-security-context",
+    isEnabledByDefault: false,
+    pacIdentifier: "CIS_MISSING_KEY_SECURITYCONTEXT",
+    tabOwner: ["Strict", "CIS"],
   },
 ];
