@@ -840,4 +840,28 @@ export const navItems = [
     pacIdentifier: "CIS_MISSING_KEY_SECURITYCONTEXT",
     tabOwner: ["Strict", "CIS"],
   },
+  {
+    id: uuid(),
+    title: "Prevent access to create pods",
+    slug: "/built-in-rules/prevent-access-create-pods",
+    isEnabledByDefault: false,
+    pacIdentifier: "CIS_INVALID_VALUE_CREATE_POD",
+    tabOwner: ["Strict", "CIS"],
+  },
+  {
+    id: uuid(),
+    title: "Ensure that default service accounts are not actively used",
+    slug: "/built-in-rules/ensure-default-service-account-not-used",
+    isEnabledByDefault: false,
+    pacIdentifier: "CIS_INVALID_VALUE_AUTOMOUNTSERVICEACCOUNTTOKEN",
+    tabOwner: ["Strict", "CIS"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent the admission of containers with the NET_RAW capability",
+    slug: "/built-in-rules/prevent-containers-net-raw-capability",
+    isEnabledByDefault: false,
+    pacIdentifier: "CIS_MISSING_VALUE_DROP_NET_RAW",
+    tabOwner: ["Strict", "CIS"],
+  },
 ];
