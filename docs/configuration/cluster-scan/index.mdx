@@ -15,9 +15,15 @@ The scan will check the following resource kinds:
 
 | **Type** | **Kind** |
 |---|---|
-| Native k8s | `deployment`, `pod`, `daemonset`,	`statefulset`,	`replicaset`, `cronjob`, `job`, `ingress`, `service`, `replicationcontroller`, `horizontalpodautoscaler`, `configmap`, `endpointslice`, `role`, `serviceaccount` |
+| Native k8s | `deployment`, `pod`, `daemonset`, `statefulset`,	`replicaset`, `cronjob`, `job`, `ingress`, `service`, `replicationcontroller`, `horizontalpodautoscaler`, `configmap`, `endpointslice`, `serviceaccount`, `role`, `clusterrole`, `rolebindings`, `clusterrolebinding` |
 | Argo CRDs | `workflow`, `workflowtemplate`, `rollout`, `application`, `appproject` |
-		
+
+### Excluded resources
+
+The scan will ignore resources with the following `labels`:
+* `kubernetes.io/bootstrapping: rbac-defaults` - used by Kubernetes to label default RBAC resources
+* `app.kubernetes.io/part-of: datree` - used by Datree to label its own resources
+
 ---
 
 ## Manual scan
