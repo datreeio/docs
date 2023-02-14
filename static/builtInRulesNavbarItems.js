@@ -483,7 +483,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-accessing-underlying-host",
     isEnabledByDefault: true,
     pacIdentifier: "CONTAINERS_INCORRECT_KEY_HOSTPATH",
-    tabOwner: ["Strict", "NSA", "cdk8s", "Starter"],
+    tabOwner: ["Strict", "NSA", "cdk8s", "Starter", "CIS"],
   },
   {
     id: uuid(),
@@ -515,7 +515,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-insecurely-exposing-workload",
     isEnabledByDefault: true,
     pacIdentifier: "CONTAINERS_INCORRECT_KEY_HOSTPORT",
-    tabOwner: ["Strict", "NSA", "cdk8s", "Starter"],
+    tabOwner: ["Strict", "NSA", "cdk8s", "Starter", "CIS"],
   },
   {
     id: uuid(),
@@ -757,7 +757,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-windows-containers-unnecessary-privileges",
     isEnabledByDefault: false,
     pacIdentifier: "EKS_INVALID_HOSTPROCESS_VALUE",
-    tabOwner: ["Strict", "EKS"],
+    tabOwner: ["Strict", "EKS", "CIS"],
   },
   {
     id: uuid(),
@@ -862,6 +862,22 @@ export const navItems = [
     slug: "/built-in-rules/prevent-containers-net-raw-capability",
     isEnabledByDefault: false,
     pacIdentifier: "CIS_MISSING_VALUE_DROP_NET_RAW",
+    tabOwner: ["Strict", "CIS"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent use of the system:masters group",
+    slug: "/built-in-rules/prevent-system-masters-group",
+    isEnabledByDefault: false,
+    pacIdentifier: "CIS_INVALID_VALUE_SYSTEM_MASTERS",
+    tabOwner: ["Strict", "CIS"],
+  },
+  {
+    id: uuid(),
+    title: "Prevent role privilege escalation",
+    slug: "/built-in-rules/prevent-role-privilege-escalation",
+    isEnabledByDefault: false,
+    pacIdentifier: "CIS_INVALID_VALUE_BIND_IMPERSONATE_ESCALATE",
     tabOwner: ["Strict", "CIS"],
   },
 ];

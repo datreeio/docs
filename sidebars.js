@@ -169,6 +169,8 @@ const sidebars = {
         "built-in-rules/CIS/prevent-access-create-pods/index",
         "built-in-rules/CIS/ensure-default-service-account-not-used/index",
         "built-in-rules/CIS/prevent-containers-net-raw-capability/index",
+        "built-in-rules/CIS/prevent-system-masters-group/index",
+        "built-in-rules/CIS/prevent-role-privilege-escalation/index",
       ],
     },
     {

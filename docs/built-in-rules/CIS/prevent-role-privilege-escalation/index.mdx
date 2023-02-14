@@ -1,0 +1,62 @@
+---
+title: ☑️ Prevent role privilege escalation
+slug: /built-in-rules/prevent-role-privilege-escalation
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+The `impersonate` privilege allows a subject to impersonate other users gaining their rights to the cluster. The `bind` privilege allows the subject to add a binding to a cluster role or role which escalates their effective permissions in the cluster. The `escalate` privilege allows a subject to modify cluster roles to which they are bound, increasing their rights to that level.  
+
+Each of these permissions has the potential to allow for privilege escalation to cluster-admin level.
+
+**Targeted objects by this rule (types of **`kind`**):** Role / ClusterRole
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** CIS_INVALID_VALUE_BIND_IMPERSONATE_ESCALATE
+
+---
+
+## This rule will fail
+
+If the `bind`/`impersonate`/`escalate` permissions are used:
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: Role
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["impersonate"]
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent role privilege escalation [1 occurrence]
+💡 Invalid value for key `verbs` - do not use `bind`/`impersonate`/`escalate` to prevent privilege escalation
+```
+
+---
+
+## How to fix this failure
+
+Remove the aforementioned permissions:
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "watch", "list"]
+```
+
+---
+
+## Read more
+
+- [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes)
