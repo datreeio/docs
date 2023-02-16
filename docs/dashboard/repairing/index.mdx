@@ -1,0 +1,27 @@
+---
+title: Repairing
+slug: /dashboard/repairing
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+The [repairing page](https://app.datree.io/repairing/cluster) details the violations found in the last [cluster scan](/configuration/cluster-scan), and provides instructions to fix them.
+
+### Failures table
+
+The table on this page contains all the rules that failed in the last scan, along with information about the relevant resource. You can filter the table by namespace, resource kind or rule name.  
+
+![repairing-table](/img/dashboard/repairing/table.png)
+
+### Failing rules
+
+Clicking on a namespace, for example, will show you all of the resources in it that have failing rules.  
+Clicking on such a resource will display them:
+
+![repairing-failing-rules](/img/dashboard/repairing/failing-rules.png)
+
+### Rule details
+
+Click on a rule to see more information about its impact, <Complexity text="fix complexity"/> and how to fix it:
+
+![repairing-rule-details](/img/dashboard/repairing/rule-details.png)

@@ -43,7 +43,7 @@ const sidebars = {
       collapsed: true,
       items: [
         "dashboard/overview/index",
-        "dashboard/drilldown/index",
+        "dashboard/repairing/index",
         "dashboard/centralized-policy/index",
         "dashboard/history/index",
         "dashboard/account-token/index",
