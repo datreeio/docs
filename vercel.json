@@ -76,6 +76,11 @@
         "permanent": true
       },
       {
+        "source": "/dashboard/drilldown",
+        "destination": "/dashboard/repairing", 
+        "permanent": true
+      },
+      {
         "source": "/setup/history",
         "destination": "/dashboard/history", 
         "permanent": true
