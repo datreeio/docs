@@ -122,8 +122,9 @@ Below you can find all of the installation failures caused by unmet prerequisite
 
 If you get the following message in your terminal: 
 ```terminal
-Helm command not found
+helm: command not found
 ``` 
+
 It means that you don't have Helm installed on your machine. Fix this issue by installing Helm on your machine, restart the terminal and reinstall Datree.
 
 #### Cluster not reachable
@@ -132,7 +133,8 @@ If you get the following message in your terminal:
 ```terminal
 INSTALLATION FAILED: Kubernetes cluster unreachable
 ``` 
-It probably means that you don't have a Kubernetes cluster up and running. To be able to install the webhook, make sure you have kubectl installed and an accessible Kubernetes cluster, only then try to install Datree again.
+
+It means that you don't have a Kubernetes cluster up and running. To be able to install the webhook, make sure you have kubectl installed and an accessible Kubernetes cluster, only then try to install Datree again.
 
 #### Windows users
 
