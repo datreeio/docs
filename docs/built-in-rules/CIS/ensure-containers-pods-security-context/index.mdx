@@ -1,0 +1,61 @@
+---
+title: ☑️ Ensure containers and pods have a configured security context
+slug: /built-in-rules/ensure-containers-pods-security-context
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+A security context defines the operating system security settings (uid, gid, capabilities, SELinux role, etc..) applied to a container, and controls the security parameters that will be assigned to it.  
+Well-defined privilege and access control settings will enhance assurance that your pod is running with the properties it requires to function.
+
+**Targeted objects by this rule (types of **`kind`**):** Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** CIS_MISSING_KEY_SECURITYCONTEXT
+
+---
+
+## This rule will fail
+
+If a pod or container does not have a security context defined:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure containers and pods have a configured security context [1 occurrence]
+💡 Missing key `securityContext` - set to enforce your containers' security and stability
+```
+
+---
+
+## How to fix this failure
+
+Define a security context for your pod or container:
+
+```yaml
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - securityContext:
+      capabilities:
+        add: [ "SYS_TIME"]
+```
+
+---
+
+## Read more
+
+- [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes)
+- [Kubernetes security context](https://kubernetes.io/docs/concepts/policy/security-context)

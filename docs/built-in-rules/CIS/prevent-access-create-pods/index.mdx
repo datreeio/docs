@@ -1,0 +1,59 @@
+---
+title: ☑️ Prevent access to create pods
+slug: /built-in-rules/prevent-access-create-pods
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+The ability to create pods in a namespace can provide a number of opportunities for privilege escalation, such as assigning privileged service accounts to these pods or mounting hostPaths with access to sensitive data.  
+As such, access to create new pods should be restricted to the smallest possible group of users.
+
+**Targeted objects by this rule (types of **`kind`**):** Role / ClusterRole
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** CIS_INVALID_VALUE_CREATE_POD
+
+---
+
+## This rule will fail
+
+If a Role or ClusterRole provides `create` access to pods:
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+rules:
+  - resources: ["pods"]
+    verbs: ["create"]
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent access to create pods [1 occurrence]
+💡 Invalid value for key `resources`/`verbs` - prohibit creating pods to prevent undesired privilege escalation
+```
+
+---
+
+## How to fix this failure
+
+Do not allow `create` access to pods:
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+rules:
+  - resources: ["pods"]
+    verbs: ["get", "watch", "list"]
+```
+
+---
+
+## Read more
+
+- [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes)

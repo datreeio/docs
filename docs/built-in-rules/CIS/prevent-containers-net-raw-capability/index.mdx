@@ -1,0 +1,64 @@
+---
+title: ☑️ Prevent the admission of containers with the NET_RAW capability
+slug: /built-in-rules/prevent-containers-net-raw-capability
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Containers run with a default set of capabilities as assigned by the Container Runtime. By default this can include potentially dangerous capabilities. With Docker as the container runtime the `NET_RAW` capability is enabled which may be misused by malicious containers.  
+Ideally, all containers should drop this capability.
+
+**Targeted objects by this rule (types of **`kind`**):** Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** CIS_MISSING_VALUE_DROP_NET_RAW
+
+---
+
+## This rule will fail
+
+If the `NET_RAW` capability is not dropped by the container:
+
+```yaml
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: my-pod
+    image: gcr.io/google-samples/node-hello:1.0
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent the admission of containers with the NET_RAW capability [1 occurrence]
+💡 Invalid value for key `drop` - prohibit the potentially dangerous NET_RAW capability
+```
+
+---
+
+## How to fix this failure
+
+Drop the `NET_RAW` capability from the container:
+
+```yaml
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: my-pod
+    image: gcr.io/google-samples/node-hello:1.0
+    securityContext:
+      capabilities:
+        drop: ["NET_RAW"]
+```
+
+---
+
+## Read more
+
+- [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes)
