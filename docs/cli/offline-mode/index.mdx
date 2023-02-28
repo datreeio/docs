@@ -7,7 +7,8 @@ slug: /cli/offline-mode
 It is possible to run Datree as a standalone in an air-gapped environment by preforming the following steps:
 1. Download [Datree’s binary](https://github.com/datreeio/datree/releases/latest) 
 2. Manually copy the binary to your offline environment 
-3. Set `offline=local` in your local [config file](/cli/cli-arguments/#configure-the-cli):  
+3. [Enable](https://hub.datree.io/dashboard/policy-as-code#1-enable-policy-as-code-pac-mode) the policy-as-code mode for your account
+4. Set `offline=local` in your local [config file](/cli/cli-arguments/#configure-the-cli):  
 ```terminal
 datree config set offline local
 ```
