@@ -1,0 +1,52 @@
+---
+title: ☑️ Prevent deploying naked pods
+slug: /built-in-rules/prevent-naked-pods
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+It's preferable to manage services and applications in clusters using higher-level resources such as Deployments, StatefulSets and DaemonSets instead of raw Pod resources. These constructs include standard default features which, in most scenarios, are necessary to configure and maintain a stable cluster.
+
+**Targeted objects by this rule (types of **`kind`**):** Pod
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** K8S_INCORRECT_KIND_VALUE_POD
+
+---
+
+## This rule will fail
+
+If `kind` type is set as _Pod_
+
+```yaml
+apiVersion: apps/v1
+kind: Pod
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent deploying naked pods [1 occurrence]
+💡 Incorrect value for key `kind` - raw pod won't be rescheduled in the event of a node failure
+```
+
+---
+
+## How to fix this failure
+
+Deploy pods using higher-level resources
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - pods and controllers](https://kubernetes.io/docs/concepts/workloads/pods/#pods-and-controllers)

@@ -1,0 +1,60 @@
+---
+title: ☑️ Ensure deployment-like resource is using a valid restart policy
+slug: /built-in-rules/ensure-valid-restart-policy
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+From the Kubernetes docs:
+
+_"Only a `.spec.template.spec.restartPolicy` equal to Always is allowed, which is the default if not specified."_
+
+Therefore, `restartPolicy` values like _OnFailure_ or _Never_ will be invalid and will not be applied as the user expect them to.
+
+**Targeted objects by this rule (types of **`kind`**):** Deployment / Pod / DaemonSet / ReplicaSet / ReplicationController
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** WORKLOAD_INCORRECT_RESTARTPOLICY_VALUE_ALWAYS
+
+---
+
+## This rule will fail
+
+If `restartPolicy` is set with any value other than _Always_
+
+```yaml
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure deployment-like resource is using a valid restart policy [1 occurrence]
+💡 Incorrect value for key `restartPolicy` - any other value than `Always` is not supported by this resource
+```
+
+---
+
+## How to fix this failure
+
+Set `restartPolicy` to _Always_ or don't include the `restartPolicy` key at all
+
+```yaml
+spec:
+  template:
+    spec:
+      restartPolicy: Always
+```
+
+---
+
+## Read more
+
+- [stackoverflow - configure restart policy of pod from deployment](https://stackoverflow.com/a/63400639/959510)

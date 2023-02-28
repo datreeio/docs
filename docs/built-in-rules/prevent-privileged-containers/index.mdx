@@ -1,0 +1,60 @@
+---
+title: ☑️ Prevent containers from having root access capabilities
+slug: /built-in-rules/prevent-privileged-containers
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Processes running in privileged containers have access to host-level resources such as the file system. These containers are much more secure when their access is limited to the pod level.
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Complexity:** **easy** (<Complexity/>)
+
+**Policy as code identifier:** CONTAINERS_INCORRECT_PRIVILEGED_VALUE_TRUE
+
+---
+
+## This rule will fail
+
+If `privileged` is set as _true_
+
+```yaml
+spec:
+  containers:
+    - name: app
+      image: nginx:1.19.8
+      securityContext:
+        privileged: true
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent containers from having root access capabilities [1 occurrence]
+💡 Incorrect value for key `privileged` - this mode will allow the container the same access as processes running on the host
+```
+
+---
+
+## How to fix this failure
+
+Set `privileged` to _false_ or remove this property completely
+
+```yaml
+spec:
+  containers:
+    - name: app
+      image: nginx:1.19.8
+      securityContext:
+        privileged: false
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - privileged containers](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privileged)

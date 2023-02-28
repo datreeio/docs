@@ -1,0 +1,56 @@
+---
+title: ☑️ Prevent containers from accessing the underlying host
+slug: /built-in-rules/prevent-accessing-underlying-host
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Kubernetes pods can use host bind mounts (i.e. directories and volumes mounted on the container host) in containers. Using a hostPath mount can enable attackers to break from the container and gain access to the underlying host. Therefore, it's not recommended to use bind mounts for application pods.
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Complexity:** **easy** (<Complexity/>)
+
+**Policy as code identifier:** CONTAINERS_INCORRECT_KEY_HOSTPATH
+
+---
+
+## This rule will fail
+
+If the key `hostPath` is used:
+
+```yaml
+spec:
+  volumes:
+    - name: myVolume
+      hostPath:
+        path: /data
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent containers from accessing the underlying host [1 occurrence]
+💡 Invalid key `hostPath` - refrain from using this mount to prevent an attack on the underlying host
+```
+
+---
+
+## How to fix this failure
+
+Refrain from using the `hostPath` mount
+
+```yaml
+spec:
+  volumes:
+    - name: myVolume
+```
+
+---
+
+## Read more
+
+- [Kubernetes.io - pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/)

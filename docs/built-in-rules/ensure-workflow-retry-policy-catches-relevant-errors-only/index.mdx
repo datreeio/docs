@@ -1,0 +1,69 @@
+---
+title: ☑️ Ensure Workflow retry policy catches relevant errors only
+slug: /built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+`retryStrategy` is an optional field of the Workflow CRD that provides control over how to retry a workflow step. One of its fields is `retryPolicy`, which defines the policy of NodePhase statuses that will be retried (NodePhase is the condition of a node at the current time).
+
+The value of `retryPolicy` can be either: _Always_, _OnError_, or _OnTransientError_. In addition, the user can use the[ **_expression_**](https://argoproj.github.io/argo-workflows/retries/#conditional-retries) key to control more of the retries.
+
+What’s the catch?
+
+- **retryPolicy=Always is too much.** The user only wants to retry on system-level errors (eg, the node dying or being preempted), but not on errors occurring in user-level code since these failures indicate a bug. In addition, this option is more suitable for long-running containers than workflows which are jobs.
+
+- **retryPolicy=OnError doesn't handle preemptions**: retryPolicy=OnError handles _some_ system-level errors like the node disappearing or the pod being deleted. However, during graceful Pod termination, the kubelet assigns a Failed status and a Shutdown reason to the terminated Pods. As a result, node preemptions result in node status "Failure", not "Error" so preemptions aren't retried.
+
+- **retryPolicy=OnError doesn't handle transient errors:** Classify preemption failure message as a transient error is allowed however, this requires retryPolicy=OnTransientError. (see also, TRANSIENT_ERROR_PATTERN).
+
+It is recommended to use Always, along with this expression that filters out unnecessary errors:
+
+> lastRetry.status == "Error" or (lastRetry.status == "Failed" and asInt(lastRetry.exitCode) not in [0])
+
+**Targeted objects by this rule (types of kind): **Workflow
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** ARGO_WORKFLOW_ENSURE_RETRY_ON_BOTH_ERROR_AND_TRANSIENT_ERROR
+
+---
+
+## This rule will fail
+
+If the retryPolicy key is set with a value of Always, but the aforementioned expression is not set:
+
+```yaml
+kind: Workflow
+spec:
+  templates:
+  - retryStrategy:
+      retryPolicy: "Always"
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure Workflow retry policy catches relevant errors only [1 occurrence]
+💡 Incorrect value for key `retryPolicy` - the expression should include retry on steps that failed either on transient or Argo controller errors
+```
+
+---
+
+## How to fix this failure
+
+When using a `retryPolicy` of `Always`, set the `expression` key with the following value:
+
+```yaml
+kind: Workflow
+spec:
+  templates:
+  - retryStrategy:
+      retryPolicy: "Always"
+        expression: 'lastRetry.status == "Error" or (lastRetry.status == "Failed" and asInt(lastRetry.exitCode) not in [0])'
+```
+
+---

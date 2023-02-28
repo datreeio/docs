@@ -1,0 +1,74 @@
+---
+title: ☑️ Prevent containers from having insecure capabilities
+slug: /built-in-rules/prevent-insecure-capabilities
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Capabilities permit certain named root actions without giving full root access. They are a more fine-grained permissions model, and all capabilities should be dropped from a pod, with only those required added back. Giving containers unnecessary capabilities may compromise them and allow attackers access to sensitive components.
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** CONTAINERS_INVALID_CAPABILITIES_VALUE
+
+---
+
+## This rule will fail
+
+If one or more of the following insecure capabilities are set:
+
+- SETPCAP
+- NET_ADMIN
+- NET_RAW
+- SYS_MODULE
+- SYS_RAWIO
+- SYS_PTRACE
+- SYS_ADMIN
+- SYS_BOOT
+- MAC_OVERRIDE
+- MAC_ADMIN
+- PERFMON
+- ALL
+- BPF
+
+```yaml
+kind: Pod
+spec:
+  containers:
+    - securityContext:
+        capabilities:
+          add: ["SYS_ADMIN", "PERFMON"]
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent containers from having insecure capabilities [1 occurrence]
+💡 Incorrect value for key `add` - refrain from using insecure capabilities to prevent access to sensitive components
+```
+
+---
+
+## How to fix this failure
+
+Refrain from setting any unnecessary insecure capabilities.
+
+```yaml
+kind: Pod
+spec:
+  containers:
+    - securityContext:
+        capabilities:
+          add: ["SYS_TIME"]
+```
+
+---
+
+## Read more
+
+- [Redhat - container security guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html-single/container_security_guide/index)

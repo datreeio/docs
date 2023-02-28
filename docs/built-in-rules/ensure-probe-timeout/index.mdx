@@ -1,0 +1,68 @@
+---
+title: ☑️ Ensure each container probe has a configured timeout
+slug: /built-in-rules/ensure-probe-timeout
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Probes have a number of fields that are used to control the behavior of liveness, readiness and startup checks. Though these fields have default values, we suggest to explicitly set them with your desired values.  
+One reason to do so is to prevent cases where unknown default behavior is used. For example, a defect was found in one of these fields causing it to be ignored, and was corrected in Kubernetes v1.20.  
+
+The field `timeoutSeconds` defines the number of seconds after which the probe times out. It has a default value of 1 second, and a minimum value of 1 second.
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** CONTAINERS_INCORRECT_TIMEOUTSECONDS_VALUE
+
+---
+
+## This rule will fail
+
+If a container has a `livenessProbe`, `readinessProbe` and/or `startupProbe` configured, but the field `timeoutSeconds` is not configured or has a value smaller than 1
+
+```yaml
+spec:
+  containers:
+    - name: myContainer
+      readinessProbe:
+        periodSeconds: 0
+```
+```yaml
+spec:
+  containers:
+    - name: myContainer
+      readinessProbe:
+        timeoutSeconds: 0
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure each container probe has a configured timeout [1 occurrence]
+💡 Incorrect value for key `timeoutSeconds` - set explicitly to control when a probe times out (min 1)
+```
+
+---
+
+## How to fix this failure
+
+Each container probe should have a configured `timeoutSeconds` property with a minimum value of 1
+
+```yaml
+spec:
+  containers:
+    - name: myContainer
+      readinessProbe:
+        timeoutSeconds: 2
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - configure probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#configure-probes)

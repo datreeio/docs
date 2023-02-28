@@ -1,0 +1,59 @@
+---
+title: ☑️ Ensure seccomp profile is set to docker/default or runtime/default
+slug: /built-in-rules/ensure-seccomp-profile-default
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Seccomp (secure computing mode) is used to restrict the set of system calls applications can make, allowing cluster administrators greater control over the security of workloads running in the cluster.  
+Kubernetes disables seccomp profiles by default for historical reasons. You should enable it to ensure that the workloads have restricted actions available within the container.
+
+**Targeted objects by this rule (types of **`kind`**):** Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** CIS_INVALID_VALUE_SECCOMP_PROFILE
+
+---
+
+## This rule will fail
+
+If seccomp is disabled or not set to an valid value:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure seccomp profile is set to docker/default or runtime/default [1 occurrence]
+💡 Invalid value for key `seccomp.security.alpha.kubernetes.io/pod` - set to docker/default or runtime/default to ensure restricted privileges
+```
+
+---
+
+## How to fix this failure
+
+Pods should have a seccomp profile set to `docker/default` or `runtime/default`:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+  annotations:
+    seccomp.security.alpha.kubernetes.io/pod: docker/default
+```
+
+---
+
+## Read more
+
+- [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes)

@@ -1,0 +1,84 @@
+---
+title: ☑️ Ensure each container has a configured liveness probe
+slug: /built-in-rules/ensure-liveness-probe
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Liveness probes allow Kubernetes to determine when a pod should be replaced. They are fundamental in configuring a resilient cluster architecture.
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Complexity:** **hard** (<Complexity/>)
+
+**Policy as code identifier:** CONTAINERS_MISSING_LIVENESSPROBE_KEY
+
+---
+
+## This rule will fail
+
+If a container doesn't have `livenessProbe` configured
+
+```yaml
+spec:
+  containers:
+    - name: app
+      image: nginx:1.19.8
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure each container has a configured liveness probe [1 occurrence]
+💡 Missing property object `livenessProbe` - add a properly configured livenessProbe to catch possible deadlocks
+```
+
+---
+
+## How to fix this failure
+
+Configure a liveness probe with an HTTP request, TCP protocol or exec command (the least recommended option)
+
+```yaml
+spec:
+  containers:
+    - name: app
+      image: nginx:1.19.8
+      livenessProbe:
+        httpGet:
+          path: /healthz
+          port: 8080
+```
+
+```yaml
+spec:
+  containers:
+    - name: app
+      image: nginx:1.19.8
+      livenessProbe:
+        tcpSocket:
+          port: 8080
+```
+
+```yaml
+spec:
+  containers:
+    - name: app
+      image: nginx:1.19.8
+      livenessProbe:
+        exec:
+          command:
+            - cat
+            - /tmp/healthy
+```
+
+---
+
+## Read more
+
+- [Liveness probe best practices](https://www.datree.io/resources/kubernetes-readiness-and-liveness-probes-best-practices)
+- [Kubernetes configurations best practices - enable liveness probe](https://www.datree.io/resources/kubernetes-configurations-best-practices#anchor7)[](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)
+- [Kubernetes docs - configure liveness and readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)

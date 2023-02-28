@@ -1,0 +1,55 @@
+---
+title: ☑️ Ensure CronJob scheduler is valid
+slug: /built-in-rules/ensure-cronjob-scheduler-valid
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+You should always confirm that the cron schedule expression is valid or your jobs won't be executed.
+
+**Targeted objects by this rule (types of **`kind`**):** CronJob
+
+**Complexity:** **easy** (<Complexity/>)
+
+**Policy as code identifier:** CRONJOB_INVALID_SCHEDULE_VALUE
+
+---
+
+## This rule will fail
+
+If the `schedule` value is not a valid cron expression
+
+```yaml
+kind: CronJob
+spec:
+  schedule: "1 * * *"
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure CronJob scheduler is valid [1 occurrence]
+💡 Incorrect value for key `schedule` - the (cron) schedule expressions is not valid and, therefore, will not work as expected
+```
+
+---
+
+## How to fix this failure
+
+Specify a valid cron expression
+
+```yaml
+kind: CronJob
+spec:
+  schedule: "*/1 * * * *"
+```
+
+---
+
+## Read more
+
+- [On-line cron expression validator](https://crontab.guru/)
+- [Kubernetes docs - cron schedule syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax)

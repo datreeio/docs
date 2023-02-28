@@ -1,0 +1,59 @@
+---
+title: ☑️ Prevent SELinux containers from running with unnecessary privileges
+slug: /built-in-rules/prevent-selinux-containers-unnecessary-privileges
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+SELinux defines access controls for the applications, processes, and files on a system. SELinux uses security policies, which are a set of rules that tell SELinux what can or can't be accessed, to enforce the access allowed by a policy.  
+SELinux options can be used to escalate privileges and should not be allowed.
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** EKS_INVALID_SELINUXOPTIONS_TYPE_VALUE
+
+---
+
+## This rule will fail
+
+If `type` is set to any value other than `container_t`, `container_init_t`, or `container_kvm_t`:
+
+```yaml
+spec:
+  containers:
+  - securityContext:
+      seLinuxOptions:
+        type: spc_t
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent SELinux containers from running with unnecessary privileges [1 occurrence]
+💡 Invalid value for key `type` - set to a predefined type to prevent unnecessary privileges
+```
+
+---
+
+## How to fix this failure
+
+```yaml
+spec:
+  containers:
+  - securityContext:
+      seLinuxOptions:
+        type: container_kvm_t
+```
+
+---
+
+## Read more
+
+- [K8s pods security standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/)
+
+- [Understanding SELinux File Labelling and SELinux Context](https://www.thegeekdiary.com/understanding-selinux-file-labelling-and-selinux-context/)

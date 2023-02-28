@@ -1,0 +1,61 @@
+---
+title: ☑️ Ensure each container probe has an initial delay configured
+slug: /built-in-rules/ensure-initial-probe-delay
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Probes have a number of fields that are used to control the behavior of liveness, readiness and startup checks. Though these fields have default values, we suggest to explicitly set them with your desired values.  
+One reason to do so is to prevent cases where unknown default behavior is used. For example, a defect was found in one of these fields causing it to be ignored, and was corrected in Kubernetes v1.20.  
+
+The field `initialDelaySeconds` defines the number of seconds after the container has started before liveness or readiness probes are initiated. It has a default value of 0 seconds, and a minimum value of 0 seconds.
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** CONTAINERS_INCORRECT_INITIALDELAYSECONDS_VALUE
+
+---
+
+## This rule will fail
+
+If a container has a `livenessProbe`, `readinessProbe` and/or `startupProbe` configured, but the field `initialDelaySeconds` is not configured or has a value smaller than 0
+
+```yaml
+spec:
+  containers:
+    - name: myContainer
+      readinessProbe:
+        timeoutSeconds: 1
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure each container probe has an initial delay configured [1 occurrence]
+💡 Incorrect value for key `initialDelaySeconds` - set explicitly to control the start time before a probe is initiated (min 0)
+```
+
+---
+
+## How to fix this failure
+
+Each container probe should have a configured `initialDelaySeconds` property with a minimum value of 0
+
+```yaml
+spec:
+  containers:
+    - name: myContainer
+      readinessProbe:
+        initialDelaySeconds: 0
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - configure probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#configure-probes)

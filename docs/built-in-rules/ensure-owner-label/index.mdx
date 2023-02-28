@@ -1,0 +1,60 @@
+---
+title: ☑️ Ensure workload has a configured `owner` label
+slug: /built-in-rules/ensure-owner-label
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+An `owner` label is great not only for financial ownership but also useful for operational ownership. Consider adding an `owner` label to your workload with the name, email alias or Slack channel of the team responsible for the service. This will make it easier to alert the relevant team or team member when necessary.
+
+:::tip
+
+## FYI
+
+Labels' keys and values are case-sensitive!
+:::
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Complexity:** **easy** (<Complexity/>)
+
+**Policy as code identifier:** WORKLOAD_MISSING_LABEL_OWNER_VALUE
+
+---
+
+## This rule will fail
+
+If the `owner` key is missing from the `labels` section
+
+```yaml
+metadata:
+  labels:
+    env: prod
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure workload has a configured `owner` label [1 occurrence]
+💡 Missing label object `owner` - add a proper owner label to know which person/team to ping when needed
+```
+
+---
+
+## How to fix this failure
+
+```yaml
+metadata:
+  labels:
+    env: prod
+    owner: yoda-at-datree.io
+```
+
+---
+
+## Read more
+
+- [A Kubernetes guide for labels and selectors - labels use cases](https://www.datree.io/resources/a-kubernetes-guide-for-labels-and-selectors#anchor5)

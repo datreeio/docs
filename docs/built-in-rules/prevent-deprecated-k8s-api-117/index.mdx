@@ -1,0 +1,62 @@
+---
+title: ☑️ Prevent deprecated APIs in Kubernetes v1.17
+slug: /built-in-rules/prevent-deprecated-k8s-api-117
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+The v1.17 release stopped serving some API versions for different resource types. When a user deploys a resource with a deprecated API version, the Kubernetes engine rejects it.
+
+:::caution
+
+Kubernetes v1.17 is no longer (officially) supported since 30 January 2021, So if you are still running this version, consider upgrading it as soon as possible.
+
+:::
+
+**Targeted objects by this rule (types of **`kind`**):** NetworkPolicy / Deployment / DaemonSet / StatefulSet
+
+**Complexity:** **easy** (<Complexity/>)
+
+**Policy as code identifier:** K8S_DEPRECATED_APIVERSION_1.17
+
+---
+
+## This rule will fail
+
+If one of the following API versions is used:
+
+- _kubeadm.k8s.io/v1beta1_
+- _rbac.authorization.k8s.io/v1alpha1_
+- _rbac.authorization.k8s.io/v1beta1_
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1alpha1
+kind: ClusterRoleBinding
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent deprecated APIs in Kubernetes v1.17 [1 occurrence]
+💡 Incorrect value for key `apiVersion` - the version you are trying to use is not supported by the Kubernetes cluster version (>=1.17)
+```
+
+---
+
+## How to fix this failure
+
+Use _v1_ instead of the deprecated version
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - v1.17 release notes](https://v1-17.docs.kubernetes.io/docs/setup/release/notes/#deprecations-and-removals)

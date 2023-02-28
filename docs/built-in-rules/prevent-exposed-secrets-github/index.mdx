@@ -1,0 +1,49 @@
+---
+title: ☑️ Prevent exposed GitHub secrets in objects
+slug: /built-in-rules/prevent-exposed-secrets-github
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+import CommonOverview from '../common-overview.mdx'
+import CommonHowToFix from '../common-how-to-fix.mdx'
+
+<CommonOverview />
+
+**Policy as code identifier:** ALL_EXPOSED_SECRET_GITHUB
+
+
+---
+
+## This rule will fail
+
+If a GitHub **App token, OAuth access token, Personal access token, and/or Refresh token** are present anywhere in the config:
+
+```yaml
+APP_TOKEN: ghs_kWZwPsQhrkrasBRhhMxVm8S7iU5HGcJHzVC9
+OAUTH_ACCESS_TOKEN: gho_fq2Umv92EQx02Gdc7Haias0UqKmq8xIeeund
+PERSONAL_ACCESS_TOKEN: ghp_gQ5zcPjyMkNPBBnXV3vnU77cHOEUJoIQbBRx
+REFRESH_TOKEN: ghr_AeUzatg8Tw3uWDa8eA54nId8v1aDZSUDParQ
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent exposed GitHub secrets in objects [1 occurrence]
+💡 Secret data found in config - keep your sensitive data elsewhere to prevent it from being stolen 
+```
+
+---
+
+## How to fix this failure
+
+<CommonHowToFix />
+
+---
+
+## Read more
+
+- [Distribute Credentials Securely Using Secrets](https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/)

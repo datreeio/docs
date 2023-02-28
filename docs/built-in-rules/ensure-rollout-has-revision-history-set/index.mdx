@@ -1,0 +1,64 @@
+---
+title: ☑️ Ensure Rollout has revision history set
+slug: /built-in-rules/ensure-rollout-has-revision-history-set
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+A Rollout's revision history is stored in the ReplicaSets it controls.
+
+`.spec.revisionHistoryLimit` is an optional field that specifies the number of old ReplicaSets to retain to allow rollback. These old ReplicaSets consume resources in etcd and crowd the output of kubectl get rs. The configuration of each Deployment revision is stored in its ReplicaSets; therefore, once an old ReplicaSet is deleted, you lose the ability to rollback to that revision of Deployment. By default, 10 old ReplicaSets will be kept, however, its ideal value depends on the frequency and stability of new Deployments.
+
+More specifically, setting this field to zero means that all old ReplicaSets with 0 replicas will be cleaned up. In this case, a new Deployment rollout cannot be undone, since its revision history is cleaned up.
+
+**Targeted objects by this rule (types of kind): **Rollout
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** ARGO_WORKFLOW_INCORRECT_REVISION_HISTORY_LIMIT_VALUE_0
+
+---
+
+## This rule will fail
+
+If the `revisionHistoryLimit` key is not set, or set to a value of 0:
+
+```yaml
+kind: Rollout
+spec:
+  revisionHistoryLimit: 0
+```
+
+```yaml
+kind: Rollout
+spec:
+  replicas: 5
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure Rollout has revision history set [1 occurrence]
+💡 Incorrect value for key `revisionHistoryLimit` - value above 0 is required to enable rolling back from a failed deployment
+```
+
+---
+
+## How to fix this failure
+
+Set the `revisionHistoryLimit` key with a non-zero value:
+
+```yaml
+kind: Rollout
+spec:
+  revisionHistoryLimit: 3
+```
+
+---
+
+## Read more
+
+- [Kubernetes - clean up policy\*\*](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#clean-up-policy)

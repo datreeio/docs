@@ -1,0 +1,62 @@
+---
+title: ☑️ Prevent containers from escalating privileges
+slug: /built-in-rules/prevent-escalating-privileges
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Privileged escalation allows a process to change the security context under which its running. In their default state, containers allow privilege escalation*. *Attackers may use this default behavior to manipulate the application or process and to gain more permissions than they should have.
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Complexity:** **easy** (<Complexity/>)
+
+**Policy as code identifier:** CONTAINERS_MISSING_KEY_ALLOWPRIVILEGEESCALATION
+
+---
+
+## This rule will fail
+
+If the key `allowPrivilegeEscalation` is not explicitly set to _false_:
+
+```yaml
+kind: Deployment
+spec:
+  template:
+    spec:
+      containers:
+        - name: myContainer
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent containers from escalating privileges [1 occurrence]
+💡 Missing key `allowPrivilegeEscalation` - set to false to prevent attackers from exploiting escalated container privileges
+```
+
+---
+
+## How to fix this failure
+
+Set the `allowPrivilegeEscalation` key to _false_:
+
+```yaml
+kind: Deployment
+spec:
+  template:
+    spec:
+      containers:
+        - name: myContainer
+          securityContext:
+            allowPrivilegeEscalation: false
+```
+
+---
+
+## Read more
+
+- [Kubernetes hardening tutorial](https://medium.com/4th-coffee/on-devops-27-kubernetes-hardening-tutorial-part-1-pods-4ec02dbdc6c4)

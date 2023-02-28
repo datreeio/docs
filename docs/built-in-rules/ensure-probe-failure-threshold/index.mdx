@@ -1,0 +1,68 @@
+---
+title: ☑️ Ensure each container probe has a configured failure threshold
+slug: /built-in-rules/ensure-probe-failure-threshold
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Probes have a number of fields that are used to control the behavior of liveness, readiness and startup checks. Though these fields have default values, we suggest to explicitly set them with your desired values.  
+One reason to do so is to prevent cases where unknown default behavior is used. For example, a defect was found in one of these fields causing it to be ignored, and was corrected in Kubernetes v1.20.  
+
+When a probe fails, Kubernetes will try `failureThreshold` times before giving up. The field has a default value of 3, and a minimum value of 1.
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** CONTAINERS_INCORRECT_FAILURETHRESHOLD_VALUE
+
+---
+
+## This rule will fail
+
+If a container has a `livenessProbe`, `readinessProbe` and/or `startupProbe` configured, but the field `failureThreshold` is not configured or has a value smaller than 1
+
+```yaml
+spec:
+  containers:
+    - name: myContainer
+      readinessProbe:
+        periodSeconds: 1
+```
+```yaml
+spec:
+  containers:
+    - name: myContainer
+      readinessProbe:
+        failureThreshold: 0
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure each container probe has a configured failure threshold [1 occurrence]
+💡 Incorrect value for key `failureThreshold` - set explicitly to control the number of retries after a probe fails (min 1)
+```
+
+---
+
+## How to fix this failure
+
+Each container probe should have a configured `failureThreshold` property with a minimum value of 1
+
+```yaml
+spec:
+  containers:
+    - name: myContainer
+      readinessProbe:
+        failureThreshold: 3
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - configure probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#configure-probes)

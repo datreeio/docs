@@ -1,0 +1,45 @@
+---
+title: ☑️ Prevent exposed Datadog secrets in objects
+slug: /built-in-rules/prevent-exposed-secrets-datadog
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+import CommonOverview from '../common-overview.mdx'
+import CommonHowToFix from '../common-how-to-fix.mdx'
+
+<CommonOverview />
+
+**Policy as code identifier:** ALL_EXPOSED_SECRET_DATADOG
+
+---
+
+## This rule will fail
+
+If a Datadog **access token** is present anywhere in the config:
+
+```yaml
+Access_token: datadog5x<=```"pcxx9wi21i8sh4na1sdl6488j79fsemasb40i10p
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent exposed Datadog secrets in objects [1 occurrence]
+💡 Secret data found in config - keep your sensitive data elsewhere to prevent it from being stolen 
+```
+
+---
+
+## How to fix this failure
+
+<CommonHowToFix />
+
+---
+
+## Read more
+
+- [Distribute Credentials Securely Using Secrets](https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/)

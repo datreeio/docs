@@ -1,0 +1,74 @@
+---
+title: ☑️ Prevent use of deprecated APIs in Kubernetes v1.16
+slug: /built-in-rules/prevent-deprecated-api-116
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Kubernetes version 1.16 stopped serving several APIs for different resource types. When deploying a resource with a deprecated API version, the Kubernetes engine will reject it.
+
+The following resources are deprecated in version 1.16:
+
+| API version | Resource kind |
+|-------------|---------------|
+| `apiextensions.k8s.io/v1beta1` | `CustomResourceDefinition` |
+| `admissionregistration.k8s.io/v1beta1` | `MutatingWebhookConfiguration`<br/>`ValidatingWebhookConfiguration` |
+
+
+:::caution
+
+Kubernetes v1.16 is no longer (officially) supported since 2 September 2020, So if you are still running this version, consider upgrading it as soon as possible.
+
+:::
+
+**Targeted objects by this rule (types of **`kind`**):** (See table above)
+
+**Complexity:** **easy** (<Complexity/>)
+
+**Policy as code identifier:** DEPRECATION_VERSION_1.16
+
+---
+
+## This rule will fail
+
+If one of the deprecated API versions is used for a resource:
+
+```yaml
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent use of deprecated APIs in Kubernetes v1.16 [1 occurrence]
+💡 Incorrect value for key `apiVersion` - the version of the resource you are trying to use is deprecated in k8s v1.16
+```
+
+---
+
+## How to fix this failure
+
+Use a supported API version instead of the deprecated one:
+
+| Deprecated API version | Supported API version |
+|-------------|---------------|
+| `apiextensions.k8s.io/v1beta1` | `apiextensions.k8s.io/v1` |
+| `admissionregistration.k8s.io/v1beta1` | `admissionregistration.k8s.io/v1` |
+
+**Example**:  
+
+```yaml
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - v1.16 deprecation guide](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#v1-16)
+- [Kubernetes blog - API deprecation in v1.16](https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/)

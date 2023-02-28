@@ -1,0 +1,61 @@
+---
+title: ☑️ Ensure workload has valid label values
+slug: /built-in-rules/ensure-labels-value-valid
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Labels are nothing more than custom key-value pairs that are attached to objects and are used to describe and manage different Kubernetes resources. If the labels do not follow Kubernetes label syntax requirements (see links below), they will not be applied properly.
+
+:::info
+
+Labels' keys and values are case-sensitive!
+:::
+
+**Targeted objects by this rule (types of **`kind`**): **Deployment / Pod / DaemonSet / StatefulSet / ReplicaSet / CronJob / Job
+
+**Complexity:** **medium** (<Complexity/>)
+
+**Policy as code identifier:** WORKLOAD_INVALID_LABELS_VALUE
+
+---
+
+## This rule will fail
+
+If one of the keys under `labels` contains an invalid value
+
+```yaml
+metadata:
+  labels:
+    on-call: yoda@datree.io
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure workload has valid label values [1 occurrence]
+💡 Incorrect value for key(s) under `labels` - the vales syntax is not valid so the Kubernetes engine will not accept it
+```
+
+---
+
+## How to fix this failure
+
+Use valid values only (see links below for valid syntax)
+
+```yaml
+metadata:
+  labels:
+    on-call: yoda-at-datree.io
+```
+
+---
+
+## Read more
+
+- [Kubernetes docs - labels syntax](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set)
+
+- [A Kubernetes guide for labels](https://datree-io.webflow.io/resources/a-kubernetes-guide-for-labels-and-selectors#anchor10)

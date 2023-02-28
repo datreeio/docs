@@ -1,0 +1,63 @@
+---
+title: ☑️ Ensure Application and AppProject are part of the argocd namespace
+slug: /built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+ArgoCD is installed in a specific namespace (by default it's '_argocd_'). All of its resources, including Application and AppProject instances, have to be installed in that namespace.
+
+NOTE: This rule will enforce using the 'argocd' namespace. If you wish to use another namespace and still want to enforce this rule, disable this rule in your dashboard and create a custom rule for your namespace.
+
+**Targeted objects by this rule (types of kind):** AppProject / Application
+
+**Complexity:** **easy** (<Complexity/>)
+
+**Policy as code identifier:** ARGO_APP_PROJECT_INCORRECT_NAMESPACE_VALUE
+
+---
+
+## This rule will fail
+
+If the `namespace` key is not set, or set to a value other than '_argocd_':
+
+```yaml
+kind: Application
+metadata:
+  namespace: myNamespace
+```
+
+```yaml
+kind: AppProject
+metadata:
+  labels:
+    app.kubernetes.io/name: argocd-cm
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Ensure Application and AppProject are part of the argocd namespace [1 occurrence]
+💡 Incorrect value for property `namespace` - Application and AppProject have to be installed on the argocd namespace
+```
+
+---
+
+## How to fix this failure
+
+Set the `namespace` key with a value of '_argocd_':
+
+```yaml
+kind: Application
+metadata:
+  namespace: argocd
+```
+
+---
+
+## Read more
+
+- [**Block87 - Argo CD Namespace Isolation**](https://blog.andyserver.com/2020/12/argocd-namespace-isolation/)
