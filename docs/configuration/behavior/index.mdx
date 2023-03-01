@@ -3,29 +3,21 @@ title: Behavior
 slug: /configuration/behavior
 ---
 
-## Set/change token
-
-Since your token is sensitive 🤫 and you would not want to keep it in your repository, we recommend to set/change it using the `helm upgrade` command:
-
-```terminal
-helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set datree.token=<your-token>
-```
-
-(simply replace `<your-token>` with your actual [token](https://app.datree.io/settings/token-management))
-
----
-
 ## Options
 
 The following options are available for configuring Datree's behavior:
 
 | **Option** | **Description** | **Type** |
 |---|---|---|
+| `enforce` | Block resources that fail the policy check from being applied to the cluster | boolean |
+| `clusterName` | The name of the cluster to be displayed in your dashboard | string |
+| `scanIntervalHours` | The number of hours between cluster scans | number |
 | `policy` | The name of the policy to check, e.g: "Argo" | string |
+| `existingSecret` | A Secret object containing a Datree token | Object |
+| `token` | The token used to link the CLI to your dashboard | string |
 | `verbose` | Display 'How to Fix' link for failed rules in output | boolean |
 | `output` | The format output of the policy check results: yaml, json, xml, simple, JUnit, sarif | string |
 | `noRecord` | Don’t send policy checks metadata to the dashboard | boolean |
-| `enforce` | Block resources that fail the policy check from being applied to the cluster | boolean |  
 
 ℹ️ *For the full list of configurable parameters in the Datree helm chart, click [here](https://github.com/datreeio/admission-webhook-datree#values)*
 
@@ -46,6 +38,31 @@ Create a YAML file with your desired values, then run the following command to a
 ```terminal
 helm upgrade -n datree -f newValues.yaml datree-webhook datree-webhook/datree-admission-webhook
 ```
+
+---
+
+## Set/change token
+
+Since your token is sensitive 🤫 and you would not want to keep it in your repository, we recommend to set/change it using the `helm upgrade` command. You can do this one of two ways:
+
+1. Via the `datree.token` parameter:
+```terminal
+helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set datree.token=<your-token>
+```
+Simply replace `<your-token>` with your actual [token](https://app.datree.io/settings/token-management).  
+<br />
+
+2. Via the `datree.existingSecret` parameter:
+To use this option, you will need to create a `Secret` object containing your token and apply it to your cluster. Then, run this command:
+```terminal
+helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set datree.existingSecret.name=<secret-name> --set datree.existingSecret.key=<secret-key>
+```
+Replace `<secret-name>` with the name of the secret containing your token.  
+Replace `<secret-key>` with the key within the secret that contains your token.
+
+:::info NOTE
+If both options are set, the `datree.existingSecret` will take precedence.
+:::
 
 ---
 
