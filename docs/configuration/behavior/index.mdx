@@ -5,7 +5,7 @@ slug: /configuration/behavior
 
 ## Options
 
-The following options are available for configuring Datree's behavior:
+The following options (Helm chart parameters) are available for configuring Datree's behavior:
 
 | **Option** | **Description** | **Type** |
 |---|---|---|
@@ -63,6 +63,39 @@ Replace `<secret-key>` with the key within the secret that contains your token.
 :::info NOTE
 If both options are set, the `datree.existingSecret` will take precedence.
 :::
+
+---
+
+## Custom skipping
+
+Datree can be configured to skip certain rules by using a dedicated `ConfigMap` (see examples below).  
+The `ConfigMap` is a part of the Datree Helm chart, under the parameter `datree.customSkipList`.  
+You can use it to skip a `namespace`, `kind`, `name`, or any combination of the three.  
+
+To add an entry to the `ConfigMap`:
+* Enter the resource/s you wish to skip under the `datree.customSkipList` key, in the format of *namespace;resourceKind;resourceName*.
+* You can use a regular expression for any of the aformentioned properties.
+
+**For example**, the following command will cause Datree to skip all resources of kind `ServiceAccount` in all namespaces, regardless of their name:
+```terminal
+helm upgrade -n datree datree-webhook ./charts/datree-admission-webhook --reuse-values --set datree.customSkipList[0]="(.*);ServiceAccount;(.*)" --debug
+```
+
+:::info Important
+After updating the `ConfigMap`, run `kubectl rollout restart deployment -n datree` to restart the webhook and apply your changes.
+:::
+
+#### More pattern examples
+
+The following pattern will cause Datree to skip all resources in the namespace 'myNs':
+```terminal
+"myNs;(.*);(.*)"
+```
+
+The following example will cause Datree to skip all resources in all namespaces if the resource name starts with the prefix 'appName-':
+```terminal
+"(.*);(.*);(^appName-.*)"
+```
 
 ---
 
@@ -127,45 +160,6 @@ metadata:
 `annotations` have a character limit - the key and value of an annotation cannot exceed 63 characters each.  
 For more information, see the [Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/#syntax-and-character-set)
 :::
-
----
-
-## Custom skipping
-
-Datree can be configured to skip certain rules by using a dedicated `ConfigMap` (see example below).  
-* The `ConfigMap` must be named 'webhook-scanning-filters.yaml' and must reside in the 'datree' namespace.
-* Enter the resources you wish to skip under the `data.skiplist` key, in the format of *namespace;resourceKind;resourceName*.
-* You can use a regular expression for any of the aformentioned properties.
-
-:::info Important
-After creating/changing your `ConfigMap`, run `kubectl rollout restart deployment -n datree` to restart the webhook and apply your changes.
-:::
-
-The following example will cause the webhook to skip all resources of type (kind) `ServiceAccount` in all namespaces, regardless of their name:
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: webhook-scanning-filters
-  namespace: datree
-data:
-  skiplist: |
-    - (.*);ServiceAccount;(.*)
-```
-
-The following example will skip all resources in the namespace 'myNs':
-```yaml
-data:
-  skiplist: |
-    - myNs;(.*);(.*)
-```
-
-The following example will skip all resources in all namespaces if the resource name starts with the prefix 'appName-':
-```yaml
-data:
-  skiplist: |
-    - (.*);(.*);(^appName-.*)
-```
 
 ---
 
