@@ -5,6 +5,15 @@ slug: /configuration/cluster-scan
 
 By default, Datree will scan your cluster(s) every hour, and update your dashboard accordingly.  
 
+## Scan interval
+
+You can set the scan interval to be longer than 1 hour (but not shorter). To do this, run the following command:
+```terminal
+helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set datree.scanIntervalHours=<interval>
+```
+
+Replace `<interval>` with the number of hours you'd like to have between scans.
+
 ## Policy
 
 The [policy](/built-in-rules)(set of rules) used for the scan is the same one that is used when deploying new resources into the cluster. This policy is displayed in your [dashboard](https://app.datree.io), and can be changed using the command shown [here](/configuration/behavior#options).
