@@ -13,7 +13,7 @@ The following options are available for configuring Datree's behavior:
 | `clusterName` | The name of the cluster to be displayed in your dashboard | string |
 | `scanIntervalHours` | The number of hours between cluster scans | number |
 | `policy` | The name of the policy to check, e.g: "Argo" | string |
-| `existingSecret` | A Secret object containing a Datree token | Object |
+| `existingSecret` | A reference to a `Secret` object containing a Datree token | Object |
 | `token` | The token used to link the CLI to your dashboard | string |
 | `verbose` | Display 'How to Fix' link for failed rules in output | boolean |
 | `output` | The format output of the policy check results: yaml, json, xml, simple, JUnit, sarif | string |
