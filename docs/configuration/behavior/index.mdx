@@ -5,29 +5,30 @@ slug: /configuration/behavior
 
 ## Options
 
-The following options are available for configuring Datree's behavior:
+The following options (Helm chart parameters) are available for configuring Datree's behavior:
 
-| **Option** | **Description** | **Type** |
-|---|---|---|
-| `enforce` | Block resources that fail the policy check from being applied to the cluster | boolean |
-| `clusterName` | The name of the cluster to be displayed in your dashboard | string |
-| `scanIntervalHours` | The number of hours between cluster scans | number |
-| `policy` | The name of the policy to check, e.g: "Argo" | string |
-| `existingSecret` | A reference to a `Secret` object containing a Datree token | Object |
-| `token` | The token used to link the CLI to your dashboard | string |
-| `verbose` | Display 'How to Fix' link for failed rules in output | boolean |
-| `output` | The format output of the policy check results: yaml, json, xml, simple, JUnit, sarif | string |
-| `noRecord` | Don’t send policy checks metadata to the dashboard | boolean |
+| **Option**          | **Description**                                                                      | **Type** |
+| ------------------- | ------------------------------------------------------------------------------------ | -------- |
+| `enforce`           | Block resources that fail the policy check from being applied to the cluster         | boolean  |
+| `clusterName`       | The name of the cluster to be displayed in your dashboard                            | string   |
+| `scanIntervalHours` | The number of hours between cluster scans                                            | number   |
+| `policy`            | The name of the policy to check, e.g: "Argo"                                         | string   |
+| `existingSecret`    | A reference to a `Secret` object containing a Datree token                           | Object   |
+| `token`             | The token used to link the CLI to your dashboard                                     | string   |
+| `verbose`           | Display 'How to Fix' link for failed rules in output                                 | boolean  |
+| `output`            | The format output of the policy check results: yaml, json, xml, simple, JUnit, sarif | string   |
+| `noRecord`          | Don’t send policy checks metadata to the dashboard                                   | boolean  |
 
-ℹ️ *For the full list of configurable parameters in the Datree helm chart, click [here](https://github.com/datreeio/admission-webhook-datree#values)*
-
+ℹ️ _For the full list of configurable parameters in the Datree helm chart, click [here](https://github.com/datreeio/admission-webhook-datree#values)_
 
 ### Configure options
+
 To set/change one or more options, choose one of the following methods:
 
 #### 1. Using a Helm inline command
 
 The following example will enable enforce mode and block resources that fail the policy check:
+
 ```terminal
 helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set datree.enforce="true"
 ```
@@ -35,6 +36,7 @@ helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --
 #### 2. Using a new Helm values file
 
 Create a YAML file with your desired values, then run the following command to apply it:
+
 ```terminal
 helm upgrade -n datree -f newValues.yaml datree-webhook datree-webhook/datree-admission-webhook
 ```
@@ -46,17 +48,22 @@ helm upgrade -n datree -f newValues.yaml datree-webhook datree-webhook/datree-ad
 Since your token is sensitive 🤫 and you would not want to keep it in your repository, we recommend to set/change it using the `helm upgrade` command. You can do this one of two ways:
 
 1. Via the `datree.token` parameter:
+
 ```terminal
 helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set datree.token=<your-token>
 ```
-Simply replace `<your-token>` with your actual [token](https://app.datree.io/settings/token-management).  
+
+Simply replace `<your-token>` with your actual [token](https://app.datree.io/settings/token-management).
+
 <br />
 
 2. Via the `datree.existingSecret` parameter:
-To use this option, you will need to create a `Secret` object containing your token and apply it to your cluster. Then, run this command:
+   To use this option, you will need to create a `Secret` object containing your token and apply it to your cluster. Then, run this command:
+
 ```terminal
 helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set datree.existingSecret.name=<secret-name> --set datree.existingSecret.key=<secret-key>
 ```
+
 Replace `<secret-name>` with the name of the secret containing your token.  
 Replace `<secret-key>` with the key within the secret that contains your token.
 
@@ -66,7 +73,68 @@ If both options are set, the `datree.existingSecret` will take precedence.
 
 ---
 
+## Custom skipping
+
+Datree can be configured to skip certain rules/resources by using a dedicated `ConfigMap`.  
+The `ConfigMap` is a part of the Datree Helm chart, under the parameter `datree.customSkipList`.  
+You can use it to skip a `namespace`, `kind`, `name`, or any combination of the three.
+
+To add an entry to the `ConfigMap`:
+
+**1.** In your `values.yaml` file, add the following parameter:
+
+```yaml
+datree:
+  customSkipList:
+    - "(.*);(.*):(.*)" # "namespace;kind;name"
+```
+
+Replace `(.*);(.*);(.*)` with your desired values (see examples below). You can use a regular expression for any of the aformentioned properties.
+
+**2.** Run a `helm upgrade`/`helm install` command to apply your changes:
+
+```terminal
+helm repo update
+helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook -f values.yaml --reuse-values --debug
+```
+
+**3.** After updating the `ConfigMap`, run `kubectl rollout restart deployment -n datree` to restart the webhook and apply your changes.
+
+:::info NOTE
+By default, Datree skips all resources with a name starting with `aws-node`.  
+This entry is already included in the default `values.yaml` file.
+:::
+
+### Examples
+
+The following entry will cause Datree to skip all resources in the namespace 'myNs':
+
+```yaml
+datree:
+  customSkipList:
+    - "myNs;(.*);(.*)"
+```
+
+The following entry will cause Datree to skip all resources of kind `ServiceAccount`, regardless of their namespace:
+
+```yaml
+datree:
+  customSkipList:
+    - "(.*);ServiceAccount;(.*)"
+```
+
+The following entry will cause Datree to skip all resources in all namespaces if the resource name starts with the prefix 'appName-':
+
+```yaml
+datree:
+  customSkipList:
+    - "(.*);(.*);(^appName-.*)"
+```
+
+---
+
 ## Ignore a namespace
+
 Add the label `"admission.datree/validate=skip"` to the configuration of the namespace you would like to ignore:
 
 ```terminal
@@ -83,23 +151,25 @@ kubectl label namespaces default "admission.datree/validate-"
 
 ## Skip specific rules for a single object
 
-To skip a rule for a specific object, add the following annotation to its manifest:  
+To skip a rule for a specific object, add the following annotation to its manifest:
+
 ```yaml
 datree.skip/[identifier]: [message]
 ```
 
 **identifier** - the unique rule identifier.  
-**message** - optional text to be presented in the policy check output (CLI and history tab at the dashboard).  <br/><br/>
+**message** - optional text to be presented in the policy check output (CLI and history tab at the dashboard). <br/><br/>
 
-To obtain identifiers of *built-in rules*, go to your [dashboard](https://app.datree.io/cli/policies/) and click on the 'i' icon of your desired rule:  
+To obtain identifiers of _built-in rules_, go to your [dashboard](https://app.datree.io/cli/policies/) and click on the 'i' icon of your desired rule:
 
 ![rule_i](/img/configuration/behavior/1.png)
 
-This will lead you to the documentation of the rule, where you will find the identifier:  
+This will lead you to the documentation of the rule, where you will find the identifier:
 
 ![rule_identifier_docs](/img/configuration/behavior/2.png)
 
-Identifiers of [*custom rules*](/custom-rules/custom-rules-overview) can be found in the policy.yaml file, when in Policy-as-code mode.  For example:  
+Identifiers of [_custom rules_](/custom-rules/custom-rules-overview) can be found in the policy.yaml file, when in Policy-as-code mode. For example:
+
 ```yaml
 customRules:
   - identifier: CUSTOM_WORKLOAD_INCORRECT_ENVIRONMENT_LABELS
@@ -108,7 +178,8 @@ customRules:
     schema:
 ```
 
-#### Example of a Deployment with skipped rules:  
+#### Example of a Deployment with skipped rules:
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -130,45 +201,6 @@ For more information, see the [Kubernetes docs](https://kubernetes.io/docs/conce
 
 ---
 
-## Custom skipping
-
-Datree can be configured to skip certain rules by using a dedicated `ConfigMap` (see example below).  
-* The `ConfigMap` must be named 'webhook-scanning-filters.yaml' and must reside in the 'datree' namespace.
-* Enter the resources you wish to skip under the `data.skiplist` key, in the format of *namespace;resourceKind;resourceName*.
-* You can use a regular expression for any of the aformentioned properties.
-
-:::info Important
-After creating/changing your `ConfigMap`, run `kubectl rollout restart deployment -n datree` to restart the webhook and apply your changes.
-:::
-
-The following example will cause the webhook to skip all resources of type (kind) `ServiceAccount` in all namespaces, regardless of their name:
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: webhook-scanning-filters
-  namespace: datree
-data:
-  skiplist: |
-    - (.*);ServiceAccount;(.*)
-```
-
-The following example will skip all resources in the namespace 'myNs':
-```yaml
-data:
-  skiplist: |
-    - myNs;(.*);(.*)
-```
-
-The following example will skip all resources in all namespaces if the resource name starts with the prefix 'appName-':
-```yaml
-data:
-  skiplist: |
-    - (.*);(.*);(^appName-.*)
-```
-
----
-
 ## Update
 
 To update Datree to the latest version, run the following commands:
@@ -177,6 +209,7 @@ To update Datree to the latest version, run the following commands:
 helm repo update
 helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --debug
 ```
+
 ---
 
 ## Uninstall
