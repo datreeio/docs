@@ -20,7 +20,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-image-pinned-version",
     isEnabledByDefault: true,
     pacIdentifier: "CONTAINERS_MISSING_IMAGE_VALUE_VERSION",
-    tabOwner: ["Strict", "Default", "cdk8s", "Starter"],
+    tabOwner: ["cdk8s"],
   },
   {
     id: uuid(),
@@ -61,7 +61,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-liveness-probe",
     isEnabledByDefault: true,
     pacIdentifier: "CONTAINERS_MISSING_LIVENESSPROBE_KEY",
-    tabOwner: ["Strict", "Default", "Starter"],
+    tabOwner: ["Other"],
   },
   {
     id: uuid(),
@@ -69,7 +69,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-readiness-probe",
     isEnabledByDefault: true,
     pacIdentifier: "CONTAINERS_MISSING_READINESSPROBE_KEY",
-    tabOwner: ["Strict", "Default", "Starter"],
+    tabOwner: ["Other"],
   },
   {
     id: uuid(),
@@ -77,7 +77,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-privileged-containers",
     isEnabledByDefault: true,
     pacIdentifier: "CONTAINERS_INCORRECT_PRIVILEGED_VALUE_TRUE",
-    tabOwner: ["Strict", "Default", "CIS"],
+    tabOwner: ["CIS"],
   },
   {
     id: uuid(),
@@ -93,7 +93,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-using-host-pid",
     isEnabledByDefault: false,
     pacIdentifier: "CONTAINERS_INCORRECT_HOSTPID_VALUE_TRUE",
-    tabOwner: ["Strict", "CIS"],
+    tabOwner: ["CIS"],
   },
   {
     id: uuid(),
@@ -101,7 +101,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-using-host-ipc",
     isEnabledByDefault: false,
     pacIdentifier: "CONTAINERS_INCORRECT_HOSTIPC_VALUE_TRUE",
-    tabOwner: ["Strict", "CIS"],
+    tabOwner: ["CIS"],
   },
   {
     id: uuid(),
@@ -109,7 +109,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-using-host-network",
     isEnabledByDefault: false,
     pacIdentifier: "CONTAINERS_INCORRECT_HOSTNETWORK_VALUE_TRUE",
-    tabOwner: ["Strict", "CIS"],
+    tabOwner: ["CIS"],
   },
   {
     id: uuid(),
@@ -125,7 +125,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-mounting-docker-socket",
     isEnabledByDefault: false,
     pacIdentifier: "CONTAINERS_INCORRECT_PATH_VALUE_DOCKERSOCKET",
-    tabOwner: ["Strict"],
+    tabOwner: ["Other"],
   },
   {
     id: uuid(),
@@ -133,7 +133,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-initial-probe-delay",
     isEnabledByDefault: false,
     pacIdentifier: "CONTAINERS_INCORRECT_INITIALDELAYSECONDS_VALUE",
-    tabOwner: ["Strict"],
+    tabOwner: ["Other"],
   },
   {
     id: uuid(),
@@ -141,7 +141,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-probe-frequency",
     isEnabledByDefault: false,
     pacIdentifier: "CONTAINERS_INCORRECT_PERIODSECONDS_VALUE",
-    tabOwner: ["Strict"],
+    tabOwner: ["Other"],
   },
   {
     id: uuid(),
@@ -149,7 +149,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-probe-timeout",
     isEnabledByDefault: false,
     pacIdentifier: "CONTAINERS_INCORRECT_TIMEOUTSECONDS_VALUE",
-    tabOwner: ["Strict"],
+    tabOwner: ["Other"],
   },
   {
     id: uuid(),
@@ -157,7 +157,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-probe-min-success-threshold",
     isEnabledByDefault: false,
     pacIdentifier: "CONTAINERS_INCORRECT_SUCCESSTHRESHOLD_VALUE",
-    tabOwner: ["Strict"],
+    tabOwner: ["Other"],
   },
   {
     id: uuid(),
@@ -165,7 +165,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-probe-failure-threshold",
     isEnabledByDefault: false,
     pacIdentifier: "CONTAINERS_INCORRECT_FAILURETHRESHOLD_VALUE",
-    tabOwner: ["Strict"],
+    tabOwner: ["Other"],
   },
   {
     id: uuid(),
@@ -173,7 +173,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-prestop",
     isEnabledByDefault: false,
     pacIdentifier: "CONTAINERS_MISSING_PRESTOP_KEY",
-    tabOwner: ["Strict"],
+    tabOwner: ["Other"],
   },
   {
     id: uuid(),
@@ -190,7 +190,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-labels-value-valid",
     isEnabledByDefault: true,
     pacIdentifier: "WORKLOAD_INVALID_LABELS_VALUE",
-    tabOwner: ["Strict", "Default", "cdk8s", "Starter"],
+    tabOwner: ["cdk8s"],
   },
   {
     id: uuid(),
@@ -198,7 +198,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-valid-restart-policy",
     isEnabledByDefault: true,
     pacIdentifier: "WORKLOAD_INCORRECT_RESTARTPOLICY_VALUE_ALWAYS",
-    tabOwner: ["Strict", "Default", "cdk8s", "Starter"],
+    tabOwner: ["cdk8s"],
   },
   {
     id: uuid(),
@@ -206,7 +206,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-deafult-namespce",
     isEnabledByDefault: true,
     pacIdentifier: "WORKLOAD_INCORRECT_NAMESPACE_VALUE_DEFAULT",
-    tabOwner: ["Strict", "Default", "cdk8s", "Starter", "CIS"],
+    tabOwner: ["cdk8s", "CIS"],
   },
   {
     id: uuid(),
@@ -214,7 +214,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-minimum-two-replicas",
     isEnabledByDefault: true,
     pacIdentifier: "DEPLOYMENT_INCORRECT_REPLICAS_VALUE",
-    tabOwner: ["Strict", "Default", "cdk8s", "Starter"],
+    tabOwner: ["cdk8s"],
   },
   {
     id: uuid(),
@@ -239,7 +239,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-cronjob-scheduler-valid",
     isEnabledByDefault: true,
     pacIdentifier: "CRONJOB_INVALID_SCHEDULE_VALUE",
-    tabOwner: ["Strict", "Default", "cdk8s", "Starter"],
+    tabOwner: ["cdk8s"],
   },
 
 
@@ -261,7 +261,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-cronjob-deadline",
     isEnabledByDefault: true,
     pacIdentifier: "CRONJOB_MISSING_STARTINGDEADLINESECOND_KEY",
-    tabOwner: ["Strict", "Default"],
+    tabOwner: ["Other"],
   },
   {
     id: uuid(),
@@ -269,7 +269,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-cronjob-concurrency",
     isEnabledByDefault: false,
     pacIdentifier: "CRONJOB_MISSING_CONCURRENCYPOLICY_KEY",
-    tabOwner: ["Strict", "Default"],
+    tabOwner: ["Other"],
   },
   // Networking
   {
@@ -278,7 +278,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container",
     isEnabledByDefault: true,
     pacIdentifier: "INGRESS_INCORRECT_HOST_VALUE_PERMISSIVE",
-    tabOwner: ["Strict", "cdk8s", "Default", "Starter"],
+    tabOwner: ["cdk8s"],
   },
   {
     id: uuid(),
@@ -296,7 +296,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737",
     isEnabledByDefault: false,
     pacIdentifier: "ENDPOINTSLICE_CVE2021_25373_INCORRECT_ADDRESSES_VALUE",
-    tabOwner: ["Strict"],
+    tabOwner: ["CVBE"],
   },
   {
     id: uuid(),
@@ -304,7 +304,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-container-security-vulnerability-cve-2021-25741",
     isEnabledByDefault: false,
     pacIdentifier: "INGRESS_CVE2021_25742_INCORRECT_SERVER_SNIPPET_KEY",
-    tabOwner: ["Strict"],
+    tabOwner: ["CVE"],
   },
   {
     id: uuid(),
@@ -312,7 +312,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-ingress-security-vulnerability-cve-2021-25742",
     isEnabledByDefault: false,
     pacIdentifier: "INGRESS_CVE2021_25742_INCORRECT_SERVER_SNIPPET_KEY",
-    tabOwner: ["Strict"],
+    tabOwner: ["CVE"],
   },
   {
     id: uuid(),
@@ -320,7 +320,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742",
     isEnabledByDefault: false,
     pacIdentifier: "CONFIGMAP_CVE2021_25742_INCORRECT_SNIPPET_ANNOTATIONS_VALUE",
-    tabOwner: ["Strict"],
+    tabOwner: ["CVE"],
   },
   // Deprecation
   {
@@ -329,7 +329,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-deprecated-k8s-api-116",
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.16",
-    tabOwner: ["Strict", "Default", "Deprecation"],
+    tabOwner: ["Deprecation"],
   },
   {
     id: uuid(),
@@ -337,7 +337,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-deprecated-k8s-api-117",
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.17",
-    tabOwner: ["Strict", "Default", "Deprecation"],
+    tabOwner: ["Deprecation"],
   },
   {
     id: uuid(),
@@ -345,7 +345,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-deprecated-api-119",
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.19",
-    tabOwner: ["Strict", "Deprecation"],
+    tabOwner: ["Deprecation"],
   },
   {
     id: uuid(),
@@ -353,7 +353,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-deprecated-api-121",
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.21",
-    tabOwner: ["Strict", "Deprecation"],
+    tabOwner: ["Deprecation"],
   },
   {
     id: uuid(),
@@ -361,7 +361,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-deprecated-api-122",
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.22",
-    tabOwner: ["Strict", "Deprecation"],
+    tabOwner: ["Deprecation"],
   },
   {
     id: uuid(),
@@ -369,7 +369,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-deprecated-api-123",
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.23",
-    tabOwner: ["Strict", "Deprecation"],
+    tabOwner: ["Deprecation"],
   },
   {
     id: uuid(),
@@ -377,7 +377,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-deprecated-api-124",
     isEnabledByDefault: true,
     pacIdentifier: "K8S_DEPRECATED_APIVERSION_1.24",
-    tabOwner: ["Strict", "Deprecation"],
+    tabOwner: ["Deprecation"],
   },
   // Argo
   {
@@ -386,7 +386,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure",
     isEnabledByDefault: true,
     pacIdentifier: "ARGO_WORKFLOW_INCORRECT_FAILFAST_VALUE_FALSE",
-    tabOwner: ["Strict", "Argo"],
+    tabOwner: ["Argo"],
   },
   {
     id: uuid(),
@@ -394,7 +394,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-workflow-pods-from-using-the-default-service-account",
     isEnabledByDefault: true,
     pacIdentifier: "ARGO_WORKFLOW_INCORRECT_SERVICE_ACCOUNT_NAME_VALUE_DEFAULT",
-    tabOwner: ["Strict", "Argo"],
+    tabOwner: ["Argo"],
   },
   {
     id: uuid(),
@@ -402,7 +402,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-configmap-is-recognized-by-argocd",
     isEnabledByDefault: true,
     pacIdentifier: "ARGO_CONFIGMAP_MISSING_PART_OF_LABEL_VALUE_ARGOCD",
-    tabOwner: ["Strict", "Argo"],
+    tabOwner: ["Argo"],
   },
   {
     id: uuid(),
@@ -410,7 +410,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration",
     isEnabledByDefault: true,
     pacIdentifier: "ARGO_ROLLOUT_MISSING_PAUSE_DURATION",
-    tabOwner: ["Strict", "Argo"],
+    tabOwner: ["Argo"],
   },
   {
     id: uuid(),
@@ -418,7 +418,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace",
     isEnabledByDefault: true,
     pacIdentifier: "ARGO_APP_PROJECT_INCORRECT_NAMESPACE_VALUE",
-    tabOwner: ["Strict", "Argo"],
+    tabOwner: ["Argo"],
   },
   {
     id: uuid(),
@@ -426,7 +426,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy",
     isEnabledByDefault: true,
     pacIdentifier: "ARGO_WORKFLOW_INCORRECT_RETRY_STRATEGY_VALUE_EMPTY",
-    tabOwner: ["Strict", "Argo"],
+    tabOwner: ["Argo"],
   },
   {
     id: uuid(),
@@ -434,7 +434,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-rollout-has-revision-history-set",
     isEnabledByDefault: true,
     pacIdentifier: "ARGO_WORKFLOW_INCORRECT_REVISION_HISTORY_LIMIT_VALUE_0",
-    tabOwner: ["Strict", "Argo"],
+    tabOwner: ["Argo"],
   },
   {
     id: uuid(),
@@ -442,7 +442,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes",
     isEnabledByDefault: true,
     pacIdentifier: "ARGO_ROLLOUT_INCORRECT_SCALE_DOWN_DELAY_VALUE_BELOW_30",
-    tabOwner: ["Strict", "Argo"],
+    tabOwner: ["Argo"],
   },
   {
     id: uuid(),
@@ -450,7 +450,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset",
     isEnabledByDefault: true,
     pacIdentifier: "ARGO_ROLLOUT_INCORRECT_PROGRESS_DEADLINE_ABORT_VALUE_FALSE",
-    tabOwner: ["Strict", "Argo"],
+    tabOwner: ["Argo"],
   },
   {
     id: uuid(),
@@ -458,7 +458,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only",
     isEnabledByDefault: true,
     pacIdentifier: "ARGO_WORKFLOW_ENSURE_RETRY_ON_BOTH_ERROR_AND_TRANSIENT_ERROR",
-    tabOwner: ["Strict", "Argo"],
+    tabOwner: ["Argo"],
   },
   // NSA
   {
@@ -685,7 +685,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-resource-name",
     isEnabledByDefault: true,
     pacIdentifier: "RESOURCE_MISSING_NAME",
-    tabOwner: ["Strict", "Default", "cdk8s"],
+    tabOwner: ["cdk8s"],
   },
   {
     id: uuid(),
@@ -693,7 +693,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-hpa-minimum-replicas",
     isEnabledByDefault: true,
     pacIdentifier: "HPA_MISSING_MINREPLICAS_KEY",
-    tabOwner: ["Strict", "Default"],
+    tabOwner: ["Other"],
   },
   {
     id: uuid(),
@@ -701,7 +701,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-hpa-maximum-replicas",
     isEnabledByDefault: false,
     pacIdentifier: "HPA_MISSING_MAXREPLICAS_KEY",
-    tabOwner: ["Strict"],
+    tabOwner: ["Other"],
   },
   {
     id: uuid(),
@@ -709,7 +709,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-naked-pods",
     isEnabledByDefault: false,
     pacIdentifier: "K8S_INCORRECT_KIND_VALUE_POD",
-    tabOwner: ["Strict", "cdk8s"],
+    tabOwner: ["cdk8s"],
   },
   {
     id: uuid(),
@@ -798,7 +798,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-cluster-admin-role",
     isEnabledByDefault: false,
     pacIdentifier: "CIS_INVALID_ROLE_CLUSTER_ADMIN",
-    tabOwner: ["Strict", "CIS"],
+    tabOwner: ["CIS"],
   },
   {
     id: uuid(),
@@ -806,7 +806,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-access-to-secrets",
     isEnabledByDefault: false,
     pacIdentifier: "CIS_INVALID_VERB_SECRETS",
-    tabOwner: ["Strict", "CIS"],
+    tabOwner: ["CIS"],
   },
   {
     id: uuid(),
@@ -814,7 +814,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-wildcards-role-clusterrole",
     isEnabledByDefault: false,
     pacIdentifier: "CIS_INVALID_WILDCARD_ROLE",
-    tabOwner: ["Strict", "CIS"],
+    tabOwner: ["CIS"],
   },
   {
     id: uuid(),
@@ -822,7 +822,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-secrets-as-env-variables",
     isEnabledByDefault: false,
     pacIdentifier: "CIS_INVALID_KEY_SECRETKEYREF_SECRETREF",
-    tabOwner: ["Strict", "CIS"],
+    tabOwner: ["CIS"],
   },
   {
     id: uuid(),
@@ -830,7 +830,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-seccomp-profile-default",
     isEnabledByDefault: false,
     pacIdentifier: "CIS_INVALID_VALUE_SECCOMP_PROFILE",
-    tabOwner: ["Strict", "CIS"],
+    tabOwner: ["CIS"],
   },
   {
     id: uuid(),
@@ -838,7 +838,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-containers-pods-security-context",
     isEnabledByDefault: false,
     pacIdentifier: "CIS_MISSING_KEY_SECURITYCONTEXT",
-    tabOwner: ["Strict", "CIS"],
+    tabOwner: ["CIS"],
   },
   {
     id: uuid(),
@@ -846,7 +846,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-access-create-pods",
     isEnabledByDefault: false,
     pacIdentifier: "CIS_INVALID_VALUE_CREATE_POD",
-    tabOwner: ["Strict", "CIS"],
+    tabOwner: ["CIS"],
   },
   {
     id: uuid(),
@@ -854,7 +854,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-default-service-account-not-used",
     isEnabledByDefault: false,
     pacIdentifier: "CIS_INVALID_VALUE_AUTOMOUNTSERVICEACCOUNTTOKEN",
-    tabOwner: ["Strict", "CIS"],
+    tabOwner: ["CIS"],
   },
   {
     id: uuid(),
@@ -862,7 +862,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-containers-net-raw-capability",
     isEnabledByDefault: false,
     pacIdentifier: "CIS_MISSING_VALUE_DROP_NET_RAW",
-    tabOwner: ["Strict", "CIS"],
+    tabOwner: ["CIS"],
   },
   {
     id: uuid(),
@@ -870,7 +870,7 @@ export const navItems = [
     slug: "/built-in-rules/prevent-system-masters-group",
     isEnabledByDefault: false,
     pacIdentifier: "CIS_INVALID_VALUE_SYSTEM_MASTERS",
-    tabOwner: ["Strict", "CIS"],
+    tabOwner: ["CIS"],
   },
   {
     id: uuid(),
@@ -878,6 +878,6 @@ export const navItems = [
     slug: "/built-in-rules/prevent-role-privilege-escalation",
     isEnabledByDefault: false,
     pacIdentifier: "CIS_INVALID_VALUE_BIND_IMPERSONATE_ESCALATE",
-    tabOwner: ["Strict", "CIS"],
+    tabOwner: ["CIS"],
   },
 ];
