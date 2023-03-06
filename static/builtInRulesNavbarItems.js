@@ -4,13 +4,27 @@ export const tabsItems = [
   { value: "Default", label: "Default" },
   { value: "Argo", label: "Argo" },
   { value: "cdk8s", label: "cdk8s" },
-  { value: "Strict", label: "Strict"},
-  { value: "NSA", label: "NSA"},
-  { value: "Secrets", label: "Secrets"},
+  { value: "Strict", label: "Strict" },
+  { value: "NSA", label: "NSA" },
+  { value: "Secrets", label: "Secrets" },
   { value: "Starter", label: "Starter" },
-  { value: "EKS", label: "EKS"},
-  { value: "Deprecation", label: "Deprecation"},
-  { value: "CIS", label: "CIS"},
+  { value: "EKS", label: "EKS" },
+  { value: "Deprecation", label: "Deprecation" },
+  { value: "CIS", label: "CIS" },
+];
+
+export const ruleCategories = [
+  { title: "NSA", image: "/img/built-in-rules/NSA.png" },
+  { title: "CIS", image: "/img/built-in-rules/CIS.png" },
+  { title: "EKS", image: "/img/built-in-rules/EKS.png" },
+  { title: "Argo", image: "/img/built-in-rules/Argo.png" },
+  { title: "cdk8s", image: "/img/built-in-rules/cdk8s.png" },
+  { title: "Best practices", image: "/img/built-in-rules/bestPractices.png" },
+  { title: "CVE", image: "/img/built-in-rules/CVE.png" },
+  { title: "Deprecation", image: "/img/built-in-rules/Deprecation.png" },
+  { title: "Secrets", image: "/img/built-in-rules/Secrets.png" },
+  { title: "Resources", image: "/img/built-in-rules/Resources.png" },
+  { title: "Other", image: "/img/built-in-rules/Other.png" },
 ];
 
 export const navItems = [
@@ -153,7 +167,8 @@ export const navItems = [
   },
   {
     id: uuid(),
-    title: "Ensure each container probe has a configured minimum success threshold",
+    title:
+      "Ensure each container probe has a configured minimum success threshold",
     slug: "/built-in-rules/ensure-probe-min-success-threshold",
     isEnabledByDefault: false,
     pacIdentifier: "CONTAINERS_INCORRECT_SUCCESSTHRESHOLD_VALUE",
@@ -242,18 +257,7 @@ export const navItems = [
     tabOwner: ["Strict", "Default", "cdk8s", "Starter"],
   },
 
-
-
-
-////////////////////
-
-
-
-
-
-
-
-
+  ////////////////////
 
   {
     id: uuid(),
@@ -319,7 +323,8 @@ export const navItems = [
     title: "Prevent ConfigMap security vulnerability (CVE-2021-25742)",
     slug: "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742",
     isEnabledByDefault: false,
-    pacIdentifier: "CONFIGMAP_CVE2021_25742_INCORRECT_SNIPPET_ANNOTATIONS_VALUE",
+    pacIdentifier:
+      "CONFIGMAP_CVE2021_25742_INCORRECT_SNIPPET_ANNOTATIONS_VALUE",
     tabOwner: ["Strict"],
   },
   // Deprecation
@@ -457,7 +462,8 @@ export const navItems = [
     title: "Ensure Workflow retry policy catches relevant errors only",
     slug: "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only",
     isEnabledByDefault: true,
-    pacIdentifier: "ARGO_WORKFLOW_ENSURE_RETRY_ON_BOTH_ERROR_AND_TRANSIENT_ERROR",
+    pacIdentifier:
+      "ARGO_WORKFLOW_ENSURE_RETRY_ON_BOTH_ERROR_AND_TRANSIENT_ERROR",
     tabOwner: ["Strict", "Argo"],
   },
   // NSA
@@ -753,7 +759,8 @@ export const navItems = [
   },
   {
     id: uuid(),
-    title: "Prevent Windows containers from running with unnecessary privileges",
+    title:
+      "Prevent Windows containers from running with unnecessary privileges",
     slug: "/built-in-rules/prevent-windows-containers-unnecessary-privileges",
     isEnabledByDefault: false,
     pacIdentifier: "EKS_INVALID_HOSTPROCESS_VALUE",
@@ -761,7 +768,8 @@ export const navItems = [
   },
   {
     id: uuid(),
-    title: "Prevent SELinux containers from running with unnecessary privileges",
+    title:
+      "Prevent SELinux containers from running with unnecessary privileges",
     slug: "/built-in-rules/prevent-selinux-containers-unnecessary-privileges",
     isEnabledByDefault: false,
     pacIdentifier: "EKS_INVALID_SELINUXOPTIONS_TYPE_VALUE",
