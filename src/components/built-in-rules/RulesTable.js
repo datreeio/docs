@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -6,7 +6,6 @@ import ListItemText from "@mui/material/ListItemText";
 import Link from "@mui/material/Link";
 import {
   navItems,
-  tabsItems,
   ruleCategories,
 } from "../../../static/builtInRulesNavbarItems";
 import { Button, Divider, Typography } from "@mui/material";
@@ -66,9 +65,7 @@ const CustomTabs = () => {
               })}
             </Grid>
             <br />
-            <Typography align="left" fontSize="h5.fontSize" fontWeight="medium">
-              The following rules are enabled in policy <b>{selectedTab}</b>:
-            </Typography>
+            <b style={{ fontSize: 20 }}>Rules:</b>
             <List>
               {filteredNavItems.map((item, index) => (
                 <div key={index}>

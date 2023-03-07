@@ -1,18 +1,16 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Card from "@mui/material/Card";
-import Divider from "@mui/material/Divider";
-import Link from "@mui/material/Link";
 import CardMedia from "@mui/material/CardMedia";
 import CardHeader from "@mui/material/CardHeader";
 import Box from "@mui/material/Box";
-import { Checkbox } from "@mui/material";
 
 const Category = ({ title, image, handleOnClick, isSelected }) => {
   return (
     <StyledCard
       sx={{
         maxWidth: 120,
+        maxHeight: 80,
         border: 0.5,
         boxShadow: 5,
         borderRadius: 6,
@@ -33,19 +31,17 @@ const Category = ({ title, image, handleOnClick, isSelected }) => {
           className="not-zoomable"
         />
       </Box>
-      {/* <Divider variant="middle" light /> */}
       <StyledCardHeader
         style={{ margin: "0.5rem", padding: 0 }}
         title={title}
         align="center"
         titleTypographyProps={{
           fontWeight: "light",
-          fontSize: 16,
+          fontSize: 15,
           noWrap: true,
         }}
       />
     </StyledCard>
-    // </Link>
   );
 };
 

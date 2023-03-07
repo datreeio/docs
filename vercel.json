@@ -1,444 +1,449 @@
 {
-    "redirects": [
-      { 
-        "source": "/view-source",
-        "destination": "https://github.com/vercel/vercel", 
-        "permanent": true
-      },
-      {
-        "source": "/getting-started",
-        "destination": "/", 
-        "permanent": true
-      },
-      {
-        "source": "/welcome/what-is-datree",
-        "destination": "/", 
-        "permanent": true
-      },
-      {
-        "source": "/centralized-policy",
-        "destination": "/setup/centralized-policy", 
-        "permanent": true
-      },
-      {
-        "source": "/schema-validation",
-        "destination": "/setup/schema-validation", 
-        "permanent": true
-      },
-      {
-        "source": "/policy-as-code",
-        "destination": "/setup/policy-as-code", 
-        "permanent": true
-      },
-      {
-        "source": "/cli-output",
-        "destination": "/setup/cli-output", 
-        "permanent": true
-      },
-      {
-        "source": "/cli-arguments",
-        "destination": "/setup/cli-arguments", 
-        "permanent": true
-      },
-      {
-        "source": "/history",
-        "destination": "/setup/history", 
-        "permanent": true
-      },
-      {
-        "source": "/account-token",
-        "destination": "/setup/account-token", 
-        "permanent": true
-      },
-      {
-        "source": "/setup/policy-customization",
-        "destination": "/setup/behavior", 
-        "permanent": true
-      },
-      {
-        "source": "/setup/overview",
-        "destination": "/configuration/overview", 
-        "permanent": true
-      },
-      {
-        "source": "/setup/behavior",
-        "destination": "/configuration/behavior", 
-        "permanent": true
-      },
-      {
-        "source": "/setup/output",
-        "destination": "/configuration/output", 
-        "permanent": true
-      },
-      {
-        "source": "/setup/centralized-policy",
-        "destination": "/dashboard/centralized-policy", 
-        "permanent": true
-      },
-      {
-        "source": "/dashboard/drilldown",
-        "destination": "/dashboard/repairing", 
-        "permanent": true
-      },
-      {
-        "source": "/setup/history",
-        "destination": "/dashboard/history", 
-        "permanent": true
-      },
-      {
-        "source": "/setup/account-token",
-        "destination": "/dashboard/account-token", 
-        "permanent": true
-      },
-      {
-        "source": "/setup/policy-as-code",
-        "destination": "/dashboard/policy-as-code", 
-        "permanent": true
-      },
-      {
-        "source": "/setup/user-management",
-        "destination": "/dashboard/user-management", 
-        "permanent": true
-      },
-      {
-        "source": "/setup/schema-validation",
-        "destination": "/cli/schema-validation", 
-        "permanent": true
-      },
-      {
-        "source": "/setup/cli-output",
-        "destination": "/cli/cli-output", 
-        "permanent": true
-      },
-      {
-        "source": "/setup/cli-arguments",
-        "destination": "/cli/cli-arguments", 
-        "permanent": true
-      },
-      {
-        "source": "/setup/offline-mode",
-        "destination": "/cli/offline-mode", 
-        "permanent": true
-      },
-      {
-        "source": "/setup/integration-guide",
-        "destination": "/guides/integration-guide", 
-        "permanent": true
-      },
-      {
-        "source": "/custom-rules-overview",
-        "destination": "/custom-rules/custom-rules-overview", 
-        "permanent": true
-      },
-      {
-        "source": "/helm-plugin",
-        "destination": "https://github.com/datreeio/helm-datree",
-        "permanent": true
-      },
-      {
-        "source": "/kustomize-support",
-        "destination": "/integrations/kustomize-support",
-        "permanent": true
-      },
-      {
-        "source": "/git-hooks",
-        "destination": "/integrations/git-hooks",
-        "permanent": true
-      },
-      {
-        "source": "/pre-commit-hook",
-        "destination": "/integrations/pre-commit-hook",
-        "permanent": true
-      },
-      {
-        "source": "/community-integrations",
-        "destination": "/integrations",
-        "permanent": true
-      },
-      {
-        "source": "/faq",
-        "destination": "/data-privacy",
-        "permanent": true
-      },
-      {
-        "source": "/containers",
-        "destination": "/built-in-rules#containers",
-        "permanent": true
-      },
-      {
-        "source": "/built-in-rules/containers",
-        "destination": "/built-in-rules#containers",
-        "permanent": true
-      },
-      {
-        "source": "/built-in-rules/workload",
-        "destination": "/built-in-rules#workload",
-        "permanent": true
-      },
-      {
-        "source": "/built-in-rules/cronjob",
-        "destination": "/built-in-rules#cronjob",
-        "permanent": true
-      },
-      {
-        "source": "/built-in-rules/networking",
-        "destination": "/built-in-rules#networking",
-        "permanent": true
-      },
-      {
-        "source": "/built-in-rules/security",
-        "destination": "/built-in-rules#security",
-        "permanent": true
-      },
-      {
-        "source": "/built-in-rules/deprecation",
-        "destination": "/built-in-rules#deprecation",
-        "permanent": true
-      },
-      {
-        "source": "/built-in-rules/argo",
-        "destination": "/built-in-rules#argo",
-        "permanent": true
-      },
-      {
-        "source": "/argo",
-        "destination": "/built-in-rules#argo",
-        "permanent": true
-      },
-      {
-        "source": "/built-in-rules/nsa",
-        "destination": "/built-in-rules#NSA",
-        "permanent": true
-      },
-      {
-        "source": "/built-in-rules/other",
-        "destination": "/built-in-rules#other",
-        "permanent": true
-      },
-      {
-        "source": "/ensure-image-pinned-version",
-        "destination": "/built-in-rules/ensure-image-pinned-version", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-memory-request",
-        "destination": "/built-in-rules/ensure-memory-request", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-cpu-request",
-        "destination": "/built-in-rules/ensure-cpu-request", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-memory-limit",
-        "destination": "/built-in-rules/ensure-memory-limit", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-cpu-limit",
-        "destination": "/built-in-rules/ensure-cpu-limit", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-liveness-probe",
-        "destination": "/built-in-rules/ensure-liveness-probe", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-readiness-probe",
-        "destination": "/built-in-rules/ensure-readiness-probe", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-privileged-containers",
-        "destination": "/built-in-rules/prevent-privileged-containers", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-digest-tag",
-        "destination": "/built-in-rules/ensure-digest-tag", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-using-host-pid",
-        "destination": "/built-in-rules/prevent-using-host-pid", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-using-host-ipc",
-        "destination": "/built-in-rules/prevent-using-host-ipc", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-using-host-network",
-        "destination": "/built-in-rules/prevent-using-host-network", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-uid-conflicts",
-        "destination": "/built-in-rules/prevent-uid-conflicts", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-mounting-docker-socket",
-        "destination": "/built-in-rules/prevent-mounting-docker-socket", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-labels-value-valid",
-        "destination": "/built-in-rules/ensure-labels-value-valid", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-valid-restart-policy",
-        "destination": "/built-in-rules/ensure-valid-restart-policy", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-deafult-namespce",
-        "destination": "/built-in-rules/prevent-deafult-namespce", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-minimum-two-replicas",
-        "destination": "/built-in-rules/ensure-minimum-two-replicas", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-owner-label",
-        "destination": "/built-in-rules/ensure-owner-label", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-env-label",
-        "destination": "/built-in-rules/ensure-env-label", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-cronjob-scheduler-valid",
-        "destination": "/built-in-rules/ensure-cronjob-scheduler-valid", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-cronjob-deadline",
-        "destination": "/built-in-rules/ensure-cronjob-deadline", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-cronjob-concurrency",
-        "destination": "/built-in-rules/prevent-cronjob-concurrency", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-ingress-forwarding-traffic-to-single-container",
-        "destination": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-node-port",
-        "destination": "/built-in-rules/prevent-node-port", 
-        "permanent": true
-      },
-      {
-        "source": "/-prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737",
-        "destination": "/built-in-rules/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737", 
-        "permanent": true
-      },
-      {
-        "source": "/-prevent-container-security-vulnerability-cve-2021-25741",
-        "destination": "/built-in-rules/prevent-container-security-vulnerability-cve-2021-25741", 
-        "permanent": true
-      },
-      {
-        "source": "/-prevent-ingress-security-vulnerability-cve-2021-25742",
-        "destination": "/built-in-rules/prevent-ingress-security-vulnerability-cve-2021-25742", 
-        "permanent": true
-      },
-      {
-        "source": "/-prevent-configmap-security-vulnerability-cve-2021-25742",
-        "destination": "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-deprecated-k8s-api-116",
-        "destination": "/built-in-rules/prevent-deprecated-k8s-api-116", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-deprecated-k8s-api-117",
-        "destination": "/built-in-rules/prevent-deprecated-k8s-api-117", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-workflow-dag-fail-fast-on-node-failure",
-        "destination": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure", 
-        "permanent": true
-      },
-      {
-        "source": "/-prevent-workflow-pods-from-using-the-default-service-account",
-        "destination": "/built-in-rules/prevent-workflow-pods-from-using-the-default-service-account", 
-        "permanent": true
-      },
-      {
-        "source": "/-ensure-configmap-is-recognized-by-argocd",
-        "destination": "/built-in-rules/ensure-configmap-is-recognized-by-argocd", 
-        "permanent": true
-      },
-      {
-        "source": "/-ensure-rollout-pause-step-has-a-configured-duration",
-        "destination": "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration", 
-        "permanent": true
-      },
-      {
-        "source": "/-ensure-application-and-appproject-are-part-of-the-argocd-namespace",
-        "destination": "/built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace", 
-        "permanent": true
-      },
-      {
-        "source": "/-prevent-workflow-from-having-an-empty-retry-strategy",
-        "destination": "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy", 
-        "permanent": true
-      },
-      {
-        "source": "/-ensure-rollout-has-revision-history-set",
-        "destination": "/built-in-rules/ensure-rollout-has-revision-history-set", 
-        "permanent": true
-      },
-      {
-        "source": "/-ensure-rollout-allows-broadcasting-ip-table-changes",
-        "destination": "/built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes", 
-        "permanent": true
-      },
-      {
-        "source": "/-ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset",
-        "destination": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset", 
-        "permanent": true
-      },
-      {
-        "source": "/-ensure-workflow-retry-policy-catches-relevant-errors-only",
-        "destination": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-hpa-minimum-replicas",
-        "destination": "/built-in-rules/ensure-hpa-minimum-replicas", 
-        "permanent": true
-      },
-      {
-        "source": "/ensure-hpa-maximum-replicas",
-        "destination": "/built-in-rules/ensure-hpa-maximum-replicas", 
-        "permanent": true
-      },
-      {
-        "source": "/prevent-naked-pods",
-        "destination": "/built-in-rules/prevent-naked-pods", 
-        "permanent": true
-      },
-      {
-        "source": "/guides/eks-addon",
-        "destination": "/", 
-        "permanent": true
-      }
-    ]
-  }
+  "redirects": [
+    {
+      "source": "/view-source",
+      "destination": "https://github.com/vercel/vercel",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/welcome/what-is-datree",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/centralized-policy",
+      "destination": "/setup/centralized-policy",
+      "permanent": true
+    },
+    {
+      "source": "/schema-validation",
+      "destination": "/setup/schema-validation",
+      "permanent": true
+    },
+    {
+      "source": "/policy-as-code",
+      "destination": "/setup/policy-as-code",
+      "permanent": true
+    },
+    {
+      "source": "/cli-output",
+      "destination": "/setup/cli-output",
+      "permanent": true
+    },
+    {
+      "source": "/cli-arguments",
+      "destination": "/setup/cli-arguments",
+      "permanent": true
+    },
+    {
+      "source": "/history",
+      "destination": "/setup/history",
+      "permanent": true
+    },
+    {
+      "source": "/account-token",
+      "destination": "/setup/account-token",
+      "permanent": true
+    },
+    {
+      "source": "/setup/policy-customization",
+      "destination": "/setup/behavior",
+      "permanent": true
+    },
+    {
+      "source": "/setup/overview",
+      "destination": "/configuration/overview",
+      "permanent": true
+    },
+    {
+      "source": "/setup/behavior",
+      "destination": "/configuration/behavior",
+      "permanent": true
+    },
+    {
+      "source": "/setup/output",
+      "destination": "/configuration/output",
+      "permanent": true
+    },
+    {
+      "source": "/setup/centralized-policy",
+      "destination": "/dashboard/centralized-policy",
+      "permanent": true
+    },
+    {
+      "source": "/dashboard/drilldown",
+      "destination": "/dashboard/repairing",
+      "permanent": true
+    },
+    {
+      "source": "/setup/history",
+      "destination": "/dashboard/history",
+      "permanent": true
+    },
+    {
+      "source": "/setup/account-token",
+      "destination": "/dashboard/account-token",
+      "permanent": true
+    },
+    {
+      "source": "/setup/policy-as-code",
+      "destination": "/dashboard/policy-as-code",
+      "permanent": true
+    },
+    {
+      "source": "/setup/user-management",
+      "destination": "/dashboard/user-management",
+      "permanent": true
+    },
+    {
+      "source": "/setup/schema-validation",
+      "destination": "/cli/schema-validation",
+      "permanent": true
+    },
+    {
+      "source": "/setup/cli-output",
+      "destination": "/cli/cli-output",
+      "permanent": true
+    },
+    {
+      "source": "/setup/cli-arguments",
+      "destination": "/cli/cli-arguments",
+      "permanent": true
+    },
+    {
+      "source": "/setup/offline-mode",
+      "destination": "/cli/offline-mode",
+      "permanent": true
+    },
+    {
+      "source": "/setup/integration-guide",
+      "destination": "/guides/integration-guide",
+      "permanent": true
+    },
+    {
+      "source": "/custom-rules-overview",
+      "destination": "/custom-rules/custom-rules-overview",
+      "permanent": true
+    },
+    {
+      "source": "/helm-plugin",
+      "destination": "https://github.com/datreeio/helm-datree",
+      "permanent": true
+    },
+    {
+      "source": "/kustomize-support",
+      "destination": "/integrations/kustomize-support",
+      "permanent": true
+    },
+    {
+      "source": "/git-hooks",
+      "destination": "/integrations/git-hooks",
+      "permanent": true
+    },
+    {
+      "source": "/pre-commit-hook",
+      "destination": "/integrations/pre-commit-hook",
+      "permanent": true
+    },
+    {
+      "source": "/community-integrations",
+      "destination": "/integrations",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/data-privacy",
+      "permanent": true
+    },
+    {
+      "source": "/containers",
+      "destination": "/built-in-rules#containers",
+      "permanent": true
+    },
+    {
+      "source": "/built-in-rules/rules",
+      "destination": "/built-in-rules",
+      "permanent": true
+    },
+    {
+      "source": "/built-in-rules/containers",
+      "destination": "/built-in-rules#containers",
+      "permanent": true
+    },
+    {
+      "source": "/built-in-rules/workload",
+      "destination": "/built-in-rules#workload",
+      "permanent": true
+    },
+    {
+      "source": "/built-in-rules/cronjob",
+      "destination": "/built-in-rules#cronjob",
+      "permanent": true
+    },
+    {
+      "source": "/built-in-rules/networking",
+      "destination": "/built-in-rules#networking",
+      "permanent": true
+    },
+    {
+      "source": "/built-in-rules/security",
+      "destination": "/built-in-rules#security",
+      "permanent": true
+    },
+    {
+      "source": "/built-in-rules/deprecation",
+      "destination": "/built-in-rules#deprecation",
+      "permanent": true
+    },
+    {
+      "source": "/built-in-rules/argo",
+      "destination": "/built-in-rules#argo",
+      "permanent": true
+    },
+    {
+      "source": "/argo",
+      "destination": "/built-in-rules#argo",
+      "permanent": true
+    },
+    {
+      "source": "/built-in-rules/nsa",
+      "destination": "/built-in-rules#NSA",
+      "permanent": true
+    },
+    {
+      "source": "/built-in-rules/other",
+      "destination": "/built-in-rules#other",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-image-pinned-version",
+      "destination": "/built-in-rules/ensure-image-pinned-version",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-memory-request",
+      "destination": "/built-in-rules/ensure-memory-request",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-cpu-request",
+      "destination": "/built-in-rules/ensure-cpu-request",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-memory-limit",
+      "destination": "/built-in-rules/ensure-memory-limit",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-cpu-limit",
+      "destination": "/built-in-rules/ensure-cpu-limit",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-liveness-probe",
+      "destination": "/built-in-rules/ensure-liveness-probe",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-readiness-probe",
+      "destination": "/built-in-rules/ensure-readiness-probe",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-privileged-containers",
+      "destination": "/built-in-rules/prevent-privileged-containers",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-digest-tag",
+      "destination": "/built-in-rules/ensure-digest-tag",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-using-host-pid",
+      "destination": "/built-in-rules/prevent-using-host-pid",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-using-host-ipc",
+      "destination": "/built-in-rules/prevent-using-host-ipc",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-using-host-network",
+      "destination": "/built-in-rules/prevent-using-host-network",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-uid-conflicts",
+      "destination": "/built-in-rules/prevent-uid-conflicts",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-mounting-docker-socket",
+      "destination": "/built-in-rules/prevent-mounting-docker-socket",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-labels-value-valid",
+      "destination": "/built-in-rules/ensure-labels-value-valid",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-valid-restart-policy",
+      "destination": "/built-in-rules/ensure-valid-restart-policy",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-deafult-namespce",
+      "destination": "/built-in-rules/prevent-deafult-namespce",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-minimum-two-replicas",
+      "destination": "/built-in-rules/ensure-minimum-two-replicas",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-owner-label",
+      "destination": "/built-in-rules/ensure-owner-label",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-env-label",
+      "destination": "/built-in-rules/ensure-env-label",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-cronjob-scheduler-valid",
+      "destination": "/built-in-rules/ensure-cronjob-scheduler-valid",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-cronjob-deadline",
+      "destination": "/built-in-rules/ensure-cronjob-deadline",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-cronjob-concurrency",
+      "destination": "/built-in-rules/prevent-cronjob-concurrency",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-ingress-forwarding-traffic-to-single-container",
+      "destination": "/built-in-rules/prevent-ingress-forwarding-traffic-to-single-container",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-node-port",
+      "destination": "/built-in-rules/prevent-node-port",
+      "permanent": true
+    },
+    {
+      "source": "/-prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737",
+      "destination": "/built-in-rules/prevent-endpointslice-validation-from-enabling-host-network-hijack-cve-2021-25737",
+      "permanent": true
+    },
+    {
+      "source": "/-prevent-container-security-vulnerability-cve-2021-25741",
+      "destination": "/built-in-rules/prevent-container-security-vulnerability-cve-2021-25741",
+      "permanent": true
+    },
+    {
+      "source": "/-prevent-ingress-security-vulnerability-cve-2021-25742",
+      "destination": "/built-in-rules/prevent-ingress-security-vulnerability-cve-2021-25742",
+      "permanent": true
+    },
+    {
+      "source": "/-prevent-configmap-security-vulnerability-cve-2021-25742",
+      "destination": "/built-in-rules/prevent-configmap-security-vulnerability-cve-2021-25742",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-deprecated-k8s-api-116",
+      "destination": "/built-in-rules/prevent-deprecated-k8s-api-116",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-deprecated-k8s-api-117",
+      "destination": "/built-in-rules/prevent-deprecated-k8s-api-117",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-workflow-dag-fail-fast-on-node-failure",
+      "destination": "/built-in-rules/ensure-workflow-dag-fail-fast-on-node-failure",
+      "permanent": true
+    },
+    {
+      "source": "/-prevent-workflow-pods-from-using-the-default-service-account",
+      "destination": "/built-in-rules/prevent-workflow-pods-from-using-the-default-service-account",
+      "permanent": true
+    },
+    {
+      "source": "/-ensure-configmap-is-recognized-by-argocd",
+      "destination": "/built-in-rules/ensure-configmap-is-recognized-by-argocd",
+      "permanent": true
+    },
+    {
+      "source": "/-ensure-rollout-pause-step-has-a-configured-duration",
+      "destination": "/built-in-rules/ensure-rollout-pause-step-has-a-configured-duration",
+      "permanent": true
+    },
+    {
+      "source": "/-ensure-application-and-appproject-are-part-of-the-argocd-namespace",
+      "destination": "/built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace",
+      "permanent": true
+    },
+    {
+      "source": "/-prevent-workflow-from-having-an-empty-retry-strategy",
+      "destination": "/built-in-rules/prevent-workflow-from-having-an-empty-retry-strategy",
+      "permanent": true
+    },
+    {
+      "source": "/-ensure-rollout-has-revision-history-set",
+      "destination": "/built-in-rules/ensure-rollout-has-revision-history-set",
+      "permanent": true
+    },
+    {
+      "source": "/-ensure-rollout-allows-broadcasting-ip-table-changes",
+      "destination": "/built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes",
+      "permanent": true
+    },
+    {
+      "source": "/-ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset",
+      "destination": "/built-in-rules/ensure-rollout-that-is-marked-as-degraded-scales-down-replicaset",
+      "permanent": true
+    },
+    {
+      "source": "/-ensure-workflow-retry-policy-catches-relevant-errors-only",
+      "destination": "/built-in-rules/ensure-workflow-retry-policy-catches-relevant-errors-only",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-hpa-minimum-replicas",
+      "destination": "/built-in-rules/ensure-hpa-minimum-replicas",
+      "permanent": true
+    },
+    {
+      "source": "/ensure-hpa-maximum-replicas",
+      "destination": "/built-in-rules/ensure-hpa-maximum-replicas",
+      "permanent": true
+    },
+    {
+      "source": "/prevent-naked-pods",
+      "destination": "/built-in-rules/prevent-naked-pods",
+      "permanent": true
+    },
+    {
+      "source": "/guides/eks-addon",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
