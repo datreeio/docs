@@ -62,7 +62,6 @@ const sidebars = {
         id: "built-in-rules/index",
       },
       items: [
-        "built-in-rules/rules/index",
         "built-in-rules/prevent-deprecated-k8s-api-116/index",
         "built-in-rules/prevent-deprecated-k8s-api-117/index",
         "built-in-rules/prevent-deprecated-k8s-api-116/index",
@@ -193,7 +192,7 @@ const sidebars = {
       },
       collapsed: true,
       items: [
-        "official-integrations/eks-integration/index", 
+        "official-integrations/eks-integration/index",
         {
           type: "category",
           label: "Github",
@@ -213,7 +212,7 @@ const sidebars = {
               href: "https://github.com/datreeio/action-datree#github-code-scanning-sarif",
             },
           ],
-        },    
+        },
         {
           type: "link",
           label: "Kubectl plugin",
@@ -298,7 +297,7 @@ const sidebars = {
         "guides/integration-guide/index",
         "guides/argo-integration/index",
         "guides/downgrading-to-community/index",
-      ]
+      ],
     },
     {
       type: "link",
