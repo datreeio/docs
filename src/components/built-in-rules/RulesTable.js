@@ -87,7 +87,7 @@ const RuleItem = ({ item }) => {
       <ListItemText
         primary={<Link href={item.slug}>{item.title}</Link>}
         secondary={
-          <Typography>
+          <Typography fontSize={"0.85rem"} color="gray">
             <span>
               <b>Policy-as-code identifier: </b>
             </span>
