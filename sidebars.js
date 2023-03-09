@@ -44,6 +44,7 @@ const sidebars = {
       items: [
         "dashboard/overview/index",
         "dashboard/repairing/index",
+        "dashboard/policies/index",
         "dashboard/centralized-policy/index",
         "dashboard/history/index",
         "dashboard/account-token/index",
