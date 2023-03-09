@@ -145,6 +145,12 @@ img[alt=failing_rules] {width: 90%; border: solid; border-color: gray; border-wi
 img[alt=repairing-rule-details] {width: 50%; border: solid; border-color: gray; border-width: 0.01rem;}
 img[alt=overview_rules_failed] {width: 70%}
 img[alt=overview_rules_passed] {width: 70%}
+img[alt=my-policies] {width: 30%}
+img[alt=rule-filters] {width: 30%}
+img[alt=policy-rules] {width: 50%}
+img[alt=rule-details] {width: 50%}
+img[alt=edit-message-on-failure] {width: 50%}
+
 
 .built-in-rules-navbar-items .menu__list {
   display: none !important;

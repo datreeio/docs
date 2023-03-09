@@ -50,7 +50,7 @@ This step verifies that the file is following your Kubernetes policy
 **A. Rule name** - rules can be disabled from the centralized policy dashboard  
 **B. Number of occurrences** - how many times the rule failed on this specific file  
 **C. Detailed failure occurrences** - which configuration within your file prompted the failure  
-**D. Message on fail** - text can be changed from the centralized policy dashboard  
+**D. Message on fail** - text can be changed from the centralized policy dashboard
 
 ## Check summary
 
@@ -69,15 +69,16 @@ A summary of all the validations and policy checks that ran on this execution. &
 - **Total rules evaluated** - number of rules in policy X number of configs tested
 - **Total rules failed** - number of rules failed from the total of rules evaluated
 - **Total rules passed** - number of rules passed from the total of rules evaluated
-- **See all rules in policy** - link to your account [Centralized policy](/dashboard/centralized-policy) dashboard
+- **See all rules in policy** - link to your account [Centralized policy](/dashboard/policies) dashboard
 
 ---
 
 ## Exit codes
-The CLI will return one of the following exit codes:  
 
-| Exit Code | Description |
-|-----------|-------------|
-| 2 | One of the validations (YAML or Kubernetes schema) OR the policy check found at least one violation |
-| 1 | The CLI ran into an error, or was used incorrectly (i.e. an unknown argument was passed) |
-| 0 | All validations and the policy check passed and found no violations |
+The CLI will return one of the following exit codes:
+
+| Exit Code | Description                                                                                         |
+| --------- | --------------------------------------------------------------------------------------------------- |
+| 2         | One of the validations (YAML or Kubernetes schema) OR the policy check found at least one violation |
+| 1         | The CLI ran into an error, or was used incorrectly (i.e. an unknown argument was passed)            |
+| 0         | All validations and the policy check passed and found no violations                                 |

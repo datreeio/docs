@@ -5,13 +5,14 @@ slug: /guides/integration-guide
 
 # Integrating Datree into your organization
 
-*So you’re familiar with Datree, but you’re not quite sure how to implement it effectively? Whether you’re a one-person team, or part of a big organization, we’ve got you covered. This article lays out best practices and tips intended to allow you to make the most out of Datree.*
+_So you’re familiar with Datree, but you’re not quite sure how to implement it effectively? Whether you’re a one-person team, or part of a big organization, we’ve got you covered. This article lays out best practices and tips intended to allow you to make the most out of Datree._
 
 Say you’re a devops engineer, and like most - you’ve had your fair share of production outages, so you decide to do something about it. You install Datree and are now ready to prevent those pesky misconfigurations.
 
 **Before you proceed to the technical stuff, there are some preliminary steps we highly recommend on taking:**
-* Have a meeting with relevant people in the organization, where you discuss why you need Datree, and what problems you’d like to solve with it. This will give you clarity when you proceed to configure Datree.
-* List the different teams that will use Datree along with their needs and requirements.
+
+- Have a meeting with relevant people in the organization, where you discuss why you need Datree, and what problems you’d like to solve with it. This will give you clarity when you proceed to configure Datree.
+- List the different teams that will use Datree along with their needs and requirements.
 
 ### Establishing a baseline
 
@@ -40,7 +41,7 @@ When creating these policies, you may be overwhelmed by all of the available rul
 Datree’s default policy contains 21 rules that are enabled by default. These rules are the lowest-common-denominator of industry best-practices when working with k8s, and are therefore recommended for all users.
 As for the other built-in rules provided with Datree - we understand that not everyone has a use for them. For this reason, we made the policy system flexible, allowing you to enable/disable rules for every policy according to your needs.
 The preliminary work you did should make this step much smoother. Now that you have your policies figured out, the rules in each of them should reflect the team’s needs.
-Make sure you standardize how your developers should fix violated rules by taking advantage of the customizable [error message](/dashboard/centralized-policy#edit-rule-fail-suggestion-text) that is displayed when a rule fails.
+Make sure you standardize how your developers should fix violated rules by taking advantage of the customizable [error message](/dashboard/policies#edit-rule-fail-suggestion-text) that is displayed when a rule fails.
 
 You go over the rules, enabling some and disabling others as needed, but then you think of a policy you’d like to enforce that doesn’t have a built-in rule. **That’s where custom rules come in.**
 You can write any rule you wish to enforce and add it to your policies. Check out the [documentation](/custom-rules/custom-rules-overview) to get started, and if you’re having trouble - feel free to open an issue in our [Github repo](https://github.com/datreeio/datree) and someone from our team or our community will assist you.
@@ -51,10 +52,10 @@ So now you might have multiple policies, but you notice that you have only one t
 **Should you use it and share it with all of your teams, or create new ones?**  
 It’s important to understand why we would want to create additional tokens at all. Firstly, tokens enable you to manage the permissions of other people who use your policies - read tokens allow using the policies, while write tokens also allow editing them and creating new ones. Secondly, token labels make your policy check history much clearer by differentiating between checks that come from different sources.  
 Generally, we recommend the following setup:
-* 1 read token for your CI machine.
-* 1 read token for your cluster integration.
-* 1 write token if using [policy-as-code](/dashboard/policy-as-code).
 
+- 1 read token for your CI machine.
+- 1 read token for your cluster integration.
+- 1 write token if using [policy-as-code](/dashboard/policy-as-code).
 
 ### Conclusion
 
