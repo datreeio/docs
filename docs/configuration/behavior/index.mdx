@@ -86,7 +86,7 @@ To add an entry to the `ConfigMap`:
 ```yaml
 datree:
   customSkipList:
-    - "(.*);(.*):(.*)" # "namespace;kind;name"
+    - "(.*);(.*);(.*)" # "namespace;kind;name"
 ```
 
 Replace `(.*);(.*);(.*)` with your desired values (see examples below). You can use a regular expression for any of the aformentioned properties.
@@ -97,8 +97,6 @@ Replace `(.*);(.*);(.*)` with your desired values (see examples below). You can 
 helm repo update
 helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook -f values.yaml --reuse-values --debug
 ```
-
-**3.** After updating the `ConfigMap`, run `kubectl rollout restart deployment -n datree` to restart the webhook and apply your changes.
 
 :::info NOTE
 By default, Datree skips all resources with a name starting with `aws-node`.  
