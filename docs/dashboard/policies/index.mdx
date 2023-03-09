@@ -1,0 +1,43 @@
+---
+title: Policies
+slug: /dashboard/policies
+---
+
+The [policies page](https://app.datree.io/cli/policies) details everything related to your policies and rules. Here you can create policies and/or customize them by enabling/disabling rules.  
+Since your Datree policies are centralized, once you configure them to your liking you can run them anywhere (via your [account token](/dashboard/account-token)).
+:::tip
+Datree also supports policy-as-code, which can be turned on via your [dashboard settings](https://app.datree.io/settings/user-settings).  
+For more details, see the [policy-as-code](/dashboard/policy-as-code) page.
+:::
+
+## Your policies
+
+The table on the left lists all of your existing policies, with "Starter" being the default one. You can create new policies as you please by clicking on 'Create Policy'.
+
+![my-policies](/img/dashboard/policies/my-policies.png)
+
+### Viewing policies
+
+Clicking on a policy will display all of the rules it contains.  
+The table on the right allows you to filter the displayed rules by `status` ('Active' rules are ones that are already enabled in the policy you're viewing) and/or by `category`.
+
+![rule-filters](/img/dashboard/policies/rule-filters.png)
+
+### Customizing a policy
+
+Rules can be **enabled/disabled** by toggling them when your desired policy is selected.
+
+![policy-rules](/img/dashboard/policies/policy-rules.png)
+
+### Rule details
+
+Clicking on a rule will open a side panel containing valuable information about it. Clicking on 'Open docs' will take you to Datree's documentation of the rule, providing even more insight into it.
+
+![rule-details](/img/dashboard/policies/rule-details.png)
+
+### Edit rule fail suggestion text
+
+The output text that is shown in the CLI and dashboard history when a rule fails is editable. The policy owner can use this to educate policy consumers (e.g. developers, teammates, etc.) and clarify how they should fix their misconfigurations.  
+To edit the text, click on the pencil icon in the 'Rule details' panel:
+
+![edit-message-on-failure](/img/dashboard/policies/edit-message-on-failure.png)
