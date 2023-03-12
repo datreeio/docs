@@ -12,8 +12,16 @@ import { Button, Divider, Typography } from "@mui/material";
 import Category from "./Category";
 import Grid from "@mui/material/Grid";
 
+const handleURL = () => {
+  const tab = location.hash.split("#")[1];
+
+  if (ruleCategories.some((category) => category.title === tab)) {
+    return tab;
+  } else return null;
+};
+
 const CustomTabs = () => {
-  const [selectedTab, setSelectedTab] = useState(null);
+  const [selectedTab, setSelectedTab] = useState(() => handleURL());
   const clearFilters = () => {
     setSelectedTab(null);
   };
