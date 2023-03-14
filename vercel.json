@@ -42,7 +42,7 @@
     },
     {
       "source": "/history",
-      "destination": "/setup/history",
+      "destination": "/dashboard/activity-log",
       "permanent": true
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "source": "/setup/history",
-      "destination": "/dashboard/history",
+      "destination": "/dashboard/activity-log",
       "permanent": true
     },
     {

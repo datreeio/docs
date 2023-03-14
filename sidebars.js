@@ -45,7 +45,7 @@ const sidebars = {
         "dashboard/overview/index",
         "dashboard/repairing/index",
         "dashboard/policies/index",
-        "dashboard/history/index",
+        "dashboard/activity-log/index",
         "dashboard/account-token/index",
         "dashboard/policy-as-code/index",
         "dashboard/user-management/index",
