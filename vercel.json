@@ -131,6 +131,11 @@
       "permanent": true
     },
     {
+      "source": "/custom-rules/basic-examples",
+      "destination": "/custom-rules/examples",
+      "permanent": true
+    },
+    {
       "source": "/helm-plugin",
       "destination": "https://github.com/datreeio/helm-datree",
       "permanent": true

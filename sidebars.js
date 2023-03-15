@@ -178,7 +178,8 @@ const sidebars = {
       collapsed: true,
       items: [
         "custom-rules/custom-rules-overview/index",
-        "custom-rules/basic-examples/index",
+        "custom-rules/rego-support/index",
+        "custom-rules/examples/index",
         "custom-rules/multiple-property-paths/index",
         "custom-rules/resource-quotas/index",
       ],
