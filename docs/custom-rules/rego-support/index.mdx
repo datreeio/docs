@@ -66,18 +66,18 @@ schema:
       libs:
         - |
           package lib.helpers
-          make_message(isMissing) = msg {
-                      msg := sprintf("you must provide labels: %v", [isMissing])
-                    }
+          check_if_missing(missing) = isLabelMissing {
+            isLabelMissing := count(missing) > 0
+          }
       code: |
-        package examplePackage
+        package requireBillingLabel
         import data.lib.helpers
 
-        violation[aBool] {
+        violation[isLabelMissing] {
         provided := {label | input.metadata.labels[label]}
         required := {"billing"}
         missing := required - provided
-        aBool := count(missing) > 0
+        isLabelMissing := helpers.check_if_missing(missing)
         }
 ```
 

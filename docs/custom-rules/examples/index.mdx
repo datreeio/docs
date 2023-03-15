@@ -100,9 +100,9 @@ regoDefinition:
   code: |
     package DenyUnapprovedImageRegistry
 
-    violation[boola] {
+    violation[isBadRegistryUsed] {
       container := input_containers[_]
-      boola := startswith(container.image, "bad.registry.com/")
+      isBadRegistryUsed := startswith(container.image, "bad.registry.com/")
     }
 
     input_containers[c] {
