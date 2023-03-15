@@ -1,0 +1,257 @@
+---
+title: Examples
+slug: /custom-rules/examples
+---
+
+Here you will find examples for custom rules and common use-cases when writing policy enforcement logic, using both **JSON schema** and **Rego**.
+
+To see an example of a ready-to-publish custom rules YAML, [skip ahead](/custom-rules/examples#full-custom-rule-examples).
+
+## JSON schema
+
+:::tip
+The following examples may include keywords you are not familiar with.  
+To learn more about JSON schema and how to use it, see the [official documentation](https://json-schema.org/)
+:::
+
+### Ensure a specific key exists
+
+The following schema ensures that the key `metadata.labels.app` exists (regardless of its value):
+
+```yaml
+properties:
+  metadata:
+    properties:
+      labels:
+        required:
+          - app
+    required:
+      - labels
+```
+
+### Set a minimum value for key of a specific kind
+
+The following schema ensures that in a YAML of kind `Deployment`, the key `spec.replicas` has a value of _3_ or higher:
+
+```yaml
+if:
+  properties:
+    kind:
+      enum:
+        - Deployment
+then:
+  properties:
+    spec:
+      properties:
+        replicas:
+          minimum: 3
+```
+
+Note that the key `maximum` is also available.
+
+### Ensure value of a specific key is not one of predefined values
+
+The following schema defines a blacklist of values for the key `metadata.namespace`:
+
+```yaml
+properties:
+  metadata:
+    properties:
+      namespace:
+        not:
+          enum:
+            - default
+            - misc
+            - general
+```
+
+### Ensure a specific key is not found in any container
+
+The following schema ensures that the key "badKey" is not defined under any container in the YAML:
+
+```yaml
+definitions:
+  specContainers:
+    properties:
+      spec:
+        properties:
+          containers:
+            type: array
+            items:
+              not:
+                required:
+                  - badKey
+allOf:
+  - $ref: "#/definitions/specContainers"
+additionalProperties:
+  $ref: "#"
+```
+
+---
+
+## Rego
+
+### Prevent use of predefined image registry
+
+The following schema ensures that container images are not taken from a predefined registry (`bad.registry.com/`):
+
+```yaml
+regoDefinition:
+  code: |
+    package DenyUnapprovedImageRegistry
+
+    violation[boola] {
+      container := input_containers[_]
+      boola := startswith(container.image, "bad.registry.com/")
+    }
+
+    input_containers[c] {
+      c := input.spec.containers[_]
+    }
+
+    input_containers[c] {
+      c := input.spec.template.spec.containers[_]
+    }
+```
+
+### Ensure a specific label exists
+
+The following schema ensures that the label `myImportantLabel` exists under `metadata.labels`:
+
+```yaml
+regoDefinition:
+  code: |
+    package examplePackage
+
+    violation[labelExists] {
+      provided := {label | input.metadata.labels[label]}
+      required := {"myImportantLabel"}
+      missing := required - provided
+      labelExists := count(missing) > 0
+    }
+```
+
+### Prevent use of 'latest' tag in Deployment containers
+
+The following schema ensures that the `latest` tag is not used in any container specified in a `Deployment`:
+
+```yaml
+regoDefinition:
+  code: |
+    package preventlatesttag
+
+    violation[usesLatest] {
+      input.kind == "Deployment"
+      imagename := input.spec.template.spec.containers[_].image
+      usesLatest := endswith(imagename, "latest")
+    }
+```
+
+---
+
+## Full custom rule examples
+
+The following are examples of how the [Policy as code](/dashboard/policy-as-code) file should look before publishing it.
+:::tip Reminder
+To apply your new policies, [publish](/dashboard/policy-as-code#2-apply-a-new-policies-configuration) them via the CLI.  
+:::
+
+### JSON schema
+
+This example has one custom rule written in JSON schema and added to the policy `Starter`:
+
+```yaml
+apiVersion: v1
+policies:
+  - name: Starter
+    rules:
+      - identifier: CUSTOM_WORKLOAD_INCORRECT_ENVIRONMENT_LABELS
+        messageOnFailure: This message will override the rule's `defaultMessageOnFailure` property
+customRules:
+  - identifier: CUSTOM_WORKLOAD_INCORRECT_ENVIRONMENT_LABELS
+    name: Ensure correct environment labels are used [CUSTOM RULE]
+    defaultMessageOnFailure: Use only approved environment labels (`prod`, `staging` and `test`)
+    schema:
+      properties:
+        metadata:
+          properties:
+            labels:
+              properties:
+                environment:
+                  enum:
+                    - prod
+                    - staging
+                    - test
+              required:
+                - environment
+          required:
+            - labels
+```
+
+### Rego
+
+This example has two custom rules written in Rego and added to the policy `Default`:
+
+```yaml
+apiVersion: v1
+policies:
+  - name: Default
+    rules:
+      - identifier: CUSTOM_DEPLOYMENT_BILLING_LABEL_EXISTS
+        messageOnFailure: Deployment labels should contain `billing` label
+      - identifier: CUSTOM_SECRET_ENVIRONMENT_LABEL_EXISTS
+        messageOnFailure: Secret labels should contain `environment` label
+customRules:
+  - identifier: CUSTOM_DEPLOYMENT_BILLING_LABEL_EXISTS
+    name: Ensure Deployment has billing label [CUSTOM RULE]
+    defaultMessageOnFailure: Deployment labels should contain `billing` label
+    schema:
+      regoDefinition:
+        libs:
+          - |
+            package lib.helpers
+            check_if_missing(missing) = isMissing {
+                        isMissing := count(missing) > 0
+                      }
+        code: |
+          package requiredlabels
+          import data.lib.helpers
+
+          violation[labelIsMissing] {
+          input.kind == "Deployment"
+          provided := {label | input.metadata.labels[label]}
+          required := {"billing"}
+          missing := required - provided
+          labelIsMissing := helpers.check_if_missing(missing)
+          }
+  - identifier: CUSTOM_SECRET_ENVIRONMENT_LABEL_EXISTS
+    name: Ensure Secret has environment label [CUSTOM RULE]
+    defaultMessageOnFailure: secret labels should contain environment label
+    schema:
+# NOTE: you can write a constraint in JSON schema, and still write the rule logic in Rego
+# In this example, the rego code will run only if the tested resource is of kind `Secret`
+      if:
+        properties:
+          kind:
+            type: string
+            enum:
+              - Secret
+      then:
+        regoDefinition:
+          libs:
+            - |
+              package lib.helpers
+              check_if_missing(missing) = isMissing {
+                          isMissing := count(missing) > 0
+                        }
+          code: |
+            package foosystemrequiredlabels
+            import data.lib.helpers
+
+            violation[labelIsMissing] {
+            provided := {label | input.metadata.labels[label]}
+            required := {"environment"}
+            missing := required - provided
+            labelIsMissing := helpers.check_if_missing(missing)
+            }
+```

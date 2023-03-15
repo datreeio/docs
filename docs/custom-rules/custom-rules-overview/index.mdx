@@ -3,55 +3,78 @@ title: Understanding custom rules
 slug: /custom-rules/custom-rules-overview
 ---
 
-In addition to the tool's built-in rules, you can also write any tests that you wish and run them against your Kubernetes configurations to check for rule violations. The custom rule engine is based on [JSON Schema](https://json-schema.org/), so it supports both **YAML** and **JSON** declarative syntax.
+In addition to Datree's built-in rules, you can also write your own rules and add them to your policies.  
+The custom rule engine is based on [JSON Schema](https://json-schema.org/), so it supports both YAML and JSON declarative syntax.
 
-:::info
+Custom rules can be written directly in **JSON Schema** or in [**Rego**](/custom-rules/rego-support).
+
+:::info Note
 Note that using custom rules is possible only when in [Policy as code](/dashboard/policy-as-code) mode.
 :::
+
+Looking for examples? See the [examples page](/custom-rules/examples).
 
 ## Quick start
 
 1. Enable [Policy-as-code mode](/dashboard/policy-as-code#1-enable-policy-as-code-pac-mode)
-2. Create a [policies YAML file](/custom-rules/basic-examples#full-custom-rule-examples) with your custom rule (attached to any policy)
+2. Create a [policies YAML file](/custom-rules/examples#full-custom-rule-examples) with your custom rule (attached to any policy)
 3. [Publish](/dashboard/policy-as-code#2-apply-a-new-policies-configuration) the policies YAML file
 
 ---
-## customRules properties
 
-- **identifier** - a unique ID to associate with a policy
+## Required format
 
-- **name** [OPTIONAL] - a title that will be shown when a rule fails
+Custom rules and the policies file they reside in must satisfy certain requirements.  
+For examples of both, see the [examples page](/custom-rules/examples).
 
-- **defaultMessageOnFailure** [OPTIONAL] - a message that is shown when the property `policies.name[].rules.messageOnFailure` is empty (unique to each identifier)
+### Rule format
 
-- **schema** - a custom rule logic written in JSON Schema (as YAML)
+Every custom rule must have the following properties:
+
+- **identifier** - a unique ID to associate with a policy.
+- **name** [OPTIONAL] - a title that will be shown in Datree's output when a rule fails.
+- **defaultMessageOnFailure** [OPTIONAL] - a message that is shown when the property `policies.name[].rules.messageOnFailure` is empty (unique to each identifier).
+- **schema** - a custom rule logic written in JSON Schema (as YAML) or in [Rego](/custom-rules/rego-support).
+
+### Policies file format
+
+The policies file must have the following properties:
+
+- **policies** - an array of policies, each with the following properties:
+  - **name** - the name of the policy.
+  - **rules** - an array of rules, each with the following properties:
+    - **identifier** - a unique ID to associate with a policy.
+    - **messageOnFailure** - the message to display in Datree's output when the rule fails.
+- **customRules** - an array of rules with the format mentioned [above](/custom-rules/custom-rules-overview#rule-format).
 
 ---
-## Basic examples
+
+<!-- ## Basic examples
 
 Here are some examples of basic use-cases:
 
-1. [Ensure a specific key exists](/custom-rules/basic-examples#ensure-a-specific-key-exists)
-2. [Set a minimum value for key of a specific kind](/custom-rules/basic-examples#set-a-minimum-value-for-key-of-a-specific-kind)
-3. [Ensure value of a specific key is not one of predefined values](/custom-rules/basic-examples#ensure-value-of-a-specific-key-is-not-one-of-predefined-values)
-4. [Ensure a specific key is not found in any container](/custom-rules/basic-examples#ensure-a-specific-key-is-not-found-in-any-container)
-
+1. [Ensure a specific key exists](/custom-rules/examples#ensure-a-specific-key-exists)
+2. [Set a minimum value for key of a specific kind](/custom-rules/examples#set-a-minimum-value-for-key-of-a-specific-kind)
+3. [Ensure value of a specific key is not one of predefined values](/custom-rules/examples#ensure-value-of-a-specific-key-is-not-one-of-predefined-values)
+4. [Ensure a specific key is not found in any container](/custom-rules/examples#ensure-a-specific-key-is-not-found-in-any-container)
 
 Here are three examples of custom rules to showcase how you can set it up:
 
-1.  [Ensure correct environment labels are used](/custom-rules/basic-examples#ensure-correct-environment-labels-are-used)
-2.  [Prevent workload from using the (system) default namespaces](/custom-rules/basic-examples#prevent-workload-from-using-the-system-default-namespaces)
-3.  [Ensure Deployment has replicas set between 2-10](/custom-rules/basic-examples#ensure-deployment-has-replicas-set-between-2-10)
+1.  [Ensure correct environment labels are used](/custom-rules/examples#ensure-correct-environment-labels-are-used)
+2.  [Prevent workload from using the (system) default namespaces](/custom-rules/examples#prevent-workload-from-using-the-system-default-namespaces)
+3.  [Ensure Deployment has replicas set between 2-10](/custom-rules/examples#ensure-deployment-has-replicas-set-between-2-10)
 
-<br/>
+<br />
 
 :::tip
 The provided examples are written in YAML schema, but custom rules can also be specified as JSON strings.
 :::
 
----
+--- -->
+
 ## Helpful links
 
 - [Getting started with JSON Schema](https://json-schema.org/learn/getting-started-step-by-step)
 - [Online YAML Schema validator](https://yamlschemavalidator.datree.io/)
 - [Online JSON Schema validator](https://www.jsonschemavalidator.net/)
+- [Online Rego validator](https://play.openpolicyagent.org/)

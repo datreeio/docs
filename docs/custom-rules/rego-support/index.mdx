@@ -1,0 +1,84 @@
+---
+title: Rego support
+slug: /custom-rules/rego-support
+---
+
+Datree supports writing custom rules in the [Rego](https://www.openpolicyagent.org/docs/latest/policy-language/#what-is-rego) language, by utilizing a custom JSON Schema keyword.
+
+## Required properties
+
+In addition to the basic [required format](/custom-rules/custom-rules-overview#rule-format), a Rego custom rule has the following requirements:
+
+- The `schema` property **must** have a property named `regoDefinition`.
+- The `regoDefinition` property **must** have a property named `code` that contains the Rego logic of the rule.
+  - The `code` property **must** be a _string_ that contains a `violation` function definition.
+  - The `violation` function **must** return a _boolean_ value.
+- The `regoDefinition` property **may** have a property named `libs`, which is an array of library functions that will be available to the Rego package.
+
+:::tip Online Rego validation
+Ensure the validity of your rules and test them against your resources using the [Rego playground](https://play.openpolicyagent.org/).
+:::
+
+#### Example:
+
+The following schema requires the tested `Deployment` resource to have a `billing` label:
+
+```yaml
+schema:
+  regoDefinition:
+    libs:
+      - |
+        package lib.helpers
+        check_if_missing(missing) = isMissing {
+                    isMissing := count(missing) > 0
+                  }
+    code: |
+      package requiredlabels
+      import data.lib.helpers
+
+      violation[labelIsMissing] {
+      input.kind == "Deployment"
+      provided := {label | input.metadata.labels[label]}
+      required := {"billing"}
+      missing := required - provided
+      labelIsMissing := helpers.check_if_missing(missing)
+      }
+```
+
+---
+
+### Constraints
+
+In the above example, the constraint `input.kind == "Deployment"` is a part of the Rego logic.  
+You can also write such a constraint in JSON schema and write the rest of the logic in Rego:
+
+```yaml
+schema:
+  # Constraint - enforce rule only on `Deployment` resources
+  if:
+    properties:
+      kind:
+        type: string
+        enum:
+          - Deployment
+  then:
+    regoDefinition:
+      libs:
+        - |
+          package lib.helpers
+          make_message(isMissing) = msg {
+                      msg := sprintf("you must provide labels: %v", [isMissing])
+                    }
+      code: |
+        package examplePackage
+        import data.lib.helpers
+
+        violation[aBool] {
+        provided := {label | input.metadata.labels[label]}
+        required := {"billing"}
+        missing := required - provided
+        aBool := count(missing) > 0
+        }
+```
+
+#### For more examples, including a complete custom rules YAML, see the [examples page](/custom-rules/examples).
