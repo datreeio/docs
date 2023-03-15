@@ -30,8 +30,8 @@ schema:
       - |
         package lib.helpers
         check_if_missing(missing) = isMissing {
-                    isMissing := count(missing) > 0
-                  }
+          isMissing := count(missing) > 0
+        }
     code: |
       package requiredlabels
       import data.lib.helpers
