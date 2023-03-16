@@ -11,6 +11,8 @@ import {
 import { Button, Divider, Typography } from "@mui/material";
 import Category from "./Category";
 import Grid from "@mui/material/Grid";
+import {useLocation} from '@docusaurus/router';
+
 
 const handleURL = () => {
   const tab = location.hash.split("#")[1];
@@ -22,9 +24,16 @@ const handleURL = () => {
 
 const CustomTabs = () => {
   const [selectedTab, setSelectedTab] = useState(() => handleURL());
+  const location = useLocation();
+
   const clearFilters = () => {
     setSelectedTab(null);
   };
+
+  const handleSelectedTab = (ruleCategory) => {
+    setSelectedTab(ruleCategory.title);
+    window.location = location.pathname + "#" + ruleCategory.title
+  }
 
   let filteredNavItems = [];
   if (selectedTab === null) {
@@ -65,7 +74,7 @@ const CustomTabs = () => {
                     <Category
                       title={ruleCategory.title}
                       image={ruleCategory.image}
-                      handleOnClick={() => setSelectedTab(ruleCategory.title)}
+                      handleOnClick={ () => handleSelectedTab(ruleCategory) }
                       isSelected={ruleCategory.title === selectedTab}
                     />
                   </Grid>
