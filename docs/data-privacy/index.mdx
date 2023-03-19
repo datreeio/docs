@@ -16,12 +16,12 @@ Datree's policy evaluation process is entirely local. Only metadata is sent to o
 
 ### What does the metadata sent to the backend contain?
 - **Identification data** - required for the backend to identify the user. *Examples: client ID, account ID.*
-- **Software data** - information about the machine on which the CLI was run, to be displayed in the dashboard. *Examples: CLI version, OS version, flags passed to the CLI.*
-- **Policy data** - details related to the policy check performed by the CLI. *Examples: policy name, rules to be evaluated.*
-- **Evaluation data** - results of the policy check. *Examples: name of tested file, number of passed/failed rules.*
+- **Software data** - information about the machine on which the CLI was run, to be displayed in the dashboard. *Examples: CLI version, OS version, flags, etc.*
+- **Policy data** - details related to the policy that was performed. *Examples: policy name, rules to be evaluated, etc.*
+- **Evaluation data** - results of the policy check. *Examples: name of tested file, number of passed/failed rules, etc.*
 
 ### Are my files and their content sent/stored anywhere?
-Your files and their contents are not sent to our backend, as the CLI performs the policy check on your machine. Datree does not have access to your files and their contents.
+Your files and their contents are not sent to our backend, as the policy check is preformed locally (on your envirement). **Datree does not have access to your files and their contents**.
 
 ### What network protocols are used for communication between the CLI and the dashboard?
 All communication is done via https, encrypted using SSL with industry best practices in mind.
@@ -34,4 +34,4 @@ We do not require (and therefore do not store) any signup details, since we supp
 ---
 
 ## Tokens
-Tokens are used to connect your CLI to your dashboard. Should a token be stolen, it cannot be used to access any of your files. Having said that, we strongly encourage you to keep your tokens private and limit their exposure to relevant people only.
+Tokens are used to connect your policy checks to your dashboard. Should a token be stolen, it cannot be used to access any of your files. Having said that, we strongly encourage you to keep your tokens private and limit their exposure to relevant people only.
