@@ -1,0 +1,67 @@
+---
+title: ☑️ Prevent use of removed APIs in Kubernetes v1.26
+slug: /built-in-rules/prevent-removed-api-126
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Kubernetes version 1.26 stopped serving several APIs for different resource types.  
+When deploying a resource with a removed API version, the Kubernetes engine will reject it.
+
+The following resources are **removed** in version 1.26:
+
+| API version | Resource kind |
+|-------------|---------------|
+| `flowcontrol.apiserver.k8s.io/v1beta1` | `FlowSchema`, `PriorityLevelConfiguration` |
+| `autoscaling/v2beta2` | `HorizontalPodAutoscaler` |
+
+**Targeted objects by this rule (types of **`kind`**):** (See table above)
+
+**Complexity:** **easy** (<Complexity/>)
+
+**Policy as code identifier:** REMOVED_API_VERSION_1.26
+
+---
+
+## This rule will fail
+
+If one of the removed API versions is used:
+
+```yaml
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent use of removed APIs in Kubernetes v1.26 [1 occurrence]
+💡 Incorrect value for key `apiVersion` - the version of the resource you are trying to use is removed in k8s v1.26
+```
+
+---
+
+## How to fix this failure
+
+Use a supported API version instead of the removed one:
+
+| Removed API version | Supported API version |
+|-------------|---------------|
+| `flowcontrol.apiserver.k8s.io/v1beta1` | `flowcontrol.apiserver.k8s.io/v1beta3` |
+| `autoscaling/v2beta2` | `autoscaling/v2` |
+
+**Example**:  
+
+```yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+```
+
+---
+
+## Read more
+
+- [Kubernetes changelog - v1.26](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.26.md#deprecations-and-removals)

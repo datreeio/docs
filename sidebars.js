@@ -170,6 +170,12 @@ const sidebars = {
         "built-in-rules/prevent-containers-net-raw-capability/index",
         "built-in-rules/prevent-system-masters-group/index",
         "built-in-rules/prevent-role-privilege-escalation/index",
+        "built-in-rules/prevent-removed-k8s-api-122/index",
+        "built-in-rules/prevent-removed-k8s-api-123/index",
+        "built-in-rules/prevent-removed-k8s-api-124/index",
+        "built-in-rules/prevent-removed-k8s-api-125/index",
+        "built-in-rules/prevent-removed-k8s-api-126/index",
+        "built-in-rules/prevent-removed-k8s-api-127/index",
       ],
     },
     {

@@ -1,0 +1,75 @@
+---
+title: ☑️ Prevent use of removed APIs in Kubernetes v1.25
+slug: /built-in-rules/prevent-removed-api-125
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Kubernetes version 1.25 stopped serving several APIs for different resource types.  
+When deploying a resource with a removed API version, the Kubernetes engine will reject it.
+
+The following resources are **removed** in version 1.25:
+
+| API version | Resource kind |
+|-------------|---------------|
+| `batch/v1beta1` | `CronJob` |
+| `discovery.k8s.io/v1beta1` | `EndpointSlice` |
+| `events.k8s.io/v1beta1` | `Event` |
+| `autoscaling/v2beta1` | `HorizontalPodAutoscaler` |
+| `policy/v1beta1` | `PodDisruptionBudget`, `PodSecurityPolicy` |
+| `node.k8s.io/v1beta1` | `RuntimeClass` |
+
+**Targeted objects by this rule (types of **`kind`**):** (See table above)
+
+**Complexity:** **easy** (<Complexity/>)
+
+**Policy as code identifier:** REMOVED_API_VERSION_1.25
+
+---
+
+## This rule will fail
+
+If one of the removed API versions is used:
+
+```yaml
+apiVersion: events.k8s.io/v1beta1
+kind: Event
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent use of removed APIs in Kubernetes v1.25 [1 occurrence]
+💡 Incorrect value for key `apiVersion` - the version of the resource you are trying to use is removed in k8s v1.25
+```
+
+---
+
+## How to fix this failure
+
+Use a supported API version instead of the removed one:
+
+| Removed API version | Supported API version |
+|-------------|---------------|
+| `batch/v1beta1` | `batch/v1` |
+| `discovery.k8s.io/v1beta1` | `discovery.k8s.io/v1` |
+| `events.k8s.io/v1beta1` | `events.k8s.io/v1` |
+| `autoscaling/v2beta1` | `autoscaling/v2` |
+| `policy/v1beta1` | `policy/v1` |
+| `node.k8s.io/v1beta1` | `node.k8s.io/v1` |
+
+**Example**:  
+
+```yaml
+apiVersion: events.k8s.io/v1
+kind: Event
+```
+
+---
+
+## Read more
+
+- [Kubernetes changelog - v1.25](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.25.md#deprecations-and-removals)
