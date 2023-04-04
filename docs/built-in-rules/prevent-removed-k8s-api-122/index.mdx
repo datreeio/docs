@@ -1,0 +1,85 @@
+---
+title: ☑️ Prevent use of removed APIs in Kubernetes v1.22
+slug: /built-in-rules/prevent-removed-api-122
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Kubernetes version 1.22 stopped serving several APIs for different resource types.  
+When deploying a resource with a removed API version, the Kubernetes engine will reject it.
+
+The following resources are **removed** in version 1.22:
+
+| API version | Resource kind |
+|-------------|---------------|
+| `admissionregistration.k8s.io/v1beta1` | `MutatingWebhookConfiguration`, `ValidatingWebhookConfiguration` |
+| `apiextensions.k8s.io/v1beta1` | `CustomResourceDefinition` |
+| `apiregistration.k8s.io/v1beta1` | `APIService` |
+| `authentication.k8s.io/v1beta1` | `TokenReview` |
+| `authorization.k8s.io/v1beta1` | `SubjectAccessReview`, `LocalSubjectAccessReview`, `SelfSubjectAccessReview` |
+| `certificates.k8s.io/v1beta1` | `CertificateSigningRequest` |
+| `coordination.k8s.io/v1beta1` | `Lease` |
+| `extensions/v1beta1`, `networking.k8s.io/v1beta1` | `Ingress` |
+| `rbac.authorization.k8s.io/v1beta1` | `ClusterRole`, `ClusterRoleBinding`, `Role`, `RoleBinding` |
+| `scheduling.k8s.io/v1beta1` | `PriorityClass` | 
+| `storage.k8s.io/v1beta1` | `CSIDriver`, `CSINode`, `StorageClass`, `VolumeAttachment` |
+
+**Targeted objects by this rule (types of **`kind`**):** (See table above)
+
+**Complexity:** **easy** (<Complexity/>)
+
+**Policy as code identifier:** K8S_REMOVED_APIVERSION_1.22
+
+---
+
+## This rule will fail
+
+If one of the removed API versions is used:
+
+```yaml
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: MutatingWebhookConfiguration
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent use of removed APIs in Kubernetes v1.22 [1 occurrence]
+💡 Incorrect value for key `apiVersion` - the version of the resource you are trying to use is removed in k8s v1.22
+```
+
+---
+
+## How to fix this failure
+
+Use a supported API version instead of the removed one:
+
+| Removed API version | Supported API version |
+|-------------|---------------|
+| `admissionregistration.k8s.io/v1beta1` | `admissionregistration.k8s.io/v1` |
+| `apiextensions.k8s.io/v1beta1` | `apiextensions.k8s.io/v1` |
+| `apiregistration.k8s.io/v1beta1` | `apiregistration.k8s.io/v1` |
+| `authentication.k8s.io/v1beta1` | `authentication.k8s.io/v1` |
+| `authorization.k8s.io/v1beta1` | `authorization.k8s.io/v1` |
+| `certificates.k8s.io/v1beta1` | `certificates.k8s.io/v1` |
+| `coordination.k8s.io/v1beta1` | `coordination.k8s.io/v1` |
+| `extensions/v1beta1`, `networking.k8s.io/v1beta1` | `networking.k8s.io/v1` |
+| `rbac.authorization.k8s.io/v1beta1` | `rbac.authorization.k8s.io/v1` |
+| `scheduling.k8s.io/v1beta1` | `scheduling.k8s.io/v1` | 
+| `storage.k8s.io/v1beta1` | `storage.k8s.io/v1` |
+
+**Example**:  
+
+```yaml
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+```
+
+---
+
+## Read more
+
+- [Kubernetes changelog - v1.22](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.22.md#deprecations-and-removals)

@@ -1,0 +1,67 @@
+---
+title: ☑️ Prevent use of removed APIs in Kubernetes v1.23
+slug: /built-in-rules/prevent-removed-api-123
+---
+
+import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
+
+Kubernetes version 1.23 stopped serving several APIs for different resource types.  
+When deploying a resource with a removed API version, the Kubernetes engine will reject it.
+
+The following resources are **removed** in version 1.23:
+
+| API version | Resource kind |
+|-------------|---------------|
+| `rbac.authorization.k8s.io/v1alpha1` | All |
+| `scheduling.k8s.io/v1alpha1` | All |
+
+**Targeted objects by this rule (types of **`kind`**):** (See table above)
+
+**Complexity:** **easy** (<Complexity/>)
+
+**Policy as code identifier:** K8S_REMOVED_APIVERSION_1.23
+
+---
+
+## This rule will fail
+
+If one of the removed API versions is used:
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1alpha1
+kind: Role
+```
+
+### Rule output in the CLI
+
+```terminal
+$ datree test *.yaml
+
+>> File: failExample.yaml
+❌ Prevent use of removed APIs in Kubernetes v1.23 [1 occurrence]
+💡 Incorrect value for key `apiVersion` - the version of the resource you are trying to use is removed in k8s v1.23
+```
+
+---
+
+## How to fix this failure
+
+Use a supported API version instead of the removed one:
+
+| Removed API version | Supported API version |
+|-------------|---------------|
+| `rbac.authorization.k8s.io/v1alpha1` | `rbac.authorization.k8s.io/v1` |
+| `scheduling.k8s.io/v1alpha1` | `scheduling.k8s.io/v1` |
+
+**Example**:  
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+```
+
+---
+
+## Read more
+
+- [Kubernetes changelog - v1.23](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.23.md#deprecations-and-removals)
