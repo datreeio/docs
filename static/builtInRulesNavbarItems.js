@@ -373,7 +373,7 @@ export const navItems = [
     title: "Prevent use of removed APIs in Kubernetes v1.22",
     slug: "/built-in-rules/prevent-removed-api-122",
     isEnabledByDefault: false,
-    pacIdentifier: "REMOVED_API_VERSION_1.22",
+    pacIdentifier: "K8S_REMOVED_APIVERSION_1.22",
     tabOwner: ["Deprecation"],
   },
   {
@@ -381,7 +381,7 @@ export const navItems = [
     title: "Prevent use of removed APIs in Kubernetes v1.23",
     slug: "/built-in-rules/prevent-removed-api-123",
     isEnabledByDefault: false,
-    pacIdentifier: "REMOVED_API_VERSION_1.23",
+    pacIdentifier: "K8S_REMOVED_APIVERSION_1.23",
     tabOwner: ["Deprecation"],
   },
   {
@@ -389,7 +389,7 @@ export const navItems = [
     title: "Prevent use of removed APIs in Kubernetes v1.24",
     slug: "/built-in-rules/prevent-removed-api-124",
     isEnabledByDefault: false,
-    pacIdentifier: "REMOVED_API_VERSION_1.24",
+    pacIdentifier: "K8S_REMOVED_APIVERSION_1.24",
     tabOwner: ["Deprecation"],
   },
   {
@@ -397,7 +397,7 @@ export const navItems = [
     title: "Prevent use of removed APIs in Kubernetes v1.25",
     slug: "/built-in-rules/prevent-removed-api-125",
     isEnabledByDefault: false,
-    pacIdentifier: "REMOVED_API_VERSION_1.25",
+    pacIdentifier: "K8S_REMOVED_APIVERSION_1.25",
     tabOwner: ["Deprecation"],
   },
   {
@@ -405,7 +405,7 @@ export const navItems = [
     title: "Prevent use of removed APIs in Kubernetes v1.26",
     slug: "/built-in-rules/prevent-removed-api-126",
     isEnabledByDefault: false,
-    pacIdentifier: "REMOVED_API_VERSION_1.26",
+    pacIdentifier: "K8S_REMOVED_APIVERSION_1.26",
     tabOwner: ["Deprecation"],
   },
   {
@@ -413,7 +413,7 @@ export const navItems = [
     title: "Prevent use of removed APIs in Kubernetes v1.27",
     slug: "/built-in-rules/prevent-removed-api-127",
     isEnabledByDefault: false,
-    pacIdentifier: "REMOVED_API_VERSION_1.27",
+    pacIdentifier: "K8S_REMOVED_APIVERSION_1.27",
     tabOwner: ["Deprecation"],
   },
   // Argo
