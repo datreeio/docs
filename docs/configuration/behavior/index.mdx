@@ -6,11 +6,11 @@ slug: /configuration/behavior
 ## Dashboard vs. Helm chart configuration
 
 By default, the following options are configurable via your [dashboard](https://app.datree.io/clusters):
-- **Policy** - The name of the policy to check, e.g: "Argo". See *policy* parameter in the options table below.
 - **Action on failure** - The action to take when a rule fails - block the resource or only monitor it. See *enforce* parameter in the options table below.
-- **Ignored resources** - Resources to be ignored, specified by namespace/kind/name or any combination of the three. See *custom skipping* section below.
+- **Active policy** - The name of the policy to check, e.g: "Argo". See *policy* parameter in the options table below.
+- **Ignored resources** - Resources to be ignored, specified by namespace/kind/name or any combination of the three. See [*custom skipping*](/configuration/behavior#custom-skipping) section below.
 
-If you wish to control these options via the Datree Helm chart instead, you can do so by running the following command:
+If you wish to control these options via the Datree Helm chart instead, you can do so by changing the value of the `configFromHelm` parameter. Simply run the following command:
 ```terminal
 helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set datree.configFromHelm=true
 ```
