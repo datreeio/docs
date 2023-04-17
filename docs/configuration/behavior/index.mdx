@@ -6,9 +6,9 @@ slug: /configuration/behavior
 ## Dashboard vs. Helm chart configuration
 
 By default, the following options are configurable via your [dashboard](https://app.datree.io/clusters):
-- **Action on failure** - The action to take when a rule fails - block the resource or only monitor it. See *enforce* parameter in the options table below.
-- **Active policy** - The name of the policy to check, e.g: "Argo". See *policy* parameter in the options table below.
-- **Ignored resources** - Resources to be ignored, specified by namespace/kind/name or any combination of the three. See [*custom skipping*](/configuration/behavior#custom-skipping) section below.
+- **Action on failure** - Select whether to monitor or block resources that fail the policy check. See *enforce* parameter in the options table below.
+- **Active policy** - The name of the policy to check, e.g: "CIS". See *policy* parameter in the options table below.
+- **Ignored resources** - Resources to be ignored, specified by namespace/kind/name or any combination of the three. See *customSkipList* parameter in the options table below.
 
 If you wish to control these options via the Datree Helm chart instead, you can do so by changing the value of the `configFromHelm` parameter. Simply run the following command:
 ```terminal
@@ -30,8 +30,9 @@ The following options (Helm chart parameters) are available for configuring Datr
 | **Option**          | **Description**                                                                      | **Type** |
 | ------------------- | ------------------------------------------------------------------------------------ | -------- |
 | `configFromHelm`    | Determines whether the options listed [here](/configuration/behavior#dashboard-vs-helm-chart-configuration) are managed from Helm chart or from the dashboard (default: false) | boolean |
-| `policy`            | The name of the policy to check, e.g: "Argo".<br/>*Relevant only if `configFromHelm` is `true`*                                        | string   |
-| `enforce`           | Block resources that fail the policy check from being applied to the cluster.<br/>*Relevant only if `configFromHelm` is `true`*         | boolean  |
+| `enforce`           | Block resources that fail the policy check from being applied to the cluster.<br/>*Relevant only if `configFromHelm` is `true`* | boolean  |
+| `policy`            | The name of the policy to check, e.g: "Argo".<br/>*Relevant only if `configFromHelm` is `true`* | string |
+| `customSkipList`    | Skip resources by namespace/kind/name. See [custom skipping](/configuration/behavior#custom-skipping) for details.<br/>*Relevant only if `configFromHelm` is `true`*               | Object |
 | `clusterName`       | The name of the cluster to be displayed in your dashboard                            | string   |
 | `scanIntervalHours` | The number of hours between cluster scans                                            | number   |
 | `existingSecret`    | A reference to a `Secret` object containing a Datree token                           | Object   |
