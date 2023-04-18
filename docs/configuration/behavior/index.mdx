@@ -6,9 +6,9 @@ slug: /configuration/behavior
 ## Dashboard vs. Helm chart configuration
 
 By default, the following options are configurable via your [dashboard](https://app.datree.io/clusters):
-- **Action on failure** - Select whether to monitor or block resources that fail the policy check. See *enforce* parameter in the options table below.
-- **Active policy** - The name of the policy to check, e.g: "CIS". See *policy* parameter in the options table below.
-- **Ignored resources** - Resources to be ignored, specified by namespace/kind/name or any combination of the three. See *customSkipList* parameter in the options table below.
+- **Action on failure** - Select whether to monitor or block resources that fail the policy check (defaults to "monitor").
+- **Active policy** - The name of the policy to check (defaults to "Starter").
+- **Ignored resources** - Resources to be ignored, in regex format, specified by namespace/kind/name or any combination of the three. See examples [here](/configuration/behavior#example-patterns).
 
 If you wish to control these options via the Datree Helm chart instead, you can do so by changing the value of the `configFromHelm` parameter. Simply run the following command:
 ```terminal
@@ -19,8 +19,8 @@ Run a [manual scan](/configuration/cluster-scan#manual-scan) to update your dash
 
 
 :::caution Important
-When controlling these options via the dashboard, changing them via the Helm chart will have no effect.  
-This is also true the other way around.
+* When controlling these options via the dashboard, changing them via the Helm chart will have no effect.  
+* All other configuration options (see table below) are always controlled via the helm chart.
 :::
 
 ## Options
@@ -125,30 +125,24 @@ By default, Datree skips all resources with a name starting with `aws-node`.
 This entry is already included in the default `values.yaml` file.
 :::
 
-### Examples
+### Example patterns
 
-The following entry will cause Datree to skip all resources in the namespace 'myNs':
+The following pattern will cause Datree to skip all resources in the namespace 'myNs':
 
-```yaml
-datree:
-  customSkipList:
-    - "myNs;(.*);(.*)"
+```
+myNs;(.*);(.*)
 ```
 
-The following entry will cause Datree to skip all resources of kind `ServiceAccount`, regardless of their namespace:
+The following pattern will cause Datree to skip all resources of kind `ServiceAccount`, regardless of their namespace:
 
-```yaml
-datree:
-  customSkipList:
-    - "(.*);ServiceAccount;(.*)"
+```
+(.*);ServiceAccount;(.*)
 ```
 
-The following entry will cause Datree to skip all resources in all namespaces if the resource name starts with the prefix 'appName-':
+The following pattern will cause Datree to skip all resources in all namespaces if the resource name starts with the prefix 'appName-':
 
-```yaml
-datree:
-  customSkipList:
-    - "(.*);(.*);(^appName-.*)"
+```
+(.*);(.*);(^appName-.*)
 ```
 
 ---
