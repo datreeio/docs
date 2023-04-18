@@ -27,19 +27,19 @@ To update your dashboard and reflect the changes, run a [manual scan](/configura
 
 The following options (Helm chart parameters) are available for configuring Datree's behavior:
 
-| **Option**          | **Description**                                                                      | **Type** |
-| ------------------- | ------------------------------------------------------------------------------------ | -------- |
-| `configFromHelm`    | Determines whether the options listed [here](/configuration/behavior#dashboard-vs-helm-chart-configuration) are managed from Helm chart or from the dashboard (default: false) | boolean |
-| `enforce`           | Block resources that fail the policy check from being applied to the cluster.<br/>*Relevant only if `configFromHelm` is `true`* | boolean  |
-| `policy`            | The name of the policy to check, e.g: "Argo".<br/>*Relevant only if `configFromHelm` is `true`* | string |
-| `customSkipList`    | Skip resources by namespace/kind/name. See [custom skipping](/configuration/behavior#custom-skipping) for details.<br/>*Relevant only if `configFromHelm` is `true`*               | Object |
-| `clusterName`       | The name of the cluster to be displayed in your dashboard                            | string   |
-| `scanIntervalHours` | The number of hours between cluster scans                                            | number   |
-| `existingSecret`    | A reference to a `Secret` object containing a Datree token                           | Object   |
-| `token`             | The token used to link the CLI to your dashboard                                     | string   |
-| `verbose`           | Display 'How to Fix' link for failed rules in output                                 | boolean  |
-| `output`            | The format output of the policy check results: yaml, json, xml, simple, JUnit, sarif | string   |
-| `noRecord`          | Don’t send policy checks metadata to the dashboard                                   | boolean  |
+| **Option**          | **Description**                                                                                                                                                                | **Type** |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| `configFromHelm`    | Determines whether the options listed [here](/configuration/behavior#dashboard-vs-helm-chart-configuration) are managed from Helm chart or from the dashboard (default: false) | boolean  |
+| `enforce`           | Block resources that fail the policy check from being applied to the cluster.<br/>*Relevant only if `configFromHelm` is `true`*                                                | boolean  |
+| `policy`            | The name of the policy to check, e.g: "Argo".<br/>*Relevant only if `configFromHelm` is `true`*                                                                                | string   |
+| `customSkipList`    | Skip resources by namespace/kind/name. See [custom skipping](/configuration/behavior#custom-skipping) for details.<br/>*Relevant only if `configFromHelm` is `true`*           | Object   |
+| `clusterName`       | The name of the cluster to be displayed in your dashboard                                                                                                                      | string   |
+| `scanIntervalHours` | The number of hours between cluster scans                                                                                                                                      | number   |
+| `existingSecret`    | A reference to a `Secret` object containing a Datree token                                                                                                                     | Object   |
+| `token`             | The token used to link the CLI to your dashboard                                                                                                                               | string   |
+| `verbose`           | Display 'How to Fix' link for failed rules in output                                                                                                                           | boolean  |
+| `output`            | The format output of the policy check results: yaml, json, xml, simple, JUnit, sarif                                                                                           | string   |
+| `noRecord`          | Don’t send policy checks metadata to the dashboard                                                                                                                             | boolean  |
 
 ℹ️ _For the full list of configurable parameters in the Datree helm chart, click [here](https://github.com/datreeio/admission-webhook-datree#values)_
 
