@@ -205,8 +205,12 @@ To update Datree to the latest version, run the following commands:
 
 ```terminal
 helm repo update
-helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --debug
+helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set image.tag=null --set scanJob.image.tag=null --debug
 ```
+
+:::tip FYI
+Setting the `image.tag` parameters to `null` instructs Datree to automatically use the latest image where needed.
+:::
 
 ---
 
