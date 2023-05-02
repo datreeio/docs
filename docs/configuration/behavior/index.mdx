@@ -3,23 +3,45 @@ title: Behavior
 slug: /configuration/behavior
 ---
 
+## Dashboard vs. Helm chart configuration
+
+By default, the following options are configurable via your [dashboard](https://app.datree.io/clusters):
+- **Action on failure** - Select whether to monitor or block resources that fail the policy check (defaults to "monitor").
+- **Active policy** - The name of the policy to check (defaults to "Starter").
+- **Ignored resources** - Resources to be ignored, in regex format, specified by namespace/kind/name or any combination of the three. See examples [here](/configuration/behavior#example-patterns).
+
+If you wish to control these options via the Datree Helm chart instead, you can do so by changing the value of the `configFromHelm` parameter. Simply run the following command:
+```terminal
+helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set datree.configFromHelm=true
+```
+Then, change your desired parameters as described in the table below.  
+To update your dashboard and reflect the changes, run a [manual scan](/configuration/cluster-scan#manual-scan) .
+
+
+:::caution Important
+* When controlling these options via the dashboard, changing them via the Helm chart will have no effect.  
+* All other configuration options (see table below) are always controlled via the helm chart.
+:::
+
 ## Options
 
 The following options (Helm chart parameters) are available for configuring Datree's behavior:
 
-| **Option**          | **Description**                                                                      | **Type** |
-| ------------------- | ------------------------------------------------------------------------------------ | -------- |
-| `enforce`           | Block resources that fail the policy check from being applied to the cluster         | boolean  |
-| `clusterName`       | The name of the cluster to be displayed in your dashboard                            | string   |
-| `scanIntervalHours` | The number of hours between cluster scans                                            | number   |
-| `policy`            | The name of the policy to check, e.g: "Argo"                                         | string   |
-| `existingSecret`    | A reference to a `Secret` object containing a Datree token                           | Object   |
-| `token`             | The token used to link the CLI to your dashboard                                     | string   |
-| `verbose`           | Display 'How to Fix' link for failed rules in output                                 | boolean  |
-| `output`            | The format output of the policy check results: yaml, json, xml, simple, JUnit, sarif | string   |
-| `noRecord`          | Don’t send policy checks metadata to the dashboard                                   | boolean  |
+| **Option**          | **Description**                                                                                                                                                                | **Type** |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| `configFromHelm`    | Determines whether the options listed [here](/configuration/behavior#dashboard-vs-helm-chart-configuration) are managed from Helm chart or from the dashboard (default: false) | boolean  |
+| `enforce`           | Block resources that fail the policy check from being applied to the cluster.<br/>*Relevant only if `configFromHelm` is `true`*                                                | boolean  |
+| `policy`            | The name of the policy to check, e.g: "Argo".<br/>*Relevant only if `configFromHelm` is `true`*                                                                                | string   |
+| `customSkipList`    | Skip resources by namespace/kind/name. See [custom skipping](/configuration/behavior#custom-skipping) for details.<br/>*Relevant only if `configFromHelm` is `true`*           | Object   |
+| `clusterName`       | The name of the cluster to be displayed in your dashboard                                                                                                                      | string   |
+| `scanIntervalHours` | The number of hours between cluster scans                                                                                                                                      | number   |
+| `existingSecret`    | A reference to a `Secret` object containing a Datree token                                                                                                                     | Object   |
+| `token`             | The token used to link the CLI to your dashboard                                                                                                                               | string   |
+| `verbose`           | Display 'How to Fix' link for failed rules in output                                                                                                                           | boolean  |
+| `output`            | The format output of the policy check results: yaml, json, xml, simple, JUnit, sarif                                                                                           | string   |
+| `noRecord`          | Don’t send policy checks metadata to the dashboard                                                                                                                             | boolean  |
 
-ℹ️ _For the full list of configurable parameters in the Datree helm chart, click [here](https://github.com/datreeio/admission-webhook-datree#values)_
+ℹ️ *For the full list of configurable parameters in the Datree helm chart, click [here](https://github.com/datreeio/admission-webhook-datree#values)*
 
 ### Configure options
 
@@ -103,30 +125,24 @@ By default, Datree skips all resources with a name starting with `aws-node`.
 This entry is already included in the default `values.yaml` file.
 :::
 
-### Examples
+### Example patterns
 
-The following entry will cause Datree to skip all resources in the namespace 'myNs':
+The following pattern will cause Datree to skip all resources in the namespace 'myNs':
 
-```yaml
-datree:
-  customSkipList:
-    - "myNs;(.*);(.*)"
+```
+myNs;(.*);(.*)
 ```
 
-The following entry will cause Datree to skip all resources of kind `ServiceAccount`, regardless of their namespace:
+The following pattern will cause Datree to skip all resources of kind `ServiceAccount`, regardless of their namespace:
 
-```yaml
-datree:
-  customSkipList:
-    - "(.*);ServiceAccount;(.*)"
+```
+(.*);ServiceAccount;(.*)
 ```
 
-The following entry will cause Datree to skip all resources in all namespaces if the resource name starts with the prefix 'appName-':
+The following pattern will cause Datree to skip all resources in all namespaces if the resource name starts with the prefix 'appName-':
 
-```yaml
-datree:
-  customSkipList:
-    - "(.*);(.*);(^appName-.*)"
+```
+(.*);(.*);(^appName-.*)
 ```
 
 ---

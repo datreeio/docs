@@ -1,9 +1,9 @@
 ---
-title: Overview
-slug: /dashboard/overview
+title: Clusters
+slug: /dashboard/clusters
 ---
 
-The [overview page](https://app.datree.io/overview) contains information about your clusters and their health.
+The [clusters page](https://app.datree.io/clusters) contains information about your clusters and their health.
 
 ### Cluster posture score
 
@@ -43,3 +43,15 @@ Clicking on a failed rule will take you to the [repairing](/dashboard/repairing)
 ![overview_rules_failed](/img/dashboard/overview/rules-list-failed.png)
 
 ![overview_rules_passed](/img/dashboard/overview/rules-list-passed.png)
+
+---
+
+### Cluster settings
+
+[Parts of Datree's behavior](/configuration/behavior#dashboard-vs-helm-chart-configuration) can be configured directly from the dashboard, by clicking the "Cluster settings" button.
+
+![cluster-settings](/img/dashboard/overview/cluster-settings.png)
+
+A panel will open, allowing you to configure [these settings](/configuration/behavior#dashboard-vs-helm-chart-configuration).
+
+![cluster-settings-panel](/img/dashboard/overview/cluster-settings-panel.png)

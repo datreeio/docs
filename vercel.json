@@ -101,6 +101,11 @@
       "permanent": true
     },
     {
+      "source": "/dashboard/overview",
+      "destination": "/dashboard/clusters",
+      "permanent": true
+    },
+    {
       "source": "/setup/schema-validation",
       "destination": "/cli/schema-validation",
       "permanent": true
