@@ -48,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@giscus/react": "^2.2.8"
   }
 }
