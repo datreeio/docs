@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import {useWindowSize} from '@docusaurus/theme-common';
-import {useDoc} from '@docusaurus/theme-common/internal';
+import { useDoc } from '@docusaurus/theme-common/internal';
 import DocItemPaginator from '@theme/DocItem/Paginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import DocVersionBadge from '@theme/DocVersionBadge';
@@ -37,6 +37,7 @@ function useDocTOC() {
 export default function DocItemLayout({children}) {
   const docTOC = useDocTOC();
   const { colorMode } = useColorMode();
+
   return (
     <div className="row">
       <div className={clsx('col', !docTOC.hidden && styles.docItemCol)}>
@@ -50,9 +51,9 @@ export default function DocItemLayout({children}) {
             <DocItemFooter />
           </article>
           <DocItemPaginator />
-          </div>
-          <br></br>       
-          <Giscus
+        </div>
+        <br></br>
+        <Giscus
           id="comments"
           repo="datreeio/docs"
           repoId="R_kgDOHJub3w"
@@ -61,11 +62,11 @@ export default function DocItemLayout({children}) {
           mapping="pathname"
           reactionsEnabled="1"
           emitMetadata="0"
-          inputPosition="top"
+          inputPosition="bottom"
           theme={colorMode}
           lang="en"
           loading="lazy"
-          />
+        />
       </div>
       {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
     </div>
