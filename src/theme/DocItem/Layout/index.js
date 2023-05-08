@@ -13,6 +13,7 @@ import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import styles from './styles.module.css';
 import Giscus from '@giscus/react';
 import { useColorMode } from '@docusaurus/theme-common';
+import { Divider } from '@mui/material';
 
 
 /**
@@ -52,6 +53,8 @@ export default function DocItemLayout({children}) {
           </article>
           <DocItemPaginator />
         </div>
+        <br></br>
+        <Divider />
         <br></br>
         <Giscus
           id="comments"
