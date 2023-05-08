@@ -59,13 +59,14 @@ export default function DocItemLayout({children}) {
           repoId="R_kgDOHJub3w"
           category="General"
           categoryId="DIC_kwDOHJub384CWUkg"
-          mapping="pathname"
+          mapping="title"
           reactionsEnabled="1"
           emitMetadata="0"
           inputPosition="bottom"
           theme={colorMode}
           lang="en"
           loading="lazy"
+          strict="true"
         />
       </div>
       {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
