@@ -37,7 +37,11 @@ The scan will ignore resources with the following `labels`:
 
 ## Manual scan
 
-To initiate a scan manually, run the following command:
+To initiate a scan manually, press the "Rescan cluster" button in your [dashboard](https://app.datree.io):  
+
+![cluster-scan](/img/configuration/cluster-scan/rescan.png)
+
+If you chose to [configure Datree via the Helm chart](/configuration/behavior#dashboard-vs-helm-chart-configuration), run the following command to initiate a scan:
 
 ```terminal
 kubectl delete jobs/scan-job -n datree; kubectl create job --from=cronjob/scan-cronjob scan-job -n datree
