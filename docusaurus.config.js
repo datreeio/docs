@@ -30,7 +30,7 @@ const config = {
     [
       require.resolve("docusaurus-plugin-image-zoom"),{}
     ],
-
+    "./src/plugins/intercom.js",
   ],
   presets: [
     [
