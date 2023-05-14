@@ -227,7 +227,7 @@ helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --
 ```
 
 :::tip Gitops approach
-To avoid having to write them explicity, you can use a `values.yaml` file to hold the values of your token and cluster name, then apply it using the `-f` flag when upgrading Datree.  
+To avoid having to write your token and cluster name explicity, you can use a `values.yaml` file to hold them, then apply it using the `-f` flag when upgrading Datree.  
 For example:
 ```yaml
 # values.yaml
