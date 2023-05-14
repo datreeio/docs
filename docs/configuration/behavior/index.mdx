@@ -239,6 +239,49 @@ datree:
 
 ---
 
+## Multiple policies
+
+You may want to use different policies for different namespaces. To do so, follow these steps (examples below):
+1. Instruct Datree to be [configured from the Helm chart](/configuration/behavior#dashboard-vs-helm-chart-configuration) by setting `datree.configFromHelm` to `true`.
+2. Delete the `datree.policy` parameter from the chart, and instead add `datree.multiplePolicies`, which is an array of objects.
+3. Each item in the array needs to have the following parameters:
+  * `policy` (*mandatory*) - the name of the policy (e.g. "Starter").
+  * `namespaces` - an object containing the following parameters:
+    * `includePatterns` (*mandatory*) - an array of regex patterns for namespaces to include.
+    * `excludePatterns` - an array of regex patterns for namespaces to exclude.
+
+The following example will set the policy "Starter" for all namespaces except "security":
+```yaml
+datree:
+  configFromHelm: true
+  # policy: "Starter" (This parameter should be deleted)
+  multiplePolicies:
+    - policy: "Starter"
+      namespaces:
+        includePatterns:
+          - "*"
+        excludePatterns:
+          - "security"
+```
+
+The following example will set the policy "CIS" for namespaces "ns1" and "ns2", and the policy "Starter" for namespace "ns3":
+```yaml
+datree:
+  configFromHelm: true
+  multiplePolicies:
+    - policy: "CIS"
+      namesapces:
+        includePattern:
+          - "ns1"
+          - "ns2" 
+    - policy: "Starter"
+      namesapces:
+        includePattern:
+          - "ns3"
+```
+
+---
+
 ## Uninstall
 
 To uninstall Datree, run the following commands:
