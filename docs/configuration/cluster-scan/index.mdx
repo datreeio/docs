@@ -7,12 +7,17 @@ By default, Datree will scan your cluster(s) every hour, and update your dashboa
 
 ## Scan interval
 
-You can set the scan interval to be longer than 1 hour (but not shorter). To do this, run the following command:
-```terminal
-helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --reuse-values --set datree.scanIntervalHours=<interval>
+You can set the scan interval to be longer than 1 hour (but not shorter).  
+To do this, set the value of `datree.scanIntervalHours` in your `values.yaml` file to the desired number of hours, then apply it:
+```yaml
+# values.yaml
+datree:
+  scanIntervalHours: 3
 ```
 
-Replace `<interval>` with the number of hours you'd like to have between scans.
+```terminal
+helm upgrade -n datree -f values.yaml datree-webhook datree-webhook/datree-admission-webhook
+```
 
 ## Policy
 
