@@ -10,12 +10,18 @@ By default, the following options are configurable via your [dashboard](https://
 - **Active policy** - The name of the policy to check (defaults to "Starter").
 - **Ignored resources** - Resources to be ignored, in regex format, specified by namespace/kind/name or any combination of the three. See examples [here](/configuration/behavior#example-patterns).
 
-If you wish to control these options via the Datree Helm chart instead, you can do so by changing the value of the `configFromHelm` parameter. Simply run the following command:
-```terminal
-helm upgrade -n datree datree-webhook datree-webhook/datree-admission-webhook --set datree.configFromHelm=true
+If you wish to control these options via the Datree Helm chart instead, you can do so by changing the value of the `configFromHelm` parameter:
+```yaml
+# values.yaml
+datree:
+  configFromHelm: true
 ```
-Then, change your desired parameters as described in the table below.  
-To update your dashboard and reflect the changes, run a [manual scan](/configuration/cluster-scan#manual-scan) .
+Then apply your updated `values.yaml` file:
+```terminal
+helm upgrade -n datree -f values.yaml datree-webhook datree-webhook/datree-admission-webhook
+```
+Now you can control the parameters described in the table below via your Helm chart.  
+To update your dashboard and reflect the changes, run a [manual scan](/configuration/cluster-scan#manual-scan).
 
 
 :::caution Important
