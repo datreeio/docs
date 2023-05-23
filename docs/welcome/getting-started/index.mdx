@@ -22,7 +22,7 @@ By default, Datree does not block misconfigured resources, it only monitors and 
 To enable **enforcement mode**, see the [behavior](/configuration/behavior) page.
 :::
 
-## Install Datree using the tool of your choice
+### Install Datree using the tool of your choice
 
 <div>
     &nbsp;&nbsp;
@@ -78,9 +78,15 @@ If you're looking to install on [Openshift](https://docs.openshift.com/), add th
 </TabItem>
 <TabItem value='Flux' label='Flux'>
 
+1. Create a `HelmRepository` resource:
+    ```
     flux create source helm admission-webhook-datree --url https://datreeio.github.io/admission-webhook-datree --namespace datree
+    ```
 
-    flux create hr admission-webhook-datree --chart=datree-admission-webhook --source=HelmRepository/admission-webhook-datree --values=<path-to-values-file.yaml> --namespace=datree
+2. Create a `HelmRelease` resource:
+    ```
+    flux create hr admission-webhook-datree --chart=datree-admission-webhook --source=HelmRepository/admission-webhook-datree --values=<path-to-values-file>.yaml --namespace=datree
+    ```
 
 Replace `<path-to-values-file.yaml>` with the path to your values file.  
 It must contain your **token** and **cluster name**. A minimal example of a values file:
