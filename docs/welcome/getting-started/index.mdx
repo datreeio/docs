@@ -5,11 +5,11 @@ title: Getting started
 description: Datree secures your Kubernetes by blocking the deployment of misconfigured resources
 ---
 
-import Admonition from '@theme/Admonition';
-import CodeBlock from '@theme/CodeBlock';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import styles from './styles.module.scss';
+import Admonition from "@theme/Admonition";
+import CodeBlock from "@theme/CodeBlock";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import styles from "./styles.module.scss";
 
 Datree secures your Kubernetes by blocking the deployment of misconfigured resources.
 
@@ -22,34 +22,87 @@ By default, Datree does not block misconfigured resources, it only monitors and 
 To enable **enforcement mode**, see the [behavior](/configuration/behavior) page.
 :::
 
-## Install Datree with Helm
+## Install Datree using the tool of your choice
 
-### 1. Add the Datree Helm repository
-Run the following command in your terminal:
-```terminal
-helm repo add datree-webhook https://datreeio.github.io/admission-webhook-datree
-helm repo update
-```
+<div>
+    &nbsp;&nbsp;
+    <img
+        src="/img/welcome/getting-started/helm.png"
+        alt="helm"
+        width="55"
+        height="55"
+        className="not-zoomable"
+    />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img
+        src="/img/built-in-rules/argo.png"
+        alt="argo"
+        width="55"
+        height="55"
+        className="not-zoomable"
+    />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img
+        src="/img/welcome/getting-started/flux.png"
+        alt="flux"
+        width="55"
+        height="55"
+        className="not-zoomable"
+    />
+</div>
+<Tabs>
+<TabItem value='Helm' label='Helm' default>
 
-### 2. Install Datree on your cluster
-Replace `<DATREE_TOKEN>` with the token from your [dashboard](https://app.datree.io/), and run the following command in your terminal:  
-```terminal
-helm install -n datree datree-webhook datree-webhook/datree-admission-webhook --debug \
---create-namespace \
---set datree.token=<DATREE_TOKEN> \
---set datree.clusterName=$(kubectl config current-context)
-```
+    helm repo add datree-webhook https://datreeio.github.io/admission-webhook-datree
+    helm repo update
 
-This will create a new namespace (datree), where Datree’s services and application resources will reside. `datree.token` is used to connect your dashboard to your cluster. Note that the installation can take up to 5 minutes.
+    helm install -n datree datree-webhook datree-webhook/datree-admission-webhook --debug \
+    --create-namespace \
+    --set datree.token=<DATREE_TOKEN> \
+    --set datree.clusterName=$(kubectl config current-context)
 
 :::tip Openshift
 If you're looking to install on [Openshift](https://docs.openshift.com/), add the following to the installation command:
+
 ```
 --set securityContext.runAsUser=null
 ```
+
 :::
 
-### 3. You're all set! 🎉
+</TabItem>
+<TabItem value='ArgoCD' label='ArgoCD'>
+
+    iwr -useb https://get.datree.io/windows_install.ps1 | iex
+
+</TabItem>
+<TabItem value='Flux' label='Flux'>
+
+    flux create source helm admission-webhook-datree --url https://datreeio.github.io/admission-webhook-datree --namespace datree
+
+    flux create hr admission-webhook-datree --chart=datree-admission-webhook --source=HelmRepository/admission-webhook-datree --values=<path-to-values-file.yaml> --namespace=datree
+
+Replace `<path-to-values-file.yaml>` with the path to your values file.  
+It must contain your **token** and **cluster name**. A minimal example of a values file:
+
+```yaml
+#values.yaml
+datree:
+    token: 1234-abcd-5678-efgh
+    clusterName: MyAwesomeCluster
+```
+
+</TabItem>
+</Tabs>
+
+* The installation will create a new namespace (datree), where Datree’s services and application resources will reside.  
+* `datree.token` is used to connect your cluster to your dashboard.  
+* Note that the installation can take up to 5 minutes.
+
+---
+
+### You're all set! 🎉
+
 Datree will now run in the background, [scanning your cluster](/configuration/cluster-scan) for misconfigurations.  
 A detailed report will be available in your [dashboard](https://app.datree.io/) once the scan is complete.
 
