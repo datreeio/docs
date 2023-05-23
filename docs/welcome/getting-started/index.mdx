@@ -33,15 +33,15 @@ To enable **enforcement mode**, see the [behavior](/configuration/behavior) page
         height="55"
         className="not-zoomable"
     />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <img
         src="/img/built-in-rules/argo.png"
         alt="argo"
         width="55"
         height="55"
         className="not-zoomable"
-    />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    /> */}
+    &nbsp;&nbsp;&nbsp;&nbsp;
     <img
         src="/img/welcome/getting-started/flux.png"
         alt="flux"
@@ -53,14 +53,20 @@ To enable **enforcement mode**, see the [behavior](/configuration/behavior) page
 <Tabs>
 <TabItem value='Helm' label='Helm' default>
 
+1. Add the Datree Helm repository:
+    ```
     helm repo add datree-webhook https://datreeio.github.io/admission-webhook-datree
     helm repo update
+    ```
 
+2. Install Datree on your cluster:
+    ```
     helm install -n datree datree-webhook datree-webhook/datree-admission-webhook --debug \
     --create-namespace \
     --set datree.token=<DATREE_TOKEN> \
     --set datree.clusterName=$(kubectl config current-context)
-
+    ```
+    
 :::tip Openshift
 If you're looking to install on [Openshift](https://docs.openshift.com/), add the following to the installation command:
 
@@ -71,11 +77,11 @@ If you're looking to install on [Openshift](https://docs.openshift.com/), add th
 :::
 
 </TabItem>
-<TabItem value='ArgoCD' label='ArgoCD'>
+{/* <TabItem value='ArgoCD' label='ArgoCD'>
 
-    iwr -useb https://get.datree.io/windows_install.ps1 | iex
+    placeholder
 
-</TabItem>
+</TabItem> */}
 <TabItem value='Flux' label='Flux'>
 
 1. Create a `HelmRepository` resource:
