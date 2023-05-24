@@ -53,20 +53,21 @@ To enable **enforcement mode**, see the [behavior](/configuration/behavior) page
 <Tabs>
 <TabItem value='Helm' label='Helm' default>
 
-1. Add the Datree Helm repository:
+1. Add the Datree Helm repository
     ```
     helm repo add datree-webhook https://datreeio.github.io/admission-webhook-datree
     helm repo update
     ```
 
-2. Install Datree on your cluster:
-    ```
+2. Install Datree on your cluster  
+Replace `<DATREE_TOKEN>` with the token from your dashboard, and run the following command:
+
     helm install -n datree datree-webhook datree-webhook/datree-admission-webhook --debug \
     --create-namespace \
     --set datree.token=<DATREE_TOKEN> \
     --set datree.clusterName=$(kubectl config current-context)
-    ```
-    
+
+
 :::tip Openshift
 If you're looking to install on [Openshift](https://docs.openshift.com/), add the following to the installation command:
 
@@ -84,18 +85,17 @@ If you're looking to install on [Openshift](https://docs.openshift.com/), add th
 </TabItem> */}
 <TabItem value='Flux' label='Flux'>
 
-1. Create a `HelmRepository` resource:
+1. Create a `HelmRepository` resource
     ```
     flux create source helm admission-webhook-datree --url https://datreeio.github.io/admission-webhook-datree --namespace datree
     ```
 
-2. Create a `HelmRelease` resource:
-    ```
-    flux create hr admission-webhook-datree --chart=datree-admission-webhook --source=HelmRepository/admission-webhook-datree --values=<path-to-values-file>.yaml --namespace=datree
-    ```
-
-Replace `<path-to-values-file.yaml>` with the path to your values file.  
-It must contain your **token** and **cluster name**. A minimal example of a values file:
+2. Create a `HelmRelease` resource  
+Replace `<path-to-values-file.yaml>` with the path to your values file, and run the following command:
+    
+    flux create hr admission-webhook-datree --chart=datree-admission-webhook --source=HelmRepository/admission-webhook-datree --values=<path-to-values-file.yaml> --namespace=datree
+  
+Your `values.yaml` file must contain your **token** and **cluster name**. A minimal example of a file:
 
 ```yaml
 #values.yaml
