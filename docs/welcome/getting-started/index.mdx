@@ -25,28 +25,28 @@ To enable **enforcement mode**, see the [behavior](/configuration/behavior) page
 ### Install Datree using the tool of your choice
 
 <div>
-    &nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
     <img
         src="/img/welcome/getting-started/helm.png"
         alt="helm"
-        width="55"
-        height="55"
+        width="50"
+        height="50"
         className="not-zoomable"
     />
-    {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <img
         src="/img/built-in-rules/argo.png"
         alt="argo"
-        width="55"
-        height="55"
+        width="50"
+        height="50"
         className="not-zoomable"
-    /> */}
-    &nbsp;&nbsp;&nbsp;&nbsp;
+    />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <img
         src="/img/welcome/getting-started/flux.png"
         alt="flux"
-        width="55"
-        height="55"
+        width="50"
+        height="50"
         className="not-zoomable"
     />
 </div>
@@ -78,12 +78,54 @@ If you're looking to install on [Openshift](https://docs.openshift.com/), add th
 :::
 
 </TabItem>
-{/* <TabItem value='ArgoCD' label='ArgoCD'>
+<TabItem value='ArgoCD' label='ArgoCD'>
 
-    placeholder
+Install Datree using one of the following methods:  
 
-</TabItem> */}
+**Option 1 - Using the Argo CLI**  
+Replace `<DATREE_TOKEN>` with your desired values, then run the following command:  
+```
+argocd app create datree --repo https://datreeio.github.io/admission-webhook-datree --helm-chart datree-admission-webhook --revision 0.3.64 --dest-namespace datree --dest-server https://kubernetes.default.svc --helm-set datree.token=<DATREE_TOKEN> --helm-set datree.clusterName=$(kubectl config current-context) --sync-option CreateNamespace=true
+```
+
+**Option 2 - Using the Argo UI**  
+Create a new application, edit its YAML, and copy-paste the following (replace `<DATREE_TOKEN>` and `<CLUSTER_NAME>` with your values):
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    name: datree
+spec:
+    destination:
+        name: ''
+        namespace: datree
+        server: 'https://kubernetes.default.svc'
+    source:
+        path: ''
+        repoURL: 'https://datreeio.github.io/admission-webhook-datree'
+        targetRevision: 0.3.64
+        chart: datree-admission-webhook
+        helm:
+            parameters:
+                - name: datree.token
+                  value: <DATREE_TOKEN>
+                - name: datree.clusterName
+                  value: <CLUSTER_NAME>
+sources: []
+project: default
+syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+```
+
+</TabItem>
 <TabItem value='Flux' label='Flux'>
+
+1. Create the `datree` namespace which will hold Datree's resources
+    ```
+    kubectl create namespace datree
+    ```
 
 1. Create a `HelmRepository` resource
     ```
