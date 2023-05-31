@@ -270,15 +270,20 @@ datree:
   configFromHelm: true
   multiplePolicies:
     - policy: "CIS"
-      namesapces:
+      namespaces:
         includePattern:
           - "ns1"
           - "ns2" 
     - policy: "Starter"
-      namesapces:
+      namespaces:
         includePattern:
           - "ns3"
 ```
+
+:::caution Using a policy in more than one namespace
+Each policy can be written only once in the `multiplePolicies` array.  
+To use the same policy for more than one namespace, specify the desired namespaces under the `includePattern` key (see "ns1" and "ns2" in the example above).
+:::
 
 ---
 
