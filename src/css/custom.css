@@ -177,3 +177,20 @@ img[alt=cluster-scan] {width: 30%}
 .theme-doc-sidebar-item-link>a {
   font-size: 1.1rem;
 }
+
+.installation-methods-tabs .tabs__item {
+  width: 100px;
+  justify-content: center;
+  line-height: 16px;
+  margin-right: 8px;
+}
+
+.installation-methods-tabs .tabs__item--active {
+  background-color: cornflowerblue;
+  border: 0;
+  color: #fff;
+  border-radius: var(--ifm-global-radius);
+  &:hover {
+    background-color: cornflowerblue;
+  }
+}
