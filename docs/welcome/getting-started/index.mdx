@@ -85,7 +85,7 @@ Install Datree using one of the following methods:
 **Option 1 - Using the Argo CLI**  
 Replace `<DATREE_TOKEN>` with your desired values, then run the following command:  
 ```
-argocd app create datree --repo https://datreeio.github.io/admission-webhook-datree --helm-chart datree-admission-webhook --revision 0.3.73 --dest-namespace datree --dest-server https://kubernetes.default.svc --helm-set datree.token=<DATREE_TOKEN> --helm-set datree.clusterName=$(kubectl config current-context) --sync-option CreateNamespace=true
+argocd app create datree --repo https://datreeio.github.io/admission-webhook-datree --helm-chart datree-admission-webhook --revision 0.3.74 --dest-namespace datree --dest-server https://kubernetes.default.svc --helm-set datree.token=<DATREE_TOKEN> --helm-set datree.clusterName=$(kubectl config current-context) --sync-option CreateNamespace=true
 ```
 
 **Option 2 - Using the Argo UI**  
