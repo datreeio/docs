@@ -205,7 +205,7 @@ export const navItems = [
   {
     id: uuid(),
     title: "Prevent workload from using the default namespace",
-    slug: "/built-in-rules/prevent-deafult-namespce",
+    slug: "/built-in-rules/prevent-default-namespace",
     isEnabledByDefault: true,
     pacIdentifier: "WORKLOAD_INCORRECT_NAMESPACE_VALUE_DEFAULT",
     tabOwner: ["cdk8s", "CIS"],
