@@ -85,7 +85,7 @@ const sidebars = {
         "built-in-rules/ensure-minimum-two-replicas/index",
         "built-in-rules/ensure-owner-label/index",
         "built-in-rules/ensure-valid-restart-policy/index",
-        "built-in-rules/prevent-deafult-namespce/index",
+        "built-in-rules/prevent-default-namespace/index",
         "built-in-rules/ensure-application-and-appproject-are-part-of-the-argocd-namespace/index",
         "built-in-rules/ensure-configmap-is-recognized-by-argocd/index",
         "built-in-rules/ensure-rollout-allows-broadcasting-ip-table-changes/index",

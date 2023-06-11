@@ -316,6 +316,11 @@
       "permanent": true
     },
     {
+      "source": "/built-in-rules/prevent-deafult-namespce",
+      "destination": "/built-in-rules/prevent-default-namespace",
+      "permanent": true
+    },
+    {
       "source": "/ensure-minimum-two-replicas",
       "destination": "/built-in-rules/ensure-minimum-two-replicas",
       "permanent": true
