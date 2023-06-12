@@ -49,6 +49,14 @@ To enable **enforcement mode**, see the [behavior](/configuration/behavior) page
         height="50"
         className="not-zoomable"
     />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img
+        src="/img/welcome/getting-started/openshift.png"
+        alt="flux"
+        width="50"
+        height="50"
+        className="not-zoomable"
+    />
 </div>
 <Tabs className="installation-methods-tabs">
 <TabItem value='Helm' label='Helm' default>
@@ -66,16 +74,6 @@ Replace `<DATREE_TOKEN>` with the token from your dashboard, and run the followi
     --create-namespace \
     --set datree.token=<DATREE_TOKEN> \
     --set datree.clusterName=$(kubectl config current-context)
-
-
-:::tip Openshift
-If you're looking to install on [Openshift](https://docs.openshift.com/), add the following to the installation command:
-
-```
---set securityContext.runAsUser=null
-```
-
-:::
 
 </TabItem>
 <TabItem value='ArgoCD' label='ArgoCD'>
@@ -145,6 +143,24 @@ datree:
     token: 1234-abcd-5678-efgh
     clusterName: MyAwesomeCluster
 ```
+
+</TabItem>
+<TabItem value='Openshift' label='Openshift'>
+
+1. Add the Datree Helm repository
+    ```
+    helm repo add datree-webhook https://datreeio.github.io/admission-webhook-datree
+    helm repo update
+    ```
+
+2. Install Datree on your cluster  
+Replace `<DATREE_TOKEN>` with the token from your dashboard, and run the following command:
+
+    helm install -n datree datree-webhook datree-webhook/datree-admission-webhook --debug \
+    --create-namespace \
+    --set datree.token=<DATREE_TOKEN> \
+    --set datree.clusterName=$(kubectl config current-context) \
+    --set securityContext.runAsUser=null
 
 </TabItem>
 </Tabs>

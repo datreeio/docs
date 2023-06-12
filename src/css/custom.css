@@ -181,7 +181,7 @@ img[alt=cluster-scan] {width: 30%}
 .installation-methods-tabs .tabs__item {
   width: 100px;
   justify-content: center;
-  line-height: 16px;
+  line-height: 0.8rem;
   margin-right: 8px;
 }
 
