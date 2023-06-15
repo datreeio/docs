@@ -723,7 +723,7 @@ export const navItems = [
     slug: "/built-in-rules/ensure-resource-name",
     isEnabledByDefault: true,
     pacIdentifier: "RESOURCE_MISSING_NAME",
-    tabOwner: ["cdk8s"],
+    tabOwner: ["cdk8s", "Other"],
   },
   {
     id: uuid(),

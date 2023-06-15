@@ -7,7 +7,14 @@ import Complexity from "@site/src/components/complexity/ComplexityWindow.js";
 
 `metadata.name` OR `metadata.generateName` is a mandatory property in every K8s resource type. 
 Validation that this property exists occurs is on the k8s server-side only, and is not enforced as part of the official schema. 
-Therefore, a YAML without this property will pass k8s schema validation, but will fail when pushed into a cluster (i.e. when running kubectl apply/create).
+Therefore, a YAML without this property will pass k8s schema validation, but will fail when pushed into a cluster (i.e. when running kubectl apply/create).  
+
+Most resources require a name that complies with DNS subdomain names, as defined [here](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names). This means that the name must:
+* contain at most 63 characters
+* contain only lowercase alphanumeric characters or '-'
+* start with an alphanumeric character
+* end with an alphanumeric character
+
 
 **Targeted objects by this rule (types of **`kind`**):** All
 
@@ -19,12 +26,20 @@ Therefore, a YAML without this property will pass k8s schema validation, but wil
 
 ## This rule will fail
 
-If a resource does not contain one of the propreties `name` or `generateName`
+If a resource does not contain one of the propreties `name` or `generateName`, or if the name is not valid:
 
 ```yaml
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
+  namespace: "myGreatNamespace"
+```
+
+```yaml
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: "thisIsAn!nvalidName"
   namespace: "myGreatNamespace"
 ```
 
@@ -42,7 +57,7 @@ $ datree test *.yaml
 
 ## How to fix this failure
 
-Set either `name` or `generateName` and give it a value
+Set either `name` or `generateName` and give it a valid value:
 
 ```yaml
 apiVersion: networking.k8s.io/v1beta1
