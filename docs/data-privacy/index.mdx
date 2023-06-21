@@ -10,15 +10,15 @@ This page addresses security-related aspects of Datree and its components.
 ## Policy checks
 
 ### Where are the policy check evaluations performed?
-Datree's policy evaluation process is entirely local. Only metadata is sent to our backend, which is used to display your policy check results in your dashboard.  
+Datree's policy evaluation process is entirely local. Only minimal metadata is sent to our backend, which is used to display your policy check results in your dashboard, so you can understand where your misconfigurations are and how to fix them.  
 
 ![history](/img/data-privacy/1.png)
 
 ### What does the metadata sent to the backend contain?
 - **Identification data** - required for the backend to identify the user. *Examples: client ID, account ID.*
-- **Software data** - information about the machine on which the CLI was run, to be displayed in the dashboard. *Examples: CLI version, OS version, flags, etc.*
-- **Policy data** - details related to the policy that was performed. *Examples: policy name, rules to be evaluated, etc.*
-- **Evaluation data** - results of the policy check. *Examples: name of tested file, number of passed/failed rules, etc.*
+- **Software data** - information about the machine on which Datree was run, to be displayed in the dashboard. *Examples: OS version, flags.*
+- **Policy data** - data related to the policy that was performed. *Examples: policy name, rules to be evaluated.*
+- **Evaluation data** - results of the policy check. *Examples: name of tested resource, number of passed/failed rules.*
 
 ### Are my files and their content sent/stored anywhere?
 Your files and their contents are not sent to our backend, as the policy check is performed locally (in your environment). **Datree does not have access to your files and their contents**.
