@@ -8,6 +8,7 @@ slug: /configuration/behavior
 By default, the following options are configurable via your [dashboard](https://app.datree.io/clusters):
 - **Action on failure** - Select whether to monitor or block resources that fail the policy check (defaults to "monitor").
 - **Active policy** - The name of the policy to check (defaults to "Starter").
+- **Bypass permissions** - Users/groups/ServiceAccounts that are able to bypass a failing policy check.
 - **Ignored resources** - Resources to be ignored, in regex format, specified by namespace/kind/name or any combination of the three. See examples [here](/configuration/behavior#example-patterns).
 
 If you wish to control these options via the Datree Helm chart instead, you can do so by changing the value of the `configFromHelm` parameter:
@@ -38,6 +39,7 @@ The following options (Helm chart parameters) are available for configuring Datr
 | `configFromHelm`    | Determines whether the options listed [here](/configuration/behavior#dashboard-vs-helm-chart-configuration) are managed from Helm chart or from the dashboard (default: false) | boolean  |
 | `enforce`           | Block resources that fail the policy check from being applied to the cluster.<br/>*Relevant only if `configFromHelm` is `true`*                                                | boolean  |
 | `policy`            | The name of the policy to check, e.g: "Argo".<br/>*Relevant only if `configFromHelm` is `true`*                                                                                | string   |
+| `bypassPermissions` | Users/groups/ServiceAccounts that are able to bypass a failing policy check. See [bypass permissions](/configuration/behavior#bypass-permissions) for details.<br/>*Relevant only if `configFromHelm` is `true`*                                                 | Object   |
 | `customSkipList`    | Skip resources by namespace/kind/name. See [custom skipping](/configuration/behavior#custom-skipping) for details.<br/>*Relevant only if `configFromHelm` is `true`*           | Object   |
 | `clusterName`       | The name of the cluster to be displayed in your dashboard                                                                                                                      | string   |
 | `scanIntervalHours` | The number of hours between cluster scans                                                                                                                                      | number   |
@@ -87,6 +89,25 @@ datree:
 :::info NOTE
 If both options are set, `datree.existingSecret` will take precedence.
 :::
+
+---
+
+## Bypass permissions
+
+You can configure Datree to allow certain users/groups/ServiceAccounts to bypass a failing policy check.  
+
+To add entities to the bypass permissions list, add/change the `datree.bypassPermissions` parameter in your `values.yaml` file. For example:  
+
+```yaml
+datree:
+  bypassPermissions:
+      userAccounts:
+        - "minikube"
+      serviceAccounts:
+        - "system:serviceaccount:default:srv"
+      groups:
+        - developers
+```
 
 ---
 
