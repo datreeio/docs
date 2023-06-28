@@ -14,11 +14,16 @@ Kubernetes disables seccomp profiles by default for historical reasons. You shou
 
 **Policy as code identifier:** CIS_INVALID_VALUE_SECCOMP_PROFILE
 
+:::caution Important
+Starting with Kubernetes 1.27, support for the alpha seccomp annotations `seccomp.security.alpha.kubernetes.io/pod` and `container.seccomp.security.alpha.kubernetes.io` will be removed.  
+The `securityContext.seccompProfile` field should be used instead.
+:::
+
 ---
 
 ## This rule will fail
 
-If seccomp is disabled or not set to an valid value:
+If seccomp is disabled or not set to a valid value:
 
 ```yaml
 apiVersion: v1
@@ -41,8 +46,9 @@ $ datree test *.yaml
 
 ## How to fix this failure
 
-Pods should have a seccomp profile set to `docker/default` or `runtime/default`:
+Pods should have a seccomp profile set to `docker/default` or `runtime/default`.
 
+For Kubernetes versions lower than 1.27:
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -52,8 +58,18 @@ metadata:
     seccomp.security.alpha.kubernetes.io/pod: docker/default
 ```
 
+For Kubernetes versions 1.27 and above:
+```yaml
+apiVersion: v1
+kind: Pod
+spec:
+  securityContext:
+    seccompProfile:
+      type: RuntimeDefault
+```
 ---
 
 ## Read more
 
 - [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes)
+- [Kuberentes 1.27 annotation removal](https://kubernetes.io/blog/2023/03/17/upcoming-changes-in-kubernetes-v1-27/#support-for-deprecated-seccomp-annotations)
