@@ -12,6 +12,8 @@ The following resources are deprecated in version 1.24:
 | API version | Resource kind |
 |-------------|---------------|
 | `storage.k8s.io/v1beta1` | `CSIStorageCapacity` |
+| `flowcontrol.apiserver.k8s.io/v1beta2` | `FlowSchema`, `PriorityLevelConfiguration` |
+| `flowcontrol.apiserver.k8s.io/v1beta1` | `FlowSchema`, `PriorityLevelConfiguration` |
 
 **Targeted objects by this rule (types of **`kind`**):** (See table above)
 
@@ -49,6 +51,8 @@ Use a supported API version instead of the deprecated one:
 | Deprecated API version | Supported API version |
 |-------------|---------------|
 | `storage.k8s.io/v1beta1` | `storage.k8s.io/v1` |
+| `flowcontrol.apiserver.k8s.io/v1beta2` | `flowcontrol.apiserver.k8s.io/v1beta3` |
+| `flowcontrol.apiserver.k8s.io/v1beta1` | `flowcontrol.apiserver.k8s.io/v1beta3` |
 
 **Example**:  
 
