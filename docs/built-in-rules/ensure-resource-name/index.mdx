@@ -1,5 +1,5 @@
 ---
-title: ☑️ Ensure resource has a configured name
+title: ☑️ Ensure resource has a valid configured name
 slug: /built-in-rules/ensure-resource-name
 ---
 
@@ -49,8 +49,8 @@ metadata:
 $ datree test *.yaml
 
 >> File: failExample.yaml
-❌ Ensure resource has a configured name [1 occurrence]
-💡 Missing key `name` or `generateName` - one of them must be set to apply resource to a cluster
+❌ Ensure resource has a valid configured name [1 occurrence]
+💡 Invalid/missing key `name` or `generateName` - one of them must be set with a valid value to apply a resource to a cluster
 ```
 
 ---
