@@ -719,7 +719,7 @@ export const navItems = [
   // other
   {
     id: uuid(),
-    title: "Ensure resource has a configured name",
+    title: "Ensure resource has a valid configured name",
     slug: "/built-in-rules/ensure-resource-name",
     isEnabledByDefault: true,
     pacIdentifier: "RESOURCE_MISSING_NAME",
