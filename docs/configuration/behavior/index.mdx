@@ -39,17 +39,18 @@ The following options (Helm chart parameters) are available for configuring Datr
 | `configFromHelm`    | Determines whether the options listed [here](/configuration/behavior#dashboard-vs-helm-chart-configuration) are managed from Helm chart or from the dashboard (default: false) | boolean  |
 | `enforce`           | Block resources that fail the policy check from being applied to the cluster.<br/>*Relevant only if `configFromHelm` is `true`*                                                | boolean  |
 | `policy`            | The name of the policy to check, e.g: "Argo".<br/>*Relevant only if `configFromHelm` is `true`*                                                                                | string   |
-| `bypassPermissions` | Users/groups/ServiceAccounts that are able to bypass a failing policy check. See [bypass permissions](/configuration/behavior#bypass-permissions) for details.<br/>*Relevant only if `configFromHelm` is `true`*                                                 | Object   |
-| `customSkipList`    | Skip resources by namespace/kind/name. See [custom skipping](/configuration/behavior#custom-skipping) for details.<br/>*Relevant only if `configFromHelm` is `true`*           | Object   |
+| `bypassPermissions` | Users/groups/ServiceAccounts that are able to bypass a failing policy check. See [bypass permissions](/configuration/behavior#bypass-permissions) for details.<br/>*Relevant only if `configFromHelm` is `true`*                                                 | object   |
+| `customSkipList`    | Skip resources by namespace/kind/name. See [custom skipping](/configuration/behavior#custom-skipping) for details.<br/>*Relevant only if `configFromHelm` is `true`*           | object   |
+| `enabledWarnings`   | The types of warnings (logs) to be printed. See [Customize warnings](/configuration/behavior#customize-warnings-logs) for details and possible values.                                                                                              | string[] |
 | `clusterName`       | The name of the cluster to be displayed in your dashboard                                                                                                                      | string   |
 | `scanIntervalHours` | The number of hours between cluster scans                                                                                                                                      | number   |
-| `existingSecret`    | A reference to a `Secret` object containing a Datree token                                                                                                                     | Object   |
+| `existingSecret`    | A reference to a `Secret` object containing a Datree token                                                                                                                     | object   |
 | `token`             | The token used to link the CLI to your dashboard                                                                                                                               | string   |
 | `verbose`           | Display 'How to Fix' link for failed rules in output                                                                                                                           | boolean  |
 | `output`            | The format output of the policy check results: yaml, json, xml, simple, JUnit, sarif                                                                                           | string   |
 | `noRecord`          | Don’t send policy checks metadata to the dashboard                                                                                                                             | boolean  |
-| `affinity`          | Offers more expressive syntax for fine-grained control of how Pods are scheduled to specific nodes                                                                             | Object   |
-| `nodeSelector`      | Used to select on which node a pod is scheduled to run                                                                                                                         | Object   |
+| `affinity`          | Offers more expressive syntax for fine-grained control of how Pods are scheduled to specific nodes                                                                             | object   |
+| `nodeSelector`      | Used to select on which node a pod is scheduled to run                                                                                                                         | object   |
 
 ℹ️ *For the full list of configurable parameters in the Datree helm chart, click [here](https://github.com/datreeio/admission-webhook-datree#values)*
 
@@ -227,6 +228,22 @@ metadata:
 `annotations` have a character limit - the key and value of an annotation cannot exceed 63 characters each.  
 For more information, see the [Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/#syntax-and-character-set)
 :::
+
+---
+
+## Customize warnings (logs)
+
+By default, Datree prints a warning for the following types of events:
+* **Passed policy checks** - resources that passed the policy check. Helm chart param: `passedPolicyCheck`.
+* **Failed policy checks** - resources that failed the policy check. Helm chart param: `failedPolicyCheck`.
+* **RBAC-bypassed** - resources that were [bypassed](/configuration/behavior#bypass-permissions) . Helm chart param: `RBACBypassed`.
+* **Skipped resources** - resources that were skipped for any reason. Helm chart param: `skipped`.
+
+An example of a failed policy check warning:  
+![failed_policy_check](/img/configuration/behavior/warning-example.png)
+
+
+The Helm chart parameter `datree.enabledWarnings` allows you to customize which types of warnings are printed, simply delete the ones you do not wish to see, and apply your `values.yaml` file.
 
 ---
 
