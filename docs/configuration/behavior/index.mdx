@@ -233,17 +233,20 @@ For more information, see the [Kubernetes docs](https://kubernetes.io/docs/conce
 
 ## Customize warnings (logs)
 
-By default, Datree prints a warning for the following types of events:
-* **Passed policy checks** - resources that passed the policy check. Helm chart param: `passedPolicyCheck`.
-* **Failed policy checks** - resources that failed the policy check. Helm chart param: `failedPolicyCheck`.
-* **RBAC-bypassed** - resources that were [bypassed](/configuration/behavior#bypass-permissions) . Helm chart param: `RBACBypassed`.
-* **Skipped resources** - resources that were skipped for any reason. Helm chart param: `skipped`.
+By default, Datree prints a warning for all types of events, as described in the table below.
+
+The Helm chart parameter `datree.enabledWarnings` allows you to customize which types of warnings are printed, simply delete the ones you do not wish to see, and apply your `values.yaml` file.
+
+| **Warning** | **Description** | **Helm chart value** |
+|-------------|-----------------|--------------------------|
+| Passed policy checks | Resources that passed the policy check | `passedPolicyCheck` |
+| Failed policy checks | Resources that failed the policy check | `failedPolicyCheck` |
+| RBAC-bypassed | Resources that were [bypassed](/configuration/behavior#bypass-permissions) | `RBACBypassed` |
+| Skipped resources | Resources that were skipped for any reason | `skippedBySkipList` |
 
 An example of a failed policy check warning:  
 ![failed_policy_check](/img/configuration/behavior/warning-example.png)
 
-
-The Helm chart parameter `datree.enabledWarnings` allows you to customize which types of warnings are printed, simply delete the ones you do not wish to see, and apply your `values.yaml` file.
 
 ---
 
