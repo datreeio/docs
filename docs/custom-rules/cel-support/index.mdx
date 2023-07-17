@@ -1,0 +1,55 @@
+---
+title: CEL support
+slug: /custom-rules/cel-support
+---
+
+Datree supports writing custom rules in the [CEL](https://github.com/google/cel-spec) language, by utilizing a custom JSON Schema keyword.
+
+:::info Supported version
+Writing custom rules in CEL is supported in CLI version [______](https://github.com/datreeio/datree/releases/tag/______) and above.
+:::
+
+## Required properties
+
+In addition to the basic [required format](/custom-rules/custom-rules-overview#rule-format), a CEL custom rule has the following requirements:
+
+- The `schema` property **must** have a property named `CELDefinition`.
+- The `CELDefinition` property **must** have a property named `expression` that contains the logic of the rule written in CEL.
+- The `CELDefinition` property **may** have a property named `message`, which specifies what print when the expression is violated.
+
+:::tip Online CEL validation
+Ensure the validity of your rules and test them against your resources using an [online CEL playground](https://playcel.undistro.io/).
+:::
+
+#### Example:
+
+The following schema requires that resources of kind `ServiceAccount` have the `automountServiceAccountToken` property set to `false`:  
+
+```yaml
+schema:
+  CELDefinition:
+    - expression: "object.kind != 'ServiceAccount' || (has(object.automountServiceAccountToken) && object.automountServiceAccountToken == false)"
+```
+
+---
+
+### Constraints
+
+In the above example, the constraint `object.kind != 'ServiceAccount'` is a part of the CEL logic.  
+You can also write such a constraint in JSON schema and write the rest of the logic using CEL:
+
+```yaml
+schema:
+  # Constraint - enforce rule only on `ServiceAccount` resources
+  if:
+    properties:
+      kind:
+        type: string
+        enum:
+          - ServiceAccount
+  then:
+    CELDefinition:
+      - expression: "has(object.automountServiceAccountToken) && object.automountServiceAccountToken == false"
+```
+
+#### For more examples, including a complete custom rules YAML, see the [examples page](/custom-rules/examples).
