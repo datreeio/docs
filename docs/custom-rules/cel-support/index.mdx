@@ -13,12 +13,12 @@ Writing custom rules in CEL is supported in CLI version [______](https://github.
 
 In addition to the basic [required format](/custom-rules/custom-rules-overview#rule-format), a CEL custom rule has the following requirements:
 
-- The `schema` property **must** have a property named `CELDefinition`, which is an array of object.
-- Each object **must** have a property named `expression` that contains the logic of the rule written in CEL.
-- Each object **may** have a property named `message`, which specifies what print when the expression is violated.
+- The `schema` property **must** have a property named `CELDefinition`, which is an array of items.
+- Each item **must** have a property named `expression` that contains the logic of the rule written in CEL. Within the expression, use `object` to reference the resource being evaluated (see example below).
+- Each item **may** have a property named `message`, which specifies what print when the expression is violated.
 
 :::tip Online CEL validation
-Ensure the validity of your rules and test them against your resources using an [online CEL playground](https://playcel.undistro.io/).
+Ensure the validity of your CEL expressions by testing them against resources using an [online CEL playground](https://playcel.undistro.io/).
 :::
 
 #### Example:
@@ -45,7 +45,6 @@ schema:
   if:
     properties:
       kind:
-        type: string
         enum:
           - ServiceAccount
   then:

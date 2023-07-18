@@ -149,6 +149,26 @@ regoDefinition:
 
 ---
 
+## CEL
+
+### Ensure resource name of a certain kind begins with a specific prefix
+
+The following schema ensures all Deployments have a configured name that begins with `exmpl-`:
+
+```yaml
+if:
+  properties:
+    kind:
+      enum:
+        - Deployment
+then:
+  CELDefinition: 
+    - expression: "object.metadata.name.startsWith("exmpl-")"
+      message: "Deployments must have a name that begins with `exmpl-`" # `message` is optional
+```
+
+---
+
 ## Full custom rule examples
 
 The following are examples of how the [Policy as code](/dashboard/policy-as-code) file should look before publishing it.
