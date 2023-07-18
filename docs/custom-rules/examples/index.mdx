@@ -321,7 +321,7 @@ customRules:
           - expression: "object.metadata.name.startsWith("exmpl-")"
             message: "Deployments must have a name that begins with `exmpl-`"
   - identifier: CUSTOM_CONTAINERS_READ_ONLY_ROOT_FILESYSTEM
-    name: Ensure Pod cobtainers have a read-only root filesystem [CUSTOM RULE]
+    name: Ensure Pod containers have a read-only root filesystem [CUSTOM RULE]
     defaultMessageOnFailure: Containers must have a read-only root filesystem
     schema:
       if:
