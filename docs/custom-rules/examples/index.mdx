@@ -167,6 +167,23 @@ then:
       message: "Deployments must have a name that begins with `exmpl-`" # `message` is optional
 ```
 
+### Ensure a resource has a property with a specific value
+
+The following schema ensures all containers in a Pod have a configured `securityContext.readOnlyRootFilesystem` set to `true`:
+
+```yaml
+if:
+  properties:
+    kind:
+      enum:
+        - Pod
+then:
+  CELDefinition: 
+    - expression: "object.spec.containers.all(container, has(container.securityContext) && has(container.securityContext.readOnlyRootFilesystem) &&  container.securityContext.readOnlyRootFilesystem == true)"
+      message: "Containers must have a read-only root filesystem" # `message` is optional
+```
+
+
 ---
 
 ## Full custom rule examples
@@ -274,4 +291,45 @@ customRules:
             missing := required - provided
             labelIsMissing := helpers.check_if_missing(missing)
             }
+```
+
+### CEL
+
+This example has two custom rules written in CEL and added to the policy `Default`:
+
+```yaml
+apiVersion: v1
+policies:
+  - name: Default
+    rules:
+      - identifier: CUSTOM_DEPLOYMENT_NAME_PREFIX
+        messageOnFailure: Deployments must have a name that begins with `exmpl-`
+      - identifier: CUSTOM_CONTAINERS_READ_ONLY_ROOT_FILESYSTEM
+        messageOnFailure: Containers must have a read-only root filesystem
+customRules:
+  - identifier: CUSTOM_DEPLOYMENT_NAME_PREFIX
+    name: Ensure Deployment has a valid name [CUSTOM RULE]
+    defaultMessageOnFailure: Deployments must have a name that begins with `exmpl-`
+    schema:
+      if:
+        properties:
+          kind:
+            enum:
+              - Deployment
+      then:
+        CELDefinition: 
+          - expression: "object.metadata.name.startsWith("exmpl-")"
+            message: "Deployments must have a name that begins with `exmpl-`"
+  - identifier: CUSTOM_CONTAINERS_READ_ONLY_ROOT_FILESYSTEM
+    name: Ensure Pod cobtainers have a read-only root filesystem [CUSTOM RULE]
+    defaultMessageOnFailure: Containers must have a read-only root filesystem
+    schema:
+      if:
+        properties:
+          kind:
+            enum:
+              - Pod
+      then:
+        CELDefinition: 
+          - expression: "object.spec.containers.all(container, has(container.securityContext) && has(container.securityContext.readOnlyRootFilesystem) &&  container.securityContext.readOnlyRootFilesystem == true)"
 ```
