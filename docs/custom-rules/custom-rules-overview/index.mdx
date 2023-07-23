@@ -6,7 +6,7 @@ slug: /custom-rules/custom-rules-overview
 In addition to Datree's built-in rules, you can also write your own rules and add them to your policies.  
 The custom rule engine is based on [JSON Schema](https://json-schema.org/), so it supports both YAML and JSON declarative syntax.
 
-Custom rules can be written directly in **JSON Schema** or in [**Rego**](/custom-rules/rego-support).
+Custom rules can be written directly in **JSON Schema**, in [**Rego**](/custom-rules/rego-support), or in [CEL](/custom-rules/cel-support).
 
 :::info Note
 Note that using custom rules is possible only when in [Policy as code](/dashboard/policy-as-code) mode.
@@ -34,7 +34,7 @@ Every custom rule must have the following properties:
 - **identifier** - a unique ID to associate with a policy.
 - **name** [OPTIONAL] - a title that will be shown in Datree's output when a rule fails.
 - **defaultMessageOnFailure** [OPTIONAL] - a message that is shown when the property `policies.name[].rules.messageOnFailure` is empty (unique to each identifier).
-- **schema** - a custom rule logic written in JSON Schema (as YAML) or in [Rego](/custom-rules/rego-support).
+- **schema** - a custom rule logic written in JSON Schema (as YAML), in [Rego](/custom-rules/rego-support), or in [CEL](/custom-rules/cel-support).
 
 ### Policies file format
 
@@ -78,3 +78,4 @@ The provided examples are written in YAML schema, but custom rules can also be s
 - [Online YAML Schema validator](https://yamlschemavalidator.datree.io/)
 - [Online JSON Schema validator](https://www.jsonschemavalidator.net/)
 - [Online Rego validator](https://play.openpolicyagent.org/)
+- [Online CEL validator](https://playcel.undistro.io/)

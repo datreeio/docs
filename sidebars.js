@@ -185,6 +185,7 @@ const sidebars = {
       items: [
         "custom-rules/custom-rules-overview/index",
         "custom-rules/rego-support/index",
+        "custom-rules/cel-support/index",
         "custom-rules/examples/index",
         "custom-rules/multiple-property-paths/index",
         "custom-rules/resource-quotas/index",
